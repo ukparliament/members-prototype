@@ -75,13 +75,13 @@ describe PeopleController do
       render_views
 
       before(:each) do
-        # stub_request(:get, "http://members-query.ukpds.org/people.json").
-        #     with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>'members-query.ukpds.org', 'User-Agent'=>'Ruby'}).
-        #     to_return(:status => 200, :body => PEOPLE_HASH.to_json, :headers => {})
-        #
-        # stub_request(:get, "http://members-query.ukpds.org/people.ttl").
-        #     with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>'members-query.ukpds.org', 'User-Agent'=>'Ruby'}).
-        #     to_return(:status => 200, :body => "", :headers => {})
+        stub_request(:get, "#{MembersPrototype::Application.config.endpoint}/people.json").
+            with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>"#{MembersPrototype::Application.config.endpoint_host}", 'User-Agent'=>'Ruby'}).
+            to_return(:status => 200, :body => PEOPLE_HASH.to_json, :headers => {})
+
+        stub_request(:get, "#{MembersPrototype::Application.config.endpoint}/people.ttl").
+            with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>"#{MembersPrototype::Application.config.endpoint_host}", 'User-Agent'=>'Ruby'}).
+            to_return(:status => 200, :body => PEOPLE_TTL, :headers => {})
 
         allow(controller).to receive(:get_data).and_return({ graph: PEOPLE_TTL, json: PEOPLE_HASH.to_json })
 
@@ -174,15 +174,13 @@ describe PeopleController do
       render_views
 
       before(:each) do
-        # stub_request(:get, "http://members-query.ukpds.org/people/1.json").
-        #     with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>'members-query.ukpds.org', 'User-Agent'=>'Ruby'}).
-        #     to_return(:status => 200, :body => PERSON_ONE_HASH.to_json, :headers => {})
-        #
-        # stub_request(:get, "http://members-query.ukpds.org/people/1.ttl").
-        #     with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>'members-query.ukpds.org', 'User-Agent'=>'Ruby'}).
-        #     to_return(:status => 200, :body => "", :headers => {})
+        stub_request(:get, "#{MembersPrototype::Application.config.endpoint}/people/1.json").
+            with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>"#{MembersPrototype::Application.config.endpoint_host}", 'User-Agent'=>'Ruby'}).
+            to_return(:status => 200, :body => PERSON_ONE_HASH.to_json, :headers => {})
 
-        allow(controller).to receive(:get_data).and_return({ graph: PERSON_ONE_TTL, json: PERSON_ONE_HASH.to_json })
+        stub_request(:get, "#{MembersPrototype::Application.config.endpoint}/people/1.ttl").
+            with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Host'=>"#{MembersPrototype::Application.config.endpoint_host}", 'User-Agent'=>'Ruby'}).
+            to_return(:status => 200, :body => PERSON_ONE_TTL, :headers => {})
 
         get 'show', id: '1', format: :html
       end

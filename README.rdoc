@@ -1,3 +1,6 @@
+= Members' Prototype
+
+
 This release can be used a base for any Rails app that does not need a database.
 
 A couple of things to bear in mind:

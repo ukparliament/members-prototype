@@ -13,6 +13,7 @@ ECS_APP_NAME = MembersPrototype
 AWS_REGION = eu-west-1
 
 build :
+    this line should break the build. This is intentional. I am testing pull requests again.
 	# docker-compose build
 	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest .
 

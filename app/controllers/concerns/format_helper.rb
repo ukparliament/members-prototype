@@ -2,7 +2,6 @@ require 'active_support'
 require 'json'
 
 module FormatHelper
-
   def format(data)
     respond_to do |format|
       format.html
@@ -10,5 +9,4 @@ module FormatHelper
       format.xml { render request.format.to_sym => JSON.parse(data[:serialized_data].to_json).to_xml }
     end
   end
-
 end

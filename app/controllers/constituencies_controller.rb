@@ -1,5 +1,4 @@
 class ConstituenciesController < ApplicationController
-
   def index
     # @constituencies = order_list(Constituency.all, :name)
     #
@@ -63,5 +62,4 @@ class ConstituenciesController < ApplicationController
     #
     # format({ serialized_data: @constituencies })
   end
-
 end

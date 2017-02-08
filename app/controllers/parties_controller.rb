@@ -1,5 +1,4 @@
 class PartiesController < ApplicationController
-
   def index
     # @parties = order_list(Party.eager_all, :name)
     #

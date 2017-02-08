@@ -1,5 +1,4 @@
 class HousesController < ApplicationController
-
   def index
     # @houses = order_list(House.eager_all, :id)
     #

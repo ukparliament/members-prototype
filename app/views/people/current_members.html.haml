@@ -1,0 +1,8 @@
+%h1 Current Members
+%ul.people-list
+  - @people.each do |person|
+    %li
+      %p= link_to(person.full_name, person_path(person.graph_id))
+      %p= link_to(person.houses.first.name, houses_path(person.houses.first.graph_id)) unless person.houses.empty?
+      %p= link_to(person.constituencies.first.name, houses_path(person.constituencies.first.graph_id)) unless person.constituencies.empty?
+      %p= link_to(person.parties.first.name, houses_path(person.parties.first.graph_id)) unless person.parties.empty?

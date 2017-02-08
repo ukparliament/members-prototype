@@ -9,8 +9,8 @@ gem 'turbolinks'
 gem 'json-ld', '2.1.0'
 gem 'vcard'
 
-# Parliament Ruby is a wrapper for the ineternal Parliament data API
-gem 'parliament-ruby', git: 'https://github.com/ukparliament/parliament-ruby'
+# Parliament Ruby is a wrapper for the internal Parliament data API
+gem 'parliament-ruby'
 
 # Pugin is the front-end component library used by Parliament
 gem 'pugin', git: 'https://github.com/ukparliament/pugin', branch: 'development'
@@ -40,13 +40,13 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
-  gem 'factory_girl_rails'
-  gem 'webmock'
-  gem 'simplecov', require: false
   gem 'rails-controller-testing'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'webmock'
+  gem 'vcr'
 end
 
 # Gems required for Docker containers

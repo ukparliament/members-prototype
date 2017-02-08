@@ -1,0 +1,5 @@
+%h1= @person.full_name
+
+%h3 Current House
+%p= link_to(@house.name, house_path(@house.graph_id))
+%p #{@house.seat_incumbencies.first.start_date} - current

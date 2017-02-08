@@ -1,0 +1,11 @@
+%h1= @person.full_name
+
+%h3 Constituencies
+%ul
+  - @constituencies.each do |constituency|
+    %li
+      = link_to(constituency.name, constituency_path(constituency.graph_id))
+      %ol
+        - constituency.seat_incumbencies.each do |seat_incumbency|
+          %li
+            %p #{seat_incumbency.start_date} - #{seat_incumbency.end_date}

@@ -9,6 +9,11 @@ RUN set -x \
 
 ENV RAILS_ROOT /opt/membersprototype
 
+# application specific environment variables
+ENV API_ENDPOINT http://localhost:3030
+ENV API_ENDPOINT_HOST localhost:3030
+ENV DATA_URI_PREFIX http://id.ukpds.org
+
 RUN mkdir -p $RAILS_ROOT
 
 # add project

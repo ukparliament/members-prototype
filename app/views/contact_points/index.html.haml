@@ -1,0 +1,10 @@
+%h1 Contact points
+
+%ul
+  - @contact_points.each do |contact_point|
+    %li
+      %div= "Email: #{contact_point.email}" unless contact_point.email == ''
+      %div= "Phone: #{contact_point.phone_number}" unless contact_point.phone_number == ''
+      %div= "Fax: #{contact_point.fax_number}" unless contact_point.fax_number == ''
+      %div= "Address: #{contact_point.postal_addresses.first.full_address}" unless contact_point.postal_addresses.first.full_address == ''
+

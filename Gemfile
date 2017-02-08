@@ -1,16 +1,22 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0.1'
+gem 'rails', '5.0.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# gem 'grom'
-gem 'grom', git: "https://github.com/ukpds/grom", branch: "development"
 gem 'json-ld', '2.1.0'
 gem 'vcard'
-gem 'pugin', path: './pugin'
+
+# Parliament Ruby is a wrapper for the internal Parliament data API
+gem 'parliament-ruby', git: 'https://github.com/ukparliament/parliament-ruby', branch: 'giusepped/decorators'
+
+# Pugin is the front-end component library used by Parliament
+gem 'pugin', git: 'https://github.com/ukparliament/pugin', branch: 'development'
+
+# HAML is used for front-end template rendering
+gem 'haml', '4.0.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -33,11 +39,11 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'factory_girl_rails'
   gem 'webmock'
   gem 'simplecov', require: false
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
+  gem 'vcr'
 end
 
 # Gems required for Docker containers

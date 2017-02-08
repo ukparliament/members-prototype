@@ -1,67 +1,61 @@
 class ConstituenciesController < ApplicationController
 
   def index
-    @constituencies = order_list(Constituency.all, :name)
-
-    format({ serialized_data: @constituencies })
+    @constituencies = Parliament::Request.new.constituencies.get
   end
 
   def show
-    @constituency = Constituency.eager_find(params[:id]) or not_found
-    @sittings = order_list(@constituency.sittings, :start_date).reverse unless @constituency.sittings.nil?
-
-    format({ serialized_data: @constituency } )
+    constituency_id = params[:id]
+    data = Parliament::Request.new.constituencies(constituency_id).get
+    @constituency = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').first.first
   end
 
   def current
-    @constituencies = order_list(Constituency.all('current'), :name)
+    @constituencies = Parliament::Request.new.constituencies.current.get
 
-    format({ serialized_data: @constituencies })
+    render 'constituencies/index'
   end
 
   def map
-    @constituency = Constituency.find(params[:constituency_id]) or not_found
-
-    format({ serialized_data: @constituency })
-  end
+    constituency_id = params[:constituency_id]
+    data = Parliament::Request.new.constituencies(constituency_id).get
+    @constituency = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').first.first
+   end
 
   def contact_point
-    @constituency = Constituency.find(params[:constituency_id]) or not_found
-    @contact_point = @constituency.contact_point
-
-    format({ serialized_data: { :constituency => @constituency, :contact_point => @contact_point } })
+    constituency_id = params[:constituency_id]
+    data = Parliament::Request.new.constituencies(constituency_id).contact_point.get
+    @constituency = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').first.first
   end
 
   def members
-    @constituency = Constituency.eager_find(params[:constituency_id]) or not_found
-    @members = @constituency.members unless @constituency.members.nil?
-    @sittings = order_list(@constituency.sittings, :start_date).reverse unless @constituency.sittings.nil?
+    constituency_id = params[:constituency_id]
+    data = Parliament::Request.new.constituencies(constituency_id).members.get
+    @constituency = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').first.first
 
-    format({ serialized_data:  @constituency })
+    render 'constituencies/show'
   end
 
   def current_member
-    @constituency = Constituency.eager_find(params[:constituency_id]) or not_found
-    @sittings = order_list(@constituency.sittings, :start_date).reverse unless @constituency.sittings.nil?
-    @member = @sittings.first.member
+    constituency_id = params[:constituency_id]
+    data = Parliament::Request.new.constituencies(constituency_id).members.current.get
+    @constituency = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').first.first
 
-    format({ serialized_data: { :constituency => @constituency, :members => @members } })
+    render 'constituencies/show'
   end
 
   def letters
     letter = params[:letter]
-    @root_path = constituencies_a_z_path
-    @constituencies = order_list(Constituency.all(letter), :name)
+    @constituencies = Parliament::Request.new.constituencies(letter).get
 
-    format({ serialized_data: @constituencies })
+    render 'constituencies/index'
   end
 
   def current_letters
     letter = params[:letter]
-    @root_path = constituencies_current_a_z_path
-    @constituencies = order_list(Constituency.all('current', letter), :name)
+    @constituencies = Parliament::Request.new.constituencies.current(letter).get
 
-    format({ serialized_data: @constituencies })
+    render 'constituencies/index'
   end
 
 end

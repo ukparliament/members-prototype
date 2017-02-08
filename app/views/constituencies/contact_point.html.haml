@@ -1,0 +1,9 @@
+%h2= @constituency.name
+
+%h3 Contact details
+- @constituency.contact_points.each do |contact_point|
+  %div= "Email: #{contact_point.email}" unless contact_point.email == ''
+  %div= "Phone: #{contact_point.phone_number}" unless contact_point.phone_number == ''
+  %div= "Fax: #{contact_point.fax_number}" unless contact_point.fax_number == ''
+  - contact_point.postal_addresses.each do |postal_address|
+    %div= "Address: #{postal_address.full_address}" unless postal_address.full_address == ''

@@ -1,0 +1,3 @@
+%h1
+  = person.respond_to?(:personGivenName) ? person.personGivenName : ''
+  = person.respond_to?(:personFamilyName) ? person.personFamilyName : ''

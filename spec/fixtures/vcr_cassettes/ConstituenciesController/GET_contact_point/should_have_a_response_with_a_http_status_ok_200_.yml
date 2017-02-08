@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/8d895ffc-c2bf-43d2-b756-95ab3e987919/contact_point.nt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"b3a37f3916d9b8c94f2d7d121cfbe7d3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4b0fea44-0e4c-4c27-a191-171c5f4584c2
+      X-Runtime:
+      - '0.276100'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/8d895ffc-c2bf-43d2-b756-95ab3e987919> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/8d895ffc-c2bf-43d2-b756-95ab3e987919> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/da35fbaf-7b5c-43de-af1b-93e35faa2448> .
+        <http://id.ukpds.org/8d895ffc-c2bf-43d2-b756-95ab3e987919> <http://id.ukpds.org/schema/constituencyGroupName> "North Devon" .
+        <http://id.ukpds.org/da35fbaf-7b5c-43de-af1b-93e35faa2448> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/da35fbaf-7b5c-43de-af1b-93e35faa2448> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/b9945b77-7928-4dfa-8aee-2c2b3642b929> .
+        <http://id.ukpds.org/b9945b77-7928-4dfa-8aee-2c2b3642b929> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/b9945b77-7928-4dfa-8aee-2c2b3642b929> <http://id.ukpds.org/schema/seatIncumbencyHasContactPoint> <http://id.ukpds.org/ca19f8c2-715f-43fb-931d-01a1657d88b3> .
+        <http://id.ukpds.org/ca19f8c2-715f-43fb-931d-01a1657d88b3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
+        <http://id.ukpds.org/ca19f8c2-715f-43fb-931d-01a1657d88b3> <http://id.ukpds.org/schema/email> "peter.heatonjones.mp@parliament.uk" .
+        <http://id.ukpds.org/ca19f8c2-715f-43fb-931d-01a1657d88b3> <http://id.ukpds.org/schema/phoneNumber> "020 7219 5728" .
+        <http://id.ukpds.org/ca19f8c2-715f-43fb-931d-01a1657d88b3> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/bb64f269-b47c-4cc3-84b6-3d51de6eef51> .
+        <http://id.ukpds.org/bb64f269-b47c-4cc3-84b6-3d51de6eef51> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PostalAddress> .
+        <http://id.ukpds.org/bb64f269-b47c-4cc3-84b6-3d51de6eef51> <http://id.ukpds.org/schema/postCode> "SW1A 0AA" .
+        <http://id.ukpds.org/bb64f269-b47c-4cc3-84b6-3d51de6eef51> <http://id.ukpds.org/schema/addressLine1> "House of Commons" .
+        <http://id.ukpds.org/bb64f269-b47c-4cc3-84b6-3d51de6eef51> <http://id.ukpds.org/schema/addressLine2> "London" .
+    http_version:
+  recorded_at: Wed, 08 Feb 2017 11:16:31 GMT
+recorded_with: VCR 3.0.3

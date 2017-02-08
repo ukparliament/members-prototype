@@ -1,8 +1,0 @@
-h1 Current Party
-
-
-=> link_to party_path(@person.parties.first.id) do
-  => @person.parties.first.name
-ul
-  => render :partial => 'party_memberships/party_membership', :collection => @person.parties.first.party_memberships
-

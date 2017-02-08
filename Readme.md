@@ -39,13 +39,6 @@ bundle install
 cp .env.sample .env
 ```
 
-Update the front-end system (currently installed as a git sub-module):
-```bash
-git submodule init
-git submodule update --remote
-make install -C pugin
-```
-
 ### Running the application
 There are two options for running the members prototype, either with a local version of the member api at the same time, or as a standalone rails application.
 
@@ -101,15 +94,15 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 ## License
 [Members Prototype][members-prototype] is licensed under the [Open Parliament Licence][info-license].
 
-[rails]: http://rubyonrails.org
-[parliament]: http://www.parliament.uk
-[ruby]: https://www.ruby-lang.org/en/
-[node]: https://nodejs.org/en/
-[npm]: https://www.npmjs.com
+[rails]:              http://rubyonrails.org
+[parliament]:         http://www.parliament.uk
+[ruby]:               https://www.ruby-lang.org/en/
+[node]:               https://nodejs.org/en/
+[npm]:                https://www.npmjs.com
 [member-service-api]: https://github.com/ukparliament/member-service-api
-[foreman]: https://github.com/ddollar/foreman
-[rspec]: http://rspec.info
-[members-prototype]: https://github.com/ukparliament/members-prototype
+[foreman]:            https://github.com/ddollar/foreman
+[rspec]:              http://rspec.info
+[members-prototype]:  https://github.com/ukparliament/members-prototype
 
-[info-license]: http://www.parliament.uk/site-information/copyright/open-parliament-licence/
+[info-license]:   http://www.parliament.uk/site-information/copyright/open-parliament-licence/
 [shield-license]: https://img.shields.io/badge/license-Open%20Parliament%20Licence-blue.svg

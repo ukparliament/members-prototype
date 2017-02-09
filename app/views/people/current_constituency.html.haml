@@ -1,0 +1,5 @@
+%h1= @person.full_name
+
+%h3 Current Constituency
+%p= link_to(@constituency.name, party_path(@constituency.graph_id))
+%p #{@constituency.seat_incumbencies.first.start_date} - current

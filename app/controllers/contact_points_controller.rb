@@ -1,5 +1,4 @@
 class ContactPointsController < ApplicationController
-
   def index
     # @contact_points = ContactPoint.all
     #

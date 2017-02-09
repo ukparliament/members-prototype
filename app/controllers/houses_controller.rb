@@ -1,60 +1,113 @@
 class HousesController < ApplicationController
-
   def index
-    # @houses = order_list(House.eager_all, :id)
-    #
-    # format({ serialized_data: @houses })
+    @houses = Parliament::Request.new.houses.get
   end
 
   def show
-    # @house = House.eager_find(params[:id]) or not_found
-    #
-    # format({ serialized_data: @house })
+    house_id = params[:id]
+    data = Parliament::Request.new.houses(house_id).get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
   end
 
   def members
-    # @house = House.eager_find(params[:house_id], 'members') or not_found
-    # @members = order_list(@house.members, :surname, :forename)
-    #
-    # format({ serialized_data: @house })
+    house_id = params[:house_id]
+    data = Parliament::Request.new.houses(house_id).members.get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
   end
 
   def current_members
-    # @house = House.eager_find(params[:house_id], 'members', 'current') or not_found
-    # @members = order_list(@house.members, :surname, :forename)
-    #
-    # format({ serialized_data: @house })
+    house_id = params[:house_id]
+    data = Parliament::Request.new.houses(house_id).members.current.get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
   end
 
   def parties
-    # @house = House.eager_find(params[:house_id], 'parties') or not_found
-    # @parties = order_list(@house.parties, :name)
-    #
-    # format({ serialized_data: @house })
+    house_id = params[:house_id]
+    data = Parliament::Request.new.houses(house_id).parties.get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @parties = data.filter('http://id.ukpds.org/schema/Party').first
   end
 
   def current_parties
-    # @house = House.eager_find(params[:house_id], 'parties', 'current') or not_found
-    # @parties = order_list(@house.parties, :name)
-    #
-    # format({ serialized_data: @house })
+    house_id = params[:house_id]
+    data = Parliament::Request.new.houses(house_id).parties.current.get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @parties = data.filter('http://id.ukpds.org/schema/Party').first
+
+    render 'parties'
+  end
+
+  def party
+    house_id = params[:house_id]
+    party_id = params[:party_id]
+    data = Parliament::Request.new.houses(house_id).parties(party_id).get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @party = data.filter('http://id.ukpds.org/schema/Party').first.first
   end
 
   def members_letters
-    # letter = params[:letter]
-    # @root_path = house_members_a_z_path
-    # @house = House.eager_find(params[:house_id], 'members', letter)
-    # @members = order_list(@house.members, :surname, :forename)
-    #
-    # format({ serialized_data: @house })
+    house_id = params[:house_id]
+    letter = params[:letter]
+    data = Parliament::Request.new.houses(house_id).members(letter).get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
+
+    render 'members'
   end
 
   def current_members_letters
-    # letter = params[:letter]
-    # @root_path = house_members_current_a_z_path
-    # @house = House.eager_find(params[:house_id], 'members', 'current', letter)
-    # @members = order_list(@house.members, :surname, :forename)
-    #
-    # format({ serialized_data: @house })
+    house_id = params[:house_id]
+    letter = params[:letter]
+    data = Parliament::Request.new.houses(house_id).members.current(letter).get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
+
+    render 'current_members'
+  end
+
+  def party_members
+    house_id = params[:house_id]
+    party_id = params[:party_id]
+    data = Parliament::Request.new.houses(house_id).parties(party_id).members.get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @party = data.filter('http://id.ukpds.org/schema/Party').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
+  end
+
+  def party_members_letters
+    house_id = params[:house_id]
+    party_id = params[:party_id]
+    letter = params[:letter]
+    data = Parliament::Request.new.houses(house_id).parties(party_id).members(letter).get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @party = data.filter('http://id.ukpds.org/schema/Party').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
+
+    render 'party_members'
+  end
+
+  def current_party_members
+    house_id = params[:house_id]
+    party_id = params[:party_id]
+    data = Parliament::Request.new.houses(house_id).parties(party_id).members.current.get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @party = data.filter('http://id.ukpds.org/schema/Party').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
+
+    render 'party_members'
+  end
+
+  def current_party_members_letters
+    house_id = params[:house_id]
+    party_id = params[:party_id]
+    letter = params[:letter]
+    data = Parliament::Request.new.houses(house_id).parties(party_id).members.current(letter).get
+    @house = data.filter('http://id.ukpds.org/schema/House').first.first
+    @party = data.filter('http://id.ukpds.org/schema/Party').first.first
+    @people = data.filter('http://id.ukpds.org/schema/Person').first
+
+    render 'party_members'
   end
 end

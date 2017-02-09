@@ -1,0 +1,134 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/houses/c2d41b82-d4df-4f50-b0f9-f52b84a6a788/parties.nt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"29ccbe37c28812e4bac43925418d859a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1939d6fe-1ddd-4702-8d19-a2d6e6fd391d
+      X-Runtime:
+      - '0.294796'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/c2d41b82-d4df-4f50-b0f9-f52b84a6a788> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/c2d41b82-d4df-4f50-b0f9-f52b84a6a788> <http://id.ukpds.org/schema/houseName> "House of Commons" .
+        <http://id.ukpds.org/7a048f56-0ddd-48b0-85bd-cf5dd9fa5427> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/7a048f56-0ddd-48b0-85bd-cf5dd9fa5427> <http://id.ukpds.org/schema/partyName> "Labour" .
+        <http://id.ukpds.org/ab77ae5d-7559-4636-ac25-2a23fd961980> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/ab77ae5d-7559-4636-ac25-2a23fd961980> <http://id.ukpds.org/schema/partyName> "Conservative" .
+        <http://id.ukpds.org/c9786f9e-1efc-40b2-857c-5e2957675991> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/c9786f9e-1efc-40b2-857c-5e2957675991> <http://id.ukpds.org/schema/partyName> "Crossbench" .
+        <http://id.ukpds.org/f4c727af-f417-459b-b66f-bcf4cbf46ce6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/f4c727af-f417-459b-b66f-bcf4cbf46ce6> <http://id.ukpds.org/schema/partyName> "Social Democratic Party" .
+        <http://id.ukpds.org/3d9cacc0-3f84-41d5-a0c0-db66613debdd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/3d9cacc0-3f84-41d5-a0c0-db66613debdd> <http://id.ukpds.org/schema/partyName> "Independent Conservative" .
+        <http://id.ukpds.org/5b6e2e81-d440-45f8-a03e-f7f161d0ad4e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/5b6e2e81-d440-45f8-a03e-f7f161d0ad4e> <http://id.ukpds.org/schema/partyName> "Ulster Unionist Party" .
+        <http://id.ukpds.org/5e5105e2-24a9-47bd-8604-792e500ef43f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/5e5105e2-24a9-47bd-8604-792e500ef43f> <http://id.ukpds.org/schema/partyName> "Independent Unionist" .
+        <http://id.ukpds.org/b2f4331e-79a1-46c1-bffa-be05b72b4e88> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/b2f4331e-79a1-46c1-bffa-be05b72b4e88> <http://id.ukpds.org/schema/partyName> "Ulster Progressive Unionist Party" .
+        <http://id.ukpds.org/feaebceb-d4b6-463b-9d3d-751decf6afc6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/feaebceb-d4b6-463b-9d3d-751decf6afc6> <http://id.ukpds.org/schema/partyName> "Ulster Popular Unionist Party" .
+        <http://id.ukpds.org/86d766a4-130b-424e-94a8-3cba141eaf13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/86d766a4-130b-424e-94a8-3cba141eaf13> <http://id.ukpds.org/schema/partyName> "Republican Labour" .
+        <http://id.ukpds.org/87c864b0-d4f2-47f9-971b-b7f71946f252> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/87c864b0-d4f2-47f9-971b-b7f71946f252> <http://id.ukpds.org/schema/partyName> "Social Democratic & Labour Party" .
+        <http://id.ukpds.org/f1522b58-6a67-465f-aaa6-5807e1c66443> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/f1522b58-6a67-465f-aaa6-5807e1c66443> <http://id.ukpds.org/schema/partyName> "Independent Socialist" .
+        <http://id.ukpds.org/0f138229-64d6-4107-b917-c903022ebf24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/0f138229-64d6-4107-b917-c903022ebf24> <http://id.ukpds.org/schema/partyName> "Other" .
+        <http://id.ukpds.org/35571d66-6467-420c-bc8d-f5a8ad1b4d70> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/35571d66-6467-420c-bc8d-f5a8ad1b4d70> <http://id.ukpds.org/schema/partyName> "Democratic Unionist Party" .
+        <http://id.ukpds.org/50519915-5df5-4f75-a84d-35417ced752d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/50519915-5df5-4f75-a84d-35417ced752d> <http://id.ukpds.org/schema/partyName> "Labour Independent" .
+        <http://id.ukpds.org/98f0d50d-d9f7-49e3-a9ad-4f7ddaf08349> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/98f0d50d-d9f7-49e3-a9ad-4f7ddaf08349> <http://id.ukpds.org/schema/partyName> "Independent" .
+        <http://id.ukpds.org/8c14793a-e195-48bf-a9c2-ab06eef8c9a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/8c14793a-e195-48bf-a9c2-ab06eef8c9a9> <http://id.ukpds.org/schema/partyName> "Sinn Fein" .
+        <http://id.ukpds.org/28a6df70-572f-4063-ab51-ac5457f352bb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/28a6df70-572f-4063-ab51-ac5457f352bb> <http://id.ukpds.org/schema/partyName> "Scottish National Party" .
+        <http://id.ukpds.org/cab7185a-bbf9-406d-9370-2f4ddb4b1abb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/cab7185a-bbf9-406d-9370-2f4ddb4b1abb> <http://id.ukpds.org/schema/partyName> "Liberal Democrat" .
+        <http://id.ukpds.org/5bc3c778-5cf3-4890-8464-641671025b9c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/5bc3c778-5cf3-4890-8464-641671025b9c> <http://id.ukpds.org/schema/partyName> "Liberal" .
+        <http://id.ukpds.org/adfc60c4-141d-4565-88a8-5efcc3a55283> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/adfc60c4-141d-4565-88a8-5efcc3a55283> <http://id.ukpds.org/schema/partyName> "Independent Labour" .
+        <http://id.ukpds.org/d3b5d7d4-f1a1-429a-aea1-e93449ba41e7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/d3b5d7d4-f1a1-429a-aea1-e93449ba41e7> <http://id.ukpds.org/schema/partyName> "Alliance" .
+        <http://id.ukpds.org/9efc274d-10a4-4df6-a7d2-e93a407fa1d6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/9efc274d-10a4-4df6-a7d2-e93a407fa1d6> <http://id.ukpds.org/schema/partyName> "National Liberal & Conservative" .
+        <http://id.ukpds.org/6397ae29-84e6-4954-96a9-1569eec7af62> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/6397ae29-84e6-4954-96a9-1569eec7af62> <http://id.ukpds.org/schema/partyName> "Plaid Cymru" .
+        <http://id.ukpds.org/3081da9e-348f-4410-a106-efad9b48451a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/3081da9e-348f-4410-a106-efad9b48451a> <http://id.ukpds.org/schema/partyName> "Non-affiliated" .
+        <http://id.ukpds.org/b24cf8e0-9552-4ea8-a102-134a395aaf18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/b24cf8e0-9552-4ea8-a102-134a395aaf18> <http://id.ukpds.org/schema/partyName> "UK Independence Party" .
+        <http://id.ukpds.org/991897c1-6481-4eac-a3f7-feb9836b52f4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/991897c1-6481-4eac-a3f7-feb9836b52f4> <http://id.ukpds.org/schema/partyName> "Respect" .
+        <http://id.ukpds.org/efec7559-21d9-46c3-8c6f-9dc503c26a44> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/efec7559-21d9-46c3-8c6f-9dc503c26a44> <http://id.ukpds.org/schema/partyName> "Speaker" .
+        <http://id.ukpds.org/9836e913-4bf5-47a3-9c41-f7afefebacf0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/9836e913-4bf5-47a3-9c41-f7afefebacf0> <http://id.ukpds.org/schema/partyName> "Independent SDP" .
+        <http://id.ukpds.org/4870f3e9-5c86-4a8f-b538-7b26ba887f31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/4870f3e9-5c86-4a8f-b538-7b26ba887f31> <http://id.ukpds.org/schema/partyName> "Opposition Unity" .
+        <http://id.ukpds.org/a98af5e5-67c6-44c4-94aa-b2d7c4655327> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/a98af5e5-67c6-44c4-94aa-b2d7c4655327> <http://id.ukpds.org/schema/partyName> "Referendum" .
+        <http://id.ukpds.org/44ab3df4-7171-407d-b9b2-34554efed65d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/44ab3df4-7171-407d-b9b2-34554efed65d> <http://id.ukpds.org/schema/partyName> "Independent Social Democrat" .
+        <http://id.ukpds.org/c588d369-d5f2-4fdc-9657-2bce330bf721> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/c588d369-d5f2-4fdc-9657-2bce330bf721> <http://id.ukpds.org/schema/partyName> "Protestant Unionist" .
+        <http://id.ukpds.org/8c4bb697-21f7-421d-9ecd-917615054c1a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/8c4bb697-21f7-421d-9ecd-917615054c1a> <http://id.ukpds.org/schema/partyName> "Independent Ulster Unionist" .
+        <http://id.ukpds.org/c8df34d6-72b7-4048-adb8-01d11d8f5d92> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/c8df34d6-72b7-4048-adb8-01d11d8f5d92> <http://id.ukpds.org/schema/partyName> "Conservative Independent" .
+        <http://id.ukpds.org/c998c7d0-1a85-4d94-a34c-2b6f0bd4e9f7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/c998c7d0-1a85-4d94-a34c-2b6f0bd4e9f7> <http://id.ukpds.org/schema/partyName> "United Kingdom Unionist" .
+        <http://id.ukpds.org/7f21628c-587f-4939-af50-b81d78d654e5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/7f21628c-587f-4939-af50-b81d78d654e5> <http://id.ukpds.org/schema/partyName> "Scottish Labour Party" .
+        <http://id.ukpds.org/ea89a867-ee6d-409a-a107-a6b4f713acf1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/ea89a867-ee6d-409a-a107-a6b4f713acf1> <http://id.ukpds.org/schema/partyName> "Anti H Block" .
+        <http://id.ukpds.org/0aed9061-7b9b-42f1-b3a8-0427460789d8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/0aed9061-7b9b-42f1-b3a8-0427460789d8> <http://id.ukpds.org/schema/partyName> "Green Party" .
+        <http://id.ukpds.org/fc94f7fe-dba5-42b9-b3a2-29eec7c30249> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/fc94f7fe-dba5-42b9-b3a2-29eec7c30249> <http://id.ukpds.org/schema/partyName> "Independent Liberal Democrat" .
+        <http://id.ukpds.org/d91ccd6f-79b3-4a7a-9da9-39971eb018b8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/d91ccd6f-79b3-4a7a-9da9-39971eb018b8> <http://id.ukpds.org/schema/partyName> "Vanguard Unionist Progressive Party" .
+        <http://id.ukpds.org/c3e4e2b8-0f09-41d2-8462-334774fb90b2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/c3e4e2b8-0f09-41d2-8462-334774fb90b2> <http://id.ukpds.org/schema/partyName> "United Ulster Unionist Movement" .
+        <http://id.ukpds.org/297349af-3c83-44ae-824a-bef16fb6a47a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/297349af-3c83-44ae-824a-bef16fb6a47a> <http://id.ukpds.org/schema/partyName> "United Ulster Unionist Party" .
+    http_version: 
+  recorded_at: Wed, 08 Feb 2017 15:58:02 GMT
+recorded_with: VCR 3.0.3

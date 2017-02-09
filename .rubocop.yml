@@ -55,3 +55,6 @@ AllCops:
     - 'vendor/**/*'
     - 'tmp/**/*'
     - 'spec/**/*'
+    - 'Gemfile'
+    - 'app/views/**/*'
+    - 'config/routes.rb'

@@ -1,0 +1,5 @@
+%h1 Houses
+%ul
+  - @houses.each do |house|
+    %li
+      = link_to(house.name, house_path(house.graph_id))

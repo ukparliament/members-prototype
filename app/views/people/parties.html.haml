@@ -1,0 +1,11 @@
+%h1= @person.full_name
+
+%h3 Parties
+%ul
+  - @parties.each do |party|
+    %li
+      = link_to(party.name, party_path(party.graph_id))
+      %ol
+        - party.party_memberships.each do |party_membership|
+          %li
+            %p #{party_membership.start_date} - #{party_membership.end_date}

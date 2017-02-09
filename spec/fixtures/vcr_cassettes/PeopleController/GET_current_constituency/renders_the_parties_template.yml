@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people/ff75cd0c-1a8b-49ab-8292-f00d153588e5/constituencies/current.nt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"7600e370f940507a6b46d3078fae5f82"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 22521a2b-bde2-41d7-b297-10b0d4a21572
+      X-Runtime:
+      - '0.034144'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/ff75cd0c-1a8b-49ab-8292-f00d153588e5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/ff75cd0c-1a8b-49ab-8292-f00d153588e5> <http://id.ukpds.org/schema/personGivenName> "Margaret" .
+        <http://id.ukpds.org/ff75cd0c-1a8b-49ab-8292-f00d153588e5> <http://id.ukpds.org/schema/personFamilyName> "Hodge" .
+        <http://id.ukpds.org/a57a0435-08e2-4ce8-9045-b8685cd8029a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a57a0435-08e2-4ce8-9045-b8685cd8029a> <http://id.ukpds.org/schema/constituencyGroupName> "Barking" .
+        <http://id.ukpds.org/a57a0435-08e2-4ce8-9045-b8685cd8029a> <http://id.ukpds.org/schema/constituencyGroupStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a57a0435-08e2-4ce8-9045-b8685cd8029a> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/8d8dffb5-c4c0-46f0-af4d-95df5cbb7586> .
+        <http://id.ukpds.org/8d8dffb5-c4c0-46f0-af4d-95df5cbb7586> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/8d8dffb5-c4c0-46f0-af4d-95df5cbb7586> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/b0f03179-7535-4881-a7bb-4b3836105a22> .
+        <http://id.ukpds.org/b0f03179-7535-4881-a7bb-4b3836105a22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/b0f03179-7535-4881-a7bb-4b3836105a22> <http://id.ukpds.org/schema/seatIncumbencyStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+    http_version: 
+  recorded_at: Wed, 08 Feb 2017 11:15:12 GMT
+recorded_with: VCR 3.0.3

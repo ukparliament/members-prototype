@@ -1,0 +1,12 @@
+%h1
+  = @person.full_name
+
+%h2 Contact Points
+%ul
+  - @contact_points.each do |contact_point|
+    %li
+      %p= "Email: #{contact_point.email}" if contact_point.respond_to?(:email)
+      %p= "Phone: #{contact_point.phoneNumber}" if contact_point.respond_to?(:phoneNumber)
+      %ul
+        - contact_point.postal_addresses.each do |postal_address|
+          %li= postal_address.full_address

@@ -1,6 +1,0 @@
-h1 Current Member
-
-= link_to person_path(@member.id) do
-  = @member.display_name
-ul
-  = render :partial => 'sittings/sitting', :collection => @member.sittings

@@ -1,4 +1,0 @@
-[submodule "pugin"]
-	path = pugin
-	url = https://github.com/ukparliament/pugin.git
-	branch = development

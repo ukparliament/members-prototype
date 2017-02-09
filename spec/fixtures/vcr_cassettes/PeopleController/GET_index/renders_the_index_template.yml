@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people.nt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"707521c37caf375e2ce268639be647f8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 03a2dffb-b769-4e67-a442-078d0189b057
+      X-Runtime:
+      - '0.999557'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+               <http://id.ukpds.org/b13e6a08-c1cf-451c-b3a2-389f067023ea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+               <http://id.ukpds.org/b13e6a08-c1cf-451c-b3a2-389f067023ea> <http://id.ukpds.org/schema/personGivenName> "Person 1 - forename" .
+               <http://id.ukpds.org/b13e6a08-c1cf-451c-b3a2-389f067023ea> <http://id.ukpds.org/schema/personFamilyName> "Person 1 - surname" .
+               <http://id.ukpds.org/0209183a-c96d-4d3f-a618-ae7cddeba64b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+               <http://id.ukpds.org/0209183a-c96d-4d3f-a618-ae7cddeba64b> <http://id.ukpds.org/schema/personGivenName> "Person 2 - forename" .
+               <http://id.ukpds.org/0209183a-c96d-4d3f-a618-ae7cddeba64b> <http://id.ukpds.org/schema/personFamilyName> "Person 2 - surname" .
+               <http://id.ukpds.org/1fc1e333-c1fa-4a0a-a72a-442c9ec6e4b6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+               <http://id.ukpds.org/1fc1e333-c1fa-4a0a-a72a-442c9ec6e4b6> <http://id.ukpds.org/schema/personGivenName> "Person 3 - forename" .
+               <http://id.ukpds.org/1fc1e333-c1fa-4a0a-a72a-442c9ec6e4b6> <http://id.ukpds.org/schema/personFamilyName> "Person 3 - surname" .
+    http_version:
+  recorded_at: Mon, 06 Feb 2017 10:34:27 GMT
+recorded_with: VCR 3.0.3

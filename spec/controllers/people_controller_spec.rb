@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe PeopleController do
+RSpec.describe PeopleController, vcr: true do
 
-  describe "GET index" do
+  describe 'GET index' do
     before(:each) do
       get :index
     end
@@ -13,13 +13,9 @@ RSpec.describe PeopleController do
 
     it 'assigns @people' do
       assigns(:people).each do |person|
-        expect(person).to be_a(Person)
+        expect(person).to be_a(Grom::Node)
+        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
       end
-    end
-
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].forename).to eq("Arya")
-      expect(assigns(:people)[1].forename).to eq("Daenerys")
     end
 
     it 'renders the index template' do
@@ -29,7 +25,7 @@ RSpec.describe PeopleController do
 
   describe "GET show" do
     before(:each) do
-      get :show, params: { id: '1' }
+      get :show, params: { id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -37,7 +33,8 @@ RSpec.describe PeopleController do
     end
 
     it 'assigns @person' do
-      expect(assigns(:person)).to be_a(Person)
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
     end
 
     it 'renders the show template' do
@@ -56,17 +53,13 @@ RSpec.describe PeopleController do
 
     it 'assigns @people' do
       assigns(:people).each do |person|
-        expect(person).to be_a(Person)
+        expect(person).to be_a(Grom::Node)
+        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
       end
     end
 
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].forename).to eq("Arya")
-      expect(assigns(:people)[1].forename).to eq("Ned")
-    end
-
     it 'renders the members template' do
-      expect(response).to render_template('members')
+      expect(response).to render_template('index')
     end
   end
 
@@ -81,13 +74,9 @@ RSpec.describe PeopleController do
 
     it 'assigns @people' do
       assigns(:people).each do |person|
-        expect(person).to be_a(Person)
+        expect(person).to be_a(Grom::Node)
+        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
       end
-    end
-
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].forename).to eq("Arya")
-      expect(assigns(:people)[1].forename).to eq("Ned")
     end
 
     it 'renders the current_members template' do
@@ -97,7 +86,7 @@ RSpec.describe PeopleController do
 
   describe "GET contact_points" do
     before(:each) do
-      get :contact_points, params: { person_id: '1' }
+      get :contact_points, params: { person_id: '08a3dfac-652a-44d6-8a43-00bb13c60e47' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -105,7 +94,12 @@ RSpec.describe PeopleController do
     end
 
     it 'assigns @person and @contact_points' do
-      expect(assigns(:person)).to be_a(Person)
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+      assigns(:contact_points).each do |contact_point|
+        expect(contact_point).to be_a(Grom::Node)
+        expect(contact_point.type).to eq('http://id.ukpds.org/schema/ContactPoint')
+      end
     end
 
     it 'renders the contact_points template' do
@@ -115,7 +109,7 @@ RSpec.describe PeopleController do
 
   describe "GET parties" do
     before(:each) do
-      get :parties, params: { person_id: '1' }
+      get :parties, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -123,16 +117,12 @@ RSpec.describe PeopleController do
     end
 
     it 'assigns @person and @parties' do
-      expect(assigns(:person)).to be_a(Person)
-
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
       assigns(:parties).each do |party|
-        expect(party).to be_a(Party)
+        expect(party).to be_a(Grom::Node)
+        expect(party.type).to eq('http://id.ukpds.org/schema/Party')
       end
-    end
-
-    it 'assigns @parties in alphabetical order' do
-      expect(assigns(:parties)[0].name).to eq("Starks")
-      expect(assigns(:parties)[1].name).to eq("Targaryens")
     end
 
     it 'renders the parties template' do
@@ -142,19 +132,110 @@ RSpec.describe PeopleController do
 
   describe "GET current_party" do
     before(:each) do
-      get :current_party, params: { person_id: '1' }
+      get :current_party, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
     end
 
     it 'should have a response with http status ok (200)' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'assigns @person' do
-      expect(assigns(:person)).to be_a(Person)
+    it 'assigns @person and @party' do
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+      expect(assigns(:party)).to be_a(Grom::Node)
+      expect(assigns(:party).type).to eq('http://id.ukpds.org/schema/Party')
     end
 
     it 'renders the current_party template' do
       expect(response).to render_template('current_party')
+    end
+  end
+
+  describe "GET constituencies" do
+    before(:each) do
+      get :constituencies, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @person and @constituencies' do
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+      assigns(:constituencies).each do |constituency|
+        expect(constituency).to be_a(Grom::Node)
+        expect(constituency.type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+      end
+    end
+
+    it 'renders the parties template' do
+      expect(response).to render_template('constituencies')
+    end
+  end
+
+  describe "GET current_constituency" do
+    before(:each) do
+      get :current_constituency, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @person and @constituency' do
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+      expect(assigns(:constituency)).to be_a(Grom::Node)
+      expect(assigns(:constituency).type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+    end
+
+    it 'renders the parties template' do
+      expect(response).to render_template('current_constituency')
+    end
+  end
+
+  describe "GET houses" do
+    before(:each) do
+      get :houses, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @person and @houses' do
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+      assigns(:houses).each do |house|
+        expect(house).to be_a(Grom::Node)
+        expect(house.type).to eq('http://id.ukpds.org/schema/House')
+      end
+    end
+
+    it 'renders the parties template' do
+      expect(response).to render_template('houses')
+    end
+  end
+
+  describe "GET current_house" do
+    before(:each) do
+      get :current_house, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @person and @house' do
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+      expect(assigns(:house)).to be_a(Grom::Node)
+      expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
+    end
+
+    it 'renders the parties template' do
+      expect(response).to render_template('current_house')
     end
   end
 
@@ -169,17 +250,13 @@ RSpec.describe PeopleController do
 
     it 'assigns @people' do
       assigns(:people).each do |person|
-        expect(person).to be_a(Person)
+        expect(person).to be_a(Grom::Node)
+        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
       end
     end
 
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].forename).to eq("Arya")
-      expect(assigns(:people)[1].forename).to eq("Daenerys")
-    end
-
     it 'renders the index template' do
-      expect(response).to render_template('letters')
+      expect(response).to render_template('index')
     end
   end
 
@@ -194,16 +271,13 @@ RSpec.describe PeopleController do
 
     it 'assigns @people' do
       assigns(:people).each do |person|
-        expect(person).to be_a(Person)
+        expect(person).to be_a(Grom::Node)
+        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
       end
     end
 
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].forename).to eq("Arya")
-    end
-
     it 'renders the members template' do
-      expect(response).to render_template('members_letters')
+      expect(response).to render_template('index')
     end
   end
 
@@ -218,102 +292,13 @@ RSpec.describe PeopleController do
 
     it 'assigns @people' do
       assigns(:people).each do |person|
-        expect(person).to be_a(Person)
+        expect(person).to be_a(Grom::Node)
+        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
       end
-    end
-
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].forename).to eq("Arya")
     end
 
     it 'renders the members template' do
-      expect(response).to render_template('current_members_letters')
-    end
-  end
-
-  describe "GET constituencies" do
-    before(:each) do
-      get :constituencies, params: { person_id: '1' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @person and @constituencies' do
-      expect(assigns(:person)).to be_a(Person)
-
-      assigns(:constituencies).each do |constituency|
-        expect(constituency).to be_a(Constituency)
-      end
-    end
-
-    it 'assigns @constituencies in alphabetical order' do
-      expect(assigns(:constituencies)[0].name).to eq("Bethnal Green")
-      expect(assigns(:constituencies)[1].name).to eq("Westminster")
-    end
-
-    it 'renders the parties template' do
-      expect(response).to render_template('constituencies')
-    end
-  end
-
-  describe "GET houses" do
-    before(:each) do
-      get :houses, params: { person_id: '1' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @person' do
-      expect(assigns(:person)).to be_a(Person)
-    end
-
-    it 'renders the parties template' do
-      expect(response).to render_template('houses')
-    end
-  end
-
-  describe "GET current_house" do
-    before(:each) do
-      get :current_house, params: { person_id: '1' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @person and @house' do
-      expect(assigns(:person)).to be_a(Person)
-
-      expect(assigns(:house)).to be_a(House)
-    end
-
-    it 'renders the parties template' do
-      expect(response).to render_template('current_house')
-    end
-  end
-
-  describe "GET current_constituency" do
-    before(:each) do
-      get :current_constituency, params: { person_id: '1' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @person and @constituency' do
-      expect(assigns(:person)).to be_a(Person)
-
-      expect(assigns(:constituency)).to be_a(Constituency)
-    end
-
-    it 'renders the parties template' do
-      expect(response).to render_template('current_constituency')
+      expect(response).to render_template('current_members')
     end
   end
 end
-

@@ -1,0 +1,11 @@
+%h1= @person.full_name
+
+%h3 Houses
+%ul
+  - @houses.each do |house|
+    %li
+      = link_to(house.name, house_path(house.graph_id))
+      %ol
+        - house.seat_incumbencies.each do |seat_incumbency|
+          %li
+            %p #{seat_incumbency.start_date} - #{seat_incumbency.end_date}

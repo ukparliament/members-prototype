@@ -20,8 +20,6 @@ passenger.3000.pid.lock
 passenger.3000.pid
 .DS_Store
 
-/spec/fixtures/*
-
 config/environment_variables.yml
 
 /public/_*

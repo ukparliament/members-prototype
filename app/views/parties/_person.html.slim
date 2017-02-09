@@ -1,7 +1,0 @@
-li 
-  = link_to person_path(person.id) do
-    = person.display_name
-  ul 
-    = render :partial => 'party_memberships/party_membership', :collection => person.party_memberships
-
-

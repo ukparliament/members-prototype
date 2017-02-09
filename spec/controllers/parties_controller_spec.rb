@@ -1,8 +1,8 @@
 require 'rails_helper'
+require 'pry'
 
-RSpec.describe PartiesController do
-
-  describe "GET index" do
+RSpec.describe PartiesController, vcr: true do
+  describe 'GET index' do
     before(:each) do
       get :index
     end
@@ -13,13 +13,9 @@ RSpec.describe PartiesController do
 
     it 'assigns @parties' do
       assigns(:parties).each do |party|
-        expect(party).to be_a(Party)
+        expect(party).to be_a(Grom::Node)
+        expect(party.type).to eq('http://id.ukpds.org/schema/Party')
       end
-    end
-
-    it 'assigns @parties in alphabetical order' do
-      expect(assigns(:parties)[0].name).to eq("Starks")
-      expect(assigns(:parties)[1].name).to eq("Targaryens")
     end
 
     it 'renders the index template' do
@@ -27,24 +23,17 @@ RSpec.describe PartiesController do
     end
   end
 
-  describe "GET current" do
+  describe 'GET current' do
     before(:each) do
       get :current
     end
 
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
+    it 'should return a Parliament::Response object' do
+      expect(assigns(:parties)).to be_a(Parliament::Response)
     end
 
-    it 'assigns @parties' do
-      assigns(:parties).each do |party|
-        expect(party).to be_a(Party)
-      end
-    end
-
-    it 'assigns @parties in alphabetical order' do
-      expect(assigns(:parties)[0].name).to eq("Starks")
-      expect(assigns(:parties)[1].name).to eq("Targaryens")
+    it 'should return the current number of parties' do
+      expect(assigns(:parties).size).to eq(13)
     end
 
     it 'renders the current template' do
@@ -52,151 +41,153 @@ RSpec.describe PartiesController do
     end
   end
 
-  describe "GET show" do
-    before(:each) do
-      get :show, params: { id: '81' }
-    end
+  describe 'GET show' do
+    context 'for a valid id' do
+      before(:each) do
+        get :show, params: { id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427' }
+      end
 
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
+      it 'response should return ok' do
+        expect(response).to have_http_status(:ok)
+      end
 
-    it 'assigns @party' do
-      expect(assigns(:party)).to be_a(Party)
-    end
+      it 'should return a Grom Node object' do
+        expect(assigns(:party)).to be_a(Grom::Node)
+      end
 
-    it 'renders the show template' do
-      expect(response).to render_template('show')
-    end
-  end
+      it 'assigns @party and checks that the partyName is contained within it' do
+        expect(assigns(:party).partyName).to eq('Labour')
+      end
 
-  describe "GET members" do
-    before(:each) do
-      get :members, params: { party_id: "81" }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @party and @members' do
-      expect(assigns(:party)).to be_a(Party)
-
-      assigns(:members).each do |member|
-        expect(member).to be_a(Member)
+      after(:all) do
+        puts 'Test for valid id finished'
       end
     end
 
-    it 'assigns @members in alphabetical order' do
-      expect(assigns(:members)[0].forename).to eq("Arya")
-      expect(assigns(:members)[1].forename).to eq("Ned")
-    end
+    context 'for an invalid id' do
+      it 'passes an invalid id to the show page' do
+        expect { get :show, params: { id: 'FAKE-ID' } }.to raise_error(ActionController::RoutingError, 'Not Found')
+      end
 
-    it 'renders the members template' do
-      expect(response).to render_template('members')
+      after(:all) do
+        puts 'Test for invalid id finished'
+      end
     end
   end
 
-  describe "GET current_members" do
-    before(:each) do
-      get :current_members, params: { party_id: "81" }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @party and @members' do
-      expect(assigns(:party)).to be_a(Party)
-
-      assigns(:members).each do |member|
-        expect(member).to be_a(Member)
+  describe 'GET members' do
+    context 'for a specific party' do
+      before(:each) do
+        get :members, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427' }
       end
-    end
 
-    it 'assigns @members in alphabetical order' do
-      expect(assigns(:members)[0].forename).to eq("Arya")
-      expect(assigns(:members)[1].forename).to eq("Ned")
-    end
+      it 'assigns @people and checks that the type is Person' do
+        assigns(:people).each do |person|
+          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+        end
+      end
 
-    it 'renders the members template' do
-      expect(response).to render_template('current_members')
+      it 'should return an Array' do
+        expect(assigns(:people)).to be_an_instance_of(Array)
+      end
+
+      it 'passes an invalid party id to the show page' do
+        expect { get :members, params: { party_id: 'FAKE-PARTY-ID' } }.to raise_error(ActionController::RoutingError, 'Not Found')
+      end
     end
   end
 
-  describe "GET letters" do
-    before(:each) do
-      get :letters, params: { letter: "s" }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @parties' do
-      assigns(:parties).each do |party|
-        expect(party).to be_a(Party)
+  describe 'GET current members' do
+    context 'for a specific party' do
+      before(:each) do
+        get :current_members, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427' }
       end
-    end
 
-    it 'assigns @parties in alphabetical order' do
-      expect(assigns(:parties)[0].name).to eq("Starks")
-    end
+      it 'assigns @people and checks that the type is Person' do
+        assigns(:people).each do |person|
+          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+        end
+      end
 
-    it 'renders the index template' do
-      expect(response).to render_template('letters')
+      it 'should return an Array' do
+        expect(assigns(:people)).to be_an_instance_of(Array)
+      end
+
+      it 'passes an invalid party id to the show page' do
+        expect { get :current_members, params: { party_id: 'FAKE-PARTY-ID' } }.to raise_error(ActionController::RoutingError, 'Not Found')
+      end
     end
   end
 
-  describe "GET members_letters" do
-    before(:each) do
-      get :members_letters, params: { party_id: 81, letter: "t" }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @party and @members' do
-      expect(assigns(:party)).to be_a(Party)
-
-      assigns(:members).each do |member|
-        expect(member).to be_a(Member)
+  describe 'GET letters' do
+    context 'parties for a specific letter' do
+      before(:each) do
+        get :letters, params: { letter: 'h' }
       end
-    end
 
-    it 'assigns @members in alphabetical order' do
-      expect(assigns(:members)[0].forename).to eq("Arya")
-    end
+      it 'should return a Grom Node object as a party' do
+        expect(assigns(:party)).to be_a(Grom::Node)
+      end
 
-    it 'renders the members template' do
-      expect(response).to render_template('members_letters')
+      it 'assigns @party and checks that the correct partyname is returned' do
+        expect(assigns(:party).partyName).to eq('Humanity')
+      end
+
+      it 'passes an invalid letter to the letters page' do
+        expect { get :letters, params: { letter: '1' } }.to raise_error(ActionController::UrlGenerationError)
+      end
     end
   end
 
-  describe "GET current_members_letters" do
-    before(:each) do
-      get :current_members_letters, params: { party_id: 81, letter: "t" }
-    end
+  describe 'GET members_letters' do
+    context 'members for a specific party with a specific letter' do
+      before(:each) do
+        get :members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'a' }
+      end
 
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
+      it 'assigns party and checks that the type is Party' do
+        expect(assigns(:party).type).to eq('http://id.ukpds.org/schema/Party')
+      end
 
-    it 'assigns @party and @members' do
-      expect(assigns(:party)).to be_a(Party)
+      it 'should return a Grom Node object as a party' do
+        expect(assigns(:party)).to be_a(Grom::Node)
+      end
 
-      assigns(:members).each do |member|
-        expect(member).to be_a(Member)
+      it 'assigns @people and checks that the type is Person' do
+        assigns(:people).each do |person|
+          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+        end
+      end
+
+      it 'passes an invalid letter and party id to the members_letters page' do
+        expect { get :members_letters, params: { party_id: 'FAKE-PARTY-ID', letter: '1' } }.to raise_error(ActionController::UrlGenerationError)
       end
     end
+  end
 
-    it 'assigns @members in alphabetical order' do
-      expect(assigns(:members)[0].forename).to eq("Arya")
-    end
+  describe 'GET current_members_letters' do
+    context 'current members for a specific party with a specific letter' do
+      before(:each) do
+        get :current_members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'c' }
+      end
 
-    it 'renders the members template' do
-      expect(response).to render_template('current_members_letters')
+      it 'assigns party and checks that the type is Party' do
+        expect(assigns(:party).type).to eq('http://id.ukpds.org/schema/Party')
+      end
+
+      it 'should return a Grom Node object as a party' do
+        expect(assigns(:party)).to be_a(Grom::Node)
+      end
+
+      it 'assigns @people and checks that the type is Person' do
+        assigns(:people).each do |person|
+          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+        end
+      end
+
+      it 'passes an invalid letter and party id to the members_letters page' do
+        expect { get :members_letters, params: { party_id: 'FAKE-PARTY-ID', letter: '1' } }.to raise_error(ActionController::UrlGenerationError)
+      end
     end
   end
 end

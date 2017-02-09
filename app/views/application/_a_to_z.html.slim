@@ -1,6 +1,0 @@
-nav[aria-label="Paged navigation"]
-  ul.atoz-letters
-    - ("A".."Z").each do |letter|
-      li[data-letter="#{letter.downcase}"]
-        = link_to(@root_path + "/" + letter.downcase, :data => { :atoz_see => 'true' }) do
-          = letter

@@ -1,0 +1,5 @@
+%h1 Current Parties
+%ul.parties-list
+  - @parties.each do |party|
+    %li
+      = party.respond_to?(:partyName) ? party.partyName : ''

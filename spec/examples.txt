@@ -1,0 +1,32 @@
+example_id                                             | status | run_time        |
+------------------------------------------------------ | ------ | --------------- |
+./spec/controllers/parties_controller_spec.rb[1:1:1]   | passed | 0.04839 seconds |
+./spec/controllers/parties_controller_spec.rb[1:1:2]   | passed | 0.07188 seconds |
+./spec/controllers/parties_controller_spec.rb[1:1:3]   | passed | 0.04813 seconds |
+./spec/controllers/parties_controller_spec.rb[1:2:1]   | passed | 0.00944 seconds |
+./spec/controllers/parties_controller_spec.rb[1:2:2]   | passed | 0.01468 seconds |
+./spec/controllers/parties_controller_spec.rb[1:2:3]   | passed | 0.00765 seconds |
+./spec/controllers/parties_controller_spec.rb[1:3:1:1] | passed | 0.01204 seconds |
+./spec/controllers/parties_controller_spec.rb[1:3:1:2] | passed | 0.0188 seconds  |
+./spec/controllers/parties_controller_spec.rb[1:3:1:3] | passed | 0.01583 seconds |
+./spec/controllers/parties_controller_spec.rb[1:3:2:1] | passed | 0.00789 seconds |
+./spec/controllers/parties_controller_spec.rb[1:4:1:1] | passed | 1.68 seconds    |
+./spec/controllers/parties_controller_spec.rb[1:4:1:2] | passed | 1.7 seconds     |
+./spec/controllers/parties_controller_spec.rb[1:4:1:3] | passed | 1.75 seconds    |
+./spec/controllers/parties_controller_spec.rb[1:5:1:1] | passed | 0.90874 seconds |
+./spec/controllers/parties_controller_spec.rb[1:5:1:2] | passed | 0.91742 seconds |
+./spec/controllers/parties_controller_spec.rb[1:5:1:3] | passed | 0.95527 seconds |
+./spec/controllers/parties_controller_spec.rb[1:6:1:1] | passed | 0.01146 seconds |
+./spec/controllers/parties_controller_spec.rb[1:6:1:2] | passed | 0.00933 seconds |
+./spec/controllers/parties_controller_spec.rb[1:6:1:3] | passed | 0.01014 seconds |
+./spec/controllers/parties_controller_spec.rb[1:7:1:1] | passed | 0.22599 seconds |
+./spec/controllers/parties_controller_spec.rb[1:7:1:2] | passed | 0.32759 seconds |
+./spec/controllers/parties_controller_spec.rb[1:7:1:3] | passed | 0.20098 seconds |
+./spec/controllers/parties_controller_spec.rb[1:7:1:4] | passed | 0.2089 seconds  |
+./spec/controllers/parties_controller_spec.rb[1:8:1:1] | passed | 1.22 seconds    |
+./spec/controllers/parties_controller_spec.rb[1:8:1:2] | passed | 0.21047 seconds |
+./spec/controllers/parties_controller_spec.rb[1:8:1:3] | passed | 0.19286 seconds |
+./spec/controllers/parties_controller_spec.rb[1:8:1:4] | passed | 0.19045 seconds |
+./spec/controllers/people_controller_spec.rb[1:1:1]    | passed | 0.06958 seconds |
+./spec/controllers/people_controller_spec.rb[1:1:2]    | passed | 0.00874 seconds |
+./spec/controllers/people_controller_spec.rb[1:1:3]    | passed | 0.01443 seconds |

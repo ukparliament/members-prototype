@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     get '/houses/current', to: 'people#current_house'
   end
 
-  resources :parties, only: [:index, :show] do
+  resources :parties, only: [:index, :show, :members] do
     get '/members', to: 'parties#members'
     get '/members/current', to: 'parties#current_members'
     get '/members/a-z', to: 'application#a_to_z', as: 'members_a_z'

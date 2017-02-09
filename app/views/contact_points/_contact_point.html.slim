@@ -1,9 +1,0 @@
-li
-  => contact_point.street_address if defined? contact_point.street_address
-  => contact_point.address_locality if defined? contact_point.address_locality
-  => contact_point.postal_code if defined? contact_point.postal_code
-  => contact_point.telephone if defined? contact_point.telephone
-  => contact_point.email if defined? contact_point.email
-  => contact_point.fax_number if defined? contact_point.fax_number
-  => link_to contact_point_path(contact_point.id), target: '_blank' do
-    span download

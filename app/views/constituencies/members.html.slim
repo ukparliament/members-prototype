@@ -1,8 +1,0 @@
-ul
-  - @sittings.each do |sitting|
-    li
-      => sitting.start_date
-	  |  -
-	  - if sitting.end_date
-	    => sitting.end_date
-      => sitting.member.display_name

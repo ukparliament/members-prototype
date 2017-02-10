@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/katylouise/parliament-ruby
-  revision: d8c84322ac1b4b9f548a09c78edc6bd605ac09b2
+  remote: https://github.com/ukparliament/parliament-ruby
+  revision: 9214c78841ae6b2aa3deb77641846224ca1ffa54
   specs:
     parliament-ruby (0.2.0)
       grom (~> 0.3.5)

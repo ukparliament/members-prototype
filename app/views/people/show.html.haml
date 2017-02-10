@@ -1,7 +1,7 @@
 %h1 #{@person.given_name} #{@person.other_name} #{@person.family_name}
 
 %h4= t('date_of_birth')
-%p= @person.date_of_birth
+%p= "#{l(@person.date_of_birth, format: :default)}" unless @person.date_of_birth.nil?
 
 %h4= t('gender')
 %p= @person.gender.name unless @person.gender.nil?

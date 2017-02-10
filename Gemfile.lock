@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/katylouise/parliament-ruby
-  revision: a22eb88c12dbb2aa6525547bcb94fde568b659d4
-  branch: katylouise/decorators
+  revision: d8c84322ac1b4b9f548a09c78edc6bd605ac09b2
   specs:
     parliament-ruby (0.2.0)
       grom (~> 0.3.5)
@@ -255,4 +254,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.13.7
+   1.13.6

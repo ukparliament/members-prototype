@@ -2,9 +2,6 @@ require 'vcard/vcard'
 require 'parliament'
 
 class ApplicationController < ActionController::Base
-  include JSONLDHelper
-  include FormatHelper
-  include NotFoundHelper
   include VCardHelper
   include Parliament
 

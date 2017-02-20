@@ -102,6 +102,8 @@ en:
       title: ! '%{current} %{members}'
     current:
       title: ! '%{current} %{parties}'
+    letters:
+      title: ! '%{parties}'
   constituencies:
     index:
       title: ! '%{constituencies}'

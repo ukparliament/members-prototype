@@ -9,7 +9,7 @@
 %div= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), root_path)).html_safe
 %br
 %h3= t('.current-beta-pages')
-%p= link_to t('.links.people', people: t('people_title')), people_path
+%p= link_to t('.links.people', people: t('people_title')), people_a_z_letter_path('a')
 %p= t('.beta-pages-text-1')
 %p= t('.beta-pages-text-2')
 %p= t('.beta-pages-text-3', current_mps: link_to(t('.links.current_mps'), people_members_current_path)).html_safe

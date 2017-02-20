@@ -25,7 +25,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET show" do
     before(:each) do
-      get :show, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788' }
+      get :show, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -44,7 +44,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET members" do
     before(:each) do
-      get :members, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788' }
+      get :members, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -67,7 +67,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_members" do
     before(:each) do
-      get :current_members, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788' }
+      get :current_members, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -90,7 +90,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET parties" do
     before(:each) do
-      get :parties, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788' }
+      get :parties, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -113,7 +113,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_parties" do
     before(:each) do
-      get :current_parties, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788' }
+      get :current_parties, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -136,7 +136,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET party" do
     before(:each) do
-      get :party, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980' }
+      get :party, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -157,7 +157,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET members_letters" do
     before(:each) do
-      get :members_letters, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', letter: "t" }
+      get :members_letters, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', letter: "t"}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -180,7 +180,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_members_letters" do
     before(:each) do
-      get :current_members_letters, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', letter: "t" }
+      get :current_members_letters, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', letter: "t"}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -203,7 +203,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET party_members" do
     before(:each) do
-      get :party_members, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980' }
+      get :party_members, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -228,7 +228,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET party_members_letters" do
     before(:each) do
-      get :party_members_letters, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980', letter: 't' }
+      get :party_members_letters, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980', letter: 't'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -253,7 +253,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_party_members" do
     before(:each) do
-      get :current_party_members, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980' }
+      get :current_party_members, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -278,7 +278,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_party_members_letters" do
     before(:each) do
-      get :current_party_members_letters, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980', letter: 't' }
+      get :current_party_members_letters, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980', letter: 't'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -298,6 +298,36 @@ RSpec.describe HousesController, vcr: true do
 
     it 'renders the current_party_members_letters template' do
       expect(response).to render_template('current_party_members_letters')
+    end
+  end
+
+  describe 'GET lookup_by_letters' do
+    context 'it returns multiple results' do
+      before(:each) do
+        get :lookup_by_letters, params: {letters: 'house'}
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to index' do
+        expect(response).to redirect_to(houses_path)
+      end
+    end
+
+    context 'it returns a single result' do
+      before(:each) do
+        get :lookup_by_letters, params: {letters: 'commons'}
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to houses/:id' do
+        expect(response).to redirect_to(house_path('c2d41b82-d4df-4f50-b0f9-f52b84a6a788'))
+      end
     end
   end
 end

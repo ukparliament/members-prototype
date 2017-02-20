@@ -180,4 +180,34 @@ RSpec.describe ConstituenciesController, vcr: true do
       expect(response).to render_template('current_letters')
     end
   end
+
+  describe 'GET lookup_by_letters' do
+    context 'it returns multiple results' do
+      before(:each) do
+        get :lookup_by_letters, params: { letters: 'hove' }
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to constituencies/a-z/hove' do
+        expect(response).to redirect_to(constituencies_a_z_letter_path(:letter => 'hove'))
+      end
+    end
+
+    context 'it returns a single result' do
+      before(:each) do
+        get :lookup_by_letters, params: { letters: 'arfon' }
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to constituencies/:id' do
+        expect(response).to redirect_to(constituency_path('f9216185-f3dc-417c-a02e-455faedb2ac2'))
+      end
+    end
+  end
 end

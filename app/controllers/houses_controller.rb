@@ -148,9 +148,9 @@ class HousesController < ApplicationController
     data = Parliament::Request.new.houses(letters).get
 
     if data.size == 1
-      redirect_to action: 'show', house: data.first.graph_id if data.size == 1
+      redirect_to house_path(data.first.graph_id) if data.size == 1
     else
-      redirect_to action: 'index'
+      redirect_to houses_path
     end
   end
 end

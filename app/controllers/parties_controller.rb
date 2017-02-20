@@ -54,9 +54,9 @@ class PartiesController < ApplicationController
     data = Parliament::Request.new.parties(letters).get
 
     if data.size == 1
-      redirect_to action: 'show', party: data.first.graph_id if data.size == 1
+      redirect_to party_path(data.first.graph_id) if data.size == 1
     else
-      redirect_to action: 'letters', letter: letters
+      redirect_to parties_a_z_letter_path(letters)
     end
   end
 end

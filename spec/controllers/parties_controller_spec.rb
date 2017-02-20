@@ -43,7 +43,7 @@ RSpec.describe PartiesController, vcr: true do
   describe 'GET show' do
     context 'for a valid party id' do
       before(:each) do
-        get :show, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427' }
+        get :show, params: {party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427'}
       end
 
       it 'response should return ok' do
@@ -67,7 +67,7 @@ RSpec.describe PartiesController, vcr: true do
   describe 'GET members' do
     context 'for a specific party' do
       before(:each) do
-        get :members, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427' }
+        get :members, params: {party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427'}
       end
 
       it 'assigns @people and checks that the type is Person' do
@@ -89,7 +89,7 @@ RSpec.describe PartiesController, vcr: true do
   describe 'GET current members' do
     context 'for a specific party' do
       before(:each) do
-        get :current_members, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427' }
+        get :current_members, params: {party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427'}
       end
 
       it 'assigns @people and checks that the type is Person' do
@@ -111,7 +111,7 @@ RSpec.describe PartiesController, vcr: true do
   describe 'GET letters' do
     context 'parties for a specific letter' do
       before(:each) do
-        get :letters, params: { letter: 'h' }
+        get :letters, params: {letter: 'h'}
       end
 
       it 'assigns @parties' do
@@ -119,14 +119,14 @@ RSpec.describe PartiesController, vcr: true do
           expect(party).to be_a(Grom::Node)
           expect(party.type).to eq('http://id.ukpds.org/schema/Party')
         end
-       end
+      end
     end
   end
 
   describe 'GET members_letters' do
     context 'members for a specific party with a specific letter' do
       before(:each) do
-        get :members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'a' }
+        get :members_letters, params: {party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'a'}
       end
 
       it 'assigns party and checks that the type is Party' do
@@ -148,7 +148,7 @@ RSpec.describe PartiesController, vcr: true do
   describe 'GET current_members_letters' do
     context 'current members for a specific party with a specific letter' do
       before(:each) do
-        get :current_members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'c' }
+        get :current_members_letters, params: {party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'c'}
       end
 
       it 'assigns party and checks that the type is Party' do
@@ -163,6 +163,36 @@ RSpec.describe PartiesController, vcr: true do
 
       it 'renders the current_members_letters template' do
         expect(response).to render_template('current_members_letters')
+      end
+    end
+  end
+
+  describe 'GET lookup_by_letters' do
+    context 'it returns multiple results' do
+      before(:each) do
+        get :lookup_by_letters, params: {letters: 'labour'}
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to parties/a-z/labour' do
+        expect(response).to redirect_to(parties_a_z_letter_path(letter: 'labour'))
+      end
+    end
+
+    context 'it returns a single result' do
+      before(:each) do
+        get :lookup_by_letters, params: {letters: 'guildford'}
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to people/:id' do
+        expect(response).to redirect_to(party_path('cd1f1624-a361-4e1f-92b7-9abf5378d953'))
       end
     end
   end

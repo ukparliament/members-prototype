@@ -1,0 +1,6 @@
+%p= "#{t('email')}: #{contact_point.email}" if contact_point.email.present?
+%p= "#{t('phone')}: #{contact_point.phone_number}" if contact_point.phone_number.present?
+%p= "#{t('fax')}: #{contact_point.fax_number}" if contact_point.fax_number.present?
+- contact_point.postal_addresses.each do |postal_address|
+  %div= "#{t('address')}: #{postal_address.full_address}" if postal_address.full_address.present?
+%span= link_to "#{t('download')}", contact_point_path(contact_point.graph_id), target: '_blank'

@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies.nt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"78ce65a6bdd13aa7b0f00cfbfc7cd781"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1e2fbc19-69ea-4608-9f0f-85520a60894d
+      X-Runtime:
+      - '0.859181'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/a2ce856d-ba0a-4508-9dd0-62feb54d3894> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a2ce856d-ba0a-4508-9dd0-62feb54d3894> <http://id.ukpds.org/schema/constituencyGroupName> "Sheffield, Brightside and Hillsborough" .
+        <http://id.ukpds.org/cfaedba8-f60e-4c4b-8988-e7b122bf15fc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/cfaedba8-f60e-4c4b-8988-e7b122bf15fc> <http://id.ukpds.org/schema/constituencyGroupName> "Eddisbury" .
+        <http://id.ukpds.org/278c386a-de3d-41d9-940e-2380a722b179> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/278c386a-de3d-41d9-940e-2380a722b179> <http://id.ukpds.org/schema/constituencyGroupName> "Crewe and Nantwich" .
+        <http://id.ukpds.org/a44069fe-11e5-463c-961f-594ce650389f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a44069fe-11e5-463c-961f-594ce650389f> <http://id.ukpds.org/schema/constituencyGroupName> "Surrey Heath" .
+        <http://id.ukpds.org/0937ceb7-f79a-4390-99eb-9a01e9696ece> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/0937ceb7-f79a-4390-99eb-9a01e9696ece> <http://id.ukpds.org/schema/constituencyGroupName> "Tatton" .
+        <http://id.ukpds.org/a84e54dc-6031-4f28-8af2-1c14cd93360d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a84e54dc-6031-4f28-8af2-1c14cd93360d> <http://id.ukpds.org/schema/constituencyGroupName> "Cannock Chase" .
+        <http://id.ukpds.org/2602053d-15ca-4ed6-9b2a-b3b1f3ad2a4e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/2602053d-15ca-4ed6-9b2a-b3b1f3ad2a4e> <http://id.ukpds.org/schema/constituencyGroupName> "Sheffield, Heeley" .
+        <http://id.ukpds.org/a6185d5b-e1da-4d0a-9f7c-b6d495e17606> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a6185d5b-e1da-4d0a-9f7c-b6d495e17606> <http://id.ukpds.org/schema/constituencyGroupName> "Rugby" .
+        <http://id.ukpds.org/5a786da8-f403-4e4a-8659-76337daf0f0b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/5a786da8-f403-4e4a-8659-76337daf0f0b> <http://id.ukpds.org/schema/constituencyGroupName> "Dundee East" .
+        <http://id.ukpds.org/e5cda9f1-4cd5-4764-ae2d-157c3d135d6b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e5cda9f1-4cd5-4764-ae2d-157c3d135d6b> <http://id.ukpds.org/schema/constituencyGroupName> "Eastbourne" .
+        <http://id.ukpds.org/652125d7-6003-4e2b-9303-5ead2503fac2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/652125d7-6003-4e2b-9303-5ead2503fac2> <http://id.ukpds.org/schema/constituencyGroupName> "Bermondsey and Old Southwark" .
+        <http://id.ukpds.org/f962fc17-c31b-4788-bf7f-7708d2164a92> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f962fc17-c31b-4788-bf7f-7708d2164a92> <http://id.ukpds.org/schema/constituencyGroupName> "Nottingham South" .
+        <http://id.ukpds.org/86307d15-3c54-4cd4-ac7d-181b338b5ef0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/86307d15-3c54-4cd4-ac7d-181b338b5ef0> <http://id.ukpds.org/schema/constituencyGroupName> "Stratford-on-Avon" .
+        <http://id.ukpds.org/f9216185-f3dc-417c-a02e-455faedb2ac2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f9216185-f3dc-417c-a02e-455faedb2ac2> <http://id.ukpds.org/schema/constituencyGroupName> "Arfon" .
+        <http://id.ukpds.org/33fd26f7-c1fc-42dc-b830-e41687d6c498> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/33fd26f7-c1fc-42dc-b830-e41687d6c498> <http://id.ukpds.org/schema/constituencyGroupName> "Gateshead" .
+        <http://id.ukpds.org/f7a8664c-c946-47be-aa53-26fa3cb574e7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f7a8664c-c946-47be-aa53-26fa3cb574e7> <http://id.ukpds.org/schema/constituencyGroupName> "Birkenhead" .
+        <http://id.ukpds.org/4261dc04-48c1-425f-aa3e-11dc367b6309> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/4261dc04-48c1-425f-aa3e-11dc367b6309> <http://id.ukpds.org/schema/constituencyGroupName> "Harrow East" .
+        <http://id.ukpds.org/8706266d-5b7f-4e08-8c33-a042a71f0d3b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/8706266d-5b7f-4e08-8c33-a042a71f0d3b> <http://id.ukpds.org/schema/constituencyGroupName> "Bradford South" .
+        <http://id.ukpds.org/c21386b9-9a71-4cd2-92d5-db2a2bd8a283> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c21386b9-9a71-4cd2-92d5-db2a2bd8a283> <http://id.ukpds.org/schema/constituencyGroupName> "Bradford West" .
+    http_version:
+  recorded_at: Tue, 07 Feb 2017 14:09:23 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/parties/h.nt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"23aa18fcfa95a78fba64284b34b67c6f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ed0a9184-4fde-4a84-95d6-fb30a97e6e33
+      X-Runtime:
+      - '0.026977'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/de74edbd-7f73-4e54-bd63-4c3bd93c8b82> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/de74edbd-7f73-4e54-bd63-4c3bd93c8b82> <http://id.ukpds.org/schema/partyName> "Humanity" .
+        <http://id.ukpds.org/33152e23-181b-4e84-a0b6-46b5e78557f6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/33152e23-181b-4e84-a0b6-46b5e78557f6> <http://id.ukpds.org/schema/partyName> "Hoi Polloi" .
+    http_version: 
+  recorded_at: Wed, 15 Feb 2017 12:23:53 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,5 @@
+%h1= @house.name
+%h3= @party.name
+%h4= t('.title', members: t('members'))
+%ul.people-list
+  = render :partial => 'houses/party_member', collection: @people

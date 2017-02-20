@@ -1,8 +1,0 @@
-ul 
-  - @sittings.each do |sitting|
-    li 
-      => sitting[:sittingStartDate]
-	  |  - 
-	  - if sitting[:sittingEndDate]
-	    => sitting[:sittingEndDate]
-      => @members.select { |m| m.id == sitting[:associated_object_id] }.first.display_name

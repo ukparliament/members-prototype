@@ -1,0 +1,7 @@
+%h1= @person.full_name
+
+- unless @constituency.nil?
+  %h3= t('.title')
+  %p= link_to(@constituency.name, party_path(@constituency.graph_id))
+  %p
+    = "#{l(@constituency.seat_incumbencies.first.start_date, format: :default)} - " unless @constituency.seat_incumbencies.first.start_date.nil?

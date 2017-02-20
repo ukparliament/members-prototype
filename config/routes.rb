@@ -1,115 +1,223 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  def listable(letter_action)
+    scope '/a-z', as: 'a_z' do
+      get '/',        to: 'application#a_to_z'
 
-  # You can have the root of your site routed with "root"
-  root 'application#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  get '/people/members', to: 'people#members'
-  get '/people/members/current', to: 'people#current_members'
-  get '/people/a-z', to: 'application#a_to_z'
-  match '/people/a-z/:letter', to: 'people#letters', letter: /[a-z]/, via: [:get], as: 'people_a_z_letter'
-  get '/people/members/a-z', to: 'application#a_to_z'
-  match '/people/members/a-z/:letter', to: 'people#members_letters', letter: /[a-z]/, via: [:get], as: 'people_members_a_z_letter'
-  get '/people/members/current/a-z', to: 'application#a_to_z'
-  match '/people/members/current/a-z/:letter', to: 'people#current_members_letters', letter: /[a-z]/, via: [:get], as: 'people_members_current_a_z_letter'
-
-  get '/parties/current', to: 'parties#current'
-  get '/parties/a-z', to: 'application#a_to_z'
-  match '/parties/a-z/:letter', to: 'parties#letters', letter: /[a-z]/, via: [:get], as: 'parties_a_z_letter'
-
-  get '/constituencies/current', to: 'constituencies#current'
-  get '/constituencies/a-z', to: 'application#a_to_z'
-  match '/constituencies/a-z/:letter', to: 'constituencies#letters', letter: /[a-z]/, via: [:get], as: 'constituences_a_z_letter'
-  get '/constituencies/current/a-z', to: 'application#a_to_z'
-  match '/constituencies/current/a-z/:letter', to: 'constituencies#current_letters', letter: /[a-z]/, via: [:get], as: 'constituences_current_a_z_letter'
-
-  resources :people, only: [:index, :show] do
-    get '/contact_points', to: 'people#contact_points'
-    get '/parties', to: 'people#parties'
-    get '/parties/current', to: 'people#current_parties'
-    get '/constituencies', to: 'people#constituencies'
-    get '/constituencies/current', to: 'people#current_constituency'
-    get '/houses', to: 'people#houses'
-    get '/houses/current', to: 'people#current_house'
+      scope '/:letter', as: 'letter' do
+        get '/', to: letter_action
+      end
+    end
   end
 
-  resources :parties, only: [:index, :show] do
-    get '/members', to: 'parties#members'
-    get '/members/current', to: 'parties#current_members'
-    get '/members/a-z', to: 'application#a_to_z'
-    match '/members/a-z/:letter', to: 'parties#members_letters', letter: /[a-z]/, via: [:get], as: 'members_a_z_letter'
-    get '/members/current/a-z', to: 'application#a_to_z'
-    match '/members/current/a-z/:letter', to: 'parties#current_members_letters', letter: /[a-z]/, via: [:get], as: 'members_current_a_z_letter'
+  def lookupable(action)
+    get '/:letters', to: action
   end
 
-  resources :contact_points, only: [:index, :show]
+  id_format_regex = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/
 
-  resources :constituencies, only: [:index, :show] do
-    get '/map', to: 'constituencies#map'
-    get '/members', to: 'constituencies#members'
-    get '/members/current', to: 'constituencies#current_members'
-    get '/contact_point', to: 'constituencies#contact_point'
+
+  ### Root ###
+  # /
+  root 'home#index'
+
+
+  ### People ###
+  # /people (multiple 'people' scope)
+  scope '/people', as: 'people' do
+    get '/', to: 'people#index'
+
+    listable('people#letters')
+
+    # /people/members
+    scope '/members', as: 'members' do
+      get '/', to: 'people#members'
+
+      listable('people#members_letters')
+
+      # /people/members/current
+      scope '/current', as: 'current' do
+        get '/', to: 'people#current_members'
+
+        listable('people#current_members_letters')
+      end
+    end
   end
 
-  resources :houses, only: [:index, :show] do
-    get '/members', to: 'houses#members'
-    get '/members/current', to: 'houses#current_members'
-    get '/parties', to: 'houses#parties'
-    get '/parties/current', to: 'houses#current_parties'
-    get '/members/a-z', to: 'application#a_to_z'
-    match '/members/a-z/:letter', to: 'houses#members_letters', letter: /[a-z]/, via: [:get], as: 'members_a_z_letter'
-    get '/members/current/a-z', to: 'application#a_to_z'
-    match '/members/current/a-z/:letter', to: 'houses#current_members_letters', letter: /[a-z]/, via: [:get], as: 'members_current_a_z_letter'
+  # /people (single 'person' scope)
+  scope '/people', as: 'person' do
+    # /people/:person_id
+    scope '/:person_id' do
+      get '/', to: 'people#show', person_id: id_format_regex
+
+      # /people/:person_id/constituencies
+      scope '/constituencies', as: 'constituencies' do
+        get '/',        to: 'people#constituencies'
+        get '/current', to: 'people#current_constituency'
+      end
+
+      get '/contact-points', to: 'people#contact_points'
+
+      # /people/:person_id/houses
+      scope '/houses', as: 'houses' do
+        get '/',        to: 'people#houses'
+        get '/current', to: 'people#current_house'
+      end
+
+      # /people/:person_id/parties
+      scope '/parties', as: 'parties' do
+        get '/',        to: 'people#parties'
+        get '/current', to: 'people#current_party'
+      end
+    end
+
+    # Allow lookups - but ensure they are SECOND in the routes list after /people/:person_id
+    lookupable('people#lookup_by_letters')
+  end
+
+  ### Parties ###
+  # /parties (multiple 'parties' scope)
+  scope '/parties', as: 'parties' do
+    get '/',        to: 'parties#index'
+    get '/current', to: 'parties#current'
+
+    listable('parties#letters')
+  end
+
+  # /parties (single 'party' scope)
+  scope '/parties', as: 'party' do
+    # /parties/:party_id
+    scope '/:party_id' do
+      get '/', to: 'parties#show', party_id: id_format_regex
+
+      # /parties/:party_id/members
+      scope '/members', as: 'members' do
+        get '/', to: 'parties#members'
+
+        listable('parties#members_letters')
+
+        # /parties/:party_id/members/current
+        scope '/current', as: 'current' do
+          get '/', to: 'parties#current_members'
+
+          listable('parties#current_members_letters')
+        end
+      end
+    end
+
+    # Allow lookups - but ensure they are SECOND in the routes list after /parties/:party_id
+    lookupable('parties#lookup_by_letters')
+  end
+
+  ### Constituencies ###
+  # /constituencies (multiple 'constituencies' scope)
+  scope '/constituencies', as: 'constituencies' do
+    get '/', to: 'constituencies#index'
+
+    listable('constituencies#letters')
+
+    # /constituencies/current
+    scope '/current', as: 'current' do
+      get '/', to: 'constituencies#current'
+
+      listable('constituencies#current_letters')
+    end
+  end
+
+  # /constituencies (single 'constituency' scope)
+  scope '/constituencies', as: 'constituency' do
+    # /constituencies/:constituency_id
+    scope '/:constituency_id' do
+      get '/', to: 'constituencies#show', constituency_id: id_format_regex
+      get '/contact_point', to: 'constituencies#contact_point'
+      get '/map', to: 'constituencies#map'
+
+      # /constituencies/:constituency_id/members
+      scope '/members', as: 'members' do
+        get '/', to: 'constituencies#members'
+        get '/current', to: 'constituencies#current_member'
+      end
+    end
+
+    # Allow lookups - but ensure they are SECOND in the routes list after /constituencies/:constituency_id
+    lookupable('constituencies#lookup_by_letters')
   end
 
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  ## Contact Points ##
+  # /contact-points  (multiple 'contact_points' scope)
+  scope '/contact-points', as: 'contact_points' do
+    get '/', to: 'contact_points#index'
+  end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  # /contact-points (single 'contact_point' scope)
+  scope '/contact-points', as: 'contact_point' do
+    # /contact-points/:contact_point_id
+    scope '/:contact_point_id' do
+      get '/', to: 'contact_points#show', contact_point_id: id_format_regex
+    end
+  end
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  ## Houses ##
+  # /houses (multiple 'houses' scope)
+  scope '/houses', as: 'houses' do
+    get '/', to: 'houses#index'
+  end
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  # /houses (single 'house' scope)
+  scope '/houses', as: 'house' do
+    # /houses/:house_id
+    scope '/:house_id' do
+      get '/', to: 'houses#show', house_id: id_format_regex
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+      # /houses/:house_id/members
+      scope '/members', as: 'members' do
+        get '/', to: 'houses#members'
+
+        listable('houses#members_letters')
+
+        # /houses/:house_id/members/current
+        scope '/current', as: 'current' do
+          get '/', to: 'houses#current_members'
+
+          listable('houses#current_members_letters')
+        end
+      end
+
+      # /houses/:house_id/parties
+      scope '/parties', as: 'parties' do
+        get '/', to: 'houses#parties'
+        get '/current', to: 'houses#current_parties'
+
+        # /houses/:house_id/parties/:party_id
+        scope '/:party_id' do
+          get '/', to: 'houses#party'
+
+          # /houses/:house_id/parties/:party_id/members
+          scope '/members' do
+            get '/', to: 'houses#party_members'
+
+            listable('houses#party_members_letters')
+
+            # /houses/:house_id/parties/:party_id/members/current
+            scope '/current' do
+              get '/', to: 'houses#current_party_members'
+
+              listable('houses#current_party_members_letters')
+            end
+          end
+        end
+      end
+    end
+
+    # Allow lookups - but ensure they are SECOND in the routes list after /houses/:house_id
+    lookupable('houses#lookup_by_letters')
+  end
+
+
+  ## Meta ##
+  # /meta
+  scope '/meta', as: 'meta' do
+    get '/', to: 'meta#index'
+    get '/cookie-policy', to: 'meta#cookie_policy'
+  end
 end

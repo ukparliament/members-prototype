@@ -1,0 +1,5 @@
+%h2= @constituency.name
+
+%h3= t('contact_points_title')
+- @constituency.contact_points.each do |contact_point|
+  = render partial: 'contact_points/contact_point', locals: { contact_point: contact_point }

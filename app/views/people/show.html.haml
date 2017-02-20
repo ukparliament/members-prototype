@@ -1,0 +1,46 @@
+%h1 #{@person.given_name} #{@person.other_name} #{@person.family_name}
+.block
+  - if @current_seat_incumbency
+    %p
+      = t('.mp_for')
+      = link_to(@current_seat_incumbency.constituency.name, constituency_path(@current_seat_incumbency.constituency.graph_id))
+
+  - if @current_party_membership
+    %p= link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
+
+- if @current_seat_incumbency
+  .block
+    .highlight__box
+      %p= t('.mp_representative')
+
+
+%h2.bordered= t('.contact_title')
+- if @person.contact_points.empty?
+  %p= t('.empty_contact_details')
+- @person.contact_points.each do |contact_point|
+  %dl.list__definition
+    %dt= t('.contact_email')
+    %dd
+      %a{ :href => "mailto:#{contact_point.email}" }= contact_point.email
+    %dt= t('.contact_phone')
+    %dd
+      %a{ :href => "tel:#{contact_point.phone_number}" }= contact_point.phone_number
+    %dt
+      = t('.contact_address')
+      - contact_point.postal_addresses.each do |postal_address|
+        %dd= postal_address.full_address
+
+.block
+  %h2.bordered= t('.election_history')
+  %ol.list
+    - if @person.seat_incumbencies.empty?
+      %p= t('.empty_election_history')
+    - @person.seat_incumbencies.each do |seat_incumbency|
+      %li.list--item
+        %ul.list
+          %li
+            = t('.mp_for')
+            = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
+          %li
+            = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
+            = " - #{l(seat_incumbency.end_date, format: :default)}" unless seat_incumbency.end_date.nil?

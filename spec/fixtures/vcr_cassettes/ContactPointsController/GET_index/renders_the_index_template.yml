@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/contact_points.nt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"9812227c856eab37cf80db0756a31f30"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eed93773-cf1a-4b0e-9bad-6e9503587444
+      X-Runtime:
+      - '1.756691'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/ea19d858-4125-46a5-814e-6d2aa8aa3a27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
+        <http://id.ukpds.org/ea19d858-4125-46a5-814e-6d2aa8aa3a27> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/ba11cd30-68bf-4a50-abea-fa981dc23147> .
+        <http://id.ukpds.org/ba11cd30-68bf-4a50-abea-fa981dc23147> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PostalAddress> .
+        <http://id.ukpds.org/ba11cd30-68bf-4a50-abea-fa981dc23147> <http://id.ukpds.org/schema/postCode> "IP13 0AU" .
+        <http://id.ukpds.org/ba11cd30-68bf-4a50-abea-fa981dc23147> <http://id.ukpds.org/schema/addressLine1> "Marlesford Hall" .
+        <http://id.ukpds.org/ba11cd30-68bf-4a50-abea-fa981dc23147> <http://id.ukpds.org/schema/addressLine2> "Woodbridge" .
+        <http://id.ukpds.org/ba11cd30-68bf-4a50-abea-fa981dc23147> <http://id.ukpds.org/schema/addressLine3> "Suffolk" .
+        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
+        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/email> "walpolerh@parliament.uk" .
+        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/phoneNumber> "01263 587763" .
+        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> .
+        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PostalAddress> .
+        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/postCode> "NR11 7BB" .
+        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/addressLine1> "Mannington Hall" .
+        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/addressLine2> "Norwich" .
+        <http://id.ukpds.org/c6c15e66-7ab5-448b-9341-1b0500ce0bfc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
+        <http://id.ukpds.org/c6c15e66-7ab5-448b-9341-1b0500ce0bfc> <http://id.ukpds.org/schema/email> "stephen@stephentimms.org.uk" .
+        <http://id.ukpds.org/c6c15e66-7ab5-448b-9341-1b0500ce0bfc> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/decbe00b-4925-4d3b-b92e-8556b7ce3eff> .
+        <http://id.ukpds.org/decbe00b-4925-4d3b-b92e-8556b7ce3eff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PostalAddress> .
+        <http://id.ukpds.org/decbe00b-4925-4d3b-b92e-8556b7ce3eff> <http://id.ukpds.org/schema/addressLine1> "No constituency office publicised" .
+    http_version:
+  recorded_at: Thu, 09 Feb 2017 12:38:37 GMT
+recorded_with: VCR 3.0.3

@@ -1,22 +1,24 @@
-require 'grom'
 require 'vcard/vcard'
+require 'parliament'
 
 class ApplicationController < ActionController::Base
-  include JSON_LD_Helper
+  include JSONLDHelper
   include FormatHelper
-  include Grom::Helpers
   include NotFoundHelper
   include VCardHelper
+  include Parliament
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  layout 'application'
-
-  def index
-  end
+  layout 'pugin/layouts/pugin'
 
   def a_to_z
     @root_path = request.path
+  end
+
+  rescue_from Parliament::NoContentError do |error|
+    raise ActionController::RoutingError, error.message
   end
 end

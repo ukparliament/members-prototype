@@ -1,65 +1,62 @@
 class PartiesController < ApplicationController
-
   def index
-    @parties = order_list(Party.all, :name)
-
-    format({ serialized_data: @parties })
+    @parties = Parliament::Request.new.parties.get
   end
 
   def current
-    @parties = order_list(Party.all('current'), :name)
-
-    format({ serialized_data: @parties })
+    @parties = Parliament::Request.new.parties.current.get
   end
 
   def show
-    @party = Party.find(params[:id]) or not_found
+    party_id = params[:party_id]
+    data = Parliament::Request.new.parties(party_id).get
 
-    format({ serialized_data: @party })
+    @party = data.first
   end
 
   def members
-    @party = Party.find(params[:party_id]) or not_found
-    @members = order_list(@party.members, :surname, :forename)
-
-    format({ serialized_data: { party: @party, members: @members } })
+    party_id = params[:party_id]
+    data = Parliament::Request.new.parties(party_id).members.get
+    @people = data.filter('http://id.ukpds.org/schema/Person')
   end
 
   def current_members
-    @party = Party.find(params[:party_id]) or not_found
-    @members = order_list(@party.members('current'), :surname, :forename)
-
-    format({ serialized_data: { party: @party, members: @members } })
-
-    render "members"
+    party_id = params[:party_id]
+    data = Parliament::Request.new.parties(party_id).members.current.get
+    @people = data.filter('http://id.ukpds.org/schema/Person')
   end
 
   def letters
     letter = params[:letter]
-    @parties = order_list(Party.all(letter), :name)
+    data = Parliament::Request.new.parties(letter).get
 
-    format({ serialized_data: @parties })
-
-    render "index"
+    @parties = data.filter('http://id.ukpds.org/schema/Party')
   end
 
   def members_letters
     letter = params[:letter]
-    @party = Party.find(params[:party_id])
-    @members = order_list(@party.members(letter), :surname, :forename)
-
-    format({ serialized_data: { party: @party, members: @members } })
-
-    render "members"
+    party_id = params[:party_id]
+    data = Parliament::Request.new.parties(party_id).members(letter).get
+    @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
+    @party = @party.first
   end
 
   def current_members_letters
     letter = params[:letter]
-    @party = Party.find(params[:party_id])
-    @members = order_list(@party.members('current', letter), :surname, :forename)
+    party_id = params[:party_id]
+    data = Parliament::Request.new.parties(party_id).members.current(letter).get
+    @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
+    @party = @party.first
+  end
 
-    format({ serialized_data: { party: @party, members: @members } })
+  def lookup_by_letters
+    letters = params[:letters]
+    data = Parliament::Request.new.parties(letters).get
 
-    render "members"
+    if data.size == 1
+      redirect_to action: 'show', party: data.first.graph_id if data.size == 1
+    else
+      redirect_to action: 'letters', letter: letters
+    end
   end
 end

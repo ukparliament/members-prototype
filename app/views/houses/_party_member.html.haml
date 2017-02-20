@@ -1,0 +1,7 @@
+%li
+  = link_to(party_member.full_name, person_path(party_member.graph_id))
+  %ul
+    - party_member.party_memberships.each do |party_membership|
+      %li
+        = "#{l(party_membership.start_date, format: :default)}" unless party_membership.start_date.nil?
+        = " - #{l(party_membership.end_date, format: :default)}" unless party_membership.end_date.nil?

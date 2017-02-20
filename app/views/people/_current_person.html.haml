@@ -1,0 +1,5 @@
+%li
+  %p= link_to(current_person.full_name, person_path(current_person.graph_id))
+  %p= link_to(current_person.houses.first.name, house_path(current_person.houses.first.graph_id)) unless current_person.houses.empty?
+  %p= link_to(current_person.constituencies.first.name, constituency_path(current_person.constituencies.first.graph_id)) unless current_person.constituencies.empty?
+  %p= link_to(current_person.parties.first.name, party_path(current_person.parties.first.graph_id)) unless current_person.parties.empty?

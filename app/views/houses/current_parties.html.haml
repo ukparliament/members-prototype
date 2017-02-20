@@ -1,0 +1,5 @@
+%h1= @house.name
+
+%h3= t('.title', current: t('current'), parties: t('parties_title'))
+%ul
+  = render :partial => 'houses/party', collection: @parties

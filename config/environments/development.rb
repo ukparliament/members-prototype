@@ -1,3 +1,6 @@
+# In development, sync stdout so that logs are correctly displayed in foreman
+$stdout.sync = true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

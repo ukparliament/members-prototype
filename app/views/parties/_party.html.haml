@@ -1,0 +1,5 @@
+%h1
+  = @party.name if @party.name.present?
+
+%h3= link_to(t('members'), party_members_path(@party.graph_id))
+%h3= link_to("#{t('current')} #{t('members')}", party_members_current_path(@party.graph_id))

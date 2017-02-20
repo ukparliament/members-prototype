@@ -1,0 +1,7 @@
+%h1= @person.full_name
+
+- unless @houses.empty?
+  %h3= t('houses_title')
+  %ul
+    = render :partial => 'people/house', collection: @houses
+

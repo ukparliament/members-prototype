@@ -1,0 +1,3 @@
+%h1= t('.title', people: t('people_title'))
+= render partial: 'shared/a_to_z', locals: { route_symbol: :people_a_z_letter_path }
+= render partial: 'pugin/cards/person-list', locals: {people: @people}

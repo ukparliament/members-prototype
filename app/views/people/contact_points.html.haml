@@ -1,0 +1,15 @@
+%h1
+  = @person.full_name
+
+- unless @contact_points.empty?
+
+  %h2= t('contact_points')
+  %ul
+    - @contact_points.each do |contact_point|
+      %li
+        %p= "#{t('email')}: #{contact_point.email}" if contact_point.email.present?
+        %p= "#{t('phone')}: #{contact_point.phone_number}" if contact_point.phone_number.present?
+        %p= "#{t('addresses')}:"
+        %ul
+          - contact_point.postal_addresses.each do |postal_address|
+            %li= postal_address.full_address

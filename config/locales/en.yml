@@ -20,4 +20,136 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  date_of_birth: 'Date Of Birth'
+  gender: 'Gender'
+  parties_title: 'Parties'
+  party: 'Party'
+  constituencies_title: 'Constituencies'
+  constituency: 'Constituency'
+  contact_points_title: 'Contact Points'
+  houses_title: 'Houses'
+  house: 'House'
+  email: 'Email'
+  phone: 'Phone'
+  fax: 'Fax'
+  address: 'Address'
+  addresses: 'Addresses'
+  download: 'download'
+  members: 'Members'
+  member: 'Member'
+  current: 'Current'
+  people_title: 'People'
+  time:
+    formats:
+      default: '%Y-%m-%d'
+  a_to_z:
+    aria_label: 'Paged navigation'
+  people:
+    index:
+      title: ! '%{people}'
+    show:
+      mp_for: 'MP for'
+      mp_representative: 'Your MP is your representative in Parliament and can help with issues that are the responsibility of UK Parliament.'
+      who_to_contact: 'Find out who to contact with your issue'
+      empty_contact_details: 'There is currently no contact information available for this person.'
+      contact_title: 'Contact Details'
+      contact_email: ! '#{email}:'
+      contact_phone: ! '#{phone}:'
+      contact_address: ! '#{address}:'
+      election_history: 'Election History'
+      empty_election_history: 'There is currently no election information available for this person.'
+    members:
+      title: ! '%{members}'
+    current_members:
+      title: ! '%{current} %{members}'
+    current_party:
+      title: ! '%{current} %{party}'
+    current_constituency:
+      title: ! '%{current} %{constituency}'
+    current_house:
+      title: ! '%{current} %{house}'
+    letters:
+      title: ! '%{people}'
+    members_letters:
+      title: ! '%{members}'
+    current_members_letters:
+      title: ! '%{current} %{members}'
+  houses:
+    members:
+      title: ! '%{members}'
+    current_members:
+      title: ! '%{current} %{members}'
+    party_members:
+      title: ! '%{members}'
+    current_parties:
+      title: ! '%{current} %{parties}'
+    members_letters:
+      title: ! '%{members}'
+    current_members_letters:
+      title: ! '%{current} %{members}'
+    party_members_letters:
+      title: ! '%{members}'
+    current_party_members:
+      title: ! '%{current} %{members}'
+    current_party_members_letters:
+      title: ! '%{current} %{members}'
+  parties:
+    index:
+      title: ! '%{parties}'
+    members:
+      title: ! '%{members}'
+    current_members:
+      title: ! '%{current} %{members}'
+    current:
+      title: ! '%{current} %{parties}'
+  constituencies:
+    index:
+      title: ! '%{constituencies}'
+    current:
+      title: ! '%{current} %{constituencies}'
+    members:
+      title: ! '%{members}'
+    current_member:
+      title: ! '%{current} %{member}'
+  home:
+    index:
+      title: 'Beta on Parliament.uk'
+      content: 'We’re building a new website for Parliament.  The ‘beta’ label means you’re looking at the first version of a new page.'
+      beta-label: 'Beta label'
+      beta-label-text-1: 'The beta label is displayed on new pages to show they’re being tested and improved – they may not work for everyone.'
+      beta-label-text-2: 'Beta pages will be available at the same time as older pages so you can choose which one to use.'
+      beta-label-text-3: 'Successful beta pages will eventually replace older services.'
+      feedback: 'Feedback'
+      feedback-text: ! 'We want your %{feedbacklink} on these pages to help us improve them.'
+      current-beta-pages: 'Current beta pages'
+      beta-pages-text-1: 'We’re creating a page for every MP and Lord, past and present.'
+      beta-pages-text-2: 'We currently have over 4000 member pages, dating back to the 1940s.'
+      beta-pages-text-3: ! 'Find contact details and election history for %{current_mps}.'
+      links:
+         people: ! '%{people}'
+         constituencies: ! '%{constituencies}'
+         current_members_of_both_houses: 'Current Members of both Houses'
+         current_mps: 'all current MPs'
+         feedback: 'feedback'
+  meta:
+    index:
+      title: 'Meta information'
+    cookie_policy:
+      title: 'Cookies'
+      subtitle: 'Cookies on beta.parliament.uk'
+      which_cookies: 'Which cookies do we use?'
+      cookie:
+        definition: 'Cookies are small files put on your device to let us know how you use our website.'
+        explanation: 'We use Google Analytics cookies to collect information about how you use our services. This helps us meet your needs and improve our website.'
+        anonymous_statement: 'All the information we collect is anonymous.'
+      cookie_table:
+        meta:
+          name: 'Name'
+          purpose: 'Purpose'
+          expires: 'Expires'
+          expiration:
+            minutes: 'After %{time} minutes.'
+            years: 'After %{time} years.'
+        explanations:
+          ga: 'This helps us know how many people have visited beta.parliament.uk by telling us if you’ve visited before.'
+          gat: 'This helps us know how long you spend on a page.'

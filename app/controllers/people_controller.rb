@@ -1,106 +1,128 @@
 class PeopleController < ApplicationController
-
   def index
-    @people = order_list(Person.all, :surname, :forename)
-
-    format({ serialized_data: @people })
+    @people = Parliament::Request.new.people.get
   end
 
   def show
-    @person = Person.find(params[:id]) or not_found
+    person_id = params[:person_id]
 
-    @constituencies = @person.constituencies
-    @parties = @person.parties
-    @contact_points = @person.contact_points
-    @sittings = order_list_by_through(@constituencies, :sittings, :sittingStartDate)
-    @houses =  @person.houses
-    format({ serialized_data: @person })
+    data = Parliament::Request.new.people(person_id).get
+
+    @person = data.filter('http://id.ukpds.org/schema/Person').first
+
+    @current_seat_incumbency = @person.seat_incumbencies.select(&:current?).first
+    @current_party_membership = @person.party_memberships.select(&:current?).first
   end
 
   def members
-    @people = order_list(Person.all('members'), :surname, :forename)
+    data = Parliament::Request.new.people.members.get
 
-    format({ serialized_data: @people })
+    @people = data.filter('http://id.ukpds.org/schema/Person')
   end
 
   def current_members
-    @people = order_list(Person.all_with('members', 'current', ['party', 'house', 'constituency']), :surname, :forename)
+    data = Parliament::Request.new.people.members.current.get
 
-    format({ serialized_data: @people })
+    @people = data.filter('http://id.ukpds.org/schema/Person')
   end
 
   def contact_points
-    @person = Person.find(params[:person_id]) or not_found
-    @contact_points = @person.contact_points
+    person_id = params[:person_id]
 
-    format({ serialized_data: { person: @person, contact_points: @contact_points } })
+    data = Parliament::Request.new.people(person_id).contact_points.get
+
+    @person, @contact_points = data.filter('http://id.ukpds.org/schema/Person', 'http://id.ukpds.org/schema/ContactPoint')
+    @person = @person.first
   end
 
   def parties
-    @person = Person.find(params[:person_id]) or not_found
-    @parties = order_list(@person.parties, :name)
+    person_id = params[:person_id]
 
-    format({ serialized_data: { person: @person, parties: @parties } })
+    data = Parliament::Request.new.people(person_id).parties.get
+
+    @person, @parties = data.filter('http://id.ukpds.org/schema/Person', 'http://id.ukpds.org/schema/Party')
+    @person = @person.first
   end
 
-  def current_parties
-    @person = Person.find(params[:person_id]) or not_found
-    @parties = @person.parties('current')
+  def current_party
+    person_id = params[:person_id]
 
-    format({ serialized_data: { person: @person, parties: @parties } })
+    data = Parliament::Request.new.people(person_id).parties.current.get
+
+    @person, @party = data.filter('http://id.ukpds.org/schema/Person', 'http://id.ukpds.org/schema/Party')
+    @person = @person.first
+    @party = @party.first
   end
 
   def constituencies
-    @person = Person.find(params[:person_id]) or not_found
-    @constituencies = order_list(@person.constituencies, :name)
+    person_id = params[:person_id]
 
-    format({ serialized_data: { person: @person, constituencies: @constituencies } })
+    data = Parliament::Request.new.people(person_id).constituencies.get
+
+    @person, @constituencies = data.filter('http://id.ukpds.org/schema/Person', 'http://id.ukpds.org/schema/ConstituencyGroup')
+    @person = @person.first
   end
 
   def current_constituency
-    @person = Person.find(params[:person_id]) or not_found
-    @constituency = @person.constituencies('current').first
+    person_id = params[:person_id]
 
-    format({ serialized_data: { person: @person, constituencies: @constituency } })
+    data = Parliament::Request.new.people(person_id).constituencies.current.get
+
+    @person, @constituency = data.filter('http://id.ukpds.org/schema/Person', 'http://id.ukpds.org/schema/ConstituencyGroup')
+    @person = @person.first
+    @constituency = @constituency.first
   end
 
   def houses
-    @person = Person.find(params[:person_id]) or not_found
-    @houses = @person.houses
+    person_id = params[:person_id]
 
-    format({ serialized_data: { person: @person, houses: @houses }})
+    data = Parliament::Request.new.people(person_id).houses.get
+
+    @person, @houses = data.filter('http://id.ukpds.org/schema/Person', 'http://id.ukpds.org/schema/House')
+    @person = @person.first
   end
 
   def current_house
-    @person = Person.find(params[:person_id]) or not_found
-    @house = @person.houses('current').first
+    person_id = params[:person_id]
 
-    format({ serialized_data: { person: @person, house: @house } })
+    data = Parliament::Request.new.people(person_id).houses.current.get
+
+    @person, @house = data.filter('http://id.ukpds.org/schema/Person', 'http://id.ukpds.org/schema/House')
+    @person = @person.first
+    @house = @house.first
   end
 
   def letters
     letter = params[:letter]
-    @people = order_list(Person.all(letter), :surname, :forename)
 
-    format({ serialized_data: @people })
-
-    render "index"
+    @people = Parliament::Request.new.people(letter).get
   end
 
   def members_letters
     letter = params[:letter]
-    @people = order_list(Person.all('members', letter), :surname, :forename)
 
-    format({ serialized_data: @people })
+    data = Parliament::Request.new.people.members(letter).get
 
-    render "members"
+    @people = data.filter('http://id.ukpds.org/schema/Person')
   end
 
   def current_members_letters
     letter = params[:letter]
-    @people = order_list(Person.all_with('members', 'current', letter, ["constituency", "party", "house"]), :surname, :forename)
 
-    format({ serialized_data: @people })
+    data = Parliament::Request.new.people.members.current(letter).get
 
+    @people = data.filter('http://id.ukpds.org/schema/Person')
+  end
+
+  def lookup_by_letters
+    letters = params[:letters]
+
+    data = Parliament::Request.new.people(letters).get
+
+    if data.size == 1
+      redirect_to action: 'show', person: data.first.graph_id if data.size == 1
+    else
+      redirect_to action: 'letters', letter: letters
+    end
   end
 end

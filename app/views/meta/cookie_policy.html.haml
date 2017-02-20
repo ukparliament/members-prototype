@@ -1,0 +1,22 @@
+%h1= t('.title')
+%p= t('.cookie.definition')
+%h2= t('.subtitle')
+%p= t('.cookie.explanation')
+%p= t('.cookie.anonymous_statement')
+%h2= t('.which_cookies')
+
+%table
+  %thead
+    %tr
+      %th= t('.cookie_table.meta.name')
+      %th= t('.cookie_table.meta.purpose')
+      %th= t('.cookie_table.meta.expires')
+  %tbody
+    %tr
+      %td _ga
+      %td= t('.cookie_table.explanations.ga')
+      %td= t('.cookie_table.meta.expiration.years', time: 2)
+    %tr
+      %td _gat
+      %td= t('.cookie_table.explanations.gat')
+      %td= t('.cookie_table.meta.expiration.minutes', time: 10)

@@ -1,0 +1,7 @@
+%h1= @person.full_name
+
+- unless @house.nil?
+  %h3= t('.title')
+  %p= link_to(@house.name, house_path(@house.graph_id))
+  %p
+    = "#{l(@house.seat_incumbencies.first.start_date, format: :default)} - " unless @house.seat_incumbencies.first.start_date.nil?

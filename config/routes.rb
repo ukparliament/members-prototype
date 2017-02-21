@@ -189,17 +189,17 @@ Rails.application.routes.draw do
         get '/current', to: 'houses#current_parties'
 
         # /houses/:house_id/parties/:party_id
-        scope '/:party_id' do
+        scope '/:party_id', as: 'party' do
           get '/', to: 'houses#party'
 
           # /houses/:house_id/parties/:party_id/members
-          scope '/members' do
+          scope '/members', as: 'members' do
             get '/', to: 'houses#party_members'
 
             listable('houses#party_members_letters')
 
             # /houses/:house_id/parties/:party_id/members/current
-            scope '/current' do
+            scope '/current', as: 'current' do
               get '/', to: 'houses#current_party_members'
 
               listable('houses#current_party_members_letters')

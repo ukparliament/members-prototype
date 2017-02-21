@@ -3,6 +3,6 @@
 - if @house.graph_id == 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'
   %h3= link_to(t('members'), house_members_current_a_z_letter_path(@house.graph_id, 'a'))
   %h3= link_to(t('parties_title'), house_parties_current_path(@house.graph_id))
--else
+- else
   %h3= "#{t('members')} - #{t('coming_soon')}"
   %h3= "#{t('parties_title')} - #{t('coming_soon')}"

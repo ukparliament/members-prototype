@@ -2,6 +2,8 @@
 
 - unless @party.nil?
   %h3= t('.title', current: t('current'), party: t('party'))
-  %p= link_to(@party.name, party_path(@party.graph_id))
-  %p
-    = "#{l(@party.party_memberships.first.start_date, format: :default)} - " unless @party.party_memberships.first.start_date.nil?
+  %ol.list
+    %li.list--item
+      %ul.list
+        %li= link_to(@party.name, party_path(@party.graph_id))
+        %li= "#{l(@party.party_memberships.first.start_date, format: :default)} - " unless @party.party_memberships.first.start_date.nil?

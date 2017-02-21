@@ -2,6 +2,6 @@
 
 - unless @house.nil?
   %h3= t('.title')
-  .block
-    = link_to(@house.name, house_path(@house.graph_id))
-    %p= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} - " unless @house.seat_incumbencies.first.start_date.nil?
+  %ol
+    %li= link_to(@house.name, house_path(@house.graph_id))
+    %li= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} - " unless @house.seat_incumbencies.first.start_date.nil?

@@ -35,6 +35,8 @@ test: build
 push:
 	docker push $(IMAGE):$(VERSION)
 	docker push $(IMAGE):latest
+
+rmi:
 	docker rmi $(IMAGE):$(VERSION)
 	docker rmi $(IMAGE):latest
 

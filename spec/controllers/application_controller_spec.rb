@@ -12,3 +12,6 @@ RSpec.describe ApplicationController do
     end
   end
 end
+
+# a test for rescue_from NoContentError can be found in people_controller_spec
+# placed it here as it needed testing in an actual controller

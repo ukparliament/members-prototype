@@ -11,7 +11,16 @@
   %p= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), root_path)).html_safe
 %h3= t('.current-beta-pages')
 .block
-  %p= t('.beta-pages-text-1')
-  %p= t('.beta-pages-text-2')
-  %p= t('.beta-pages-text-3', current_mps: link_to(t('.links.current_mps'), people_members_current_path)).html_safe
-%h3= link_to t('.links.people', people: t('people_title')), people_path
+%p= t('.beta-pages-text-1')
+%p= t('.beta-pages-text-2')
+%p= t('.beta-pages-text-3', current_mps: link_to(t('.links.current_mps'), people_members_current_a_z_letter_path('a'))).html_safe
+.block
+  %h3= link_to t('.links.commons', commons: t('commons')), house_path('c2d41b82-d4df-4f50-b0f9-f52b84a6a788')
+  %ul
+    %li= link_to t('.links.members', members: t('members')), house_members_current_a_z_letter_path('c2d41b82-d4df-4f50-b0f9-f52b84a6a788', 'a')
+    %li= link_to t('.links.parties', parties: t('parties_title')), house_parties_current_path('c2d41b82-d4df-4f50-b0f9-f52b84a6a788')
+    %li= link_to t('.links.constituencies', constituencies: t('constituencies_title')), constituencies_current_a_z_letter_path('a')
+%h3= link_to t('.links.lords', lords: t('lords')), house_path('cdf477be-7bb3-4f19-bf63-b837795e37eb')
+%ul
+  %li= link_to t('.links.members', members: t('members')), house_members_current_a_z_letter_path('cdf477be-7bb3-4f19-bf63-b837795e37eb', 'a')
+  %li= link_to t('.links.parties', parties: t('parties_title')), house_parties_current_path('cdf477be-7bb3-4f19-bf63-b837795e37eb')

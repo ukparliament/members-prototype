@@ -133,6 +133,11 @@ en:
          current_members_of_both_houses: 'Current Members of both Houses'
          current_mps: 'all current MPs'
          feedback: 'feedback'
+         commons: 'Commons'
+         lords: 'Lords'
+         members: '%{members}'
+         parties: '%{parties}'
+         constituencies: '%{constituencies}'
   meta:
     index:
       title: 'Meta information'

@@ -23,7 +23,8 @@ class PartiesController < ApplicationController
   def current_members
     party_id = params[:party_id]
     data = Parliament::Request.new.parties(party_id).members.current.get
-    @people = data.filter('http://id.ukpds.org/schema/Person')
+    @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
+    @party = @party.first
   end
 
   def letters

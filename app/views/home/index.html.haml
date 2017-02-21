@@ -22,5 +22,5 @@
     %li= link_to t('.links.constituencies', constituencies: t('constituencies_title')), constituencies_current_a_z_letter_path('a')
 %h3= link_to t('.links.lords', lords: t('lords')), house_path('cdf477be-7bb3-4f19-bf63-b837795e37eb')
 %ul
-  %li= link_to t('.links.members', members: t('members')), house_members_current_a_z_letter_path('cdf477be-7bb3-4f19-bf63-b837795e37eb', 'a')
-  %li= link_to t('.links.parties', parties: t('parties_title')), house_parties_current_path('cdf477be-7bb3-4f19-bf63-b837795e37eb')
+  %li= "#{t('.links.members', members: t('members'))} - #{t('coming_soon')}"
+  %li= "#{t('.links.parties', parties: t('parties_title'))} - #{t('coming_soon')}"

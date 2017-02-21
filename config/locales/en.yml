@@ -39,6 +39,10 @@ en:
   member: 'Member'
   current: 'Current'
   people_title: 'People'
+  coming_soon: 'Coming Soon'
+  past_and_present_members: 'Past and present members'
+  members_hol: 'Members of the House of Lords'
+  members_commons: 'Members of the House of Commons'
   time:
     formats:
       default: '%Y-%m-%d'

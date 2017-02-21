@@ -1,3 +1,9 @@
+%p= link_to(t('past_and_present_members'), house_members_a_z_letter_path(@house.graph_id, 'a'))
+- if @house.name == 'House of Commons'
+  %p= link_to(t('members_hol'), house_members_a_z_letter_path('cdf477be-7bb3-4f19-bf63-b837795e37eb', 'a'))
+- if @house.name == 'House of Lords'
+  %p= link_to(t('members_commons'), house_members_a_z_letter_path('c2d41b82-d4df-4f50-b0f9-f52b84a6a788', 'a'))
+
 %h1= @house.name
 %h3= t('.title', members: t('members'))
 %ul.people-list

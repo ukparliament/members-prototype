@@ -1,15 +1,17 @@
 %h1= t('.title')
 %p= t('.content')
-%br
-%h3= t('.beta-label')
+.block
+  %h3= t('.beta-label')
 %p= t('.beta-label-text-1')
 %p= t('.beta-label-text-2')
 %p= t('.beta-label-text-3')
-%h3= t('.feedback')
-%div= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), root_path)).html_safe
-%br
-%h3= t('.current-beta-pages')
-%p= link_to t('.links.people', people: t('people_title')), people_a_z_letter_path('a')
+.block
+  %h3= t('.feedback')
+%p= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), root_path)).html_safe
+.block
+  %h3= t('.current-beta-pages')
 %p= t('.beta-pages-text-1')
 %p= t('.beta-pages-text-2')
 %p= t('.beta-pages-text-3', current_mps: link_to(t('.links.current_mps'), people_members_current_path)).html_safe
+.block
+  %h3= link_to t('.links.people', people: t('people_title')), people_path

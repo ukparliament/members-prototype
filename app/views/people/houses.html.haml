@@ -2,6 +2,6 @@
 
 - unless @houses.empty?
   %h3= t('houses_title')
-  %ul.list
+  %ol.list
     = render :partial => 'people/house', collection: @houses
 

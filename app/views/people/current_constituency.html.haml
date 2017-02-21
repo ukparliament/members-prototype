@@ -2,8 +2,6 @@
 
 - unless @constituency.nil?
   %h3= t('.title')
-  %ol.list
-    %li.list--item
-      %ul.list
-        %li= link_to(@constituency.name, party_path(@constituency.graph_id))
-        %li= "#{l(@constituency.seat_incumbencies.first.start_date, format: :default)} - " unless @constituency.seat_incumbencies.first.start_date.nil?
+  .block
+    = link_to(@constituency.name, party_path(@constituency.graph_id))
+    %p= "#{l(@constituency.seat_incumbencies.first.start_date, format: :default)} - " unless @constituency.seat_incumbencies.first.start_date.nil?

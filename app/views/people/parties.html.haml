@@ -1,7 +1,7 @@
 %h1= @person.full_name
 
 %h3= t('parties_title')
-%ul.list
+%ol.list
   = render :partial => 'people/party', collection: @parties
 
 

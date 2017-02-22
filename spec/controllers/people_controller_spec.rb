@@ -23,9 +23,23 @@ RSpec.describe PeopleController, vcr: true do
     end
   end
 
+  describe 'GET lookup' do
+    before(:each) do
+      get :lookup, params: { source: 'mnisId', id: '3898' }
+    end
+
+    it 'should have a response with http status redirect (302)' do
+      expect(response).to have_http_status(302)
+    end
+
+    it 'redirects to people/:id' do
+      expect(response).to redirect_to(person_path('581ade57-3805-4a4a-82c9-8d622cb352a4'))
+    end
+  end
+
   describe "GET show" do
     before(:each) do
-      get :show, params: {person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff'}
+      get :show, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
     end
 
     it 'should have a response with http status ok (200)' do

@@ -3,6 +3,15 @@ class PartiesController < ApplicationController
     @parties = Parliament::Request.new.parties.get
   end
 
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @party = Parliament::Request.new.parties.lookup.get(params: { source: source, id: id }).first
+
+    redirect_to party_path(@party.graph_id)
+  end
+
   def current
     @parties = Parliament::Request.new.parties.current.get
   end

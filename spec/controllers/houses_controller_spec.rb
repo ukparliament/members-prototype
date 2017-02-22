@@ -23,6 +23,20 @@ RSpec.describe HousesController, vcr: true do
     end
   end
 
+  describe 'GET lookup' do
+    before(:each) do
+      get :lookup, params: { source: 'mnisId', id: '1' }
+    end
+
+    it 'should have a response with http status redirect (302)' do
+      expect(response).to have_http_status(302)
+    end
+
+    it 'redirects to houses/:id' do
+      expect(response).to redirect_to(house_path('9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703'))
+    end
+  end
+
   describe "GET show" do
     before(:each) do
       get :show, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}

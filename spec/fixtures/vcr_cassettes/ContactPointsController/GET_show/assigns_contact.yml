@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/contact_points/a11425ca-6a47-4170-80b9-d6e9f3800a52.nt
+    uri: http://localhost:3030/contact_points/a11425ca-6a47-4170-80b9-d6e9f3800a52
     body:
       encoding: US-ASCII
       string: ''

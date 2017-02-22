@@ -22,6 +22,20 @@ RSpec.describe PartiesController, vcr: true do
     end
   end
 
+  describe 'GET lookup' do
+    before(:each) do
+      get :lookup, params: { source: 'mnisId', id: '96' }
+    end
+
+    it 'should have a response with http status redirect (302)' do
+      expect(response).to have_http_status(302)
+    end
+
+    it 'redirects to parties/:id' do
+      expect(response).to redirect_to(party_path('9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703'))
+    end
+  end
+
   describe 'GET current' do
     before(:each) do
       get :current

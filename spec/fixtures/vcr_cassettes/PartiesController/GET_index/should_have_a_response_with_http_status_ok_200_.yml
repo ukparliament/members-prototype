@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/parties.nt
+    uri: http://localhost:3030/parties
     body:
       encoding: US-ASCII
       string: ''
@@ -555,6 +555,6 @@ http_interactions:
         <http://id.ukpds.org/1c0bf06d-ff7d-45ce-ac21-76eb6edbec5a> <http://id.ukpds.org/schema/partyName> "LPBP" .
         <http://id.ukpds.org/d1dfd6ec-9a5e-48b6-8cdb-ee8b6e9010d3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
         <http://id.ukpds.org/d1dfd6ec-9a5e-48b6-8cdb-ee8b6e9010d3> <http://id.ukpds.org/schema/partyName> "SHH" .
-    http_version: 
+    http_version:
   recorded_at: Mon, 06 Feb 2017 12:06:37 GMT
 recorded_with: VCR 3.0.3

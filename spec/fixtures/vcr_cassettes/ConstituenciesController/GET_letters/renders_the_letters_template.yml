@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/constituencies/a.nt
+    uri: http://localhost:3030/constituencies/a
     body:
       encoding: US-ASCII
       string: ''

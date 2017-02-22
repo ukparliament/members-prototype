@@ -83,7 +83,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashdiff (0.3.2)
-    i18n (0.8.0)
+    i18n (0.8.1)
     json (2.0.3)
     json-ld (2.1.0)
       multi_json (~> 1.11)
@@ -104,7 +104,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    parliament-ruby (0.2.2)
+    parliament-ruby (0.3.0)
       grom (~> 0.3.5)
     parser (2.4.0.0)
       ast (~> 2.2)
@@ -230,7 +230,7 @@ DEPENDENCIES
   foreman
   haml (= 4.0.7)
   json-ld (= 2.1.0)
-  parliament-ruby (= 0.2.2)
+  parliament-ruby (= 0.3.0)
   passenger
   pugin!
   rails (= 5.0.1)

@@ -3,6 +3,15 @@ class ConstituenciesController < ApplicationController
     @constituencies = Parliament::Request.new.constituencies.get
   end
 
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @constituency = Parliament::Request.new.constituencies.lookup.get(params: { source: source, id: id }).first
+
+    redirect_to constituency_path(@constituency.graph_id)
+  end
+
   def show
     constituency_id = params[:constituency_id]
     data = Parliament::Request.new.constituencies(constituency_id).get

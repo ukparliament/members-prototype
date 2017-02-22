@@ -3,6 +3,15 @@ class HousesController < ApplicationController
     @houses = Parliament::Request.new.houses.get
   end
 
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @house = Parliament::Request.new.houses.lookup.get(params: { source: source, id: id }).first
+
+    redirect_to house_path(@house.graph_id)
+  end
+
   def show
     house_id = params[:house_id]
 

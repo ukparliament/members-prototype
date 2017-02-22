@@ -23,6 +23,20 @@ RSpec.describe ConstituenciesController, vcr: true do
     end
   end
 
+  describe 'GET lookup' do
+    before(:each) do
+      get :lookup, params: { source: 'mnisId', id: '3274' }
+    end
+
+    it 'should have a response with http status redirect (302)' do
+      expect(response).to have_http_status(302)
+    end
+
+    it 'redirects to constituencies/:id' do
+      expect(response).to redirect_to(constituency_path('95e3953e-a2bf-4ec0-bc57-5d073661f43a'))
+    end
+  end
+
   describe 'GET show' do
     before(:each) do
       get :show, params: { constituency_id: 'f9216185-f3dc-417c-a02e-455faedb2ac2' }

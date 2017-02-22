@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   # /people (multiple 'people' scope)
   scope '/people', as: 'people' do
     get '/', to: 'people#index'
+    get 'lookup', to: 'people#lookup'
 
     listable('people#letters')
 
@@ -79,6 +80,7 @@ Rails.application.routes.draw do
   scope '/parties', as: 'parties' do
     get '/',        to: 'parties#index'
     get '/current', to: 'parties#current'
+    get '/lookup', to: 'parties#lookup'
 
     listable('parties#letters')
   end
@@ -112,6 +114,7 @@ Rails.application.routes.draw do
   # /constituencies (multiple 'constituencies' scope)
   scope '/constituencies', as: 'constituencies' do
     get '/', to: 'constituencies#index'
+    get '/lookup', to: 'constituencies#lookup'
 
     listable('constituencies#letters')
 
@@ -161,6 +164,7 @@ Rails.application.routes.draw do
   # /houses (multiple 'houses' scope)
   scope '/houses', as: 'houses' do
     get '/', to: 'houses#index'
+    get '/lookup', to: 'houses#lookup'
   end
 
   # /houses (single 'house' scope)

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/people/members/t.nt
+    uri: http://localhost:3030/people/members/t
     body:
       encoding: US-ASCII
       string: ''

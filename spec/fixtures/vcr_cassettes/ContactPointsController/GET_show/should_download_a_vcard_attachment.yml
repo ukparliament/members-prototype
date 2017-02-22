@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/contact_points/a11425ca-6a47-4170-80b9-d6e9f3800a52.nt
+    uri: http://localhost:3030/contact_points/a11425ca-6a47-4170-80b9-d6e9f3800a52
     body:
       encoding: US-ASCII
       string: ''
@@ -49,6 +49,6 @@ http_interactions:
         <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/postCode> "NR11 7BB" .
         <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/addressLine1> "Mannington Hall" .
         <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/addressLine2> "Norwich" .
-    http_version: 
+    http_version:
   recorded_at: Thu, 09 Feb 2017 12:55:25 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/parties/guildford.nt
+    uri: http://localhost:3030/parties/guildford
     body:
       encoding: US-ASCII
       string: ''
@@ -43,6 +43,6 @@ http_interactions:
       string: |
         <http://id.ukpds.org/cd1f1624-a361-4e1f-92b7-9abf5378d953> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
         <http://id.ukpds.org/cd1f1624-a361-4e1f-92b7-9abf5378d953> <http://id.ukpds.org/schema/partyName> "Guildford Greenbelt Group" .
-    http_version: 
+    http_version:
   recorded_at: Mon, 20 Feb 2017 17:17:05 GMT
 recorded_with: VCR 3.0.3

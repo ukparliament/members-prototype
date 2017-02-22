@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/parties/7a048f56-0ddd-48b0-85bd-cf5dd9fa5427/members/current.nt
+    uri: http://localhost:3030/parties/7a048f56-0ddd-48b0-85bd-cf5dd9fa5427/members/current
     body:
       encoding: US-ASCII
       string: ''
@@ -68,7 +68,7 @@ http_interactions:
   recorded_at: Thu, 09 Feb 2017 15:12:54 GMT
 - request:
     method: get
-    uri: http://localhost:3030/parties/FAKE-PARTY-ID/members/current.nt
+    uri: http://localhost:3030/parties/FAKE-PARTY-ID/members/current
     body:
       encoding: US-ASCII
       string: ''

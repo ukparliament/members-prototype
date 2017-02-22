@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/constituencies/8d895ffc-c2bf-43d2-b756-95ab3e987919/contact_point.nt
+    uri: http://localhost:3030/constituencies/8d895ffc-c2bf-43d2-b756-95ab3e987919/contact_point
     body:
       encoding: US-ASCII
       string: ''

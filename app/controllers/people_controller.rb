@@ -3,6 +3,15 @@ class PeopleController < ApplicationController
     @people = Parliament::Request.new.people.get
   end
 
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @person = Parliament::Request.new.people.lookup.get(params: { source: source, id: id }).first
+
+    redirect_to person_path(@person.graph_id)
+  end
+
   def show
     person_id = params[:person_id]
 

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/lookup?id=3274&source=mnisId
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"ad5b9013a3db55e710e8d65cd8b82cfb"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dbca62a8-9465-4bf9-8f9b-bb907d1c93d6
+      X-Runtime:
+      - '0.044572'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "<http://id.ukpds.org/95e3953e-a2bf-4ec0-bc57-5d073661f43a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/ConstituencyGroup> .\n"
+    http_version: 
+  recorded_at: Wed, 22 Feb 2017 16:16:26 GMT
+recorded_with: VCR 3.0.3

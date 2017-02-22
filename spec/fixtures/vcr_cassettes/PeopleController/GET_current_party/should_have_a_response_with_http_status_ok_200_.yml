@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/people/626b57f9-6ef0-475a-ae12-40a44aca7eff/parties/current.nt
+    uri: http://localhost:3030/people/626b57f9-6ef0-475a-ae12-40a44aca7eff/parties/current
     body:
       encoding: US-ASCII
       string: ''

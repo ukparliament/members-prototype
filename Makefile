@@ -21,17 +21,17 @@ build:
 		--build-arg GTM_KEY=$(GTM_KEY) \
 		--build-arg ASSET_LOCATION_URL=$(ASSET_LOCATION_URL) \
 		.
+
 # Container port 3000 is specified in Dockerfile
 # Browse to http://localhost:80 to see the application
-
-run:
-	docker run -p 80:3000 $(IMAGE)
+run: build
+	docker run --rm -p 80:3000 $(IMAGE)
 
 dev:
 	docker run -p 80:3000 -v ${PWD}:/opt/$(APP_NAME) $(IMAGE)
 
 test: build
-	docker run $(IMAGE) bundle exec rake
+	docker run --rm $(IMAGE) bundle exec rake
 
 push:
 	docker push $(IMAGE):$(VERSION)

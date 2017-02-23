@@ -168,3 +168,10 @@ en:
         explanations:
           ga: 'This helps us know how many people have visited beta.parliament.uk by telling us if you’ve visited before.'
           gat: 'This helps us know how long you spend on a page.'
+      managing_cookies:
+        title: 'How to manage your cookies'
+        subtitle: 'Most web browsers allow you to control cookies through browser settings.'
+        find_out: "Find out how to %{link}."
+        find_out_link: "manage and delete cookies"
+        opt_out: "You can %{link}."
+        opt_out_link: "opt out of Google Analytics cookies"

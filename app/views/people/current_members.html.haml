@@ -1,5 +1,4 @@
 %h1= t('.title', current: t('current'), members: t('members'))
 = render partial: 'shared/a_to_z', locals: { route_symbol: :people_members_current_a_z_letter_path }
-%p= link_to(t('past_and_present_members'), people_members_a_z_letter_path('a'))
-
 = render partial: 'pugin/cards/person-list', locals: {people: @people}
+%p= link_to(t('past_and_present_members'), people_members_a_z_letter_path('a'))

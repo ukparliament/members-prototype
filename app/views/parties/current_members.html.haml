@@ -1,6 +1,6 @@
-%p= link_to(t('past_and_present_members'), party_members_a_z_letter_path(@party.graph_id, 'a'))
-
 %h1= @party.name
 %h3= t('.title', current: t('current'), members: t('members'))
-
+= render partial: 'shared/id_a_to_z', locals: { route_symbol: :party_members_current_a_z_letter_path, id: @party.graph_id}
 = render 'members'
+%p= link_to(t('past_and_present_members'), party_members_a_z_letter_path(@party.graph_id, 'a'))
+

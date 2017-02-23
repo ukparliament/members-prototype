@@ -146,7 +146,7 @@ en:
          members: '%{members}'
          parties: '%{parties}'
          constituencies: '%{constituencies}'
-         new_window: 'web site opens in a new window'
+         new_window: 'website opens in a new window'
   meta:
     index:
       title: 'Meta information'

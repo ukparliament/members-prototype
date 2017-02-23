@@ -60,6 +60,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.1.1)
     concurrent-ruby (1.0.4)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -112,6 +113,12 @@ GEM
       rack
       rake (>= 0.8.1)
     powerpack (0.1.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
     public_suffix (2.0.5)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -181,6 +188,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    slop (3.6.0)
     spring (2.0.1)
       activesupport (>= 4.2)
     sprockets (3.7.1)
@@ -232,6 +240,8 @@ DEPENDENCIES
   json-ld (= 2.1.0)
   parliament-ruby (= 0.3.0)
   passenger
+  pry
+  pry-nav
   pugin!
   rails (= 5.0.1)
   rails-controller-testing

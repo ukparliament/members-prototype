@@ -1,3 +1,6 @@
 %h1= t('.title', parties: t('parties_title'))
-%ul
-  = render 'party_list'
+= render partial: 'shared/a_to_z', locals: { route_symbol: :parties_a_z_letter_path }
+= render partial: 'party_list', locals: {parties: @parties}
+
+
+

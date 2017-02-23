@@ -8,7 +8,8 @@
   %p= t('.beta-label-text-3')
 %h3= t('.feedback')
 .block
-  %p= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), root_path)).html_safe
+  %p= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), 'https://ukparliament-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-032e1b1d-958f-4402-9ab2-97a38ed9b899/AF-Stage9b7ecae8-0c85-4ee7-afda-b256cffe5f08/definition.json&redirectlink=%2F&cancelRedirectLink=%2F&category=AF-Category-48936b5c-9329-48c7-a0a5-563463aacadf')).html_safe
+
 %h3= t('.current-beta-pages')
 .block
   %p= t('.beta-pages-text-1')
@@ -23,3 +24,4 @@
 %ul.list
   %li= "#{t('.links.members', members: t('members'))} - #{t('coming_soon')}"
   %li= "#{t('.links.parties', parties: t('parties_title'))} - #{t('coming_soon')}"
+

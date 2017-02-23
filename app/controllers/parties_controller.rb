@@ -54,6 +54,7 @@ class PartiesController < ApplicationController
   def current_members_letters
     letter = params[:letter]
     party_id = params[:party_id]
+    #binding.pry
     data = Parliament::Request.new.parties(party_id).members.current(letter).get
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first

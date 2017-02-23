@@ -3,6 +3,6 @@
     %ul.navigation__letter
       - ('a'..'z').each do |letter|
         %li{ data: { letter: letter }, class: (params[:letter] == letter) ? 'active' : '' }
-          = link_to(send(route_symbol, letter), data: { 'atoz-see': 'true' } ) do
+          = link_to(send(route_symbol, id, letter), data: { 'atoz-see': 'true' } ) do
             = letter
 

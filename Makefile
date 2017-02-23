@@ -45,3 +45,4 @@ rmi:
 deploy-ecs:
 	./aws_ecs/register-task-definition.sh $(IMAGE) $(APP_NAME) $(AWS_REGION)
 	aws ecs update-service --service $(APP_NAME) --cluster $(ECS_CLUSTER) --region $(AWS_REGION) --task-definition $(APP_NAME)
+

@@ -1,3 +1,4 @@
 %h1= t('.title', current: t('current'), parties: t('parties_title'))
 
 = render 'party_list'
+%p= link_to(t('past_and_present_parties'), parties_path)

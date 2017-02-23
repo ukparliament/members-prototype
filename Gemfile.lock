@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/ukparliament/pugin
-  revision: 87e7a1a3566a6ff6e112c660631b8276fbf2a8e8
-  branch: development
+  remote: https://github.com/ukparliament/parliament.uk-pugin-components-rails
+  revision: 69bdc3342f6d6ab3a8171cb0d7ce9cd92deedc5b
+  branch: master
   specs:
     pugin (0.2.0)
       haml (~> 4.0)
@@ -83,7 +83,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashdiff (0.3.2)
-    i18n (0.8.0)
+    i18n (0.8.1)
     json (2.0.3)
     json-ld (2.1.0)
       multi_json (~> 1.11)
@@ -104,7 +104,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    parliament-ruby (0.2.2)
+    parliament-ruby (0.3.0)
       grom (~> 0.3.5)
     parser (2.4.0.0)
       ast (~> 2.2)
@@ -195,7 +195,7 @@ GEM
       libv8 (~> 3.16.14.15)
       ref
     thor (0.19.4)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     tilt (2.0.6)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -230,7 +230,7 @@ DEPENDENCIES
   foreman
   haml (= 4.0.7)
   json-ld (= 2.1.0)
-  parliament-ruby (= 0.2.2)
+  parliament-ruby (= 0.3.0)
   passenger
   pugin!
   rails (= 5.0.1)
@@ -249,4 +249,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.14.4
+   1.13.5

@@ -23,6 +23,20 @@ RSpec.describe PeopleController, vcr: true do
     end
   end
 
+  describe 'GET lookup' do
+    before(:each) do
+      get :lookup, params: { source: 'mnisId', id: '3898' }
+    end
+
+    it 'should have a response with http status redirect (302)' do
+      expect(response).to have_http_status(302)
+    end
+
+    it 'redirects to people/:id' do
+      expect(response).to redirect_to(person_path('581ade57-3805-4a4a-82c9-8d622cb352a4'))
+    end
+  end
+
   describe "GET show" do
     before(:each) do
       get :show, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
@@ -86,7 +100,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET contact_points" do
     before(:each) do
-      get :contact_points, params: { person_id: '08a3dfac-652a-44d6-8a43-00bb13c60e47' }
+      get :contact_points, params: {person_id: '08a3dfac-652a-44d6-8a43-00bb13c60e47'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -109,7 +123,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET parties" do
     before(:each) do
-      get :parties, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
+      get :parties, params: {person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -132,7 +146,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_party" do
     before(:each) do
-      get :current_party, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
+      get :current_party, params: {person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -153,7 +167,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET constituencies" do
     before(:each) do
-      get :constituencies, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
+      get :constituencies, params: {person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -176,7 +190,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_constituency" do
     before(:each) do
-      get :current_constituency, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+      get :current_constituency, params: {person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -197,7 +211,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET houses" do
     before(:each) do
-      get :houses, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+      get :houses, params: {person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -220,7 +234,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_house" do
     before(:each) do
-      get :current_house, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+      get :current_house, params: {person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -241,7 +255,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe 'GET letters' do
     before(:each) do
-      get :letters, params: { letter: 't' }
+      get :letters, params: {letter: 't'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -262,7 +276,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET members_letters" do
     before(:each) do
-      get :members_letters, params: { letter: "t" }
+      get :members_letters, params: {letter: "t"}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -283,7 +297,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_members_letters" do
     before(:each) do
-      get :current_members_letters, params: { letter: "t" }
+      get :current_members_letters, params: {letter: "t"}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -299,6 +313,42 @@ RSpec.describe PeopleController, vcr: true do
 
     it 'renders the current_members_letters template' do
       expect(response).to render_template('current_members_letters')
+    end
+  end
+
+  describe 'GET lookup_by_letters' do
+    context 'it returns multiple results' do
+      before(:each) do
+        get :lookup_by_letters, params: {letters: 'cam'}
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to people/a-z/cam' do
+        expect(response).to redirect_to(people_a_z_letter_path(letter: 'cam'))
+      end
+    end
+
+    context 'it returns a single result' do
+      before(:each) do
+        get :lookup_by_letters, params: {letters: 'creasy'}
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to people/:id' do
+        expect(response).to redirect_to(person_path('c9e343c4-0c1f-4d74-b966-b2c8260b8382'))
+      end
+    end
+  end
+
+  describe 'rescue_from Parliament::NoContentError' do
+    it 'raises an ActionController::RoutingError' do
+      expect{ get :show, params: { person_id: 'a11425ca-6a47-4170-80b9-d6e9f3800a52' } }.to raise_error(ActionController::RoutingError)
     end
   end
 end

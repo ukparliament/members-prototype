@@ -36,8 +36,8 @@
     - if @person.seat_incumbencies.empty?
       %p= t('.empty_election_history')
     - @person.seat_incumbencies.each do |seat_incumbency|
-      %li.list--item
-        %ul.list
+      %li.list__item--borderless-top
+        %ul
           %li
             = t('.mp_for')
             = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))

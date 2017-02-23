@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/houses/c2d41b82-d4df-4f50-b0f9-f52b84a6a788/parties.nt
+    uri: http://localhost:3030/houses/c2d41b82-d4df-4f50-b0f9-f52b84a6a788/parties
     body:
       encoding: US-ASCII
       string: ''
@@ -129,6 +129,6 @@ http_interactions:
         <http://id.ukpds.org/c3e4e2b8-0f09-41d2-8462-334774fb90b2> <http://id.ukpds.org/schema/partyName> "United Ulster Unionist Movement" .
         <http://id.ukpds.org/297349af-3c83-44ae-824a-bef16fb6a47a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
         <http://id.ukpds.org/297349af-3c83-44ae-824a-bef16fb6a47a> <http://id.ukpds.org/schema/partyName> "United Ulster Unionist Party" .
-    http_version: 
+    http_version:
   recorded_at: Wed, 08 Feb 2017 15:58:02 GMT
 recorded_with: VCR 3.0.3

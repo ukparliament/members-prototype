@@ -3,6 +3,15 @@ class HousesController < ApplicationController
     @houses = Parliament::Request.new.houses.get
   end
 
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @house = Parliament::Request.new.houses.lookup.get(params: { source: source, id: id }).first
+
+    redirect_to house_path(@house.graph_id)
+  end
+
   def show
     house_id = params[:house_id]
 
@@ -148,9 +157,9 @@ class HousesController < ApplicationController
     data = Parliament::Request.new.houses(letters).get
 
     if data.size == 1
-      redirect_to action: 'show', house: data.first.graph_id if data.size == 1
+      redirect_to house_path(data.first.graph_id)
     else
-      redirect_to action: 'index'
+      redirect_to houses_path
     end
   end
 end

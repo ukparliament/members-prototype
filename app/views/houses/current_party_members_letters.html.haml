@@ -1,3 +1,5 @@
+%p= link_to(t('past_and_present_members'), house_parties_party_members_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
+
 %h1= @house.name
 %h3= @party.name
 %h4= t('.title', current: t('current'), members: t('members'))

@@ -3,6 +3,15 @@ class ConstituenciesController < ApplicationController
     @constituencies = Parliament::Request.new.constituencies.get
   end
 
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @constituency = Parliament::Request.new.constituencies.lookup.get(params: { source: source, id: id }).first
+
+    redirect_to constituency_path(@constituency.graph_id)
+  end
+
   def show
     constituency_id = params[:constituency_id]
     data = Parliament::Request.new.constituencies(constituency_id).get
@@ -52,9 +61,9 @@ class ConstituenciesController < ApplicationController
     data = Parliament::Request.new.constituencies(letters).get
 
     if data.size == 1
-      redirect_to action: 'show', constituency: data.first.graph_id if data.size == 1
+      redirect_to constituency_path(data.first.graph_id)
     else
-      redirect_to action: 'letters', letter: letters
+      redirect_to constituencies_a_z_letter_path(letters)
     end
   end
 end

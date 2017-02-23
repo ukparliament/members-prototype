@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/hove
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"4762ede9e984f4474cd1f2fb93d24472"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e8b2a3d9-24c9-4823-aca1-e4e56c5731fc
+      X-Runtime:
+      - '0.343508'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/6586353c-86b7-42f3-8fba-5023522082b7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6586353c-86b7-42f3-8fba-5023522082b7> <http://id.ukpds.org/schema/constituencyGroupName> "Hove" .
+        <http://id.ukpds.org/d42d7ca2-2c78-48cd-85b3-dd65261a7121> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d42d7ca2-2c78-48cd-85b3-dd65261a7121> <http://id.ukpds.org/schema/constituencyGroupName> "Hove" .
+        <http://id.ukpds.org/feb69d13-beb2-4fe5-a16c-73aa23f76b8d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/feb69d13-beb2-4fe5-a16c-73aa23f76b8d> <http://id.ukpds.org/schema/constituencyGroupName> "Hove" .
+        <http://id.ukpds.org/0705eb07-3235-4a25-8473-6ef2a741ce64> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/0705eb07-3235-4a25-8473-6ef2a741ce64> <http://id.ukpds.org/schema/constituencyGroupName> "Hove" .
+        <http://id.ukpds.org/c458dc03-f729-446e-9972-b14b71ad7d9b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c458dc03-f729-446e-9972-b14b71ad7d9b> <http://id.ukpds.org/schema/constituencyGroupName> "Hove" .
+    http_version:
+  recorded_at: Mon, 20 Feb 2017 17:19:42 GMT
+recorded_with: VCR 3.0.3

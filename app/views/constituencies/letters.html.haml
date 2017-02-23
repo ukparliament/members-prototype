@@ -1,1 +1,3 @@
+%h1= t('.title', constituencies: t('constituencies_title'))
+= render partial: 'shared/a_to_z', locals: { route_symbol: :constituencies_a_z_letter_path }
 = render 'constituencies/constituencies'

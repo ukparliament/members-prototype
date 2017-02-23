@@ -3,6 +3,15 @@ class PeopleController < ApplicationController
     @people = Parliament::Request.new.people.get
   end
 
+  def lookup
+    source = params[:source]
+    id = params[:id]
+
+    @person = Parliament::Request.new.people.lookup.get(params: { source: source, id: id }).first
+
+    redirect_to person_path(@person.graph_id)
+  end
+
   def show
     person_id = params[:person_id]
 
@@ -120,9 +129,9 @@ class PeopleController < ApplicationController
     data = Parliament::Request.new.people(letters).get
 
     if data.size == 1
-      redirect_to action: 'show', person: data.first.graph_id if data.size == 1
+      redirect_to person_path(data.first.graph_id)
     else
-      redirect_to action: 'letters', letter: letters
+      redirect_to people_a_z_letter_path(letters)
     end
   end
 end

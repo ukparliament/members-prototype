@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/parties/current.nt
+    uri: http://localhost:3030/parties/current
     body:
       encoding: US-ASCII
       string: ''
@@ -67,6 +67,6 @@ http_interactions:
         <http://id.ukpds.org/5b6e2e81-d440-45f8-a03e-f7f161d0ad4e> <http://id.ukpds.org/schema/partyName> "Ulster Unionist Party" .
         <http://id.ukpds.org/b24cf8e0-9552-4ea8-a102-134a395aaf18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
         <http://id.ukpds.org/b24cf8e0-9552-4ea8-a102-134a395aaf18> <http://id.ukpds.org/schema/partyName> "UK Independence Party" .
-    http_version: 
+    http_version:
   recorded_at: Wed, 08 Feb 2017 17:06:53 GMT
 recorded_with: VCR 3.0.3

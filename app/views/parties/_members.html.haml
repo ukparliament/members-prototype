@@ -1,5 +1,5 @@
-%ul.people-list
+%ul.list
   - @people.each do |person|
-    %li
+    %li.list__item
       = link_to(person.full_name, person_path(person.graph_id))
 

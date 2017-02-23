@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/parties/labour
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"3da58289dd150bcdc6c4109c5eebe7d4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e4023186-4f22-4d4c-bb3f-a3528d0f2f56
+      X-Runtime:
+      - '0.110739'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/87c864b0-d4f2-47f9-971b-b7f71946f252> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/87c864b0-d4f2-47f9-971b-b7f71946f252> <http://id.ukpds.org/schema/partyName> "Social Democratic & Labour Party" .
+        <http://id.ukpds.org/1e3b6ab9-57d2-4136-84f5-8a0b216a5681> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/1e3b6ab9-57d2-4136-84f5-8a0b216a5681> <http://id.ukpds.org/schema/partyName> "Scottish Labour" .
+        <http://id.ukpds.org/50519915-5df5-4f75-a84d-35417ced752d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/50519915-5df5-4f75-a84d-35417ced752d> <http://id.ukpds.org/schema/partyName> "Labour Independent" .
+        <http://id.ukpds.org/adfc60c4-141d-4565-88a8-5efcc3a55283> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/adfc60c4-141d-4565-88a8-5efcc3a55283> <http://id.ukpds.org/schema/partyName> "Independent Labour" .
+        <http://id.ukpds.org/86d766a4-130b-424e-94a8-3cba141eaf13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/86d766a4-130b-424e-94a8-3cba141eaf13> <http://id.ukpds.org/schema/partyName> "Republican Labour" .
+        <http://id.ukpds.org/0ad4bb94-0461-451a-8f1d-53892ca6188e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/0ad4bb94-0461-451a-8f1d-53892ca6188e> <http://id.ukpds.org/schema/partyName> "Independent Labour Party" .
+        <http://id.ukpds.org/7a048f56-0ddd-48b0-85bd-cf5dd9fa5427> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/7a048f56-0ddd-48b0-85bd-cf5dd9fa5427> <http://id.ukpds.org/schema/partyName> "Labour" .
+        <http://id.ukpds.org/7f21628c-587f-4939-af50-b81d78d654e5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/7f21628c-587f-4939-af50-b81d78d654e5> <http://id.ukpds.org/schema/partyName> "Scottish Labour Party" .
+    http_version:
+  recorded_at: Mon, 20 Feb 2017 16:24:31 GMT
+recorded_with: VCR 3.0.3

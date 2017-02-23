@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/parties/h.nt
+    uri: http://localhost:3030/parties/h
     body:
       encoding: US-ASCII
       string: ''
@@ -45,6 +45,6 @@ http_interactions:
         <http://id.ukpds.org/de74edbd-7f73-4e54-bd63-4c3bd93c8b82> <http://id.ukpds.org/schema/partyName> "Humanity" .
         <http://id.ukpds.org/33152e23-181b-4e84-a0b6-46b5e78557f6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
         <http://id.ukpds.org/33152e23-181b-4e84-a0b6-46b5e78557f6> <http://id.ukpds.org/schema/partyName> "Hoi Polloi" .
-    http_version: 
+    http_version:
   recorded_at: Thu, 09 Feb 2017 11:51:46 GMT
 recorded_with: VCR 3.0.3

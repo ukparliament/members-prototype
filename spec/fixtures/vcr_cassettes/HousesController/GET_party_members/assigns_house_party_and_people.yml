@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/houses/c2d41b82-d4df-4f50-b0f9-f52b84a6a788/parties/ab77ae5d-7559-4636-ac25-2a23fd961980/members.nt
+    uri: http://localhost:3030/houses/c2d41b82-d4df-4f50-b0f9-f52b84a6a788/parties/ab77ae5d-7559-4636-ac25-2a23fd961980/members
     body:
       encoding: US-ASCII
       string: ''

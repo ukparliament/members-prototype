@@ -1,10 +1,12 @@
 %h1= t('.title')
 .block
   %p= t('.cookie.definition')
+
 %h2= t('.subtitle')
 .block
   %p= t('.cookie.explanation')
   %p= t('.cookie.anonymous_statement')
+
 %h2= t('.which_cookies')
 .block
   %table
@@ -22,3 +24,9 @@
         %td _gat
         %td= t('.cookie_table.explanations.gat')
         %td= t('.cookie_table.meta.expiration.minutes', time: 10)
+
+%h2= t('.managing_cookies.title')
+.block
+  %p= t('.managing_cookies.subtitle')
+  %p= t('.managing_cookies.find_out', link: link_to(t('.managing_cookies.find_out_link'), 'http://www.aboutcookies.org/', target: '_blank')).html_safe
+  %p= t('.managing_cookies.opt_out', link: link_to(t('.managing_cookies.opt_out_link'), 'https://tools.google.com/dlpage/gaoptout', target: '_blank')).html_safe

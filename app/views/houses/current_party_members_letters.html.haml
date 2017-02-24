@@ -3,5 +3,6 @@
 %h1= @house.name
 %h3= @party.name
 %h4= t('.title', current: t('current'), members: t('members'))
+= render partial: 'shared/iid_id_a_to_z', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, id: @house.graph_id, iid: @party.graph_id}
 %ul.people-list
   = render :partial => 'houses/party_member', collection: @people

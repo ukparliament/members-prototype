@@ -5,5 +5,6 @@
 
 %h1= @house.name
 %h3= t('.title', members: t('members'))
+= render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_a_z_letter_path, id: @house.graph_id}
 %ul.people-list
   = render :partial => 'houses/person', collection: @people

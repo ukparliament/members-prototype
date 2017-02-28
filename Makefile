@@ -46,3 +46,4 @@ deploy-ecs:
 # aws ecs register-task-definition --cli-input-json file://./aws_ecs/task-definition.json
 	./aws_ecs/register-task-definition.sh
 	aws ecs update-service --service $(APP_NAME) --cluster $(ECS_CLUSTER) --region $(AWS_REGION) --task-definition $(APP_NAME)
+

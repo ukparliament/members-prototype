@@ -4,4 +4,5 @@
     - party_member.party_memberships.sort{ |mem_a, mem_b| mem_b.send(:start_date) <=> mem_a.send(:start_date) }.each do |party_membership|
       %li
         = "#{l(party_membership.start_date, format: :default)}" unless party_membership.start_date.nil?
-        = " - #{l(party_membership.end_date, format: :default)}" unless party_membership.end_date.nil?
+        = party_membership.end_date.nil? ? " - Present" : " - #{l(party_membership.end_date, format: :default)}"
+        /= seat_incumbency.end_date.nil? ? " - Present" : " - #{l(seat_incumbency.end_date, format: :default)}"

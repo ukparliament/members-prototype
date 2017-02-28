@@ -4,4 +4,4 @@
     - person.seat_incumbencies.sort{ |inc_a, inc_b| inc_b.send(:start_date) <=> inc_a.send(:start_date) }.each do |seat_incumbency|
       %li
         = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
-        = " - #{l(seat_incumbency.end_date, format: :default)}" unless seat_incumbency.end_date.nil?
+        = seat_incumbency.end_date.nil? ? " - Present" : " - #{l(seat_incumbency.end_date, format: :default)}"

@@ -4,6 +4,11 @@
 %p= @constituency.start_date
 %p= @constituency.end_date
 
-= link_to @seat_incumbency.member.full_name, person_path(@seat_incumbency.member.graph_id)
-%p= "#{l(@seat_incumbency.start_date, format: :default)} - " unless @seat_incumbency.start_date.nil?
+.block
+  %ul.list__item
+    %li= link_to @seat_incumbency.member.full_name, person_path(@seat_incumbency.member.graph_id)
+    %li= "#{l(@seat_incumbency.start_date, format: :default)} - Present" unless @seat_incumbency.start_date.nil?
+
+
+
 

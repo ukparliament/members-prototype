@@ -15,32 +15,32 @@
 
 
 %h2.bordered= t('.contact_title')
-- if @person.contact_points.empty?
-  %p= t('.empty_contact_details')
-- @person.contact_points.each do |contact_point|
-  %dl.list__definition
-    %dt= t('.contact_email')
-    %dd
-      %a{ :href => "mailto:#{contact_point.email}" }= contact_point.email
-    %dt= t('.contact_phone')
-    %dd
-      %a{ :href => "tel:#{contact_point.phone_number}" }= contact_point.phone_number
-    %dt
-      = t('.contact_address')
-      - contact_point.postal_addresses.each do |postal_address|
-        %dd= postal_address.full_address
-
 .block
-  %h2.bordered= t('.election_history')
-  %ol.list
-    - if @person.seat_incumbencies.empty?
-      %p= t('.empty_election_history')
-    - @person.seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
-      %li.list__item--borderless-top
-        %ul
-          %li
-            = t('.mp_for')
-            = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
-          %li
-            = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
-            = " - #{l(seat_incumbency.end_date, format: :default)}" unless seat_incumbency.end_date.nil?
+  - if @person.contact_points.empty?
+    %p= t('.empty_contact_details')
+  - @person.contact_points.each do |contact_point|
+    %dl.list__definition
+      %dt= t('.contact_email')
+      %dd
+        %a{ :href => "mailto:#{contact_point.email}" }= contact_point.email
+      %dt= t('.contact_phone')
+      %dd
+        %a{ :href => "tel:#{contact_point.phone_number}" }= contact_point.phone_number
+      %dt
+        = t('.contact_address')
+        - contact_point.postal_addresses.each do |postal_address|
+          %dd= postal_address.full_address
+
+%h2.bordered= t('.election_history')
+%ol.list
+  - if @person.seat_incumbencies.empty?
+    %p= t('.empty_election_history')
+  - @person.seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
+    %li.list__item--borderless-top
+      %ul
+        %li
+          = t('.mp_for')
+          = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
+        %li
+          = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
+          = seat_incumbency.end_date.nil? ? " - Present" : " - #{l(seat_incumbency.end_date, format: :default)}"

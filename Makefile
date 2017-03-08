@@ -7,7 +7,7 @@ AWS_ACCOUNT_ID=$(shell aws sts get-caller-identity --output text --query "Accoun
 # GO_PIPELINE_COUNTER is the pipeline number, passed from our build agent.
 GO_PIPELINE_COUNTER?="unknown"
 
-# Construct the image tag.
+# VERSION is used to tag the Docker images
 VERSION=0.2.$(GO_PIPELINE_COUNTER)
 
 # ECS-related

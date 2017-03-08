@@ -40,6 +40,9 @@ ARG GIT_TAG=unknown
 LABEL git-sha=$GIT_SHA \
 	      git-tag=$GIT_TAG
 
+# Just to check the env var
+RUN env
+
 # EXPOSE 3000
 
 RUN rails assets:precompile

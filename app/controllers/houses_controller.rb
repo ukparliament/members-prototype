@@ -32,7 +32,7 @@ class HousesController < ApplicationController
     @letters = letter_data.map(&:value)
 
     houses_id
-end
+  end
 
   def current_members
     house_id = params[:house_id]

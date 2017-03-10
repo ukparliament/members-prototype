@@ -32,7 +32,7 @@ class PeopleController < ApplicationController
 
     if @current_incumbency.nil?
       incumbencies = @seat_incumbencies.nodes.dup.concat(@house_incumbencies.nodes)
-      @most_recent_incumbency = incumbencies.sort_by { |inc| inc.end_date }.last
+      @most_recent_incumbency = incumbencies.sort_by(&:end_date).last
     else
       @most_recent_incumbency = @current_incumbency
     end

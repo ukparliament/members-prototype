@@ -3,11 +3,9 @@ Parliament.uk prototype is a [Rails 5][rails] application designed to be the beg
 
 [![License][shield-license]][info-license]
 
-
 ### Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
@@ -22,13 +20,11 @@ Parliament.uk prototype is a [Rails 5][rails] application designed to be the beg
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-
 ## Requirements
 Parliament.uk prototype requires the following:
 * [Ruby][ruby] - for the exact version, [click here][ruby-version].
 * [Node][node]
 * [NPM][npm]
-
 
 ## Getting Started
 Setup the main application repository:

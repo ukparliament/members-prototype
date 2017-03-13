@@ -27,9 +27,15 @@ class PeopleController < ApplicationController
     )
 
     @person = @person.first
-
     @current_incumbency = @seat_incumbencies.select(&:current?).first || @house_incumbencies.select(&:current?).first
     @current_party_membership = @person.party_memberships.select(&:current?).first
+
+    if @current_incumbency.nil?
+      incumbencies = @seat_incumbencies.nodes.dup.concat(@house_incumbencies.nodes)
+      @most_recent_incumbency = incumbencies.sort_by(&:end_date).last
+    else
+      @most_recent_incumbency = @current_incumbency
+    end
   end
 
   def members

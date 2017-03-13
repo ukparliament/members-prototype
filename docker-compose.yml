@@ -16,3 +16,5 @@ services:
     build:
       context: ../member-service-api
     env_file: ~/.ukpds/member-service-api.env
+    ports:
+      - "3030:3000"

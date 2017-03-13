@@ -25,7 +25,7 @@ Parliament.uk prototype is a [Rails 5][rails] application designed to be the beg
 
 ## Requirements
 Parliament.uk prototype requires the following:
-* [Ruby][ruby] - for the exact version, [click here][ruby-version]. 
+* [Ruby][ruby] - for the exact version, [click here][ruby-version].
 * [Node][node]
 * [NPM][npm]
 
@@ -79,6 +79,35 @@ We use [RSpec][rspec] as our testing framework and tests can be run using:
 ```bash
 bundle exec rspec
 ```
+
+
+### Running the application using Docker Compose
+
+To run the application using Docker Compose, make sure that you have checked out
+the [member-service-api][member-service-api] project into the same location as
+the parliament.uk-prototype project as described above in
+[Running with Foreman and a Local Version of the API](#running-with-foreman-and-a-local-version-of-the-api).
+
+Next create a folder in your home directory called `~/.ukpds` and within this,
+create two files:
+
+**~/.ukpds/parliament.uk-prototype.env**
+```
+GTM_KEY=<GTM key>
+ASSET_LOCATION_URL=<asset location URL>
+```
+
+**~/.ukpds/member-service-api.env**
+```
+UKPDS_DATA_URI_PREFIX=<UKPDS data URI prefix>
+UKPDS_DATA_ENDPOINT=<UKPDS data endpoint URL>
+```
+
+Then in this folder, run `docker-compose up` or, if you prefer to run it in the
+background, `docker-compose up -d`.
+
+You should then be able to access the web application on http://localhost:3000/
+and the members' service on http://localhost:3030/ as above.
 
 
 ## Contributing

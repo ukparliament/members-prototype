@@ -4,6 +4,8 @@ services:
   web:
     build:
       context: .
+    environment:
+      PARLIAMENT_BASE_URL: http://api:3000
     env_file: ~/.ukpds/parliament.uk-prototype.env
     ports:
       - "3000:3000"

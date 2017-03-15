@@ -1,3 +1,5 @@
+.PHONY: build run dev test push rmi deploy-ecs
+
 APP_NAME = parliamentukprototype
 
 # The value assigned here is for execution in local machines

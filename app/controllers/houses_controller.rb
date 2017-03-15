@@ -28,7 +28,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
 
     houses_id
@@ -42,7 +42,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
 
     houses_id
@@ -88,7 +88,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
     houses_id
   end
@@ -102,7 +102,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
     houses_id
   end
@@ -121,7 +121,7 @@ class HousesController < ApplicationController
     )
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -140,7 +140,7 @@ class HousesController < ApplicationController
     )
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -159,7 +159,7 @@ class HousesController < ApplicationController
 
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -179,7 +179,7 @@ class HousesController < ApplicationController
 
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 

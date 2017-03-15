@@ -1,4 +1,9 @@
-%h1 #{@person.given_name} #{@person.family_name}
+%h1= @person.display_name == '' ? "#{@person.full_name}" : "#{@person.display_name}"
+
+- if @most_recent_incumbency.nil? || @most_recent_incumbency.house.name == 'House of Lords'
+  %h3= @person.full_title
+  %h4= "#{@person.full_name}" unless @person.display_name == ''
+
 - unless @person.statuses[:house_membership_status].empty?
   .block
     - if @person.statuses[:house_membership_status].include?('Current MP')
@@ -52,7 +57,7 @@
             %ul
               %li
                 = "#{l(house_incumbency.start_date, format: :default)}" unless house_incumbency.start_date.nil?
-                = house_incumbency.end_date.nil? ? " to Present" : " to #{l(house_incumbency.end_date, format: :default)}"
+                = house_incumbency.current? ? " to Present" : " to #{l(house_incumbency.end_date, format: :default)}"
 
     - if @seat_incumbencies.present?
       %h3= t('hoc')
@@ -65,4 +70,4 @@
                 = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
               %li
                 = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
-                = seat_incumbency.end_date.nil? ? " to Present" : " to #{l(seat_incumbency.end_date, format: :default)}"
+                = seat_incumbency.current? ? " to Present" : " to #{l(seat_incumbency.end_date, format: :default)}"

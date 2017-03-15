@@ -35,7 +35,7 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -47,7 +47,7 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -70,7 +70,7 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -83,7 +83,7 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 

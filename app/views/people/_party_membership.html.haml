@@ -3,5 +3,5 @@
   %ol
     %li
       = "#{l(party_membership.start_date, format: :default)}" unless party_membership.start_date.nil?
-      = party_membership.end_date.nil? ? " to Present" : " to #{l(party_membership.end_date, format: :default)}"
+      = party_membership.current? ? " to Present" : " to #{l(party_membership.end_date, format: :default)}"
 

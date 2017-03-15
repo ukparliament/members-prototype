@@ -1,4 +1,4 @@
-%h1= "#{@person.full_name} - #{t('.title', current: t('current'), party: t('party'))}"
+%h1= "#{@person.display_name} - #{t('.title', current: t('current'), party: t('party'))}"
 
 - unless @party.nil?
   .block

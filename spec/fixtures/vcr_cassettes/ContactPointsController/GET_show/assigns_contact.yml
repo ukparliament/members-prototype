@@ -42,6 +42,9 @@ http_interactions:
       encoding: UTF-8
       string: |
         <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
+        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/contactPointHasIncumbency> <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3801234> .
+        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3801234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Incumbency> .
+        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3801234> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/08a3dfac-652a-44d6-8a43-00bb13c60e47> .
         <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/email> "walpolerh@parliament.uk" .
         <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/phoneNumber> "01263 587763" .
         <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> .

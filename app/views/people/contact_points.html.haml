@@ -1,4 +1,4 @@
-%h1= "#{@person.full_name} - #{t('contact_points_title')}"
+%h1= "#{@person.display_name} - #{t('contact_points_title')}"
 
 - unless @contact_points.empty?
   - @contact_points.each do |contact_point|

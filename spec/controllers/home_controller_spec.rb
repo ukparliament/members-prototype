@@ -26,9 +26,8 @@ RSpec.describe HomeController, vcr: true do
     end
   end
 
-  context ' it does not return a response' do
+  context 'it does not return a response' do
     it 'and should raise an error' do
-      # get :index
        expect{ get :index }.to raise_error(ActionController::RoutingError)
     end
   end

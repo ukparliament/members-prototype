@@ -1,8 +1,8 @@
 %li.list__item
   %ul
-    - if member.respond_to?(:full_name) && member.respond_to?(:graph_id)
+    - if member.respond_to?(:graph_id)
       %li
-        %a{:href => "/people/#{member.graph_id}"}= member.full_name
+        %a{:href => "/people/#{member.graph_id}"}= member.display_name
 
         - if !member.statuses[:house_membership_status].empty? && !member.statuses[:house_membership_status].include?('Current MP')
           %p= member.statuses[:house_membership_status].join(' and ')

@@ -1,4 +1,4 @@
-%h1= "#{@person.full_name} - #{t('parties_title')} #{t('past_present')}"
+%h1= "#{@person.display_name} - #{t('parties_title')} #{t('past_present')}"
 
 %ol.list
   = render :partial => 'people/party_membership', collection: @party_memberships

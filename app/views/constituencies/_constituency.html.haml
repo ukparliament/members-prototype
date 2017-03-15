@@ -6,8 +6,8 @@
 %ul.list
   - @seat_incumbencies.each do |seat_incumbency|
     %li.list__item
-      %h2= link_to seat_incumbency.member.full_name, person_path(seat_incumbency.member.graph_id)
+      %h2= link_to seat_incumbency.member.display_name, person_path(seat_incumbency.member.graph_id)
       %ol
         %li
           = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
-          = seat_incumbency.end_date.nil? ? " to Present" : " to #{l(seat_incumbency.end_date, format: :default)}"
+          = seat_incumbency.current? ? " to Present" : " to #{l(seat_incumbency.end_date, format: :default)}"

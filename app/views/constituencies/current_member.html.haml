@@ -2,11 +2,11 @@
 
 %p
   = "#{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
-  = @constituency.end_date.nil? ? " to Present" : " to #{l(@constituency.end_date, format: :default)}"
+  = @constituency.current? ? " to Present" : " to #{l(@constituency.end_date, format: :default)}"
 
 .block
   %ul.list__item
-    %h2= link_to @seat_incumbency.member.full_name, person_path(@seat_incumbency.member.graph_id)
+    %h2= link_to @seat_incumbency.member.display_name, person_path(@seat_incumbency.member.graph_id)
     %li= "#{l(@seat_incumbency.start_date, format: :default)} to Present" unless @seat_incumbency.start_date.nil?
 
 

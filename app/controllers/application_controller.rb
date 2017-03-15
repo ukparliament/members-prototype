@@ -17,7 +17,21 @@ class ApplicationController < ActionController::Base
     @root_path = request.path
   end
 
-  rescue_from Parliament::NoContentError do |error|
-    raise ActionController::RoutingError, error.message
+  # rescue_from Parliament::NoContentError do |error|
+  #   # raise ActionController::RoutingError, error.message
+  # end
+  rescue_from StandardError do |exception|
+    case
+      when exception.to_s =~ /NoContentError/
+        render :template => 'errors/no_content'
+
+      when exception.to_s =~ /InternalServerError|RuntimeError/
+        render :template => 'errors/internal_server_error'
+
+      when exception.to_s =~ /NotFoundError/
+        render :template => 'errors/not_found'
+      else
+         raise "#{exception}"
+     end
+    end
   end
-end

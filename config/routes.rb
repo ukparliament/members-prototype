@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   def listable(letter_action)
     scope '/a-z', as: 'a_z' do
       get '/',        to: 'application#a_to_z'
@@ -224,4 +226,12 @@ Rails.application.routes.draw do
     get '/', to: 'meta#index'
     get '/cookie-policy', to: 'meta#cookie_policy'
   end
+
+
+  # Errors ##
+  # /errors
+    match '/404', :to => 'errors#not_found', :via => :all
+    match '/500', :to => 'errors#internal_server_error', :via => :all
+    match '/204', :to => 'errors#no_content', :via => :all
+
 end

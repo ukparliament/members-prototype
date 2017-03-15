@@ -13,4 +13,4 @@
       %dt= "#{t('address')}:"
       %dd= postal_address.full_address
   %dt= t('vcard_download')
-  %dd= link_to "#{t('download')}", contact_point_path(contact_point.graph_id), target: '_blank'
+  %dd= link_to "#{t('download')}" "download=angela.vcf", contact_point_path(contact_point.graph_id), target: '_blank'

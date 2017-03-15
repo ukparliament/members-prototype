@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/contact_points/a11425ca-6a47-4170-80b9-d6e9f3800a52
+    uri: http://localhost:3030/contact_points/939d1024-04c3-45b3-96a7-9391c60ab9f2
     body:
       encoding: US-ASCII
       string: ''
@@ -29,20 +29,32 @@ http_interactions:
       Content-Type:
       - application/n-triples; charset=utf-8
       Etag:
-      - W/"e855994682d8df852465137707181dda"
+      - W/"da58b03eb41167d09f4472f7cc8eea10"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cc0ebd37-aa18-4411-b378-df86cbc3828b
+      - 169bf615-3732-468e-aefb-60b2e1b9e525
       X-Runtime:
-      - '0.033200'
+      - '0.045290'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: |
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/email> "walpolerh@parliament.uk" .
+        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
+        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://id.ukpds.org/schema/email> "person.one@parliament.uk" .
+        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://id.ukpds.org/schema/phoneNumber> "020 8456 4567" .
+        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> .
+        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://id.ukpds.org/schema/contactPointHasIncumbency> <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> .
+        <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Incumbency> .
+        <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> .
+        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PostalAddress> .
+        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://id.ukpds.org/schema/postCode> "SW1A 0AA" .
+        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://id.ukpds.org/schema/addressLine1> "House of Commons" .
+        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://id.ukpds.org/schema/addressLine2> "London" .
+        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personGivenName> "Person 1 givenName" .
+        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personFamilyName> "Person 1 familyName" .
     http_version:
-  recorded_at: Thu, 09 Feb 2017 13:01:54 GMT
+  recorded_at: Tue, 14 Mar 2017 12:52:00 GMT
 recorded_with: VCR 3.0.3

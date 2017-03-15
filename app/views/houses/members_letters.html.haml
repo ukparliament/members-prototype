@@ -3,8 +3,8 @@
 %ul.list
   = render :partial => 'houses/person', collection: @people
 
-- if @house.name == 'House of Commons'
-  /%p= link_to(t('members_hol'), house_members_a_z_letter_path('cdf477be-7bb3-4f19-bf63-b837795e37eb', 'a'))
-  %p= link_to(t('members_hol'), house_path(@lords_id))
-- if @house.name == 'House of Lords'
-  %p= link_to(t('members_commons'), house_members_a_z_letter_path(@commons_id, 'a'))
+.block
+  - if @house.name == 'House of Commons'
+    %p= link_to(t('members_hol'), house_path(@lords_id))
+  - if @house.name == 'House of Lords'
+    %p= link_to(t('members_commons'), house_members_a_z_letter_path(@commons_id, 'a'))

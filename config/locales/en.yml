@@ -36,13 +36,16 @@ en:
   address: 'Address'
   addresses: 'Addresses'
   download: 'Download'
+  all_past_present: 'All past and present'
   members: 'Members'
   member: 'Member'
   current: 'Current'
   people_title: 'People'
   coming_soon: 'Coming Soon'
   vcard_download: 'vCard:'
-  past_and_present_members: 'Past and present members'
+  past_and_present_members: 'View all past and present members'
+  past_and_present_members_commons: 'View all past and present members of the House of Commons'
+  past_and_present_members_lords: 'View all past and present members of the House of Lords'
   members_hol: 'Members of the House of Lords'
   members_commons: 'Members of the House of Commons'
   hol: 'House of Lords'
@@ -54,8 +57,11 @@ en:
   former_lord: 'Former Lord'
   current_constituency: 'Current Constituency'
   past_constituency: 'Past Constituency'
-  past_members: 'Past Members'
+  past_members: 'Past members'
   party_no_current_members: 'There are currently no members of this party in either House.'
+  mps: 'MPs'
+  lords: 'Lords'
+  view_all_current: 'View all current'
   time:
     formats:
       default: '%-d %b %Y'
@@ -66,7 +72,11 @@ en:
       title: ! '%{people}'
     show:
       mp_for: 'MP for'
-      mp_representative: 'Your MP is your representative in Parliament and can help with issues that are the responsibility of UK Parliament.'
+      view_all: 'View all current'
+      mp_representative_1: 'Find out %{contactlink}.'
+      mp_representative_2: 'Your MP is your representative in Parliament and can help with issues that are the responsibility of UK Parliament.'
+      mp_caution: 'Please include your postcode when emailing an MP.'
+      lord_representative: 'Lords can be contacted about issues that are the responsibility of Parliament but do not represent constituencies.'
       who_to_contact: 'Find out who to contact with your issue'
       empty_contact_details: 'There is currently no contact information available for this person.'
       contact_title: 'Contact Details'
@@ -75,6 +85,9 @@ en:
       address: ! '%{address}:'
       membership_history: 'Membership History'
       empty_election_history: 'There is currently no election information available for this person.'
+      links:
+        contact_mp: "when an MP can help you and when they can't"
+        contact_lord: 'Who should I contact with my issue?'
     members:
       title: ! '%{members}'
     current_members:
@@ -110,6 +123,13 @@ en:
       title: ! '%{current} %{members}'
     current_party_members_letters:
       title: ! '%{current} %{members}'
+    party:
+      party_members: 'party members.'
+    index:
+      all_parties_members: 'All parties and members of the'
+    show:
+      members: 'All current members of the'
+      parties: 'All current parties in the'
   parties:
     index:
       title: ! '%{parties}'
@@ -125,6 +145,9 @@ en:
       title: ! '%{parties}'
     current_members_letters:
       title: ! '%{current} %{members}'
+    show:
+      party_members: 'party members.'
+      past: 'All past'
   constituencies:
     index:
       title: ! '%{constituencies}'
@@ -140,14 +163,17 @@ en:
       title: ! '%{current} %{constituencies}'
   home:
     index:
-      title: 'Beta on Parliament.uk'
-      content: 'We’re building a new website for Parliament.  The ‘beta’ label means you’re looking at the first version of a new page.'
-      beta-label: 'Beta label'
-      beta-label-text-1: 'The beta label is displayed on new pages to show they’re being tested and improved – they may not work for everyone.'
-      beta-label-text-2: 'Beta pages will be available at the same time as older pages so you can choose which one to use.'
-      beta-label-text-3: 'Successful beta pages will eventually replace older services.'
+      title: 'UK Parliament test website'
+      title-context: 'Welcome to beta.parliament.uk, a beta website for UK Parliament.'
+      beta-highlight-title: 'About this website'
+      beta-highlight-text-1: 'We’re building a new website for Parliament. These pages are being tested and improved – they may be inaccurate or misleading.'
+      beta-highlight-text-2: 'Test pages are separate from the current %{parliamentlink} website'
+      whats-on: "What's on our beta website"
+      members-info: 'Members Information'
       feedback: 'Feedback'
-      feedback-text: ! 'We want your %{feedbacklink} on these pages to help us improve them.'
+      feedback-text: ! 'We want %{feedbacklink} on these beta pages to help us improve them further.'
+      follow: 'Follow our progress'
+      follow-text: 'Follow all %{bloglink}.'
       current-beta-pages: 'Current beta pages'
       beta-pages-text-1: 'We’re creating a page for every MP and Lord, past and present.'
       beta-pages-text-2: 'We currently have over 4000 member pages, dating back to the 1940s.'
@@ -157,11 +183,13 @@ en:
          constituencies: ! '%{constituencies}'
          current_members_of_both_houses: 'Current Members of both Houses'
          current_mps: 'all current MPs'
-         feedback: 'feedback'
+         current_website: 'parliament.uk'
+         blog: 'new website developments on our blog'
+         feedback: 'your feedback'
          commons: 'Commons'
          lords: 'Lords'
-         members: '%{members}'
-         parties: '%{parties}'
+         members: 'MPs'
+         parties: 'Parties and groups'
          constituencies: '%{constituencies}'
   meta:
     index:

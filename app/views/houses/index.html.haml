@@ -1,3 +1,7 @@
 %h1= t('houses_title')
 - @houses.each do |house|
-  %h2= link_to(house.name, house_path(house.graph_id))
+  .block
+    .list__item
+      %h2= link_to(house.name, house_path(house.graph_id))
+      %p= "#{t('.all_parties_members')} #{house.name}."
+      /%p= "#{t('current')} #{@party.name} #{t('.party_members')}"

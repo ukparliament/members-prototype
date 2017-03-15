@@ -1,5 +1,5 @@
 %h1= "#{@house.name} - #{t('.title', current: t('current'), parties: t('parties_title'))}"
 %ul.list
   = render :partial => 'houses/party', collection: @parties
-
-%p= link_to(t('past_and_present_parties'), house_parties_path(@house.graph_id))
+.block
+  %p= link_to(t('past_and_present_parties'), house_parties_path(@house.graph_id))

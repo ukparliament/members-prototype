@@ -2,9 +2,9 @@
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_current_a_z_letter_path, id: @house.graph_id}
 %ul.list
   = render :partial => 'houses/current_person', collection: @people
-- if @house.name == 'House of Commons'
-  %p= link_to(t('members_hol'), house_path(@lords_id))
-- if @house.name == 'House of Lords'
-  %p= link_to(t('members_commons'), house_members_current_a_z_letter_path(@commons_id, 'a'))
-
-%p= link_to(t('past_and_present_members'), house_members_a_z_letter_path(@house.graph_id, 'a'))
+.block
+  - if @house.name == 'House of Commons'
+    %p= link_to(t('members_hol'), house_path(@lords_id))
+  - if @house.name == 'House of Lords'
+    %p= link_to(t('members_commons'), house_members_current_a_z_letter_path(@commons_id, 'a'))
+  %p= link_to(t('past_and_present_members'), house_members_a_z_letter_path(@house.graph_id, 'a'))

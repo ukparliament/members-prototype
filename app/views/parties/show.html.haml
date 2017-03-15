@@ -2,8 +2,14 @@
   = @party.name if @party.name.present?
 
 - if @party.member_count > 0
-  %h2= link_to(t('members'), party_members_current_path(@party.graph_id))
+  .block
+    .list__item
+      %h2= link_to("#{t('current')} #{t('members')}", party_members_current_path(@party.graph_id))
+      %p= "#{t('current')} #{@party.name} #{t('.party_members')}"
 
 - if @party.member_count == 0
-  %p= t('party_no_current_members')
-  %h2= link_to(t('past_members'), party_members_path(@party.graph_id))
+  %p.lead= t('party_no_current_members')
+  .block
+    .list__item
+      %h2= link_to(t('past_members'), party_members_path(@party.graph_id))
+      %p= "#{t('.past')} #{@party.name} #{t('.party_members')}"

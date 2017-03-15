@@ -2,4 +2,5 @@
 = render partial: 'shared/iid_id_a_to_z', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, id: @house.graph_id, iid: @party.graph_id}
 %ul.list
   = render :partial => 'houses/party_member', collection: @people
-%p= link_to(t('past_and_present_members'), house_parties_party_members_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
+.block
+  %p= link_to(t('past_and_present_members'), house_parties_party_members_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))

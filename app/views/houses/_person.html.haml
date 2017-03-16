@@ -1,3 +1,3 @@
 %li.list__item
-  %h2= link_to(person.full_name, person_path(person.graph_id))
+  %h2= link_to(person.display_name, person_path(person.graph_id))
   %p= person.statuses[:general_membership_status].join(' and ')

@@ -1,7 +1,7 @@
-%h1= "#{@person.full_name} - #{t('.title', current: t('current'), constituency: t('constituency'))}"
+%h1= "#{@person.display_name} - #{t('.title', current: t('current'), constituency: t('constituency'))}"
 
 - unless @constituency.nil?
   .block
-    %ol.list__item
+    .list__item
       %h2= link_to(@constituency.name, party_path(@constituency.graph_id))
-      %li= "#{l(@constituency.seat_incumbencies.first.start_date, format: :default)} to Present" unless @constituency.seat_incumbencies.first.start_date.nil?
+      %p= "#{l(@constituency.seat_incumbencies.first.start_date, format: :default)} to Present" unless @constituency.seat_incumbencies.first.start_date.nil?

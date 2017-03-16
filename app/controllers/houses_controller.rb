@@ -18,6 +18,7 @@ class HousesController < ApplicationController
     data = Parliament::Request.new.houses(house_id).get
 
     @house = data.filter('http://id.ukpds.org/schema/House').first
+    houses_id
   end
 
   def members
@@ -28,7 +29,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
 
     houses_id
@@ -42,7 +43,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
 
     houses_id
@@ -56,6 +57,7 @@ class HousesController < ApplicationController
     @house, @parties = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Party')
     @house = @house.first
     @parties = @parties.sort_by(:name)
+    houses_id
   end
 
   def current_parties
@@ -66,6 +68,7 @@ class HousesController < ApplicationController
     @house, @parties = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Party')
     @house = @house.first
     @parties = @parties.reverse_sort_by(:member_count)
+    houses_id
   end
 
   def party
@@ -88,7 +91,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
     houses_id
   end
@@ -102,7 +105,7 @@ class HousesController < ApplicationController
 
     @house, @people = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Person')
     @house = @house.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
     houses_id
   end
@@ -121,7 +124,7 @@ class HousesController < ApplicationController
     )
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -140,7 +143,7 @@ class HousesController < ApplicationController
     )
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -159,7 +162,7 @@ class HousesController < ApplicationController
 
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -179,7 +182,41 @@ class HousesController < ApplicationController
 
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_members
+    @house_id = params[:house_id]
+
+    letter_data = Parliament::Request.new.houses(@house_id).members.a_z_letters.get
+
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_current_members
+    @house_id = params[:house_id]
+
+    letter_data = Parliament::Request.new.houses(@house_id).members.current.a_z_letters.get
+
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_party_members
+    @house_id = params[:house_id]
+    @party_id = params[:party_id]
+
+    letter_data = Parliament::Request.new.houses(@house_id).parties(@party_id).members.a_z_letters.get
+
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_current_party_members
+    @house_id = params[:house_id]
+    @party_id = params[:party_id]
+
+    letter_data = Parliament::Request.new.houses(@house_id).parties(@party_id).members.current.a_z_letters.get
+
     @letters = letter_data.map(&:value)
   end
 

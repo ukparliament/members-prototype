@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   def index
     letter_data = Parliament::Request.new.people.a_z_letters.get
 
-    @people = Parliament::Request.new.people.get.sort_by(:family_name, :given_name)
+    @people = Parliament::Request.new.people.get.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -44,7 +44,7 @@ class PeopleController < ApplicationController
     data = Parliament::Request.new.people.members.get
     letter_data = Parliament::Request.new.people.members.a_z_letters.get
 
-    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:family_name, :given_name)
+    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -52,7 +52,7 @@ class PeopleController < ApplicationController
     data = Parliament::Request.new.people.members.current.get
     letter_data = Parliament::Request.new.people.members.current.a_z_letters.get
 
-    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:family_name, :given_name)
+    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -133,7 +133,7 @@ class PeopleController < ApplicationController
 
     letter_data = Parliament::Request.new.people.a_z_letters.get
 
-    @people = Parliament::Request.new.people(letter).get.sort_by(:family_name, :given_name)
+    @people = Parliament::Request.new.people(letter).get.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -143,7 +143,7 @@ class PeopleController < ApplicationController
     data = Parliament::Request.new.people.members(letter).get
     letter_data = Parliament::Request.new.people.members.a_z_letters.get
 
-    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:family_name, :given_name)
+    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -153,7 +153,25 @@ class PeopleController < ApplicationController
     data = Parliament::Request.new.people.members.current(letter).get
     letter_data = Parliament::Request.new.people.members.current.a_z_letters.get
 
-    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:family_name, :given_name)
+    @people = data.filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name)
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z
+    letter_data = Parliament::Request.new.people.a_z_letters.get
+
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_members
+    letter_data = Parliament::Request.new.people.members.a_z_letters.get
+
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_current_members
+    letter_data = Parliament::Request.new.people.members.current.a_z_letters.get
+
     @letters = letter_data.map(&:value)
   end
 

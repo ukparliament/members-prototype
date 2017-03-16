@@ -16,10 +16,7 @@ class ApplicationController < ActionController::Base
   def a_to_z
     @root_path = request.path
   end
-
-  # rescue_from Parliament::NoContentError do |error|
-  #   # raise ActionController::RoutingError, error.message
-  # end
+  
   rescue_from StandardError do |exception|
     case
       when exception.to_s =~ /NoContentError/
@@ -34,4 +31,4 @@ class ApplicationController < ActionController::Base
          raise "#{exception}"
      end
     end
-  end
+

@@ -1,5 +1,5 @@
 %li.list__item
-  %h2= link_to(current_person.full_name, person_path(current_person.graph_id))
+  %h2= link_to(current_person.display_name, person_path(current_person.graph_id))
   %ul
     - unless current_person.constituencies.empty?
       %li

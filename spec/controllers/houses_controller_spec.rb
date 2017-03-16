@@ -44,7 +44,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET show" do
     before(:each) do
-      get :show, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
+      get :show, params: {house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -125,7 +125,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET parties" do
     before(:each) do
-      get :parties, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
+      get :parties, params: {house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -153,7 +153,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_parties" do
     before(:each) do
-      get :current_parties, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788'}
+      get :current_parties, params: {house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52'}
     end
 
     it 'should have a response with http status ok (200)' do
@@ -401,6 +401,78 @@ RSpec.describe HousesController, vcr: true do
 
     it 'renders the current_party_members_letters template' do
       expect(response).to render_template('current_party_members_letters')
+    end
+  end
+
+  describe "GET a_to_z_members" do
+    before(:each) do
+      get :a_to_z_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z_members template' do
+      expect(response).to render_template('a_to_z_members')
+    end
+  end
+
+  describe "GET a_to_z_current_members" do
+    before(:each) do
+      get :a_to_z_current_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z_current_members template' do
+      expect(response).to render_template('a_to_z_current_members')
+    end
+  end
+
+  describe "GET a_to_z_party_members" do
+    before(:each) do
+      get :a_to_z_party_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'c5858995-6d25-4eb5-b92e-fba3fbd8ba47' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z_party_members template' do
+      expect(response).to render_template('a_to_z_party_members')
+    end
+  end
+
+  describe "GET a_to_z_current_party_members" do
+    before(:each) do
+      get :a_to_z_current_party_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'c5858995-6d25-4eb5-b92e-fba3fbd8ba47' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z_current_party_members template' do
+      expect(response).to render_template('a_to_z_current_party_members')
     end
   end
 

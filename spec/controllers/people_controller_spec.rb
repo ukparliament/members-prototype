@@ -371,6 +371,60 @@ RSpec.describe PeopleController, vcr: true do
     end
   end
 
+  describe "GET a_to_z" do
+    before(:each) do
+      get :a_to_z
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z template' do
+      expect(response).to render_template('a_to_z')
+    end
+  end
+
+  describe "GET a_to_z_members" do
+    before(:each) do
+      get :a_to_z_members
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z_members template' do
+      expect(response).to render_template('a_to_z_members')
+    end
+  end
+
+  describe "GET a_to_z_current_members" do
+    before(:each) do
+      get :a_to_z_current_members
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z_current_members template' do
+      expect(response).to render_template('a_to_z_current_members')
+    end
+  end
+
   describe 'GET lookup_by_letters' do
     context 'it returns multiple results' do
       before(:each) do

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
 
+
   def listable(letter_action)
+  def listable(a_z_action, letter_action)
     scope '/a-z', as: 'a_z' do
-      get '/',        to: 'application#a_to_z'
+      get '/',        to: a_z_action
 
       scope '/:letter', as: 'letter' do
         get '/', to: letter_action
@@ -22,26 +24,25 @@ Rails.application.routes.draw do
   # /
   root 'home#index'
 
-
   ### People ###
   # /people (multiple 'people' scope)
   scope '/people', as: 'people' do
     get '/', to: 'people#index'
     get 'lookup', to: 'people#lookup'
 
-    listable('people#letters')
+    listable('people#a_to_z', 'people#letters')
 
     # /people/members
     scope '/members', as: 'members' do
       get '/', to: 'people#members'
 
-      listable('people#members_letters')
+      listable('people#a_to_z_members', 'people#members_letters')
 
       # /people/members/current
       scope '/current', as: 'current' do
         get '/', to: 'people#current_members'
 
-        listable('people#current_members_letters')
+        listable('people#a_to_z_current_members', 'people#current_members_letters')
       end
     end
   end
@@ -84,7 +85,7 @@ Rails.application.routes.draw do
     get '/current', to: 'parties#current'
     get '/lookup', to: 'parties#lookup'
 
-    listable('parties#letters')
+    listable('parties#a_to_z', 'parties#letters')
   end
 
   # /parties (single 'party' scope)
@@ -97,13 +98,13 @@ Rails.application.routes.draw do
       scope '/members', as: 'members' do
         get '/', to: 'parties#members'
 
-        listable('parties#members_letters')
+        listable('parties#a_to_z_members', 'parties#members_letters')
 
         # /parties/:party_id/members/current
         scope '/current', as: 'current' do
           get '/', to: 'parties#current_members'
 
-          listable('parties#current_members_letters')
+          listable('parties#a_to_z_current_members', 'parties#current_members_letters')
         end
       end
     end
@@ -118,13 +119,13 @@ Rails.application.routes.draw do
     get '/', to: 'constituencies#index'
     get '/lookup', to: 'constituencies#lookup'
 
-    listable('constituencies#letters')
+    listable('constituencies#a_to_z', 'constituencies#letters')
 
     # /constituencies/current
     scope '/current', as: 'current' do
       get '/', to: 'constituencies#current'
 
-      listable('constituencies#current_letters')
+      listable('constituencies#a_to_z_current', 'constituencies#current_letters')
     end
   end
 
@@ -179,13 +180,13 @@ Rails.application.routes.draw do
       scope '/members', as: 'members' do
         get '/', to: 'houses#members'
 
-        listable('houses#members_letters')
+        listable('houses#a_to_z_members', 'houses#members_letters')
 
         # /houses/:house_id/members/current
         scope '/current', as: 'current' do
           get '/', to: 'houses#current_members'
 
-          listable('houses#current_members_letters')
+          listable('houses#a_to_z_current_members', 'houses#current_members_letters')
         end
       end
 
@@ -202,13 +203,13 @@ Rails.application.routes.draw do
           scope '/members', as: 'members' do
             get '/', to: 'houses#party_members'
 
-            listable('houses#party_members_letters')
+            listable('houses#a_to_z_party_members', 'houses#party_members_letters')
 
             # /houses/:house_id/parties/:party_id/members/current
             scope '/current', as: 'current' do
               get '/', to: 'houses#current_party_members'
 
-              listable('houses#current_party_members_letters')
+              listable('houses#a_to_z_current_party_members', 'houses#current_party_members_letters')
             end
           end
         end

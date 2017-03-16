@@ -1,6 +1,5 @@
-%h1= "#{@person.full_name} - #{t('houses_title')} #{t('past_present')}"
+%h1= "#{@person.display_name} - #{t('houses_title')} #{t('past_present')}"
 
 - unless @incumbencies.empty?
   %ol.list
     = render :partial => 'people/incumbency', collection: @incumbencies
-

@@ -1,5 +1,20 @@
 %h1= "#{@house.name} - #{t('.title', current: t('current'), parties: t('parties_title'))}"
+.block
+  .link__tab
+    -if @house.name == "House of Commons"
+      .link__tab--item.active
+        %p= t('commons')
+    - else
+      .link__tab--item
+        = link_to(t('commons'),house_parties_current_path(@commons_id))
+    -if @house.name == "House of Lords"
+      .link__tab--item.active
+        %p= t('lords')
+    - else
+      .link__tab--item
+        = link_to(t('lords'),house_parties_current_path(@lords_id))
+
 %ul.list
   = render :partial => 'houses/party', collection: @parties
-
-%p= link_to(t('past_and_present_parties'), house_parties_path(@house.graph_id))
+.block
+  %p= link_to(t('past_and_present_parties'), house_parties_path(@house.graph_id))

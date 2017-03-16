@@ -35,7 +35,7 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -47,7 +47,7 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -70,7 +70,7 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
   end
 
@@ -83,7 +83,29 @@ class PartiesController < ApplicationController
 
     @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
-    @people = @people.sort_by(:family_name, :given_name)
+    @people = @people.sort_by(:sort_name)
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z
+    letter_data = Parliament::Request.new.parties.a_z_letters.get
+
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_members
+    @party_id = params[:party_id]
+
+    letter_data = Parliament::Request.new.parties(@party_id).members.a_z_letters.get
+
+    @letters = letter_data.map(&:value)
+  end
+
+  def a_to_z_current_members
+    @party_id = params[:party_id]
+
+    letter_data = Parliament::Request.new.parties(@party_id).members.current.a_z_letters.get
+
     @letters = letter_data.map(&:value)
   end
 

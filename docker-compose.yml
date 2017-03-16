@@ -18,3 +18,4 @@ services:
     env_file: ~/.ukpds/member-service-api.env
     ports:
       - "3030:3000"
+

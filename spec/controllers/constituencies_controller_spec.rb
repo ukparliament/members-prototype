@@ -46,7 +46,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
   describe 'GET show' do
     before(:each) do
-      get :show, params: { constituency_id: 'f9216185-f3dc-417c-a02e-455faedb2ac2' }
+      get :show, params: { constituency_id: 'dd35a30d-ea9b-4274-8a27-f193246191a7' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -64,8 +64,12 @@ RSpec.describe ConstituenciesController, vcr: true do
     end
 
     it 'assigns @seat_incumbencies in reverse chronological order' do
-      expect(assigns(:seat_incumbencies)[0].start_date).to eq(DateTime.new(2015, 5, 7))
-      expect(assigns(:seat_incumbencies)[1].start_date).to eq(DateTime.new(2010, 5, 6))
+      expect(assigns(:seat_incumbencies)[0].start_date).to eq(DateTime.new(2010, 5, 6))
+      expect(assigns(:seat_incumbencies)[1].start_date).to eq(DateTime.new(2005, 5, 5))
+    end
+
+    it 'assigns @current_incumbency to be the current incumbency' do
+      expect(assigns(:current_incumbency).start_date).to eq(DateTime.new(2015, 5, 7))
     end
 
     it 'renders the show template' do
@@ -243,6 +247,42 @@ RSpec.describe ConstituenciesController, vcr: true do
 
     it 'renders the current_letters template' do
       expect(response).to render_template('current_letters')
+    end
+  end
+
+  describe "GET a_to_z" do
+    before(:each) do
+      get :a_to_z
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z template' do
+      expect(response).to render_template('a_to_z')
+    end
+  end
+
+  describe "GET a_to_z_current" do
+    before(:each) do
+      get :a_to_z_current
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @letters' do
+      expect(assigns(:letters)).to be_a(Array)
+    end
+
+    it 'renders the a_to_z_current template' do
+      expect(response).to render_template('a_to_z_current')
     end
   end
 

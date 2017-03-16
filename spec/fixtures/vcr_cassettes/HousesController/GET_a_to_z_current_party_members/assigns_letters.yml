@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/parties/c5858995-6d25-4eb5-b92e-fba3fbd8ba47/members/current/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"d66ad14b52c1b99209039464f3289b05"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ad02c996-cb7d-4afb-8a0a-e9d2c062076c
+      X-Runtime:
+      - '0.262882'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node72892 <http://id.ukpds.org/schema/value> "M" .
+        _:node72893 <http://id.ukpds.org/schema/value> "L" .
+        _:node72894 <http://id.ukpds.org/schema/value> "G" .
+        _:node72895 <http://id.ukpds.org/schema/value> "B" .
+        _:node72896 <http://id.ukpds.org/schema/value> "T" .
+        _:node72897 <http://id.ukpds.org/schema/value> "R" .
+        _:node72898 <http://id.ukpds.org/schema/value> "P" .
+        _:node72899 <http://id.ukpds.org/schema/value> "A" .
+        _:node72900 <http://id.ukpds.org/schema/value> "D" .
+        _:node72901 <http://id.ukpds.org/schema/value> "J" .
+        _:node72902 <http://id.ukpds.org/schema/value> "F" .
+        _:node72903 <http://id.ukpds.org/schema/value> "C" .
+        _:node72904 <http://id.ukpds.org/schema/value> "V" .
+        _:node72905 <http://id.ukpds.org/schema/value> "W" .
+        _:node72906 <http://id.ukpds.org/schema/value> "E" .
+        _:node72907 <http://id.ukpds.org/schema/value> "S" .
+        _:node72908 <http://id.ukpds.org/schema/value> "H" .
+        _:node72909 <http://id.ukpds.org/schema/value> "N" .
+        _:node72910 <http://id.ukpds.org/schema/value> "K" .
+        _:node72911 <http://id.ukpds.org/schema/value> "O" .
+        _:node72912 <http://id.ukpds.org/schema/value> "Q" .
+        _:node72913 <http://id.ukpds.org/schema/value> "Z" .
+    http_version: 
+  recorded_at: Wed, 15 Mar 2017 14:37:01 GMT
+recorded_with: VCR 3.0.3

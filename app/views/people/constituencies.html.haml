@@ -1,4 +1,4 @@
-%h1= "#{@person.full_name} - #{t('constituencies_title')} #{t('past_present')}"
+%h1= "#{@person.display_name} - #{t('constituencies_title')} #{t('past_present')}"
 
 - unless @seat_incumbencies.empty?
   %ol.list

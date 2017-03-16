@@ -1,11 +1,11 @@
-%h1= "#{@person.full_name} - #{t('.title', current: t('current'), house: t('house'))}"
+%h1= "#{@person.display_name} - #{t('.title', current: t('current'), house: t('house'))}"
 
 - unless @house.nil?
   .block
-    %ol.list__item
+    .list__item
       %h2= link_to(@house.name, house_path(@house.graph_id))
       - unless @house.seat_incumbencies.empty?
-        %li= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} to Present" unless @house.seat_incumbencies.first.start_date.nil?
+        %p= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} to Present" unless @house.seat_incumbencies.first.start_date.nil?
 
       - unless @house.house_incumbencies.empty?
-        %li= "#{l(@house.house_incumbencies.first.start_date, format: :default)} to Present" unless @house.house_incumbencies.first.start_date.nil?
+        %p= "#{l(@house.house_incumbencies.first.start_date, format: :default)} to Present" unless @house.house_incumbencies.first.start_date.nil?

@@ -1,2 +1,5 @@
 %h1= "#{@house.name} - #{@party.name}"
-%h2= link_to("#{t('current')} #{t('members')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))
+.block
+  .list__item
+    %h2= link_to("#{t('current')} #{t('members')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))
+    %p= "#{t('view_all_current')} #{@party.name} #{t('.party_members')}"

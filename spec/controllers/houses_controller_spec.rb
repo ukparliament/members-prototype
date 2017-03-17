@@ -178,61 +178,70 @@ RSpec.describe HousesController, vcr: true do
   end
 
   describe "GET party" do
-    before(:each) do
-      get :party, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'c5858995-6d25-4eb5-b92e-fba3fbd8ba47' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @house and @party' do
-      expect(assigns(:house)).to be_a(Grom::Node)
-      expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
-      expect(assigns(:party)).to be_a(Grom::Node)
-      expect(assigns(:party).type).to eq('http://id.ukpds.org/schema/Party')
-    end
-
-    it 'renders the party template' do
-      expect(response).to render_template('party')
-    end
-  end
-
-  describe "GET members_letters" do
-    context 'display members letters view' do
+    context 'both house and party have a valid id' do
       before(:each) do
-        get :members_letters, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', letter: 'a' }
+        get :party, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'f4e62fb8-2cf4-41b2-b7a3-7e621522a30d' }
       end
 
       it 'should have a response with http status ok (200)' do
         expect(response).to have_http_status(:ok)
       end
 
-      it 'assigns @house, @people and @letters' do
+      it 'assigns @house and @party' do
         expect(assigns(:house)).to be_a(Grom::Node)
         expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
-        expect(assigns(:letters)).to be_a(Array)
-
-        assigns(:people).each do |person|
-          expect(person).to be_a(Grom::Node)
-          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
-        end
+        expect(assigns(:party)).to be_a(Grom::Node)
+        expect(assigns(:party).type).to eq('http://id.ukpds.org/schema/Party')
       end
 
-      it 'assigns @people in alphabetical order' do
-        expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-        expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      it 'renders the party template' do
+        expect(response).to render_template('party')
       end
+    end
 
-      it 'renders the members_letters template' do
-        expect(response).to render_template('members_letters')
+    context 'party id is invalid' do
+      it 'raises an error if @party is nil' do
+        house_id = '4b77dd58-f6ba-4121-b521-c8ad70465f52'
+        party_id = '123'
+
+        expect{ get :party, params: { house_id: house_id, party_id: party_id } }.to raise_error(ActionController::RoutingError, 'Invalid party id')
       end
+    end
+  end
+
+  describe "GET members_letters" do
+    before(:each) do
+      get :members_letters, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', letter: 'a' }
+    end
+
+    it 'should have a response with http status ok (200)' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @house, @people and @letters' do
+      expect(assigns(:house)).to be_a(Grom::Node)
+      expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
+      expect(assigns(:letters)).to be_a(Array)
+
+      assigns(:people).each do |person|
+        expect(person).to be_a(Grom::Node)
+        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+      end
+    end
+
+    it 'assigns @people in alphabetical order' do
+      expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
+      expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+    end
+
+    it 'renders the members_letters template' do
+      expect(response).to render_template('members_letters')
     end
   end
 
   describe "GET current_members_letters" do
     before(:each) do
-      get :current_members_letters, params: {house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', letter: "a"}
+      get :current_members_letters, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -262,7 +271,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET party_members" do
     before(:each) do
-      get :party_members, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980'}
+      get :party_members, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980' }
     end
 
     it 'should have a response with http status ok (200)' do

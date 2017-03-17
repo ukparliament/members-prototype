@@ -1,7 +1,7 @@
 %h1= "#{@house.name} - #{t('.title', current: t('current'), parties: t('parties_title'))}"
 .block
   .link__tab
-    -if @house.name == "House of Commons"
+    - if @house.name == "House of Commons"
       .link__tab--item.active
         %p= t('commons')
     - else

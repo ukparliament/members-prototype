@@ -1,5 +1,14 @@
 %h1= "#{@house.name} - #{@party.name}"
-.block
-  .list__item
-    %h2= link_to("#{t('current')} #{t('members')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))
-    %p= "#{t('view_all_current')} #{@party.name} #{t('.party_members')}"
+
+- if @party.member_count > 0
+  .block
+    .list__item
+      %h2= link_to("#{t('current')} #{t('members')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))
+      %p= "#{t('view_all_current')} #{@party.name} #{t('.party_members')}"
+
+- if @party.member_count == 0
+  %p.lead= t('party_no_current_members_house')
+  .block
+    .list__item
+      %h2= link_to(t('past_members'), house_parties_party_members_path(@house.graph_id, @party.graph_id))
+      %p= "#{t('.past')} #{@party.name} #{t('.party_members')}"

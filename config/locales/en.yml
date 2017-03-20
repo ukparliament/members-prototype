@@ -59,6 +59,7 @@ en:
   past_constituency: 'Past Constituency'
   past_members: 'Past members'
   party_no_current_members: 'There are currently no members of this party in either House.'
+  party_no_current_members_house: 'There are currently no members of this party in this House.'
   mps: 'MPs'
   lords: 'Lords'
   view_all_current: 'View all current'
@@ -129,6 +130,7 @@ en:
       title: ! '%{current} %{members}'
     party:
       party_members: 'party members.'
+      past: 'All past'
     index:
       all_parties_members: 'All parties and members of the'
     show:

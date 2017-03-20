@@ -180,30 +180,39 @@ RSpec.describe HousesController, vcr: true do
   end
 
   describe "GET party" do
-    before(:each) do
-      get :party, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980'}
+    context 'both house and party have a valid id' do
+      before(:each) do
+        get :party, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'f4e62fb8-2cf4-41b2-b7a3-7e621522a30d' }
+      end
+
+      it 'should have a response with http status ok (200)' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'assigns @house and @party' do
+        expect(assigns(:house)).to be_a(Grom::Node)
+        expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
+        expect(assigns(:party)).to be_a(Grom::Node)
+        expect(assigns(:party).type).to eq('http://id.ukpds.org/schema/Party')
+      end
+
+      it 'renders the party template' do
+        expect(response).to render_template('party')
+      end
     end
 
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
+    context 'party id is invalid' do
+      it 'raises an error if @party is nil' do
+        house_id = '4b77dd58-f6ba-4121-b521-c8ad70465f52'
+        party_id = '123'
 
-    it 'assigns @house and @parties' do
-      expect(assigns(:house)).to be_a(Grom::Node)
-      expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
-      expect(assigns(:party)).to be_a(Grom::Node)
-      expect(assigns(:party).type).to eq('http://id.ukpds.org/schema/Party')
-    end
-
-    it 'renders the party template' do
-      expect(response).to render_template('party')
+        expect{ get :party, params: { house_id: house_id, party_id: party_id } }.to raise_error(ActionController::RoutingError, 'Invalid party id')
+      end
     end
   end
 
   describe "GET members_letters" do
-
     context 'display members letters view' do
-
         before(:each) do
           get :members_letters, params: {house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', letter: "a"}
         end
@@ -232,18 +241,6 @@ RSpec.describe HousesController, vcr: true do
           expect(response).to render_template('members_letters')
         end
     end
-
-    # context 'it should ids for both house of commons and house of lords' do
-    #   it 'it should return house of commons id' do
-    #     get :members_letters
-    #     expect(assigns(:commons_id)).to eq('4b77dd58-f6ba-4121-b521-c8ad70465f52')
-    #   end
-    #
-    #   it 'should return house of lords id' do
-    #     get :members_letters
-    #     expect(assigns(:lords_id)).to eq('f1a325bf-f550-48a5-ad40-e30cb7b7bdf4')
-    #   end
-    # end
   end
 
   describe "GET current_members_letters" do

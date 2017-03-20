@@ -1,7 +1,6 @@
-- title @party.name if @party.name.present?
+- page_title = title(@party.name) if @party.name.present?
 
-%h1
-  = @party.name if @party.name.present?
+%h1 page_title
 
 - if @party.member_count > 0
   .block

@@ -1,4 +1,4 @@
-- if @house.graph_id == @commons_id
+- if HousesHelper.commons?(@house)
   - page_title = title("#{@house.name} - #{t('.title', members: t('mps'))} #{t('past_present')}")
 - else
   - page_title = title("#{@house.name} - #{t('.title', members: t('lords'))} #{t('past_present')}")
@@ -10,7 +10,8 @@
   = render partial: 'pugin/cards/person-list', locals: { people: @people }
 
 .block
-  - if @house.name == 'House of Commons'
-    %p= link_to(t('members_hol'), house_members_a_z_letter_path(@lords_id, 'a'))
-  - if @house.name == 'House of Lords'
-    %p= link_to(t('members_commons'), house_members_a_z_letter_path(@commons_id, 'a'))
+  - if HousesHelper.commons?(@house)
+    %p= link_to(t('members_hol'), house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
+
+  - if HousesHelper.lords?(@house)
+    %p= link_to(t('members_commons'), house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))

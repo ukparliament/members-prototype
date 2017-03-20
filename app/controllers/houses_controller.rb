@@ -18,7 +18,6 @@ class HousesController < ApplicationController
     data = Parliament::Request.new.houses(house_id).get
 
     @house = data.filter('http://id.ukpds.org/schema/House').first
-    houses_id
   end
 
   def members
@@ -31,8 +30,6 @@ class HousesController < ApplicationController
     @house = @house.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
-
-    houses_id
   end
 
   def current_members
@@ -45,8 +42,6 @@ class HousesController < ApplicationController
     @house = @house.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
-
-    houses_id
   end
 
   def parties
@@ -57,7 +52,6 @@ class HousesController < ApplicationController
     @house, @parties = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Party')
     @house = @house.first
     @parties = @parties.sort_by(:name)
-    houses_id
   end
 
   def current_parties
@@ -68,7 +62,6 @@ class HousesController < ApplicationController
     @house, @parties = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Party')
     @house = @house.first
     @parties = @parties.reverse_sort_by(:member_count)
-    houses_id
   end
 
   def party
@@ -93,7 +86,6 @@ class HousesController < ApplicationController
     @house = @house.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
-    houses_id
   end
 
   def current_members_letters
@@ -107,7 +99,6 @@ class HousesController < ApplicationController
     @house = @house.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
-    houses_id
   end
 
   def party_members

@@ -5,8 +5,10 @@
 %ul.list
   = render partial: 'pugin/cards/person-list', locals: { people: @people }
 .block
-  - if @house.name == 'House of Commons'
-    %p= link_to(t('members_hol'), house_members_current_a_z_letter_path(@lords_id, 'a'))
-  - if @house.name == 'House of Lords'
-    %p= link_to(t('members_commons'), house_members_current_a_z_letter_path(@commons_id, 'a'))
+  - if HousesHelper.commons?(@house)
+    %p= link_to(t('members_hol'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
+
+  - if HousesHelper.lords?(@house)
+    %p= link_to(t('members_commons'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
+
   %p= link_to(t('past_and_present_members'), house_members_a_z_letter_path(@house.graph_id, 'a'))

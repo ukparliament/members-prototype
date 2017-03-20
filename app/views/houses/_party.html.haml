@@ -6,11 +6,11 @@
   %li.list__item
     .column__float--left-80
       %h2= link_to(party.name, house_parties_party_path(@house.graph_id, party.graph_id))
-      %p= "#{t('all_current')} #{party.name} #{@house.graph_id == @commons_id ? t('mps') : t('lords').downcase}"
+      %p= "#{t('all_current')} #{party.name} #{HousesHelper.commons?(@house) ? t('mps') : t('lords').downcase}"
     .column__float--right-20
       %p
         = party.member_count
         %span
-          = @house.graph_id == @commons_id ? t('mps') : t('lords')
+          = HousesHelper.commons?(@house) ? t('mps') : t('lords')
 
 

@@ -3,18 +3,18 @@
 %h1= page_title
 .block
   .link__tab
-    -if @house.name == "House of Commons"
+    - if HousesHelper.commons?(@house)
       .link__tab--item.active
         %p= t('commons')
     - else
       .link__tab--item
-        = link_to(t('commons'),house_parties_current_path(@commons_id))
-    -if @house.name == "House of Lords"
+        = link_to(t('commons'),house_parties_current_path(HousesHelper.commons_id))
+    - if HousesHelper.lords?(@house)
       .link__tab--item.active
         %p= t('lords')
     - else
       .link__tab--item
-        = link_to(t('lords'),house_parties_current_path(@lords_id))
+        = link_to(t('lords'),house_parties_current_path(HousesHelper.lords_id))
 
 %ul.list
   = render :partial => 'houses/party', collection: @parties

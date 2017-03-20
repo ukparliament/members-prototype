@@ -13,16 +13,16 @@
   %h3= t('.members-info')
   %ol.list
     %li.list__item
-      %h4= link_to t('.links.members', members: t('members')), house_members_current_a_z_letter_path(@commons_id, 'a')
+      %h4= link_to t('.links.members', members: t('members')), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
       %p All current members of the House of Commons
     %li.list__item
-      %h4= link_to t('.links.lords', lords: t('lords')), house_members_current_a_z_letter_path(@lords_id, 'a')
+      %h4= link_to t('.links.lords', lords: t('lords')), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a')
       %p All current members of the House of Lords
     %li.list__item
       %h4= link_to t('.links.constituencies', constituencies: t('constituencies_title')), constituencies_current_a_z_letter_path('a')
       %p Find MPs by the area they represent
     %li.list__item
-      %h4= link_to t('.links.parties', parties: t('parties_title')), house_parties_current_path(@commons_id)
+      %h4= link_to t('.links.parties', parties: t('parties_title')), house_parties_current_path(HousesHelper.commons_id)
       %p Find MPs and Lords by their party or group
 
 %section.block--top

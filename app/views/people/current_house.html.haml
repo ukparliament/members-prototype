@@ -1,3 +1,5 @@
+- title "#{@person.display_name} - #{t('.title', current: t('current'), house: t('house'))}"
+
 %h1= "#{@person.display_name} - #{t('.title', current: t('current'), house: t('house'))}"
 
 - unless @house.nil?

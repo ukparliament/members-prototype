@@ -1,3 +1,5 @@
+- title "#{@house.name} - #{t('.title', current: t('current'), members: t('members'))}"
+
 %h1= "#{@house.name} - #{t('.title', current: t('current'), members: t('members'))}"
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_current_a_z_letter_path, id: @house.graph_id}
 %ul.list

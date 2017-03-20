@@ -1,5 +1,7 @@
+- page_title = title(@person.display_name)
+
 %section
-  %h1= @person.display_name
+  %h1= page_title
 
   - if @most_recent_incumbency.nil? || @most_recent_incumbency.house.name == 'House of Lords'
     %p.lead= @person.full_title

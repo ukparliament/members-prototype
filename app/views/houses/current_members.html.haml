@@ -1,4 +1,6 @@
-%h1= "#{@house.name} - #{t('.title', current: t('current'), members: t('members'))}"
+- page_title = title("#{@house.name} - #{t('.title', current: t('current'), members: t('members'))}")
+
+%h1= page_title
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_current_a_z_letter_path, id: @house.graph_id}
 %ul.list
   = render partial: 'pugin/cards/person-list', locals: { people: @people }

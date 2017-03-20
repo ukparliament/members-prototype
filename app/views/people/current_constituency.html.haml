@@ -1,4 +1,6 @@
-%h1= "#{@person.display_name} - #{t('.title', current: t('current'), constituency: t('constituency'))}"
+- page_title = title("#{@person.display_name} - #{t('.title', current: t('current'), constituency: t('constituency'))}")
+
+%h1= page_title
 
 - unless @constituency.nil?
   .block

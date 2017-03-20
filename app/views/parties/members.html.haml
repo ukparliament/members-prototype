@@ -1,3 +1,5 @@
-%h1= "#{@party.name} - #{t('.title', members: t('members'))} #{t('past_present')}"
+- page_title = title("#{@party.name} - #{t('.title', members: t('members'))} #{t('past_present')}")
+
+%h1= page_title
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :party_members_a_z_letter_path, id: @party.graph_id}
 = render 'members'

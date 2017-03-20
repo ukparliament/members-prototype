@@ -1,4 +1,6 @@
-%h1= t('.title')
+- page_title = title(t('.title'))
+
+%h1= page_title
 
 %ul
   - @meta_routes.each do |route|

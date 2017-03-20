@@ -1,7 +1,9 @@
 - if @house.graph_id == @commons_id
-  %h1= "#{@house.name} - #{t('.title', members: t('mps'))} #{t('past_present')}"
+  - page_title = title("#{@house.name} - #{t('.title', members: t('mps'))} #{t('past_present')}")
 - else
-  %h1= "#{@house.name} - #{t('.title', members: t('lords'))} #{t('past_present')}"
+  - page_title = title("#{@house.name} - #{t('.title', members: t('lords'))} #{t('past_present')}")
+
+%h1= page_title
 
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_a_z_letter_path, id: @house.graph_id}
 %ul.list

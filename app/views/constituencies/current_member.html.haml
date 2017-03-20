@@ -1,4 +1,6 @@
-%h1= "#{@constituency.name} - #{t('.title', current: t('current'), constituency: t('constituency'), member: t('member'))}"
+- page_title = title("#{@constituency.name} - #{t('.title', current: t('current'), constituency: t('constituency'), member: t('member'))}")
+
+%h1= page_title
 
 %p
   = "#{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?

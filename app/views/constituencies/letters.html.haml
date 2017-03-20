@@ -1,3 +1,5 @@
-%h1= "#{t('.title', constituencies: t('constituencies_title'))} #{t('past_present')}"
+- page_title = title(t('.title', constituencies: t('constituencies_title')) + ' ' + t('past_present'))
+
+%h1= page_title
 = render partial: 'shared/a_to_z', locals: { route_symbol: :constituencies_a_z_letter_path }
 = render 'constituencies/constituencies'

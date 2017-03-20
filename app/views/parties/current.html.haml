@@ -1,4 +1,6 @@
-%h1= t('.title', current: t('current'), parties: t('parties_title'))
+- page_title = title(t('.title', current: t('current'), parties: t('parties_title')))
+
+%h1= page_title
 
 = render 'party_list'
 %p= link_to(t('past_and_present_parties'), parties_path)

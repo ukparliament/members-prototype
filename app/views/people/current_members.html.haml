@@ -1,4 +1,6 @@
-%h1= t('.title', current: t('current'), members: t('members'))
+- page_title = title(t('.title', current: t('current'), members: t('members')))
+
+%h1= page_title
 = render partial: 'shared/a_to_z', locals: { route_symbol: :people_members_current_a_z_letter_path }
 = render partial: 'pugin/cards/person-list', locals: { people: @people }
 

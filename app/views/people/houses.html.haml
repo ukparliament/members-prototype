@@ -1,6 +1,6 @@
-- title "#{@person.display_name} - #{t('houses_title')} #{t('past_present')}"
+- page_title = title("#{@person.display_name} - #{t('houses_title')} #{t('past_present')}")
 
-%h1= "#{@person.display_name} - #{t('houses_title')} #{t('past_present')}"
+%h1= page_title
 
 - unless @incumbencies.empty?
   %ol.list

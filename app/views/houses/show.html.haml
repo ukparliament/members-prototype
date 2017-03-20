@@ -1,6 +1,6 @@
-- title @house.name
+- page_title = title(@house.name)
 
-%h1= @house.name
+%h1= page_title
 .block
   .list__item
     - if @house.graph_id == @commons_id

@@ -79,10 +79,10 @@ class HousesController < ApplicationController
 
     @house, @party = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Party')
 
-    raise ActionController::RoutingError, 'Invalid party id' if @party.first.nil?
-
     @house = @house.first
     @party = @party.first
+
+    raise ActionController::RoutingError, 'Invalid party id' if @party.nil?
   end
 
   def members_letters

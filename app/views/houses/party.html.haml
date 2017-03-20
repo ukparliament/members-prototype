@@ -1,6 +1,6 @@
-- title "#{@house.name} - #{@party.name}"
+- page_title = title("#{@house.name} - #{@party.name}")
 
-%h1= "#{@house.name} - #{@party.name}"
+%h1= page_title
 .block
   .list__item
     %h2= link_to("#{t('current')} #{t('members')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))

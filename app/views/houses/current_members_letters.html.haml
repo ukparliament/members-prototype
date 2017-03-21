@@ -6,8 +6,8 @@
 %h1= page_title
 
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_current_a_z_letter_path, id: @house.graph_id}
-%ul.list
-  = render partial: 'pugin/cards/person-list', locals: { people: @people }
+= render partial: 'pugin/cards/person-list', locals: { people: @people }
+
 .block
   - if HousesHelper.commons?(@house)
     %p= link_to(t('members_hol'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))

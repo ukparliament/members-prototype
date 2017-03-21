@@ -2,7 +2,7 @@
   %li.list__item
     %h2= link_to(party.name, house_parties_party_path(@house.graph_id, party.graph_id))
     = "(#{party.member_count} members)" unless party.member_count.nil?
--else
+- else
   %li.list__item
     .column__float--left-80
       %h2= link_to(party.name, house_parties_party_path(@house.graph_id, party.graph_id))

@@ -24,11 +24,10 @@ module HousesHelper
   private_class_method
 
   def self.set_ids
-    unless @commons_id && @lords_id
-      houses = Parliament::Request.new.houses.get.filter('http://id.ukpds.org/schema/House').sort_by(:name)
+    return if @commons_id && @lords_id
+    houses = Parliament::Request.new.houses.get.filter('http://id.ukpds.org/schema/House').sort_by(:name)
 
-      @commons_id = houses.first.graph_id
-      @lords_id = houses.last.graph_id
-    end
+    @commons_id = houses.first.graph_id
+    @lords_id = houses.last.graph_id
   end
 end

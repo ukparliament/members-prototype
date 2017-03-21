@@ -1,15 +1,14 @@
 - page_title = title("#{@constituency.name} - #{t('.title', current: t('current'), constituency: t('constituency'), member: t('member'))}")
-
 %h1= page_title
-
 %p
   = "#{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
   = @constituency.current? ? " to Present" : " to #{l(@constituency.end_date, format: :default)}"
 
-.block
-  .list__item--secondary
-    %h2= link_to @seat_incumbency.member.display_name, person_path(@seat_incumbency.member.graph_id)
-    %p= "#{l(@seat_incumbency.start_date, format: :default)} to Present" unless @seat_incumbency.start_date.nil?
+- unless @seat_incumbency.nil?
+  .block
+    .list__item--secondary
+      %h2= link_to @seat_incumbency.member.display_name, person_path(@seat_incumbency.member.graph_id)
+      %p= "#{l(@seat_incumbency.start_date, format: :default)} to Present" unless @seat_incumbency.start_date.nil?
 
 
 

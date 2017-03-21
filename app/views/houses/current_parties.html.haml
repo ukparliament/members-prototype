@@ -1,6 +1,7 @@
 - page_title = title("#{@house.name} - #{t('.title', current: t('current'), parties: t('parties_title'))}")
 
 %h1= page_title
+
 .block
   .link__tab
     - if HousesHelper.commons?(@house)

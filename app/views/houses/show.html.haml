@@ -1,6 +1,7 @@
 - page_title = title(@house.name)
 
 %h1= page_title
+
 .block
   .list__item
     - if HousesHelper.commons?(@house)
@@ -8,8 +9,8 @@
     - else
       %h2= link_to("#{t('current')} #{t('lords')}", house_members_current_a_z_letter_path(@house.graph_id, 'a'))
     %p= "#{t('.members')} #{@house.name}."
+
 .block
   .list__item
     %h2= link_to("#{t('current')} #{t('parties_title')}", house_parties_current_path(@house.graph_id))
     %p= "#{t('.parties')} #{@house.name}."
-

@@ -33,9 +33,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 209c5881-3f3d-4b75-88d1-5895cb2fe29c
+      - 95c9666f-8fc0-4406-bfb5-494994b32db2
       X-Runtime:
-      - '0.112968'
+      - '0.063685'
       Transfer-Encoding:
       - chunked
     body:
@@ -46,5 +46,5 @@ http_interactions:
         <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
         <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://id.ukpds.org/schema/houseName> "House of Lords" .
     http_version: 
-  recorded_at: Tue, 21 Mar 2017 15:10:46 GMT
+  recorded_at: Tue, 21 Mar 2017 15:11:59 GMT
 recorded_with: VCR 3.0.3

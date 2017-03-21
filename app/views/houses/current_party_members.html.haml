@@ -1,8 +1,9 @@
 - page_title = title("#{@house.name} - #{@party.name} #{t('.title', current: t('current'), members: t('members'))}")
 
 %h1= page_title
+
 = render partial: 'shared/iid_id_a_to_z', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, id: @house.graph_id, iid: @party.graph_id}
-%ul.list
-  = render partial: 'pugin/cards/person-list', locals: { people: @people }
+= render partial: 'pugin/cards/person-list', locals: { people: @people }
+
 .block
   %p= link_to(t('past_and_present_members'), house_parties_party_members_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))

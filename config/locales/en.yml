@@ -22,7 +22,7 @@
 en:
   date_of_birth: 'Date Of Birth'
   gender: 'Gender'
-  parties_title: 'Parties & Groups'
+  parties_title: 'Parties'
   party: 'Party'
   constituencies_title: 'Constituencies'
   constituency: 'Constituency'
@@ -44,8 +44,8 @@ en:
   coming_soon: 'Coming Soon'
   vcard_download: 'vCard:'
   past_and_present_members: 'View all past and present members'
-  past_and_present_members_commons: 'View all past and present members of the House of Commons'
-  past_and_present_members_lords: 'View all past and present members of the House of Lords'
+  past_and_present_members_commons: 'All current and former MPs'
+  past_and_present_members_lords: 'All current and former Lords'
   members_hol: 'Members of the House of Lords'
   members_commons: 'Members of the House of Commons'
   hol: 'House of Lords'
@@ -65,6 +65,7 @@ en:
   view_all_current: 'View all current'
   all_current: 'All current'
   commons: 'Commons'
+  the_speaker_of_the_house_of_commons: 'The Speaker of the House of Commons'
   time:
     formats:
       default: '%-d %b %Y'
@@ -134,8 +135,12 @@ en:
     index:
       all_parties_members: 'All parties and members of the'
     show:
+      mps: 'All current and former MPs'
+      lords: 'All current and former Lords'
       members: 'All current members of the'
       parties: 'All current parties in the'
+      members_all_commons: 'All current MPs'
+      members_all_lords: 'All current Lords'
   parties:
     index:
       title: ! '%{parties}'

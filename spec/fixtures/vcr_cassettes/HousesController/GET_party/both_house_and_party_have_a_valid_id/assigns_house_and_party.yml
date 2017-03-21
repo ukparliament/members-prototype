@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/parties/c5858995-6d25-4eb5-b92e-fba3fbd8ba47
+    uri: http://localhost:3030/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/parties/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d
     body:
       encoding: US-ASCII
       string: ''
@@ -29,13 +29,13 @@ http_interactions:
       Content-Type:
       - application/n-triples; charset=utf-8
       Etag:
-      - W/"4cc24f8728b657f376a5e77dbb649a09"
+      - W/"96206549b03ef7ded9087e493e81ad12"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0ebbbc86-081f-446e-a781-2ed37b5e4a47
+      - 7f1c73aa-4a05-440f-b893-660b9854c4a6
       X-Runtime:
-      - '0.718864'
+      - '0.705183'
       Transfer-Encoding:
       - chunked
     body:
@@ -43,9 +43,9 @@ http_interactions:
       string: |
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
-        <http://id.ukpds.org/c5858995-6d25-4eb5-b92e-fba3fbd8ba47> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
-        <http://id.ukpds.org/c5858995-6d25-4eb5-b92e-fba3fbd8ba47> <http://id.ukpds.org/schema/partyName> "Conservative" .
-        <http://id.ukpds.org/c5858995-6d25-4eb5-b92e-fba3fbd8ba47> <http://id.ukpds.org/schema/count> "330"^^<http://www.w3.org/2001/XMLSchema#integer> .
-    http_version: 
-  recorded_at: Mon, 20 Mar 2017 11:30:07 GMT
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/count> "229"^^<http://www.w3.org/2001/XMLSchema#integer> .
+    http_version:
+  recorded_at: Tue, 21 Mar 2017 13:34:13 GMT
 recorded_with: VCR 3.0.3

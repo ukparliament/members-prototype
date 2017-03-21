@@ -1,11 +1,14 @@
-- page_title = title("#{@house.name} - #{@party.name}")
+- page_title = title("#{@party.name} - #{@house.name}")
 
 %h1= page_title
 
 - if @party.member_count > 0
   .block
     .list__item
-      %h2= link_to("#{t('current')} #{t('members')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))
+      - if HousesHelper.commons?(@house)
+        %h2= link_to("#{t('current')} #{@party.name} #{t('mps')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))
+      - if HousesHelper.lords?(@house)
+        %h2= link_to("#{t('current')} #{@party.name} #{t('lords')}", house_parties_party_members_current_path(@house.graph_id, @party.graph_id))
       %p= "#{t('view_all_current')} #{@party.name} #{t('.party_members')}"
 
 - if @party.member_count == 0

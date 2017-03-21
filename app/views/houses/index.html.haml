@@ -1,9 +1,9 @@
 - page_title = title(t('houses_title'))
 
 %h1= page_title
+
 - @houses.each do |house|
   .block
     .list__item
       %h2= link_to(house.name, house_path(house.graph_id))
       %p= "#{t('.all_parties_members')} #{house.name}."
-      /%p= "#{t('current')} #{@party.name} #{t('.party_members')}"

@@ -156,9 +156,7 @@ en:
     a_to_z:
       title: ! '%{parties}'
     letters:
-      title: ! '%{parties} %{past_present}'
-    members:
-      title: ! '%{members}'
+      title: ! '%{parties} %{past_present}'    
     current:
       title: ! '%{current} %{parties_title}'
       current_and_former: ! '%{current_and_former} %{parties_title}'
@@ -166,6 +164,7 @@ en:
       party_members: 'party members.'
       past: 'All past'
     members:
+      title: ! '%{members}'
     a_to_z_members:
     members_letters:
       title: ! '%{members}'

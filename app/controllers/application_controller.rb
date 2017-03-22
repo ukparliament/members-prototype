@@ -1,12 +1,14 @@
 require 'vcard/vcard'
 require 'parliament'
 require 'houses_helper'
+require 'request_helper'
 
 # Base class for all other controllers
 class ApplicationController < ActionController::Base
   include VCardHelper
   include Parliament
   include HousesHelper
+  include RequestHelper
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

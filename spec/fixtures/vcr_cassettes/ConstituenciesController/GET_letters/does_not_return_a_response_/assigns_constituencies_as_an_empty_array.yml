@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"cc3f06f179a931ac33f1ac448df3750d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 55b02bbe-07de-48c1-9a62-1cb56574291e
+      X-Runtime:
+      - '0.561015'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node118430 <http://id.ukpds.org/schema/value> "M" .
+        _:node118431 <http://id.ukpds.org/schema/value> "B" .
+        _:node118432 <http://id.ukpds.org/schema/value> "A" .
+        _:node118433 <http://id.ukpds.org/schema/value> "C" .
+        _:node118434 <http://id.ukpds.org/schema/value> "D" .
+        _:node118435 <http://id.ukpds.org/schema/value> "E" .
+        _:node118436 <http://id.ukpds.org/schema/value> "G" .
+        _:node118437 <http://id.ukpds.org/schema/value> "H" .
+        _:node118438 <http://id.ukpds.org/schema/value> "I" .
+        _:node118439 <http://id.ukpds.org/schema/value> "L" .
+        _:node118440 <http://id.ukpds.org/schema/value> "K" .
+        _:node118441 <http://id.ukpds.org/schema/value> "N" .
+        _:node118442 <http://id.ukpds.org/schema/value> "F" .
+        _:node118443 <http://id.ukpds.org/schema/value> "P" .
+        _:node118444 <http://id.ukpds.org/schema/value> "R" .
+        _:node118445 <http://id.ukpds.org/schema/value> "S" .
+        _:node118446 <http://id.ukpds.org/schema/value> "O" .
+        _:node118447 <http://id.ukpds.org/schema/value> "W" .
+        _:node118448 <http://id.ukpds.org/schema/value> "T" .
+        _:node118449 <http://id.ukpds.org/schema/value> "J" .
+        _:node118450 <http://id.ukpds.org/schema/value> "Y" .
+        _:node118451 <http://id.ukpds.org/schema/value> "Q" .
+        _:node118452 <http://id.ukpds.org/schema/value> "U" .
+        _:node118453 <http://id.ukpds.org/schema/value> "V" .
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 17:05:29 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 8e1a3406-f3de-4763-a7eb-b64195d8892b
+      X-Runtime:
+      - '1.123733'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 17:05:30 GMT
+recorded_with: VCR 3.0.3

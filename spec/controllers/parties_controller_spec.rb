@@ -183,11 +183,26 @@ RSpec.describe PartiesController, vcr: true do
     it 'renders the letters template' do
       expect(response).to render_template('letters')
     end
+
+    context 'invalid parties' do
+      before(:each) do
+        get :letters, params: { letter: 'x' }
+      end
+
+      it 'should return a 200 status' do
+        expect(response).to have_http_status(200)
+      end
+
+      it 'should populate @parties with an empty array' do
+        expect(controller.instance_variable_get(:@parties)).to be_empty
+      end
+    end
+
   end
 
   describe 'GET members_letters' do
     before(:each) do
-      get :members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'a' }
+      get :members_letters, params: { party_id: 'f4e62fb8-2cf4-41b2-b7a3-7e621522a30d', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -206,8 +221,8 @@ RSpec.describe PartiesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1')
-      expect(assigns(:people)[1].given_name).to eq('Person 2')
+      expect(assigns(:people)[0].sort_name).to eq('Abbott, Ms Diane')
+      expect(assigns(:people)[1].sort_name).to eq('Abrahams, Debbie')
     end
 
     it 'renders the members_letters template' do
@@ -217,7 +232,7 @@ RSpec.describe PartiesController, vcr: true do
 
   describe 'GET current_members_letters' do
     before(:each) do
-      get :current_members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'c' }
+      get :current_members_letters, params: { party_id: 'f4e62fb8-2cf4-41b2-b7a3-7e621522a30d', letter: 'c' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -236,8 +251,8 @@ RSpec.describe PartiesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1')
-      expect(assigns(:people)[1].given_name).to eq('Person 2')
+      expect(assigns(:people)[0].sort_name).to eq('Cadbury, Ruth')
+      expect(assigns(:people)[1].sort_name).to eq('Campbell, Mr Alan')
     end
 
     it 'renders the current_members_letters template' do

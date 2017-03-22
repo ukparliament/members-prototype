@@ -1,0 +1,207 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/parties/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"2e39a2648618d3422c7e025328c79ca5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8fcf9ae2-e490-4c3d-bc40-ab6f8cedc8a0
+      X-Runtime:
+      - '0.892090'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node78905 <http://id.ukpds.org/schema/value> "L" .
+        _:node78906 <http://id.ukpds.org/schema/value> "C" .
+        _:node78907 <http://id.ukpds.org/schema/value> "S" .
+        _:node78908 <http://id.ukpds.org/schema/value> "I" .
+        _:node78909 <http://id.ukpds.org/schema/value> "N" .
+        _:node78910 <http://id.ukpds.org/schema/value> "O" .
+        _:node78911 <http://id.ukpds.org/schema/value> "P" .
+        _:node78912 <http://id.ukpds.org/schema/value> "A" .
+        _:node78913 <http://id.ukpds.org/schema/value> "D" .
+        _:node78914 <http://id.ukpds.org/schema/value> "R" .
+        _:node78915 <http://id.ukpds.org/schema/value> "U" .
+        _:node78916 <http://id.ukpds.org/schema/value> "B" .
+        _:node78917 <http://id.ukpds.org/schema/value> "G" .
+        _:node78918 <http://id.ukpds.org/schema/value> "V" .
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 17:25:58 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/parties/l
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"b6316fbddb8bb19756d045027b710c66"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 17a90e26-4ebf-40f1-b2f2-e64b91b3c3a6
+      X-Runtime:
+      - '1.074480'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
+        <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> <http://id.ukpds.org/schema/partyName> "Liberal Democrat" .
+        <http://id.ukpds.org/b8878666-5a8c-4644-bf63-f8beb4a5592b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/b8878666-5a8c-4644-bf63-f8beb4a5592b> <http://id.ukpds.org/schema/partyName> "Liberal" .
+        <http://id.ukpds.org/168e88b7-800d-47d2-94be-25f4a97ad056> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/168e88b7-800d-47d2-94be-25f4a97ad056> <http://id.ukpds.org/schema/partyName> "Labour Independent" .
+        <http://id.ukpds.org/e776b867-3fa0-46f6-a1f5-33db7ba31317> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/e776b867-3fa0-46f6-a1f5-33db7ba31317> <http://id.ukpds.org/schema/partyName> "Liberal Democrat Independent" .
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 17:26:00 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/parties/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"e2d139ff57915e1d112c0290f298f593"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 77caaf64-6773-40ea-b06b-4b66cfd1a7f4
+      X-Runtime:
+      - '0.763413'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node78919 <http://id.ukpds.org/schema/value> "L" .
+        _:node78920 <http://id.ukpds.org/schema/value> "C" .
+        _:node78921 <http://id.ukpds.org/schema/value> "S" .
+        _:node78922 <http://id.ukpds.org/schema/value> "I" .
+        _:node78923 <http://id.ukpds.org/schema/value> "N" .
+        _:node78924 <http://id.ukpds.org/schema/value> "O" .
+        _:node78925 <http://id.ukpds.org/schema/value> "P" .
+        _:node78926 <http://id.ukpds.org/schema/value> "A" .
+        _:node78927 <http://id.ukpds.org/schema/value> "D" .
+        _:node78928 <http://id.ukpds.org/schema/value> "R" .
+        _:node78929 <http://id.ukpds.org/schema/value> "U" .
+        _:node78930 <http://id.ukpds.org/schema/value> "B" .
+        _:node78931 <http://id.ukpds.org/schema/value> "G" .
+        _:node78932 <http://id.ukpds.org/schema/value> "V" .
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 17:26:00 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/parties/x
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - bfcac7ef-48b6-42cf-93ae-7761c093b90b
+      X-Runtime:
+      - '0.609779'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 17:26:01 GMT
+recorded_with: VCR 3.0.3

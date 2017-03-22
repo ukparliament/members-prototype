@@ -211,58 +211,90 @@ RSpec.describe ConstituenciesController, vcr: true do
   end
 
   describe 'GET letters' do
-    before(:each) do
-      get :letters, params: { letter: 'a' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @constituencies and @letters' do
-      assigns(:constituencies).each do |constituency|
-        expect(constituency).to be_a(Grom::Node)
-        expect(constituency.type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+    context 'returns a response' do
+      before(:each) do
+        get :letters, params: { letter: 'a' }
       end
 
-      expect(assigns(:letters)).to be_a(Array)
+      it 'should have a response with http status ok (200)' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'assigns @constituencies and @letters' do
+        assigns(:constituencies).each do |constituency|
+          expect(constituency).to be_a(Grom::Node)
+          expect(constituency.type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+        end
+
+        expect(assigns(:letters)).to be_a(Array)
+      end
+
+      it 'assigns @constituencies in alphabetical order' do
+        expect(assigns(:constituencies)[0].name).to eq('Aberavon')
+        expect(assigns(:constituencies)[1].name).to eq('Aberavon')
+      end
+
+      it 'renders the letters template' do
+        expect(response).to render_template('letters')
+      end
     end
 
-    it 'assigns @constituencies in alphabetical order' do
-      expect(assigns(:constituencies)[0].name).to eq('Aberavon')
-      expect(assigns(:constituencies)[1].name).to eq('Aberavon')
-    end
+    context 'does not return a response ' do
+      before(:each) do
+        get :letters, params: { letter: 'z' }
+      end
 
-    it 'renders the letters template' do
-      expect(response).to render_template('letters')
+      it 'returns a 200 response ' do
+        expect(response).to have_http_status(200)
+      end
+
+      it 'assigns @constituencies as an empty array' do
+        expect(controller.instance_variable_get(:@constituencies)).to be_empty
+      end
     end
   end
 
   describe 'GET current_letters' do
-    before(:each) do
-      get :current_letters, params: { letter: 'a' }
-    end
-
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @constituencies and @letters' do
-      assigns(:constituencies).each do |constituency|
-        expect(constituency).to be_a(Grom::Node)
-        expect(constituency.type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+    context 'returns a response ' do
+      before(:each) do
+        get :current_letters, params: { letter: 'a' }
       end
 
-      expect(assigns(:letters)).to be_a(Array)
+      it 'should have a response with http status ok (200)' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'assigns @constituencies and @letters' do
+        assigns(:constituencies).each do |constituency|
+          expect(constituency).to be_a(Grom::Node)
+          expect(constituency.type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+        end
+
+        expect(assigns(:letters)).to be_a(Array)
+      end
+
+      it 'assigns @constituencies in alphabetical order' do
+        expect(assigns(:constituencies)[0].name).to eq('Aberavon')
+        expect(assigns(:constituencies)[1].name).to eq('Aberconwy')
+      end
+
+      it 'renders the current_letters template' do
+        expect(response).to render_template('current_letters')
+      end
     end
 
-    it 'assigns @constituencies in alphabetical order' do
-      expect(assigns(:constituencies)[0].name).to eq('Aberdeen North')
-      expect(assigns(:constituencies)[1].name).to eq('Aldridge-Brownhills')
-    end
+    context 'does not return a response ' do
+      before(:each) do
+        get :letters, params: { letter: 'z' }
+      end
 
-    it 'renders the current_letters template' do
-      expect(response).to render_template('current_letters')
+      it 'returns a 200 response ' do
+        expect(response).to have_http_status(200)
+      end
+
+      it 'assigns @constituencies as an empty array' do
+        expect(controller.instance_variable_get(:@constituencies)).to be_empty
+      end
     end
   end
 

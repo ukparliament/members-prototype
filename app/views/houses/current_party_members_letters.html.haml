@@ -5,7 +5,7 @@
 = render partial: 'shared/iid_id_a_to_z', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, id: @house.graph_id, iid: @party.graph_id}
 
 -if @people.empty?
-  = render partial: 'shared/empty_list', locals: {title: t('no_content.empty_list.constituencies.title'), description: t('no_content.empty_list.constituencies.description')}
+  = render partial: 'shared/empty_list', locals: {title: nil, description: t('no_content.empty_list.constituencies.description', letter: params[:letter].upcase)}
 -else
   = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
 

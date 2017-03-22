@@ -22,7 +22,7 @@
 en:
   date_of_birth: 'Date Of Birth'
   gender: 'Gender'
-  parties_title: 'Parties'
+  parties_title: 'Parties and Groups'
   party: 'Party'
   constituencies_title: 'Constituencies'
   constituency: 'Constituency'
@@ -36,7 +36,7 @@ en:
   address: 'Address'
   addresses: 'Addresses'
   download: 'Download'
-  all_past_present: 'All past and present'
+  current_and_former: 'All current and former'
   members: 'Members'
   member: 'Member'
   current: 'Current'
@@ -58,7 +58,7 @@ en:
   current_constituency: 'Current Constituency'
   past_constituency: 'Past Constituency'
   past_members: 'Past members'
-  party_no_current_members: 'There are currently no members of this party in either House.'
+  party_no_current_members: 'There are no MPs or Lords in this party.'
   party_no_current_members_house: 'There are currently no members of this party in this House.'
   mps: 'MPs'
   lords: 'Lords'
@@ -67,6 +67,7 @@ en:
   commons: 'Commons'
   the_speaker_of_the_house_of_commons: 'The Speaker of the House of Commons'
   awaiting_by_election: 'Currently vacant seat - awaiting by-election'
+  former: 'former'
   time:
     formats:
       default: '%-d %b %Y'
@@ -144,22 +145,29 @@ en:
       members_all_lords: 'All current Lords'
   parties:
     index:
+      title: ! '%{current_and_former} %{parties}'
+    a_to_z:
       title: ! '%{parties}'
+    letters:
+      title: ! '%{parties} %{past_present}'
     members:
       title: ! '%{members}'
+    current:
+      title: ! '%{current} %{parties_title}'
+      current_and_former: ! '%{current_and_former} %{parties_title}'
+    show:
+      party_members: 'party members.'
+      past: 'All past'
+    members:
+    a_to_z_members:
     members_letters:
       title: ! '%{members}'
     current_members:
       title: ! '%{current} %{members}'
-    current:
-      title: ! '%{current} %{parties}'
-    letters:
-      title: ! '%{parties}'
+    a_to_z_current_members:
     current_members_letters:
       title: ! '%{current} %{members}'
-    show:
-      party_members: 'party members.'
-      past: 'All past'
+
   constituencies:
     index:
       title: ! '%{constituencies}'
@@ -183,21 +191,19 @@ en:
         description: "Sorry there are no results for '%{letter}'"
   home:
     index:
-      title: 'UK Parliament test website'
-      title-context: 'Welcome to beta.parliament.uk, a beta website for UK Parliament.'
-      beta-highlight-title: 'About this website'
-      beta-highlight-text-1: 'We’re building a new website for Parliament. These pages are being tested and improved – they may be inaccurate or misleading.'
-      beta-highlight-text-2: 'Test pages are separate from the current %{parliamentlink} website'
-      whats-on: "What's on our beta website"
+      title: 'Welcome to the UK Parliament test website'
+      title-context-1: 'We’re building a %{new_website_link}. These pages are being tested and improved – they may be inaccurate or misleading.'
+      title-context-2: 'Test pages are separate from the current %{parliamentlink} website.'
+      whats-on: "What's on our test website"
       members-info: 'Members Information'
-      feedback: 'Feedback'
+      feedback: 'Give feedback'
       feedback-text: ! 'We want %{feedbacklink} on these beta pages to help us improve them further.'
       follow: 'Follow our progress'
       follow-text: 'Follow all %{bloglink}.'
-      current-beta-pages: 'Current beta pages'
-      beta-pages-text-1: 'We’re creating a page for every MP and Lord, past and present.'
-      beta-pages-text-2: 'We currently have over 4000 member pages, dating back to the 1940s.'
-      beta-pages-text-3: ! 'Find contact details and election history for %{current_mps}.'
+      current_mps: 'All current members of the House of Commons'
+      current_lords: 'All current members of the House of Lords'
+      current_constituencies: 'Find current MPs by the area they represent'
+      current_parties_groups: 'Find current MPs and Lords by their party or group'
       links:
          people: ! '%{people}'
          constituencies: ! '%{constituencies}'
@@ -211,6 +217,7 @@ en:
          members: 'MPs'
          parties: 'Parties and groups'
          constituencies: '%{constituencies}'
+         new_website: 'new website for Parliament'
   meta:
     index:
       title: 'Meta information'

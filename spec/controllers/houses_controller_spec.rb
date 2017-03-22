@@ -37,6 +37,11 @@ RSpec.describe HousesController, vcr: true do
       expect(response).to have_http_status(302)
     end
 
+    it 'assigns @house' do
+      expect(assigns(:house)).to be_a(Grom::Node)
+      expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
+    end
+
     it 'redirects to houses/:id' do
       expect(response).to redirect_to(house_path('9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703'))
     end
@@ -133,6 +138,7 @@ RSpec.describe HousesController, vcr: true do
     it 'assigns @house and @parties' do
       expect(assigns(:house)).to be_a(Grom::Node)
       expect(assigns(:house).type).to eq('http://id.ukpds.org/schema/House')
+
       assigns(:parties).each do |party|
         expect(party).to be_a(Grom::Node)
         expect(party.type).to eq('http://id.ukpds.org/schema/Party')
@@ -303,7 +309,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET party_members_letters" do
     before(:each) do
-      get :party_members_letters, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980', letter: 't'}
+      get :party_members_letters, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980', letter: 't' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -472,7 +478,7 @@ RSpec.describe HousesController, vcr: true do
   describe 'GET lookup_by_letters' do
     context 'it returns multiple results' do
       before(:each) do
-        get :lookup_by_letters, params: {letters: 'house'}
+        get :lookup_by_letters, params: { letters: 'house' }
       end
 
       it 'should have a response with http status redirect (302)' do

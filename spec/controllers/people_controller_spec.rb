@@ -39,6 +39,11 @@ RSpec.describe PeopleController, vcr: true do
       expect(response).to have_http_status(302)
     end
 
+    it 'assigns @person' do
+      expect(assigns(:person)).to be_a(Grom::Node)
+      expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+    end
+
     it 'redirects to people/:id' do
       expect(response).to redirect_to(person_path('581ade57-3805-4a4a-82c9-8d622cb352a4'))
     end
@@ -53,9 +58,30 @@ RSpec.describe PeopleController, vcr: true do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'assigns @person' do
+    it 'assigns @person, @seat_incumbencies, @house_incumbencies, @current_party_membership,
+    @most_recent_incumbency and @current_incumbency' do
       expect(assigns(:person)).to be_a(Grom::Node)
       expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+
+      assigns(:seat_incumbencies).each do |seat_incumbency|
+        expect(seat_incumbency).to be_a(Grom::Node)
+        expect(seat_incumbency.type).to eq('http://id.ukpds.org/schema/SeatIncumbency')
+      end
+
+      assigns(:house_incumbencies).each do |house_incumbency|
+        expect(house_incumbency).to be_a(Grom::Node)
+        expect(house_incumbency.type).to eq('http://id.ukpds.org/schema/HouseIncumbency')
+      end
+
+      expect(assigns(:current_party_membership)).to be_a(Grom::Node)
+      expect(assigns(:current_party_membership).type).to eq('http://id.ukpds.org/schema/PartyMembership')
+      expect(assigns(:current_party_membership).current?).to be(true)
+
+      expect(assigns(:most_recent_incumbency)).to be_a(Grom::Node)
+      expect(assigns(:most_recent_incumbency).end_date).to be(nil)
+
+      expect(assigns(:current_incumbency)).to be_a(Grom::Node)
+      expect(assigns(:current_incumbency).current?).to be(true)
     end
 
     it 'renders the show template' do
@@ -121,7 +147,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET contact_points" do
     before(:each) do
-      get :contact_points, params: {person_id: '08a3dfac-652a-44d6-8a43-00bb13c60e47'}
+      get :contact_points, params: { person_id: '08a3dfac-652a-44d6-8a43-00bb13c60e47' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -154,6 +180,7 @@ RSpec.describe PeopleController, vcr: true do
     it 'assigns @person and @party_memberships' do
       expect(assigns(:person)).to be_a(Grom::Node)
       expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+
       assigns(:party_memberships).each do |party_membership|
         expect(party_membership).to be_a(Grom::Node)
         expect(party_membership.type).to eq('http://id.ukpds.org/schema/PartyMembership')
@@ -172,7 +199,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_party" do
     before(:each) do
-      get :current_party, params: {person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff'}
+      get :current_party, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -193,7 +220,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET constituencies" do
     before(:each) do
-      get :constituencies, params: {person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff'}
+      get :constituencies, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -221,7 +248,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_constituency" do
     before(:each) do
-      get :current_constituency, params: {person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5'}
+      get :current_constituency, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -242,7 +269,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET houses" do
     before(:each) do
-      get :houses, params: {person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5'}
+      get :houses, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -252,6 +279,7 @@ RSpec.describe PeopleController, vcr: true do
     it 'assigns @person and @incumbencies' do
       expect(assigns(:person)).to be_a(Grom::Node)
       expect(assigns(:person).type).to eq('http://id.ukpds.org/schema/Person')
+
       assigns(:incumbencies).each do |incumbency|
         expect(incumbency).to be_a(Grom::Node)
         expect(incumbency.type).to eq('http://id.ukpds.org/schema/Incumbency')
@@ -270,7 +298,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_house" do
     before(:each) do
-      get :current_house, params: {person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5'}
+      get :current_house, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -291,18 +319,20 @@ RSpec.describe PeopleController, vcr: true do
 
   describe 'GET letters' do
     before(:each) do
-      get :letters, params: {letter: 't'}
+      get :letters, params: { letter: 't' }
     end
 
     it 'should have a response with http status ok (200)' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'assigns @people' do
+    it 'assigns @people and @letters' do
       assigns(:people).each do |person|
         expect(person).to be_a(Grom::Node)
         expect(person.type).to eq('http://id.ukpds.org/schema/Person')
       end
+
+      expect(assigns(:letters)).to be_a(Array)
     end
 
     it 'assigns @people in alphabetical order' do
@@ -317,7 +347,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET members_letters" do
     before(:each) do
-      get :members_letters, params: {letter: "t"}
+      get :members_letters, params: { letter: 't' }
     end
 
     it 'should have a response with http status ok (200)' do

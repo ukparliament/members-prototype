@@ -4,6 +4,6 @@
       %ul
         %li= link_to(constituency.name, constituency_path(constituency.graph_id))
         - if constituency.members.empty?
-          %li= t('awaiting_by_election')
+          %li= t('vacant_by_election')
         - else
           %li= constituency.members.first.display_name

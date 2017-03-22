@@ -69,8 +69,8 @@ en:
   all_current: 'All current'
   commons: 'Commons'
   the_speaker_of_the_house_of_commons: 'The Speaker of the House of Commons'
-  awaiting_by_election: 'Currently vacant seat - awaiting by-election'
   former: 'former'
+  vacant_by_election: 'Vacant until by-election'
   time:
     formats:
       default: '%-d %b %Y'

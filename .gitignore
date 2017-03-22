@@ -26,3 +26,6 @@ passenger.3000.pid
 .env.sample.*
 
 /spec/examples.txt
+
+.yardoc
+/doc/

@@ -189,6 +189,14 @@ RSpec.describe PartiesController, vcr: true do
         expect(response).to render_template('letters')
       end
     end
+
+    context 'invalid parties' do
+      it 'should return a 204 error' do
+        get :letters, params: { letter: 'x' }
+        expect(response).to have_http_status(204)
+      end
+    end
+
   end
 
   describe 'GET members_letters' do
@@ -221,6 +229,13 @@ RSpec.describe PartiesController, vcr: true do
         expect(response).to render_template('members_letters')
       end
     end
+
+    context 'members for fake party with wrong letter' do
+      it 'should have a response of 204' do
+          get :members_letters, params: {party_id: 'FAKE_ID', letter: 'x'}
+          expect(response).to have_http_status(204)
+      end
+    end
   end
 
   describe 'GET current_members_letters' do
@@ -251,6 +266,13 @@ RSpec.describe PartiesController, vcr: true do
 
       it 'renders the current_members_letters template' do
         expect(response).to render_template('current_members_letters')
+      end
+    end
+
+    context 'members for fake party with invalid letter' do
+      it 'should have a response of 204' do
+        get :current_members_letters, params: {party_id: 'FAKE_ID', letter: 'x'}
+        expect(response).to have_http_status(204)
       end
     end
   end

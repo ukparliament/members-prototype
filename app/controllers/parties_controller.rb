@@ -54,37 +54,43 @@ class PartiesController < ApplicationController
   def letters
     letter = params[:letter]
 
-    data = Parliament::Request.new.parties(letter).get
     letter_data = Parliament::Request.new.parties.a_z_letters.get
-
-    @parties = data.filter('http://id.ukpds.org/schema/Party').sort_by(:name)
     @letters = letter_data.map(&:value)
+
+    request = Parliament::Request.new.parties(letter)
+    response = RequestHelper.handler(request) { @people = [] }
+
+    @parties = response[:response].filter('http://id.ukpds.org/schema/Party').sort_by(:name) if response[:success]
+
   end
 
   def members_letters
     letter = params[:letter]
     party_id = params[:party_id]
 
-    data = Parliament::Request.new.parties(party_id).members(letter).get
     letter_data = Parliament::Request.new.parties(party_id).members.a_z_letters.get
+    @letters = letter_data.map(&:value)
 
-    @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
+    request = Parliament::Request.new.parties(party_id).members(letter)
+    response = RequestHelper.handler(request) { @people = [] }
+    @party, @people = response[:response].filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person') if response[:success]
     @party = @party.first
     @people = @people.sort_by(:sort_name)
-    @letters = letter_data.map(&:value)
   end
 
   def current_members_letters
     letter = params[:letter]
     party_id = params[:party_id]
 
-    data = Parliament::Request.new.parties(party_id).members.current(letter).get
     letter_data = Parliament::Request.new.parties(party_id).members.current.a_z_letters.get
 
-    @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
+    @letters = letter_data.map(&:value)
+    request = Parliament::Request.new.parties(party_id).members.current(letter)
+    response = RequestHelper.handler(request) { @people = [] }
+
+    @party, @people = response[:response].filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person') if response[:success]
     @party = @party.first
     @people = @people.sort_by(:sort_name)
-    @letters = letter_data.map(&:value)
   end
 
   def a_to_z

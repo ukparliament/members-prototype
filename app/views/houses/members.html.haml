@@ -1,7 +1,7 @@
-- if @house.graph_id == @commons_id
-  - page_title = title("#{@house.name} - #{t('.title', members: t('mps'))} #{t('past_present')}")
+- if HousesHelper.commons?(@house)
+  - page_title = title(t('.title', members: t('mps'), current_and_former_2: t('current_and_former_2')))
 - else
-  - page_title = title("#{@house.name} - #{t('.title', members: t('lords'))} #{t('past_present')}")
+  - page_title = title(t('.title', members: t('lords'), current_and_former_2: t('current_and_former_2')))
 
 %h1= page_title
 

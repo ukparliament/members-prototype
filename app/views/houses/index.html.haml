@@ -6,4 +6,7 @@
   .block
     .list__item
       %h2= link_to(house.name, house_path(house.graph_id))
-      %p= "#{t('.all_parties_members')} #{house.name}."
+      - if HousesHelper.commons?(house)
+        %p= t('.all_mps_info')
+      - else
+        %p= t('.all_lords_info')

@@ -9,7 +9,7 @@
       - if party.name === "Speaker"
         %p= "#{t('the_speaker_of_the_house_of_commons')}"
       - else
-        %p= "#{t('all_current')} #{party.name} #{HousesHelper.commons?(@house) ? t('mps') : t('lords').downcase}"
+        %p= "#{t('all_current')} #{party.name} #{HousesHelper.commons?(@house) ? t('mps') : t('lords')}"
     .column__float--right-20
       %p
         = party.member_count

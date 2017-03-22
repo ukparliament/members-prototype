@@ -23,6 +23,7 @@ en:
   date_of_birth: 'Date Of Birth'
   gender: 'Gender'
   parties_title: 'Parties and Groups'
+  parties_title_2: 'Parties'
   party: 'Party'
   constituencies_title: 'Constituencies'
   constituency: 'Constituency'
@@ -69,6 +70,7 @@ en:
   all_current: 'All current'
   commons: 'Commons'
   the_speaker_of_the_house_of_commons: 'The Speaker of the House of Commons'
+  awaiting_by_election: 'Currently vacant seat - awaiting by-election'
   former: 'former'
   vacant_by_election: 'Vacant until by-election'
   time:
@@ -118,7 +120,7 @@ en:
       title: ! '%{current} %{mps_and_lords}'
   houses:
     members:
-      title: ! '%{members}'
+      title: ! '%{current_and_former_2} %{members}'
     current_members:
       title: ! '%{current} %{members}'
     party_members:
@@ -139,12 +141,13 @@ en:
       party_members: 'party members.'
       past: 'All past'
     index:
-      all_parties_members: 'All parties and members of the'
+      all_mps_info: 'MPs, parties and constituencies in the House of Commons'
+      all_lords_info: 'Lords, parties and groups in the House of Lords'
     show:
       mps: 'All current and former MPs'
       lords: 'All current and former Lords'
       members: 'All current members of the'
-      parties: 'All current parties in the'
+      parties: 'All current parties and groups in the'
       members_all_commons: 'All current MPs'
       members_all_lords: 'All current Lords'
   parties:

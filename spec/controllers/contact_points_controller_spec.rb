@@ -29,7 +29,7 @@ RSpec.describe ContactPointsController, vcr: true do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'assigns @contact' do
+    it 'assigns @contact_point' do
       get :show, params: { contact_point_id: 'a11425ca-6a47-4170-80b9-d6e9f3800a52' }
       expect(assigns(:contact_point)).to be_a(Grom::Node)
       expect(assigns(:contact_point).type).to eq('http://id.ukpds.org/schema/ContactPoint')

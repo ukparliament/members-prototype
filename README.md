@@ -1,5 +1,5 @@
 # Parliament.uk prototype
-Parliament.uk prototype is a [Rails 5][rails] application designed to be the beginnings of a new [parliament.uk][parliament] website and api.
+Parliament.uk prototype is a [Rails 5][rails] application designed to be the beginnings of a new [parliament.uk][parliament] website and API.
 
 [![License][shield-license]][info-license]
 
@@ -36,28 +36,28 @@ cp .env.sample .env
 ```
 
 ### Running the application
-There are two options for running the parliament.uk prototype, either with a local version of the member api at the same time, or as a standalone rails application.
+There are two options for running the parliament.uk prototype, either with a local version of the member API at the same time, or as a standalone rails application.
 
 #### Member Service API?
-Along with this prototype there is a paired [member-service-api][member-service-api] project. This api's role is to consume data from a triple store and generate .ttl files which our parliament.uk prototype can consume.
+Along with this prototype there is a paired [member-service-api][member-service-api] project. This API's role is to consume data from a triple store and generate .ttl files which our parliament.uk prototype can consume.
 
 #### Running with Foreman and a Local Version of the API
-> **NOTE:** In order to use [foreman][foreman] to run the api and application together, we are assuming you have the [member-service-api][member-service-api] project cloned and set-up in the same location as the parliament.uk-prototype project. For example, your folders should look something like the following:
+> **NOTE:** In order to use [foreman][foreman] to run the API and application together, we are assuming you have the [member-service-api][member-service-api] project cloned and set-up in the same location as the parliament.uk-prototype project. For example, your folders should look something like the following:
 > ```
 > /                         (projects root)
 > /parliament.uk-prototype/ (prototype)
 > /member-service-api/      (api)
 > ```
-> With this setup, foreman runs the api directly from within the member-service-api directory.
+> With this setup, foreman runs the API directly from within the member-service-api directory.
 
 ```bash
 bundle exec foreman start
 ```
 
-The application and api should now be viewable in your local browser at http://localhost:3000 (application) and http://localhost:3030 (api). With this setup, you can make changes to the local api repository and test them right away.
+The application and API should now be viewable in your local browser at http://localhost:3000 (application) and http://localhost:3030 (API). With this setup, you can make changes to the local API repository and test them right away.
 
 ##### Foreman?
-[Foreman][foreman] allows us to run multiple applications concurrently, making local development of the Parliament.uk prototype much faster. Using foreman you can make changes to both the member-api and prototype in tandem without the need for deployment delays.
+[Foreman][foreman] allows us to run multiple applications concurrently, making local development of the Parliament.uk prototype much faster. Using foreman you can make changes to both the member-service-api and prototype in tandem without the need for deployment delays.
 
 
 #### Running the application standalone, without an API

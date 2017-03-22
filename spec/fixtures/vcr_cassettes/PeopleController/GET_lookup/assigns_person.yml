@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people/lookup?id=3898&source=mnisId
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"cef63e03e8318b86a5ac9edfcea4cec2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8e634f07-b3fc-4006-b153-b3a0285a0a6e
+      X-Runtime:
+      - '0.062490'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "<http://id.ukpds.org/f5812d52-e221-4a51-a167-e74c84995ecb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Person> .\n"
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 14:07:14 GMT
+recorded_with: VCR 3.0.3

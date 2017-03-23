@@ -90,22 +90,17 @@ class ConstituenciesController < ApplicationController
 
     request = Parliament::Request.new.constituencies(letter)
     response = RequestHelper.handler(request) { @constituencies = [] }
-
     @constituencies = response[:response].sort_by(:name) if response[:success]
-
   end
 
   def current_letters
     letter = params[:letter]
-
     letter_data = Parliament::Request.new.constituencies.current.a_z_letters.get
     @letters = letter_data.map(&:value)
 
     request = Parliament::Request.new.constituencies.current(letter)
     response = RequestHelper.handler(request) { @constituencies = [] }
-
-    @constituencies = response[:response].filter('http://id.ukpds.org/schema/ConstituencyGroup')
-    @constituencies = @constituencies.sort_by(:name) if response[:success]
+    @constituencies = response[:response].filter('http://id.ukpds.org/schema/ConstituencyGroup').sort_by(:name) if response[:success]
 
   end
 

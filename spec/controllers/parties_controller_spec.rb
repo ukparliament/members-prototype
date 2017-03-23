@@ -191,9 +191,8 @@ RSpec.describe PartiesController, vcr: true do
     end
 
     context 'invalid parties' do
-      it 'should return a 204 error' do
-        get :letters, params: { letter: 'x' }
-        expect(response).to have_http_status(204)
+      it 'raises an ActionController::RoutingError' do
+        expect { get :letters, params: { letter: 'x'} }.to raise_error(ActionController::RoutingError)
       end
     end
 
@@ -230,10 +229,9 @@ RSpec.describe PartiesController, vcr: true do
       end
     end
 
-    context 'members for fake party with wrong letter' do
-      it 'should have a response of 204' do
-          get :members_letters, params: {party_id: 'FAKE_ID', letter: 'x'}
-          expect(response).to have_http_status(204)
+    context 'members for valid party with letter that produces no content' do
+      it 'raises an ActionController::RoutingError' do
+        expect { get :members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'x'} }.to raise_error(ActionController::RoutingError)
       end
     end
   end
@@ -270,9 +268,8 @@ RSpec.describe PartiesController, vcr: true do
     end
 
     context 'members for fake party with invalid letter' do
-      it 'should have a response of 204' do
-        get :current_members_letters, params: {party_id: 'FAKE_ID', letter: 'x'}
-        expect(response).to have_http_status(204)
+      it 'raises an ActionController::RoutingError' do
+        expect { get :current_members_letters, params: { party_id: 'FAKE_ID', letter: 'a'} }.to raise_error(ActionController::RoutingError)
       end
     end
   end

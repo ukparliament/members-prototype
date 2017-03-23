@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   layout 'pugin/layouts/pugin'
 
-  rescue_from Parliament::NoContentError do |error|
+  rescue_from Parliament::NoContentResponseError do |error|
     raise ActionController::RoutingError, error.message
   end
 end

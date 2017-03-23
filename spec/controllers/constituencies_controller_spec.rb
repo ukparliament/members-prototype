@@ -224,9 +224,8 @@ RSpec.describe ConstituenciesController, vcr: true do
     end
 
     context 'does not return a response ' do
-      it 'returns a 204 response ' do
-        get :letters, params: { letter: 'z' }
-        expect(response).to have_http_status(204)
+      it 'and raises an ActionController::RoutingError' do
+        expect { get :letters, params: { letter: 'z'} }.to raise_error(ActionController::RoutingError)
       end
     end
   end
@@ -261,9 +260,8 @@ RSpec.describe ConstituenciesController, vcr: true do
     end
 
     context 'does not return a response ' do
-      it 'returns a 204 response ' do
-        get :current_letters, params: { letter: 'z' }
-        expect(response).to have_http_status(204)
+      it 'and raises an ActionController::RoutingError' do
+        expect { get :current_letters, params: { letter: 'x'} }.to raise_error(ActionController::RoutingError)
       end
     end
   end

@@ -14,22 +14,47 @@
           %p.lead
             = t('.mp_for')
             = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
-          - if !@person.statuses[:house_membership_status].empty? && !@person.statuses[:house_membership_status].include?('Current MP')
-            %p= @person.statuses[:house_membership_status].join(' and ')
+          - if !@person.statuses[:house_membership_status].empty? && @person.statuses[:house_membership_status].include?('Former Lord')
+            %p
+              = link_to("#{t('view_all_current')} #{t('mps')}", house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
+              = " / "
+              = link_to("#{t('view_all_2')} #{t('lords')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
+          -else
+            %p= link_to("#{t('view_all_current')} #{t('mps')}", house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
         - else
           %p.lead
-            = @person.statuses[:house_membership_status].join(' and ')
+            - if @person.statuses[:house_membership_status].include?('Lord')
+              - if @person.statuses[:house_membership_status].include?('Former MP')
+                = @person.statuses[:house_membership_status].join(' and ')
+                %p
+                  = link_to("#{t('view_all_current')} #{t('lords')}", house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
+                  = " / "
+                  = link_to("#{t('view_all_2')} #{t('mps')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
+              - else
+                = @person.statuses[:house_membership_status].join(' and ')
+                %p= link_to("#{t('all_current')} #{t('lords')}", house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
+            - else
+              - if @person.statuses[:house_membership_status].include?('Former MP')
+                - if @person.statuses[:house_membership_status].include?('Former Lord')
+                  = @person.statuses[:house_membership_status].join(' and ')
+                  %p
+                    = link_to("#{t('view_all_2')} #{t('lords')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
+                    = " / "
+                    = link_to("#{t('view_all_2')} #{t('mps')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
+                - else
+                  = @person.statuses[:house_membership_status].join(' and ')
+                  %p
+                    = link_to("#{t('view_all_2')} #{t('mps')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
+              - else
+                = @person.statuses[:house_membership_status].join(' and ')
+                %p
+                  = link_to("#{t('view_all_2')} #{t('lords')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
       - if @current_party_membership && @current_incumbency
         .block--border
-          %p.lead= @current_party_membership.party.name
-          .line-break-heavy
-          - if @person.statuses[:house_membership_status].include?('Current MP')
-            %p= link_to("#{t('.view_all')} #{@current_party_membership.party.name} #{t('mps')}", house_parties_party_members_current_a_z_letter_path(@current_incumbency.house.graph_id,@current_party_membership.party.graph_id, 'a'))
-          - else
-            %p= link_to("#{t('.view_all')} #{@current_party_membership.party.name} #{t('lords')}", house_parties_party_members_current_a_z_letter_path(@current_incumbency.house.graph_id,@current_party_membership.party.graph_id, 'a'))
+          %p.lead= link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
 - if @current_incumbency && @current_party_membership
   %section.block--top
-    %h2= t('.contact_title')
+    %h2= "#{t('.contact_title')} #{@person.display_name}"
     - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Lord')
       -# .block
         -# .highlight__box
@@ -67,27 +92,27 @@
 
 - if @house_incumbencies.present? || @seat_incumbencies.present?
   %section.block--top
-    %h2= t('.membership_history')
-    .block
-      - if @house_incumbencies.present?
-        %h3= t('.hol')
-        %ol.list
-          - @house_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |house_incumbency|
-            %li.list__item--secondary
-              %ul
-                %li
-                  = "#{l(house_incumbency.start_date, format: :default)}" unless house_incumbency.start_date.nil?
-                  = house_incumbency.current? ? " to Present" : " to #{l(house_incumbency.end_date, format: :default)}"
+    - if @house_incumbencies.present?
+      %h2= t('.membership_history')
+      %h3= t('.hol')
+      %ol.list
+        - @house_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |house_incumbency|
+          %li.list__item--secondary
+            %ul
+              %li
+                = "#{l(house_incumbency.start_date, format: :default)}" unless house_incumbency.start_date.nil?
+                = house_incumbency.current? ? " to Present" : " to #{l(house_incumbency.end_date, format: :default)}"
 
-      - if @seat_incumbencies.present?
-        %h3= t('.hoc')
-        %ol.list
-          - @seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
-            %li.list__item--secondary
-              %ul
-                %li
-                  = t('.mp_for')
-                  = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
-                %li
-                  = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
-                  = seat_incumbency.current? ? " to Present" : " to #{l(seat_incumbency.end_date, format: :default)}"
+    - if @seat_incumbencies.present?
+      %h2= t('.election_history')
+      %h3= t('.hoc')
+      %ol.list
+        - @seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
+          %li.list__item--secondary
+            %ul
+              %li
+                = t('.mp_for')
+                = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
+              %li
+                = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
+                = seat_incumbency.current? ? " to Present" : " to #{l(seat_incumbency.end_date, format: :default)}"

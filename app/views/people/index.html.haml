@@ -1,4 +1,4 @@
-- page_title = title(t('.title', people: t('people_title')) + ' ' + t('past_present'))
+- page_title = title(t('.title', mps_and_lords: t('mps_and_lords'), current_and_former_2: t('current_and_former_2')))
 
 %h1= page_title
 = render partial: 'shared/a_to_z', locals: { route_symbol: :people_a_z_letter_path }

@@ -37,6 +37,7 @@ en:
   addresses: 'Addresses'
   download: 'Download'
   current_and_former: 'All current and former'
+  current_and_former_2: 'Current and former'
   members: 'Members'
   member: 'Member'
   current: 'Current'
@@ -62,7 +63,9 @@ en:
   party_no_current_members_house: 'There are currently no members of this party in this House.'
   mps: 'MPs'
   lords: 'Lords'
+  mps_and_lords: 'MPs and Lords'
   view_all_current: 'View all current'
+  view_all_2: 'View all'
   all_current: 'All current'
   commons: 'Commons'
   the_speaker_of_the_house_of_commons: 'The Speaker of the House of Commons'
@@ -75,7 +78,7 @@ en:
     aria_label: 'Paged navigation'
   people:
     index:
-      title: ! '%{people}'
+      title: ! '%{current_and_former_2} %{mps_and_lords}'
     show:
       mp_for: 'MP for'
       view_all: 'View all current'
@@ -85,11 +88,12 @@ en:
       lord_representative: 'Lords can be contacted about issues that are the responsibility of Parliament but do not represent constituencies.'
       who_to_contact: 'Find out who to contact with your issue'
       empty_contact_details: 'There is currently no contact information available for this person.'
-      contact_title: 'Contact Details'
+      contact_title: 'Contact'
       email: ! '%{email}:'
       phone: ! '%{phone}:'
       address: ! '%{address}:'
       membership_history: 'Membership History'
+      election_history: 'Election History'
       empty_election_history: 'There is currently no election information available for this person.'
       hol: 'Lord'
       hoc: 'MP'
@@ -97,9 +101,9 @@ en:
         contact_mp: "when an MP can help you and when they can't"
         contact_lord: 'Who should I contact with my issue?'
     members:
-      title: ! '%{members}'
+      title: ! '%{current_and_former_2} %{mps_and_lords}'
     current_members:
-      title: ! '%{current} %{members}'
+      title: ! '%{current} %{mps_and_lords}'
     current_party:
       title: ! '%{current} %{party}'
     current_constituency:
@@ -107,11 +111,11 @@ en:
     current_house:
       title: ! '%{current} %{house}'
     letters:
-      title: ! '%{people}'
+      title: ! '%{current_and_former_2} %{mps_and_lords}'
     members_letters:
-      title: ! '%{members}'
+      title: ! '%{current_and_former_2} %{mps_and_lords}'
     current_members_letters:
-      title: ! '%{current} %{members}'
+      title: ! '%{current} %{mps_and_lords}'
   houses:
     members:
       title: ! '%{members}'
@@ -167,7 +171,6 @@ en:
     a_to_z_current_members:
     current_members_letters:
       title: ! '%{current} %{members}'
-
   constituencies:
     index:
       title: ! '%{constituencies}'

@@ -1,0 +1,182 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people/members/current/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"ec1eae8c64586eb1fbe4cad8d5c1f043"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d66eb2e5-4348-4ca7-bfdb-b09e84d96793
+      X-Runtime:
+      - '0.227200'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node62682 <http://id.ukpds.org/schema/value> "B" .
+        _:node62683 <http://id.ukpds.org/schema/value> "A" .
+        _:node62684 <http://id.ukpds.org/schema/value> "E" .
+        _:node62685 <http://id.ukpds.org/schema/value> "H" .
+        _:node62686 <http://id.ukpds.org/schema/value> "P" .
+        _:node62687 <http://id.ukpds.org/schema/value> "S" .
+        _:node62688 <http://id.ukpds.org/schema/value> "L" .
+        _:node62689 <http://id.ukpds.org/schema/value> "N" .
+        _:node62690 <http://id.ukpds.org/schema/value> "G" .
+        _:node62691 <http://id.ukpds.org/schema/value> "C" .
+        _:node62692 <http://id.ukpds.org/schema/value> "F" .
+        _:node62693 <http://id.ukpds.org/schema/value> "R" .
+        _:node62694 <http://id.ukpds.org/schema/value> "I" .
+        _:node62695 <http://id.ukpds.org/schema/value> "M" .
+        _:node62696 <http://id.ukpds.org/schema/value> "Q" .
+        _:node62697 <http://id.ukpds.org/schema/value> "D" .
+        _:node62698 <http://id.ukpds.org/schema/value> "J" .
+        _:node62699 <http://id.ukpds.org/schema/value> "K" .
+        _:node62700 <http://id.ukpds.org/schema/value> "W" .
+        _:node62701 <http://id.ukpds.org/schema/value> "O" .
+        _:node62702 <http://id.ukpds.org/schema/value> "T" .
+        _:node62703 <http://id.ukpds.org/schema/value> "V" .
+        _:node62704 <http://id.ukpds.org/schema/value> "Y" .
+        _:node62705 <http://id.ukpds.org/schema/value> "U" .
+        _:node62706 <http://id.ukpds.org/schema/value> "Z" .
+    http_version:
+  recorded_at: Thu, 23 Mar 2017 09:27:36 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/people/members/current/t
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"43da5b1b73f93d82f856a6fb86e0c261"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 30503ab9-a487-415b-964b-af2073825521
+      X-Runtime:
+      - '0.562382'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://id.ukpds.org/schema/personGivenName> "Person 1 - givenName" .
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://id.ukpds.org/schema/personFamilyName> "Person 1 - familyName" .
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/3a72299b-be6e-4e13-bf84-8b02428a43f5> .
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/2c8bb297-3423-49e1-bc36-b162366d200c> .
+        <http://id.ukpds.org/3a72299b-be6e-4e13-bf84-8b02428a43f5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseIncumbency> .
+        <http://id.ukpds.org/3a72299b-be6e-4e13-bf84-8b02428a43f5> <http://id.ukpds.org/schema/houseIncumbencyHasHouse> <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> .
+        <http://id.ukpds.org/3a72299b-be6e-4e13-bf84-8b02428a43f5> <http://id.ukpds.org/schema/incumbencyStartDate> "2005-06-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://id.ukpds.org/schema/houseName> "House of Lords" .
+        <http://id.ukpds.org/2c8bb297-3423-49e1-bc36-b162366d200c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/2c8bb297-3423-49e1-bc36-b162366d200c> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> .
+        <http://id.ukpds.org/2c8bb297-3423-49e1-bc36-b162366d200c> <http://id.ukpds.org/schema/partyMembershipStartDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/2c8bb297-3423-49e1-bc36-b162366d200c> <http://id.ukpds.org/schema/partyMembershipEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> <http://id.ukpds.org/schema/partyName> "Liberal Democrat" .
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/e0513a87-c3b0-4efc-8c41-d929b3e47baa> .
+        <http://id.ukpds.org/e0513a87-c3b0-4efc-8c41-d929b3e47baa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/e0513a87-c3b0-4efc-8c41-d929b3e47baa> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> .
+        <http://id.ukpds.org/e0513a87-c3b0-4efc-8c41-d929b3e47baa> <http://id.ukpds.org/schema/partyMembershipStartDate> "2005-06-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e0513a87-c3b0-4efc-8c41-d929b3e47baa> <http://id.ukpds.org/schema/partyMembershipEndDate> "2012-02-29"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/0db5e47f-8bb1-43ff-beb7-d1235adfd6df> .
+        <http://id.ukpds.org/0db5e47f-8bb1-43ff-beb7-d1235adfd6df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/0db5e47f-8bb1-43ff-beb7-d1235adfd6df> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/68a0e532-8581-46b0-8516-a71914588afc> .
+        <http://id.ukpds.org/0db5e47f-8bb1-43ff-beb7-d1235adfd6df> <http://id.ukpds.org/schema/partyMembershipStartDate> "2012-03-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/0db5e47f-8bb1-43ff-beb7-d1235adfd6df> <http://id.ukpds.org/schema/partyMembershipEndDate> "2016-10-31"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/68a0e532-8581-46b0-8516-a71914588afc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/68a0e532-8581-46b0-8516-a71914588afc> <http://id.ukpds.org/schema/partyName> "Independent Liberal Democrat" .
+        <http://id.ukpds.org/6fd7fd6d-1ebc-4461-8e72-167aa8078819> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/6b5582a2-99c0-4a6e-ab17-5c7658121773> .
+        <http://id.ukpds.org/6b5582a2-99c0-4a6e-ab17-5c7658121773> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/6b5582a2-99c0-4a6e-ab17-5c7658121773> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/22683b21-a019-4929-88b3-0a06259e7c9e> .
+        <http://id.ukpds.org/6b5582a2-99c0-4a6e-ab17-5c7658121773> <http://id.ukpds.org/schema/partyMembershipStartDate> "2016-10-31"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/22683b21-a019-4929-88b3-0a06259e7c9e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/22683b21-a019-4929-88b3-0a06259e7c9e> <http://id.ukpds.org/schema/partyName> "Non-affiliated" .
+        <http://id.ukpds.org/d99dd9fb-dfe8-4f37-bce4-212d1a6c2f21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/d99dd9fb-dfe8-4f37-bce4-212d1a6c2f21> <http://id.ukpds.org/schema/personGivenName> "Person 2 - givenName" .
+        <http://id.ukpds.org/d99dd9fb-dfe8-4f37-bce4-212d1a6c2f21> <http://id.ukpds.org/schema/personFamilyName> "Person 2 - familyName" .
+        <http://id.ukpds.org/d99dd9fb-dfe8-4f37-bce4-212d1a6c2f21> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/ea886d49-fb70-497f-9a9b-19368f5ef738> .
+        <http://id.ukpds.org/d99dd9fb-dfe8-4f37-bce4-212d1a6c2f21> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/b9249b2a-b821-402d-9ade-494c45fe4824> .
+        <http://id.ukpds.org/ea886d49-fb70-497f-9a9b-19368f5ef738> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseIncumbency> .
+        <http://id.ukpds.org/ea886d49-fb70-497f-9a9b-19368f5ef738> <http://id.ukpds.org/schema/houseIncumbencyHasHouse> <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> .
+        <http://id.ukpds.org/ea886d49-fb70-497f-9a9b-19368f5ef738> <http://id.ukpds.org/schema/incumbencyStartDate> "2005-06-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b9249b2a-b821-402d-9ade-494c45fe4824> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/b9249b2a-b821-402d-9ade-494c45fe4824> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
+        <http://id.ukpds.org/b9249b2a-b821-402d-9ade-494c45fe4824> <http://id.ukpds.org/schema/partyMembershipStartDate> "1974-10-10"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b9249b2a-b821-402d-9ade-494c45fe4824> <http://id.ukpds.org/schema/partyMembershipEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
+        <http://id.ukpds.org/d99dd9fb-dfe8-4f37-bce4-212d1a6c2f21> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/68d01e20-167c-4835-9471-f3c66b0c5b37> .
+        <http://id.ukpds.org/68d01e20-167c-4835-9471-f3c66b0c5b37> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/68d01e20-167c-4835-9471-f3c66b0c5b37> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
+        <http://id.ukpds.org/68d01e20-167c-4835-9471-f3c66b0c5b37> <http://id.ukpds.org/schema/partyMembershipStartDate> "2005-06-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a9038ec2-a968-4646-8010-eea36986bb83> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/a9038ec2-a968-4646-8010-eea36986bb83> <http://id.ukpds.org/schema/personGivenName> "Person 3 - givenName" .
+        <http://id.ukpds.org/a9038ec2-a968-4646-8010-eea36986bb83> <http://id.ukpds.org/schema/personFamilyName> "Person 3 - familyName" .
+        <http://id.ukpds.org/a9038ec2-a968-4646-8010-eea36986bb83> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/0ede2cfd-e878-4093-a5f1-963b6e9c4fd8> .
+        <http://id.ukpds.org/a9038ec2-a968-4646-8010-eea36986bb83> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/2319aab8-059d-41ce-a440-2762ce2f785a> .
+        <http://id.ukpds.org/0ede2cfd-e878-4093-a5f1-963b6e9c4fd8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseIncumbency> .
+        <http://id.ukpds.org/0ede2cfd-e878-4093-a5f1-963b6e9c4fd8> <http://id.ukpds.org/schema/houseIncumbencyHasHouse> <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> .
+        <http://id.ukpds.org/0ede2cfd-e878-4093-a5f1-963b6e9c4fd8> <http://id.ukpds.org/schema/incumbencyStartDate> "2010-07-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/2319aab8-059d-41ce-a440-2762ce2f785a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/2319aab8-059d-41ce-a440-2762ce2f785a> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> .
+        <http://id.ukpds.org/2319aab8-059d-41ce-a440-2762ce2f785a> <http://id.ukpds.org/schema/partyMembershipStartDate> "1987-03-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/2319aab8-059d-41ce-a440-2762ce2f785a> <http://id.ukpds.org/schema/partyMembershipEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a9038ec2-a968-4646-8010-eea36986bb83> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/150fd838-2a28-4d9e-bdcd-445cfbd4a779> .
+        <http://id.ukpds.org/150fd838-2a28-4d9e-bdcd-445cfbd4a779> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
+        <http://id.ukpds.org/150fd838-2a28-4d9e-bdcd-445cfbd4a779> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> .
+        <http://id.ukpds.org/150fd838-2a28-4d9e-bdcd-445cfbd4a779> <http://id.ukpds.org/schema/partyMembershipStartDate> "2010-07-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+    http_version:
+  recorded_at: Thu, 23 Mar 2017 09:27:37 GMT
+recorded_with: VCR 3.0.3

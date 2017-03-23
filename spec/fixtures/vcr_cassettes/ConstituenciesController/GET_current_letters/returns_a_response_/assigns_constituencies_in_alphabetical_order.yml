@@ -1,0 +1,302 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/current/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"598a8fa16d60ffbb8ce6cd7475017967"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 295e5634-bb5b-4736-a320-5df9df326647
+      X-Runtime:
+      - '0.087366'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node62085 <http://id.ukpds.org/schema/value> "B" .
+        _:node62086 <http://id.ukpds.org/schema/value> "C" .
+        _:node62087 <http://id.ukpds.org/schema/value> "A" .
+        _:node62088 <http://id.ukpds.org/schema/value> "D" .
+        _:node62089 <http://id.ukpds.org/schema/value> "E" .
+        _:node62090 <http://id.ukpds.org/schema/value> "G" .
+        _:node62091 <http://id.ukpds.org/schema/value> "H" .
+        _:node62092 <http://id.ukpds.org/schema/value> "L" .
+        _:node62093 <http://id.ukpds.org/schema/value> "M" .
+        _:node62094 <http://id.ukpds.org/schema/value> "I" .
+        _:node62095 <http://id.ukpds.org/schema/value> "K" .
+        _:node62096 <http://id.ukpds.org/schema/value> "N" .
+        _:node62097 <http://id.ukpds.org/schema/value> "F" .
+        _:node62098 <http://id.ukpds.org/schema/value> "R" .
+        _:node62099 <http://id.ukpds.org/schema/value> "P" .
+        _:node62100 <http://id.ukpds.org/schema/value> "S" .
+        _:node62101 <http://id.ukpds.org/schema/value> "O" .
+        _:node62102 <http://id.ukpds.org/schema/value> "W" .
+        _:node62103 <http://id.ukpds.org/schema/value> "T" .
+        _:node62104 <http://id.ukpds.org/schema/value> "J" .
+        _:node62105 <http://id.ukpds.org/schema/value> "Y" .
+        _:node62106 <http://id.ukpds.org/schema/value> "V" .
+        _:node62107 <http://id.ukpds.org/schema/value> "U" .
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 20:16:37 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/current/a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"08e51d97308bba446190490604cb4acc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e2b3fecf-f62e-41a8-ae8a-072277ba90a1
+      X-Runtime:
+      - '0.195353'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/e85fc1f5-c286-458b-8ea3-8f1d05ea3c90> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e85fc1f5-c286-458b-8ea3-8f1d05ea3c90> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/e85fc1f5-c286-458b-8ea3-8f1d05ea3c90> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/1eadf092-8301-4423-90db-f4b6d012ff2d> .
+        <http://id.ukpds.org/1eadf092-8301-4423-90db-f4b6d012ff2d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/1eadf092-8301-4423-90db-f4b6d012ff2d> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/049c2ed9-7c70-4c80-a216-8fffcd8168f1> .
+        <http://id.ukpds.org/049c2ed9-7c70-4c80-a216-8fffcd8168f1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/049c2ed9-7c70-4c80-a216-8fffcd8168f1> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/64740fec-f599-453c-beb6-2de37dd0128a> .
+        <http://id.ukpds.org/64740fec-f599-453c-beb6-2de37dd0128a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/64740fec-f599-453c-beb6-2de37dd0128a> <http://id.ukpds.org/schema/personGivenName> "Wendy" .
+        <http://id.ukpds.org/64740fec-f599-453c-beb6-2de37dd0128a> <http://id.ukpds.org/schema/personFamilyName> "Morton" .
+        <http://id.ukpds.org/dd35a30d-ea9b-4274-8a27-f193246191a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/dd35a30d-ea9b-4274-8a27-f193246191a7> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/dd35a30d-ea9b-4274-8a27-f193246191a7> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/f1b884a6-02af-49e8-b69c-4e3a255913c7> .
+        <http://id.ukpds.org/f1b884a6-02af-49e8-b69c-4e3a255913c7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/f1b884a6-02af-49e8-b69c-4e3a255913c7> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/58d59202-3985-41ce-8bb3-b07feb0da659> .
+        <http://id.ukpds.org/58d59202-3985-41ce-8bb3-b07feb0da659> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/58d59202-3985-41ce-8bb3-b07feb0da659> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/a4f9389a-c54a-4d1b-a80e-79d535f7d1fa> .
+        <http://id.ukpds.org/a4f9389a-c54a-4d1b-a80e-79d535f7d1fa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/a4f9389a-c54a-4d1b-a80e-79d535f7d1fa> <http://id.ukpds.org/schema/personGivenName> "Kirsty" .
+        <http://id.ukpds.org/a4f9389a-c54a-4d1b-a80e-79d535f7d1fa> <http://id.ukpds.org/schema/personFamilyName> "Blackman" .
+        <http://id.ukpds.org/60347c2a-8d34-4c61-a728-fc196e842339> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/60347c2a-8d34-4c61-a728-fc196e842339> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/60347c2a-8d34-4c61-a728-fc196e842339> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/73b15e3a-c071-4d36-b770-4f2ee4fda342> .
+        <http://id.ukpds.org/73b15e3a-c071-4d36-b770-4f2ee4fda342> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/73b15e3a-c071-4d36-b770-4f2ee4fda342> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/36be4236-d45c-4f79-879d-4eb50d7db614> .
+        <http://id.ukpds.org/36be4236-d45c-4f79-879d-4eb50d7db614> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/36be4236-d45c-4f79-879d-4eb50d7db614> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/aadcb1fa-290f-4fe7-85de-b4cfdda30988> .
+        <http://id.ukpds.org/aadcb1fa-290f-4fe7-85de-b4cfdda30988> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/aadcb1fa-290f-4fe7-85de-b4cfdda30988> <http://id.ukpds.org/schema/personGivenName> "David" .
+        <http://id.ukpds.org/aadcb1fa-290f-4fe7-85de-b4cfdda30988> <http://id.ukpds.org/schema/personFamilyName> "Lidington" .
+        <http://id.ukpds.org/01cf0f3b-7787-424f-be62-60d14b8476c8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/01cf0f3b-7787-424f-be62-60d14b8476c8> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/01cf0f3b-7787-424f-be62-60d14b8476c8> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/b67e43ce-bc86-4fb5-93e6-0f500003b7fd> .
+        <http://id.ukpds.org/b67e43ce-bc86-4fb5-93e6-0f500003b7fd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/b67e43ce-bc86-4fb5-93e6-0f500003b7fd> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/ef8e02fe-2a5a-4295-9c81-7182d188f317> .
+        <http://id.ukpds.org/ef8e02fe-2a5a-4295-9c81-7182d188f317> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/ef8e02fe-2a5a-4295-9c81-7182d188f317> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/fe170d51-0371-4a4e-b7d1-0acffe7c428c> .
+        <http://id.ukpds.org/fe170d51-0371-4a4e-b7d1-0acffe7c428c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/fe170d51-0371-4a4e-b7d1-0acffe7c428c> <http://id.ukpds.org/schema/personGivenName> "Gloria" .
+        <http://id.ukpds.org/fe170d51-0371-4a4e-b7d1-0acffe7c428c> <http://id.ukpds.org/schema/personFamilyName> "De Piero" .
+        <http://id.ukpds.org/cf3c1f9a-c21a-4ab9-8615-190dea50d25b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/cf3c1f9a-c21a-4ab9-8615-190dea50d25b> <http://id.ukpds.org/schema/constituencyGroupName> "Angus" .
+        <http://id.ukpds.org/cf3c1f9a-c21a-4ab9-8615-190dea50d25b> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/fa16bf25-fc47-44d4-b1f9-d243a3d6e8ec> .
+        <http://id.ukpds.org/fa16bf25-fc47-44d4-b1f9-d243a3d6e8ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/fa16bf25-fc47-44d4-b1f9-d243a3d6e8ec> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/a36c1926-c894-43d6-862e-94fef595a990> .
+        <http://id.ukpds.org/a36c1926-c894-43d6-862e-94fef595a990> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/a36c1926-c894-43d6-862e-94fef595a990> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/d3f259fd-b7a1-42bb-a3b6-d758da5d0811> .
+        <http://id.ukpds.org/d3f259fd-b7a1-42bb-a3b6-d758da5d0811> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/d3f259fd-b7a1-42bb-a3b6-d758da5d0811> <http://id.ukpds.org/schema/personGivenName> "Michael" .
+        <http://id.ukpds.org/d3f259fd-b7a1-42bb-a3b6-d758da5d0811> <http://id.ukpds.org/schema/personFamilyName> "Weir" .
+        <http://id.ukpds.org/597b13bd-82ec-47c8-922c-0e7bfdaad916> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/597b13bd-82ec-47c8-922c-0e7bfdaad916> <http://id.ukpds.org/schema/constituencyGroupName> "Alyn and Deeside" .
+        <http://id.ukpds.org/597b13bd-82ec-47c8-922c-0e7bfdaad916> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/4bbcace3-3dc0-49f0-a2c6-28ee4fe81b81> .
+        <http://id.ukpds.org/4bbcace3-3dc0-49f0-a2c6-28ee4fe81b81> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/4bbcace3-3dc0-49f0-a2c6-28ee4fe81b81> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/c144663b-8c4b-4ac9-b030-2de914919ee0> .
+        <http://id.ukpds.org/c144663b-8c4b-4ac9-b030-2de914919ee0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/c144663b-8c4b-4ac9-b030-2de914919ee0> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/d22f08bd-8f7c-47c6-9858-37e528886ebc> .
+        <http://id.ukpds.org/d22f08bd-8f7c-47c6-9858-37e528886ebc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/d22f08bd-8f7c-47c6-9858-37e528886ebc> <http://id.ukpds.org/schema/personGivenName> "Mark" .
+        <http://id.ukpds.org/d22f08bd-8f7c-47c6-9858-37e528886ebc> <http://id.ukpds.org/schema/personFamilyName> "Tami" .
+        <http://id.ukpds.org/af827a42-c8e0-4d81-8e0d-9ba6a5f0de67> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/af827a42-c8e0-4d81-8e0d-9ba6a5f0de67> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/af827a42-c8e0-4d81-8e0d-9ba6a5f0de67> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/8dedce66-02f1-4822-ba0b-4cb5a386c27e> .
+        <http://id.ukpds.org/8dedce66-02f1-4822-ba0b-4cb5a386c27e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/8dedce66-02f1-4822-ba0b-4cb5a386c27e> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/fc387d5e-7069-4001-b76a-9ec9fc96d4b8> .
+        <http://id.ukpds.org/fc387d5e-7069-4001-b76a-9ec9fc96d4b8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/fc387d5e-7069-4001-b76a-9ec9fc96d4b8> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/412222c5-c9cc-4b27-a50f-768b31f86c08> .
+        <http://id.ukpds.org/412222c5-c9cc-4b27-a50f-768b31f86c08> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/412222c5-c9cc-4b27-a50f-768b31f86c08> <http://id.ukpds.org/schema/personGivenName> "Stephen" .
+        <http://id.ukpds.org/412222c5-c9cc-4b27-a50f-768b31f86c08> <http://id.ukpds.org/schema/personFamilyName> "Kinnock" .
+        <http://id.ukpds.org/d1c77d97-c99b-4206-8ff9-fc2107b1f012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d1c77d97-c99b-4206-8ff9-fc2107b1f012> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel and South Downs" .
+        <http://id.ukpds.org/d1c77d97-c99b-4206-8ff9-fc2107b1f012> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/f01a60c4-4fb5-4ce5-92f7-24e20d06ff0e> .
+        <http://id.ukpds.org/f01a60c4-4fb5-4ce5-92f7-24e20d06ff0e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/f01a60c4-4fb5-4ce5-92f7-24e20d06ff0e> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/62390824-9a28-41e9-8786-17bcb1380bc5> .
+        <http://id.ukpds.org/62390824-9a28-41e9-8786-17bcb1380bc5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/62390824-9a28-41e9-8786-17bcb1380bc5> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/5a13fc20-39ce-41a7-8004-cd4bcc661c3f> .
+        <http://id.ukpds.org/5a13fc20-39ce-41a7-8004-cd4bcc661c3f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/5a13fc20-39ce-41a7-8004-cd4bcc661c3f> <http://id.ukpds.org/schema/personGivenName> "Nicholas" .
+        <http://id.ukpds.org/5a13fc20-39ce-41a7-8004-cd4bcc661c3f> <http://id.ukpds.org/schema/personFamilyName> "Herbert" .
+        <http://id.ukpds.org/cd4365fe-ac1a-4c4b-be0b-c4b3c5b453e0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/cd4365fe-ac1a-4c4b-be0b-c4b3c5b453e0> <http://id.ukpds.org/schema/constituencyGroupName> "Arfon" .
+        <http://id.ukpds.org/cd4365fe-ac1a-4c4b-be0b-c4b3c5b453e0> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/310d37dd-9526-484f-aa77-bc1bd98c1391> .
+        <http://id.ukpds.org/310d37dd-9526-484f-aa77-bc1bd98c1391> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/310d37dd-9526-484f-aa77-bc1bd98c1391> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/990c945d-157b-4bd1-bb45-afd540ce7c5f> .
+        <http://id.ukpds.org/990c945d-157b-4bd1-bb45-afd540ce7c5f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/990c945d-157b-4bd1-bb45-afd540ce7c5f> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/b3a9c439-c602-41cc-8e71-e21ce055bfcf> .
+        <http://id.ukpds.org/b3a9c439-c602-41cc-8e71-e21ce055bfcf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/b3a9c439-c602-41cc-8e71-e21ce055bfcf> <http://id.ukpds.org/schema/personGivenName> "Hywel" .
+        <http://id.ukpds.org/b3a9c439-c602-41cc-8e71-e21ce055bfcf> <http://id.ukpds.org/schema/personFamilyName> "Williams" .
+        <http://id.ukpds.org/7266e31d-f02e-4310-9e6b-d5fdf131c8fe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7266e31d-f02e-4310-9e6b-d5fdf131c8fe> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/7266e31d-f02e-4310-9e6b-d5fdf131c8fe> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/1764e36b-8c0a-49df-b2f1-9f117a9c1ce8> .
+        <http://id.ukpds.org/1764e36b-8c0a-49df-b2f1-9f117a9c1ce8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/1764e36b-8c0a-49df-b2f1-9f117a9c1ce8> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/56bab0ab-71ba-4152-91a9-652d10ab2a17> .
+        <http://id.ukpds.org/56bab0ab-71ba-4152-91a9-652d10ab2a17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/56bab0ab-71ba-4152-91a9-652d10ab2a17> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/4b92a362-4875-48d6-86fe-646429ce8c10> .
+        <http://id.ukpds.org/4b92a362-4875-48d6-86fe-646429ce8c10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/4b92a362-4875-48d6-86fe-646429ce8c10> <http://id.ukpds.org/schema/personGivenName> "Angela" .
+        <http://id.ukpds.org/4b92a362-4875-48d6-86fe-646429ce8c10> <http://id.ukpds.org/schema/personFamilyName> "Rayner" .
+        <http://id.ukpds.org/e1ee42c8-aaf2-49af-be49-9a0e079724c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e1ee42c8-aaf2-49af-be49-9a0e079724c6> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll and Bute" .
+        <http://id.ukpds.org/e1ee42c8-aaf2-49af-be49-9a0e079724c6> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/1808c997-6c04-43fa-a6f2-21a29184c7a9> .
+        <http://id.ukpds.org/1808c997-6c04-43fa-a6f2-21a29184c7a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/1808c997-6c04-43fa-a6f2-21a29184c7a9> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/11861ed9-eeaa-4309-b316-020618f9125a> .
+        <http://id.ukpds.org/11861ed9-eeaa-4309-b316-020618f9125a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/11861ed9-eeaa-4309-b316-020618f9125a> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/0b54f907-2a8b-4512-aa70-cb07b1027bcb> .
+        <http://id.ukpds.org/0b54f907-2a8b-4512-aa70-cb07b1027bcb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/0b54f907-2a8b-4512-aa70-cb07b1027bcb> <http://id.ukpds.org/schema/personGivenName> "Brendan" .
+        <http://id.ukpds.org/0b54f907-2a8b-4512-aa70-cb07b1027bcb> <http://id.ukpds.org/schema/personFamilyName> "O'Hara" .
+        <http://id.ukpds.org/adb4f3eb-bd82-41d0-8b95-f66425041bf9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/adb4f3eb-bd82-41d0-8b95-f66425041bf9> <http://id.ukpds.org/schema/constituencyGroupName> "Amber Valley" .
+        <http://id.ukpds.org/adb4f3eb-bd82-41d0-8b95-f66425041bf9> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/70143974-3e3f-444a-8f59-f8fd4b367311> .
+        <http://id.ukpds.org/70143974-3e3f-444a-8f59-f8fd4b367311> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/70143974-3e3f-444a-8f59-f8fd4b367311> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/1b510bec-5c5d-48a5-8912-4bb72de65eb1> .
+        <http://id.ukpds.org/1b510bec-5c5d-48a5-8912-4bb72de65eb1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/1b510bec-5c5d-48a5-8912-4bb72de65eb1> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/9f7e0a6d-c11c-4047-8f2f-591cffd1c252> .
+        <http://id.ukpds.org/9f7e0a6d-c11c-4047-8f2f-591cffd1c252> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/9f7e0a6d-c11c-4047-8f2f-591cffd1c252> <http://id.ukpds.org/schema/personGivenName> "Nigel" .
+        <http://id.ukpds.org/9f7e0a6d-c11c-4047-8f2f-591cffd1c252> <http://id.ukpds.org/schema/personFamilyName> "Mills" .
+        <http://id.ukpds.org/ebebbded-b2d6-442b-9137-b24c2b518687> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ebebbded-b2d6-442b-9137-b24c2b518687> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/ebebbded-b2d6-442b-9137-b24c2b518687> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/5f69defb-fff2-44ff-9808-a9472ef9990e> .
+        <http://id.ukpds.org/5f69defb-fff2-44ff-9808-a9472ef9990e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/5f69defb-fff2-44ff-9808-a9472ef9990e> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/defca808-9b0e-40fa-88ea-e35a7f46f1a0> .
+        <http://id.ukpds.org/defca808-9b0e-40fa-88ea-e35a7f46f1a0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/defca808-9b0e-40fa-88ea-e35a7f46f1a0> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/802ab7eb-895b-4cf4-9150-5c6d59c8728a> .
+        <http://id.ukpds.org/802ab7eb-895b-4cf4-9150-5c6d59c8728a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/802ab7eb-895b-4cf4-9150-5c6d59c8728a> <http://id.ukpds.org/schema/personGivenName> "Damian" .
+        <http://id.ukpds.org/802ab7eb-895b-4cf4-9150-5c6d59c8728a> <http://id.ukpds.org/schema/personFamilyName> "Green" .
+        <http://id.ukpds.org/c567216a-2b73-4f03-b2b6-5ae81ea1d80c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c567216a-2b73-4f03-b2b6-5ae81ea1d80c> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr, Carrick and Cumnock" .
+        <http://id.ukpds.org/c567216a-2b73-4f03-b2b6-5ae81ea1d80c> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/d2d2bdd5-01a3-48df-aff8-dc4fc9eda513> .
+        <http://id.ukpds.org/d2d2bdd5-01a3-48df-aff8-dc4fc9eda513> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/d2d2bdd5-01a3-48df-aff8-dc4fc9eda513> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/c6bc7cca-11de-4772-80d9-533530cd7a20> .
+        <http://id.ukpds.org/c6bc7cca-11de-4772-80d9-533530cd7a20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/c6bc7cca-11de-4772-80d9-533530cd7a20> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/a3821693-4a78-46b8-99e5-de4807af1aac> .
+        <http://id.ukpds.org/a3821693-4a78-46b8-99e5-de4807af1aac> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/a3821693-4a78-46b8-99e5-de4807af1aac> <http://id.ukpds.org/schema/personGivenName> "Corri" .
+        <http://id.ukpds.org/a3821693-4a78-46b8-99e5-de4807af1aac> <http://id.ukpds.org/schema/personFamilyName> "Wilson" .
+        <http://id.ukpds.org/f0690ecd-70c5-4bf8-8e57-b2fecafcbcb3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f0690ecd-70c5-4bf8-8e57-b2fecafcbcb3> <http://id.ukpds.org/schema/constituencyGroupName> "Airdrie and Shotts" .
+        <http://id.ukpds.org/f0690ecd-70c5-4bf8-8e57-b2fecafcbcb3> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/b543bc47-eeb5-4ee3-b354-1b3b34b4e1cb> .
+        <http://id.ukpds.org/b543bc47-eeb5-4ee3-b354-1b3b34b4e1cb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/b543bc47-eeb5-4ee3-b354-1b3b34b4e1cb> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/c82d2f42-6110-4ade-a9ea-fce7bed72fad> .
+        <http://id.ukpds.org/c82d2f42-6110-4ade-a9ea-fce7bed72fad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/c82d2f42-6110-4ade-a9ea-fce7bed72fad> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/9d233636-8291-4901-b8fe-ee8f7fd38f3d> .
+        <http://id.ukpds.org/9d233636-8291-4901-b8fe-ee8f7fd38f3d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/9d233636-8291-4901-b8fe-ee8f7fd38f3d> <http://id.ukpds.org/schema/personGivenName> "Neil" .
+        <http://id.ukpds.org/9d233636-8291-4901-b8fe-ee8f7fd38f3d> <http://id.ukpds.org/schema/personFamilyName> "Gray" .
+        <http://id.ukpds.org/acbea447-fc64-4441-83be-417eb31e5dbb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/acbea447-fc64-4441-83be-417eb31e5dbb> <http://id.ukpds.org/schema/constituencyGroupName> "Aberconwy" .
+        <http://id.ukpds.org/acbea447-fc64-4441-83be-417eb31e5dbb> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/7e2b33f4-bf5a-4e28-a8c1-3e69b3a133e2> .
+        <http://id.ukpds.org/7e2b33f4-bf5a-4e28-a8c1-3e69b3a133e2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/7e2b33f4-bf5a-4e28-a8c1-3e69b3a133e2> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/8858822c-c45c-48d2-8061-582c748ce5e1> .
+        <http://id.ukpds.org/8858822c-c45c-48d2-8061-582c748ce5e1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/8858822c-c45c-48d2-8061-582c748ce5e1> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/4a029e0a-96f8-4b9b-ae7b-8755737dd272> .
+        <http://id.ukpds.org/4a029e0a-96f8-4b9b-ae7b-8755737dd272> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/4a029e0a-96f8-4b9b-ae7b-8755737dd272> <http://id.ukpds.org/schema/personGivenName> "Guto" .
+        <http://id.ukpds.org/4a029e0a-96f8-4b9b-ae7b-8755737dd272> <http://id.ukpds.org/schema/personFamilyName> "Bebb" .
+        <http://id.ukpds.org/7f6ee9ae-c3f5-4fe6-9ef8-d57f6d1d27df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7f6ee9ae-c3f5-4fe6-9ef8-d57f6d1d27df> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale West" .
+        <http://id.ukpds.org/7f6ee9ae-c3f5-4fe6-9ef8-d57f6d1d27df> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/1966687e-c141-4e87-afb0-e4b4eb3d98b6> .
+        <http://id.ukpds.org/1966687e-c141-4e87-afb0-e4b4eb3d98b6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/1966687e-c141-4e87-afb0-e4b4eb3d98b6> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/03361781-f7ff-498e-bc09-49e719e27265> .
+        <http://id.ukpds.org/03361781-f7ff-498e-bc09-49e719e27265> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/03361781-f7ff-498e-bc09-49e719e27265> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/f48ecc4e-f536-4371-ad50-a65f16cef834> .
+        <http://id.ukpds.org/f48ecc4e-f536-4371-ad50-a65f16cef834> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/f48ecc4e-f536-4371-ad50-a65f16cef834> <http://id.ukpds.org/schema/personGivenName> "Graham" .
+        <http://id.ukpds.org/f48ecc4e-f536-4371-ad50-a65f16cef834> <http://id.ukpds.org/schema/personFamilyName> "Brady" .
+        <http://id.ukpds.org/9d65a056-04c9-4aa5-999c-1a5905ce54fd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9d65a056-04c9-4aa5-999c-1a5905ce54fd> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/9d65a056-04c9-4aa5-999c-1a5905ce54fd> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/878d38ee-1a3a-4bc6-9814-2c025d911ef0> .
+        <http://id.ukpds.org/878d38ee-1a3a-4bc6-9814-2c025d911ef0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/878d38ee-1a3a-4bc6-9814-2c025d911ef0> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/9c05033b-e19d-4aad-b109-3b97f644a6de> .
+        <http://id.ukpds.org/9c05033b-e19d-4aad-b109-3b97f644a6de> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/9c05033b-e19d-4aad-b109-3b97f644a6de> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/3c11367a-35ea-4b1d-b036-977553ee7bc6> .
+        <http://id.ukpds.org/3c11367a-35ea-4b1d-b036-977553ee7bc6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/3c11367a-35ea-4b1d-b036-977553ee7bc6> <http://id.ukpds.org/schema/personGivenName> "James" .
+        <http://id.ukpds.org/3c11367a-35ea-4b1d-b036-977553ee7bc6> <http://id.ukpds.org/schema/personFamilyName> "Howarth" .
+        <http://id.ukpds.org/e2fe9722-1a81-43ac-a598-d6598a7b313e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e2fe9722-1a81-43ac-a598-d6598a7b313e> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/e2fe9722-1a81-43ac-a598-d6598a7b313e> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/cd91fc95-032d-4964-84cb-03ad309d8b54> .
+        <http://id.ukpds.org/cd91fc95-032d-4964-84cb-03ad309d8b54> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/cd91fc95-032d-4964-84cb-03ad309d8b54> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/21f96fda-557a-4569-a14d-19a5ee962730> .
+        <http://id.ukpds.org/21f96fda-557a-4569-a14d-19a5ee962730> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/21f96fda-557a-4569-a14d-19a5ee962730> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/52369b84-d368-4e5f-816a-e3402e2b64a4> .
+        <http://id.ukpds.org/52369b84-d368-4e5f-816a-e3402e2b64a4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/52369b84-d368-4e5f-816a-e3402e2b64a4> <http://id.ukpds.org/schema/personGivenName> "Callum" .
+        <http://id.ukpds.org/52369b84-d368-4e5f-816a-e3402e2b64a4> <http://id.ukpds.org/schema/personFamilyName> "McCaig" .
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 20:16:38 GMT
+recorded_with: VCR 3.0.3

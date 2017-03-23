@@ -22,6 +22,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
+
   # In development and test environments, use the dotenv gem
   gem 'dotenv-rails'
 

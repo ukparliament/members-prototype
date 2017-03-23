@@ -183,6 +183,13 @@ RSpec.describe PartiesController, vcr: true do
     it 'renders the letters template' do
       expect(response).to render_template('letters')
     end
+
+    context 'invalid parties' do
+      it 'raises an ActionController::RoutingError' do
+        expect { get :letters, params: { letter: 'x'} }.to raise_error(ActionController::RoutingError)
+      end
+    end
+
   end
 
   describe 'GET members_letters' do
@@ -213,6 +220,12 @@ RSpec.describe PartiesController, vcr: true do
     it 'renders the members_letters template' do
       expect(response).to render_template('members_letters')
     end
+
+    context 'members for valid party with letter that produces no content' do
+      it 'raises an ActionController::RoutingError' do
+        expect { get :members_letters, params: { party_id: '7a048f56-0ddd-48b0-85bd-cf5dd9fa5427', letter: 'x'} }.to raise_error(ActionController::RoutingError)
+      end
+    end
   end
 
   describe 'GET current_members_letters' do
@@ -242,6 +255,12 @@ RSpec.describe PartiesController, vcr: true do
 
     it 'renders the current_members_letters template' do
       expect(response).to render_template('current_members_letters')
+    end
+
+    context 'members for fake party with invalid letter' do
+      it 'raises an ActionController::RoutingError' do
+        expect { get :current_members_letters, params: { party_id: 'FAKE_ID', letter: 'a'} }.to raise_error(ActionController::RoutingError)
+      end
     end
   end
 

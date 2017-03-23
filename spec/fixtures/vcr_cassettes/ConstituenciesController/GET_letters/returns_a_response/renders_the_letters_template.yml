@@ -1,0 +1,796 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"d8b56246d68b1f2ad565c563768f2c87"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d8155e46-4b26-450b-919b-99df74179f0e
+      X-Runtime:
+      - '0.290506'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node99318 <http://id.ukpds.org/schema/value> "M" .
+        _:node99319 <http://id.ukpds.org/schema/value> "B" .
+        _:node99320 <http://id.ukpds.org/schema/value> "A" .
+        _:node99321 <http://id.ukpds.org/schema/value> "C" .
+        _:node99322 <http://id.ukpds.org/schema/value> "D" .
+        _:node99323 <http://id.ukpds.org/schema/value> "E" .
+        _:node99324 <http://id.ukpds.org/schema/value> "G" .
+        _:node99325 <http://id.ukpds.org/schema/value> "H" .
+        _:node99326 <http://id.ukpds.org/schema/value> "I" .
+        _:node99327 <http://id.ukpds.org/schema/value> "L" .
+        _:node99328 <http://id.ukpds.org/schema/value> "K" .
+        _:node99329 <http://id.ukpds.org/schema/value> "N" .
+        _:node99330 <http://id.ukpds.org/schema/value> "F" .
+        _:node99331 <http://id.ukpds.org/schema/value> "P" .
+        _:node99332 <http://id.ukpds.org/schema/value> "R" .
+        _:node99333 <http://id.ukpds.org/schema/value> "S" .
+        _:node99334 <http://id.ukpds.org/schema/value> "O" .
+        _:node99335 <http://id.ukpds.org/schema/value> "W" .
+        _:node99336 <http://id.ukpds.org/schema/value> "T" .
+        _:node99337 <http://id.ukpds.org/schema/value> "J" .
+        _:node99338 <http://id.ukpds.org/schema/value> "Y" .
+        _:node99339 <http://id.ukpds.org/schema/value> "Q" .
+        _:node99340 <http://id.ukpds.org/schema/value> "U" .
+        _:node99341 <http://id.ukpds.org/schema/value> "V" .
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 20:08:33 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"d53fc65f127845dee9cc065658126b07"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fec2388c-9e24-44ae-8929-99519666abd4
+      X-Runtime:
+      - '0.172535'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/993599b3-3f43-40ae-a511-b449f31499f2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/993599b3-3f43-40ae-a511-b449f31499f2> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/993599b3-3f43-40ae-a511-b449f31499f2> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a894412f-9f59-4180-9e0a-4dc8ebc0e5c4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a894412f-9f59-4180-9e0a-4dc8ebc0e5c4> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/a894412f-9f59-4180-9e0a-4dc8ebc0e5c4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/18fcc74b-6c4f-4313-8484-4a46c0dfdd92> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/18fcc74b-6c4f-4313-8484-4a46c0dfdd92> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel" .
+        <http://id.ukpds.org/18fcc74b-6c4f-4313-8484-4a46c0dfdd92> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/eb0740b6-992c-4fd0-a0fc-ebd49540907d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/eb0740b6-992c-4fd0-a0fc-ebd49540907d> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham" .
+        <http://id.ukpds.org/eb0740b6-992c-4fd0-a0fc-ebd49540907d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/89becdca-b611-4a05-8d46-66c0887c9a50> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/89becdca-b611-4a05-8d46-66c0887c9a50> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdare" .
+        <http://id.ukpds.org/89becdca-b611-4a05-8d46-66c0887c9a50> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6e4c4b79-7302-42a5-b088-6e714ec544ae> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6e4c4b79-7302-42a5-b088-6e714ec544ae> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/6e4c4b79-7302-42a5-b088-6e714ec544ae> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/57f96030-ace9-4a9a-a166-2437493bdf86> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/57f96030-ace9-4a9a-a166-2437493bdf86> <http://id.ukpds.org/schema/constituencyGroupName> "Accrington" .
+        <http://id.ukpds.org/57f96030-ace9-4a9a-a166-2437493bdf86> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6e29f6e5-e9ac-4372-8eb3-39ec2c618934> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6e29f6e5-e9ac-4372-8eb3-39ec2c618934> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/6e29f6e5-e9ac-4372-8eb3-39ec2c618934> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/993339ec-36fe-4e7b-90af-011c5407390d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/993339ec-36fe-4e7b-90af-011c5407390d> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel and Shoreham" .
+        <http://id.ukpds.org/993339ec-36fe-4e7b-90af-011c5407390d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/78ff84cf-ae3e-43a7-97d1-c9c2402f6cb4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/78ff84cf-ae3e-43a7-97d1-c9c2402f6cb4> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/78ff84cf-ae3e-43a7-97d1-c9c2402f6cb4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/1f29ee73-aa64-4512-97e0-31d812a86a60> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/1f29ee73-aa64-4512-97e0-31d812a86a60> <http://id.ukpds.org/schema/constituencyGroupName> "Anglesey" .
+        <http://id.ukpds.org/1f29ee73-aa64-4512-97e0-31d812a86a60> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/2b47f556-40b3-4780-b1ad-097378517424> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/2b47f556-40b3-4780-b1ad-097378517424> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeenshire and Kincardineshire, Kincardine and Western" .
+        <http://id.ukpds.org/2b47f556-40b3-4780-b1ad-097378517424> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d5870447-90f5-4867-b0e1-e6c264a188c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d5870447-90f5-4867-b0e1-e6c264a188c6> <http://id.ukpds.org/schema/constituencyGroupName> "Alyn and Deeside" .
+        <http://id.ukpds.org/d5870447-90f5-4867-b0e1-e6c264a188c6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/84117c2d-d2a1-4c79-b214-53849321375a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/84117c2d-d2a1-4c79-b214-53849321375a> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/84117c2d-d2a1-4c79-b214-53849321375a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/705bb348-3f62-45c4-8865-c4d78147ee36> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/705bb348-3f62-45c4-8865-c4d78147ee36> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/705bb348-3f62-45c4-8865-c4d78147ee36> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6ccafb93-fc10-477f-a223-f97002b285cc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6ccafb93-fc10-477f-a223-f97002b285cc> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/6ccafb93-fc10-477f-a223-f97002b285cc> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/ff311636-2be1-4f8c-9095-7b6ea78fb16e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ff311636-2be1-4f8c-9095-7b6ea78fb16e> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/ff311636-2be1-4f8c-9095-7b6ea78fb16e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c86ccdbb-57b2-471f-b796-97683fb7178d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c86ccdbb-57b2-471f-b796-97683fb7178d> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/c86ccdbb-57b2-471f-b796-97683fb7178d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6781288b-4733-4af5-8b59-0ad57ecc6623> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6781288b-4733-4af5-8b59-0ad57ecc6623> <http://id.ukpds.org/schema/constituencyGroupName> "Angus East" .
+        <http://id.ukpds.org/6781288b-4733-4af5-8b59-0ad57ecc6623> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9e54065d-a00b-49b1-a3e7-a5511f367369> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9e54065d-a00b-49b1-a3e7-a5511f367369> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/9e54065d-a00b-49b1-a3e7-a5511f367369> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/4f633429-0f25-4714-8246-6e93a9918e03> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/4f633429-0f25-4714-8246-6e93a9918e03> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/4f633429-0f25-4714-8246-6e93a9918e03> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/ccd1a12a-5b4f-4f19-9c14-b9a4e1d87570> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ccd1a12a-5b4f-4f19-9c14-b9a4e1d87570> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/ccd1a12a-5b4f-4f19-9c14-b9a4e1d87570> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/bd025484-d949-4027-a507-969f794bc051> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/bd025484-d949-4027-a507-969f794bc051> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/bd025484-d949-4027-a507-969f794bc051> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f696bdd2-b41e-4126-b6bd-4420b3c4526d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f696bdd2-b41e-4126-b6bd-4420b3c4526d> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/f696bdd2-b41e-4126-b6bd-4420b3c4526d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/0d4e8aa0-45f0-486f-ae3f-4d01de57f23f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/0d4e8aa0-45f0-486f-ae3f-4d01de57f23f> <http://id.ukpds.org/schema/constituencyGroupName> "Abingdon" .
+        <http://id.ukpds.org/0d4e8aa0-45f0-486f-ae3f-4d01de57f23f> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b40c7f91-8b3c-4941-bc1e-fec322824fb9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/b40c7f91-8b3c-4941-bc1e-fec322824fb9> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/b40c7f91-8b3c-4941-bc1e-fec322824fb9> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d9491e4b-0689-4dd2-badc-11adfa8a2f51> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d9491e4b-0689-4dd2-badc-11adfa8a2f51> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/d9491e4b-0689-4dd2-badc-11adfa8a2f51> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/535f3690-5ced-4882-9188-9e9516e8a3a6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/535f3690-5ced-4882-9188-9e9516e8a3a6> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/535f3690-5ced-4882-9188-9e9516e8a3a6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/76f6a22e-47c5-4424-9a76-ad96f98632e6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/76f6a22e-47c5-4424-9a76-ad96f98632e6> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll" .
+        <http://id.ukpds.org/76f6a22e-47c5-4424-9a76-ad96f98632e6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e6ffdcdc-97e4-4481-9891-4cd082fe6ffe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e6ffdcdc-97e4-4481-9891-4cd082fe6ffe> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/e6ffdcdc-97e4-4481-9891-4cd082fe6ffe> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/5c1b540c-b4e3-428d-b426-d6a74e6df8ab> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/5c1b540c-b4e3-428d-b426-d6a74e6df8ab> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/5c1b540c-b4e3-428d-b426-d6a74e6df8ab> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/62bb4084-e271-435b-80a9-e6a8df535a41> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/62bb4084-e271-435b-80a9-e6a8df535a41> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/62bb4084-e271-435b-80a9-e6a8df535a41> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6e06d5fb-a9f2-41f1-a013-a434069700aa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6e06d5fb-a9f2-41f1-a013-a434069700aa> <http://id.ukpds.org/schema/constituencyGroupName> "Accrington" .
+        <http://id.ukpds.org/6e06d5fb-a9f2-41f1-a013-a434069700aa> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c34601ec-4604-4104-976d-696ee087a82e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c34601ec-4604-4104-976d-696ee087a82e> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeenshire and Kincardineshire, Eastern" .
+        <http://id.ukpds.org/c34601ec-4604-4104-976d-696ee087a82e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/be1ed6c3-82c9-4170-bcb8-d6b773172eda> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/be1ed6c3-82c9-4170-bcb8-d6b773172eda> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel and South Downs" .
+        <http://id.ukpds.org/be1ed6c3-82c9-4170-bcb8-d6b773172eda> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/52c94d8c-6718-4953-b95a-48e72f245360> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/52c94d8c-6718-4953-b95a-48e72f245360> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/52c94d8c-6718-4953-b95a-48e72f245360> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9d65a056-04c9-4aa5-999c-1a5905ce54fd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9d65a056-04c9-4aa5-999c-1a5905ce54fd> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/060d5869-c013-4213-868f-936e141d406d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/060d5869-c013-4213-868f-936e141d406d> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/060d5869-c013-4213-868f-936e141d406d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/186fbfc1-257f-4942-a2bd-049e4837351f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/186fbfc1-257f-4942-a2bd-049e4837351f> <http://id.ukpds.org/schema/constituencyGroupName> "Angus" .
+        <http://id.ukpds.org/186fbfc1-257f-4942-a2bd-049e4837351f> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7f6ee9ae-c3f5-4fe6-9ef8-d57f6d1d27df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7f6ee9ae-c3f5-4fe6-9ef8-d57f6d1d27df> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale West" .
+        <http://id.ukpds.org/01cf0f3b-7787-424f-be62-60d14b8476c8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/01cf0f3b-7787-424f-be62-60d14b8476c8> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/adb4f3eb-bd82-41d0-8b95-f66425041bf9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/adb4f3eb-bd82-41d0-8b95-f66425041bf9> <http://id.ukpds.org/schema/constituencyGroupName> "Amber Valley" .
+        <http://id.ukpds.org/7266e31d-f02e-4310-9e6b-d5fdf131c8fe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7266e31d-f02e-4310-9e6b-d5fdf131c8fe> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/774a1213-5eb5-4ccb-958f-a17b04b3cc5d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/774a1213-5eb5-4ccb-958f-a17b04b3cc5d> <http://id.ukpds.org/schema/constituencyGroupName> "Armagh" .
+        <http://id.ukpds.org/774a1213-5eb5-4ccb-958f-a17b04b3cc5d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e2f9a7b9-953a-40a6-92d8-ca8c5d70ef4d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e2f9a7b9-953a-40a6-92d8-ca8c5d70ef4d> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/e2f9a7b9-953a-40a6-92d8-ca8c5d70ef4d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/37d27017-b7c6-4b5f-ad39-77cf5f5c057a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/37d27017-b7c6-4b5f-ad39-77cf5f5c057a> <http://id.ukpds.org/schema/constituencyGroupName> "Amber Valley" .
+        <http://id.ukpds.org/37d27017-b7c6-4b5f-ad39-77cf5f5c057a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/4ab0c3c0-5fce-42b5-a99b-6d872e0e796b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/4ab0c3c0-5fce-42b5-a99b-6d872e0e796b> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/4ab0c3c0-5fce-42b5-a99b-6d872e0e796b> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/3c09642f-bff1-4ca8-86cb-f23f5fc128fe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/3c09642f-bff1-4ca8-86cb-f23f5fc128fe> <http://id.ukpds.org/schema/constituencyGroupName> "Abingdon" .
+        <http://id.ukpds.org/3c09642f-bff1-4ca8-86cb-f23f5fc128fe> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/17df4803-a6b8-4236-abb7-fe5324e5fd7a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/17df4803-a6b8-4236-abb7-fe5324e5fd7a> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/17df4803-a6b8-4236-abb7-fe5324e5fd7a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9e3e594c-a1fa-4926-a295-890d8dbeb095> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9e3e594c-a1fa-4926-a295-890d8dbeb095> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/9e3e594c-a1fa-4926-a295-890d8dbeb095> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/0409c984-9d18-416f-a21a-fedd7485b4c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/0409c984-9d18-416f-a21a-fedd7485b4c6> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/0409c984-9d18-416f-a21a-fedd7485b4c6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/40483726-b8e5-41cf-a3ca-3f6a9ecf4772> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/40483726-b8e5-41cf-a3ca-3f6a9ecf4772> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/40483726-b8e5-41cf-a3ca-3f6a9ecf4772> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/856973eb-4037-4d15-9469-31a35c0dbabe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/856973eb-4037-4d15-9469-31a35c0dbabe> <http://id.ukpds.org/schema/constituencyGroupName> "Abingdon" .
+        <http://id.ukpds.org/856973eb-4037-4d15-9469-31a35c0dbabe> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9d0ab9a2-4f4e-47a0-99fd-4dec7e6529a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9d0ab9a2-4f4e-47a0-99fd-4dec7e6529a9> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/9d0ab9a2-4f4e-47a0-99fd-4dec7e6529a9> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d3322e02-f457-4f13-9ee1-1b5a49caa7ca> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d3322e02-f457-4f13-9ee1-1b5a49caa7ca> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/d3322e02-f457-4f13-9ee1-1b5a49caa7ca> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/fdc8eb74-f3fd-4e3a-ba4f-6f1e1741a15a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/fdc8eb74-f3fd-4e3a-ba4f-6f1e1741a15a> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/fdc8eb74-f3fd-4e3a-ba4f-6f1e1741a15a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/64ac2774-8b73-48e0-afcc-5f86ccecd5c1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/64ac2774-8b73-48e0-afcc-5f86ccecd5c1> <http://id.ukpds.org/schema/constituencyGroupName> "Antrim" .
+        <http://id.ukpds.org/64ac2774-8b73-48e0-afcc-5f86ccecd5c1> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7c41f5c6-80c3-4ca4-bde8-8e4bc82499c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7c41f5c6-80c3-4ca4-bde8-8e4bc82499c0> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll and Bute" .
+        <http://id.ukpds.org/7c41f5c6-80c3-4ca4-bde8-8e4bc82499c0> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/ce53834d-a866-4bf3-bd5a-0d7ed4439084> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ce53834d-a866-4bf3-bd5a-0d7ed4439084> <http://id.ukpds.org/schema/constituencyGroupName> "Ayrshire and Bute, Bute and Northern" .
+        <http://id.ukpds.org/ce53834d-a866-4bf3-bd5a-0d7ed4439084> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a67ac1ec-b778-4e40-92d8-573a7bfe142e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a67ac1ec-b778-4e40-92d8-573a7bfe142e> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll and Bute" .
+        <http://id.ukpds.org/a67ac1ec-b778-4e40-92d8-573a7bfe142e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d9c2ee06-7537-4a9b-97b7-1739482fe617> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d9c2ee06-7537-4a9b-97b7-1739482fe617> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel" .
+        <http://id.ukpds.org/d9c2ee06-7537-4a9b-97b7-1739482fe617> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/36481f73-71b2-430a-9c34-b244e6a37f8a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/36481f73-71b2-430a-9c34-b244e6a37f8a> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdare" .
+        <http://id.ukpds.org/36481f73-71b2-430a-9c34-b244e6a37f8a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9196c526-d10e-44ff-8b9b-a2f7dc1e6971> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9196c526-d10e-44ff-8b9b-a2f7dc1e6971> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll" .
+        <http://id.ukpds.org/9196c526-d10e-44ff-8b9b-a2f7dc1e6971> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d502b8cc-e9a7-4e44-a92b-c346c88e633c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d502b8cc-e9a7-4e44-a92b-c346c88e633c> <http://id.ukpds.org/schema/constituencyGroupName> "Anglesey" .
+        <http://id.ukpds.org/d502b8cc-e9a7-4e44-a92b-c346c88e633c> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/43f1a472-40b5-4c10-b3a9-1a55303949be> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/43f1a472-40b5-4c10-b3a9-1a55303949be> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/43f1a472-40b5-4c10-b3a9-1a55303949be> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/493830be-750c-4c8b-b43c-5f80da7b71ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/493830be-750c-4c8b-b43c-5f80da7b71ec> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeenshire and Kincardineshire, Central" .
+        <http://id.ukpds.org/493830be-750c-4c8b-b43c-5f80da7b71ec> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/abc45e14-e2a8-40b0-ae34-478769e98a9d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/abc45e14-e2a8-40b0-ae34-478769e98a9d> <http://id.ukpds.org/schema/constituencyGroupName> "Anglesey" .
+        <http://id.ukpds.org/abc45e14-e2a8-40b0-ae34-478769e98a9d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c567216a-2b73-4f03-b2b6-5ae81ea1d80c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c567216a-2b73-4f03-b2b6-5ae81ea1d80c> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr, Carrick and Cumnock" .
+        <http://id.ukpds.org/15f0f50f-b6d1-4106-b6d6-3eb78ea63b61> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/15f0f50f-b6d1-4106-b6d6-3eb78ea63b61> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/15f0f50f-b6d1-4106-b6d6-3eb78ea63b61> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/1e861202-981b-493b-b072-3ef3c5492086> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/1e861202-981b-493b-b072-3ef3c5492086> <http://id.ukpds.org/schema/constituencyGroupName> "Abertillery" .
+        <http://id.ukpds.org/1e861202-981b-493b-b072-3ef3c5492086> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7539afc7-c3ad-4083-966a-3de16e21e956> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7539afc7-c3ad-4083-966a-3de16e21e956> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/7539afc7-c3ad-4083-966a-3de16e21e956> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/1d0708d9-b385-476e-94d1-c3ea05350d1a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/1d0708d9-b385-476e-94d1-c3ea05350d1a> <http://id.ukpds.org/schema/constituencyGroupName> "Amber Valley" .
+        <http://id.ukpds.org/1d0708d9-b385-476e-94d1-c3ea05350d1a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/359e162d-6ac0-4e41-98d8-edcd9e3c894f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/359e162d-6ac0-4e41-98d8-edcd9e3c894f> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/359e162d-6ac0-4e41-98d8-edcd9e3c894f> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/57cbbfdd-8195-4ea8-bc85-70551073d334> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/57cbbfdd-8195-4ea8-bc85-70551073d334> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/57cbbfdd-8195-4ea8-bc85-70551073d334> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/69ba40aa-7ba5-4ba8-841b-44f1bbd944e3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/69ba40aa-7ba5-4ba8-841b-44f1bbd944e3> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/69ba40aa-7ba5-4ba8-841b-44f1bbd944e3> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/018f4629-0232-4ff0-9710-58b7412551d7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/018f4629-0232-4ff0-9710-58b7412551d7> <http://id.ukpds.org/schema/constituencyGroupName> "Armagh" .
+        <http://id.ukpds.org/018f4629-0232-4ff0-9710-58b7412551d7> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/af827a42-c8e0-4d81-8e0d-9ba6a5f0de67> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/af827a42-c8e0-4d81-8e0d-9ba6a5f0de67> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/06a0d86c-4454-4618-b123-be5b555f78a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/06a0d86c-4454-4618-b123-be5b555f78a8> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/06a0d86c-4454-4618-b123-be5b555f78a8> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/4bae3228-7919-4ec7-ac7e-2ff3339febad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/4bae3228-7919-4ec7-ac7e-2ff3339febad> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/4bae3228-7919-4ec7-ac7e-2ff3339febad> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f958b452-5d40-49c0-a7ff-13de206c3715> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f958b452-5d40-49c0-a7ff-13de206c3715> <http://id.ukpds.org/schema/constituencyGroupName> "Alyn and Deeside" .
+        <http://id.ukpds.org/f958b452-5d40-49c0-a7ff-13de206c3715> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/82398040-943f-44b3-9132-8c8df54440a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/82398040-943f-44b3-9132-8c8df54440a8> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/82398040-943f-44b3-9132-8c8df54440a8> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/cd4365fe-ac1a-4c4b-be0b-c4b3c5b453e0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/cd4365fe-ac1a-4c4b-be0b-c4b3c5b453e0> <http://id.ukpds.org/schema/constituencyGroupName> "Arfon" .
+        <http://id.ukpds.org/3d42eb41-2623-455f-86a8-0647a72a42d4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/3d42eb41-2623-455f-86a8-0647a72a42d4> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/3d42eb41-2623-455f-86a8-0647a72a42d4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/19b4facd-5514-4914-9bb0-431158646c0e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/19b4facd-5514-4914-9bb0-431158646c0e> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen Central" .
+        <http://id.ukpds.org/19b4facd-5514-4914-9bb0-431158646c0e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e34872e2-0e71-4e85-98ce-7c64ac0993aa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e34872e2-0e71-4e85-98ce-7c64ac0993aa> <http://id.ukpds.org/schema/constituencyGroupName> "Armagh" .
+        <http://id.ukpds.org/e34872e2-0e71-4e85-98ce-7c64ac0993aa> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/71739344-f089-4447-a9d1-1c8c95360b61> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/71739344-f089-4447-a9d1-1c8c95360b61> <http://id.ukpds.org/schema/constituencyGroupName> "Abertillery" .
+        <http://id.ukpds.org/71739344-f089-4447-a9d1-1c8c95360b61> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f0690ecd-70c5-4bf8-8e57-b2fecafcbcb3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f0690ecd-70c5-4bf8-8e57-b2fecafcbcb3> <http://id.ukpds.org/schema/constituencyGroupName> "Airdrie and Shotts" .
+        <http://id.ukpds.org/acbea447-fc64-4441-83be-417eb31e5dbb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/acbea447-fc64-4441-83be-417eb31e5dbb> <http://id.ukpds.org/schema/constituencyGroupName> "Aberconwy" .
+        <http://id.ukpds.org/e1ee42c8-aaf2-49af-be49-9a0e079724c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e1ee42c8-aaf2-49af-be49-9a0e079724c6> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll and Bute" .
+        <http://id.ukpds.org/293d12cf-830c-4b70-8d40-27f5cba94767> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/293d12cf-830c-4b70-8d40-27f5cba94767> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/293d12cf-830c-4b70-8d40-27f5cba94767> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d3eec094-fe05-4ae5-84e4-c5d7197e9879> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d3eec094-fe05-4ae5-84e4-c5d7197e9879> <http://id.ukpds.org/schema/constituencyGroupName> "Accrington" .
+        <http://id.ukpds.org/d3eec094-fe05-4ae5-84e4-c5d7197e9879> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c213ca82-3148-4885-8d57-e45cfbbdae7c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c213ca82-3148-4885-8d57-e45cfbbdae7c> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/c213ca82-3148-4885-8d57-e45cfbbdae7c> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/aea4cd36-04b0-4534-9863-5ec4c112f532> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/aea4cd36-04b0-4534-9863-5ec4c112f532> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/aea4cd36-04b0-4534-9863-5ec4c112f532> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7ab98f29-2f09-467a-a01e-abe0e8a42e97> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7ab98f29-2f09-467a-a01e-abe0e8a42e97> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/7ab98f29-2f09-467a-a01e-abe0e8a42e97> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/60976313-2714-42fe-98ea-3d38013b1938> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/60976313-2714-42fe-98ea-3d38013b1938> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr District of Burghs" .
+        <http://id.ukpds.org/60976313-2714-42fe-98ea-3d38013b1938> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/597b13bd-82ec-47c8-922c-0e7bfdaad916> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/597b13bd-82ec-47c8-922c-0e7bfdaad916> <http://id.ukpds.org/schema/constituencyGroupName> "Alyn and Deeside" .
+        <http://id.ukpds.org/d1c77d97-c99b-4206-8ff9-fc2107b1f012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d1c77d97-c99b-4206-8ff9-fc2107b1f012> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel and South Downs" .
+        <http://id.ukpds.org/f12d7f3b-798c-4de4-bdb8-97d4cee4e6be> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f12d7f3b-798c-4de4-bdb8-97d4cee4e6be> <http://id.ukpds.org/schema/constituencyGroupName> "Acton" .
+        <http://id.ukpds.org/f12d7f3b-798c-4de4-bdb8-97d4cee4e6be> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/8238cdf7-fbcb-42b9-bb9d-c39b70e9a203> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/8238cdf7-fbcb-42b9-bb9d-c39b70e9a203> <http://id.ukpds.org/schema/constituencyGroupName> "Acton" .
+        <http://id.ukpds.org/8238cdf7-fbcb-42b9-bb9d-c39b70e9a203> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b3aebaaa-9b44-4743-a18d-c2613e8e2614> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/b3aebaaa-9b44-4743-a18d-c2613e8e2614> <http://id.ukpds.org/schema/constituencyGroupName> "Abertillery" .
+        <http://id.ukpds.org/b3aebaaa-9b44-4743-a18d-c2613e8e2614> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7fab43b7-603e-4053-8350-da34b0fd25e7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7fab43b7-603e-4053-8350-da34b0fd25e7> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/7fab43b7-603e-4053-8350-da34b0fd25e7> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b247eaec-eacd-4a30-9eed-66a66fb9d878> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/b247eaec-eacd-4a30-9eed-66a66fb9d878> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale West" .
+        <http://id.ukpds.org/b247eaec-eacd-4a30-9eed-66a66fb9d878> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e85fc1f5-c286-458b-8ea3-8f1d05ea3c90> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e85fc1f5-c286-458b-8ea3-8f1d05ea3c90> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/cf3c1f9a-c21a-4ab9-8615-190dea50d25b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/cf3c1f9a-c21a-4ab9-8615-190dea50d25b> <http://id.ukpds.org/schema/constituencyGroupName> "Angus" .
+        <http://id.ukpds.org/ebebbded-b2d6-442b-9137-b24c2b518687> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ebebbded-b2d6-442b-9137-b24c2b518687> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/76fd672c-170b-42fe-b7eb-144d37528f83> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/76fd672c-170b-42fe-b7eb-144d37528f83> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/76fd672c-170b-42fe-b7eb-144d37528f83> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/929e78e2-b8c4-4ae5-a51c-91d7be0de4f3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/929e78e2-b8c4-4ae5-a51c-91d7be0de4f3> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll" .
+        <http://id.ukpds.org/929e78e2-b8c4-4ae5-a51c-91d7be0de4f3> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a191c84a-5266-409c-8c53-4955287e1b6a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a191c84a-5266-409c-8c53-4955287e1b6a> <http://id.ukpds.org/schema/constituencyGroupName> "Airdrie and Shotts" .
+        <http://id.ukpds.org/a191c84a-5266-409c-8c53-4955287e1b6a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9f643baf-e469-462c-89c9-854db823ef57> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9f643baf-e469-462c-89c9-854db823ef57> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/9f643baf-e469-462c-89c9-854db823ef57> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/2ae2581c-34b8-49af-b177-d62705aba6b4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/2ae2581c-34b8-49af-b177-d62705aba6b4> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/2ae2581c-34b8-49af-b177-d62705aba6b4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/60347c2a-8d34-4c61-a728-fc196e842339> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/60347c2a-8d34-4c61-a728-fc196e842339> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/dd35a30d-ea9b-4274-8a27-f193246191a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/dd35a30d-ea9b-4274-8a27-f193246191a7> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/e2fe9722-1a81-43ac-a598-d6598a7b313e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e2fe9722-1a81-43ac-a598-d6598a7b313e> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 20:08:34 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"d53fc65f127845dee9cc065658126b07"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0af1583c-a11e-4d41-889c-f28b74f3b917
+      X-Runtime:
+      - '0.169087'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/993599b3-3f43-40ae-a511-b449f31499f2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/993599b3-3f43-40ae-a511-b449f31499f2> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/993599b3-3f43-40ae-a511-b449f31499f2> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a894412f-9f59-4180-9e0a-4dc8ebc0e5c4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a894412f-9f59-4180-9e0a-4dc8ebc0e5c4> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/a894412f-9f59-4180-9e0a-4dc8ebc0e5c4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/18fcc74b-6c4f-4313-8484-4a46c0dfdd92> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/18fcc74b-6c4f-4313-8484-4a46c0dfdd92> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel" .
+        <http://id.ukpds.org/18fcc74b-6c4f-4313-8484-4a46c0dfdd92> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/eb0740b6-992c-4fd0-a0fc-ebd49540907d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/eb0740b6-992c-4fd0-a0fc-ebd49540907d> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham" .
+        <http://id.ukpds.org/eb0740b6-992c-4fd0-a0fc-ebd49540907d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/89becdca-b611-4a05-8d46-66c0887c9a50> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/89becdca-b611-4a05-8d46-66c0887c9a50> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdare" .
+        <http://id.ukpds.org/89becdca-b611-4a05-8d46-66c0887c9a50> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6e4c4b79-7302-42a5-b088-6e714ec544ae> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6e4c4b79-7302-42a5-b088-6e714ec544ae> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/6e4c4b79-7302-42a5-b088-6e714ec544ae> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/57f96030-ace9-4a9a-a166-2437493bdf86> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/57f96030-ace9-4a9a-a166-2437493bdf86> <http://id.ukpds.org/schema/constituencyGroupName> "Accrington" .
+        <http://id.ukpds.org/57f96030-ace9-4a9a-a166-2437493bdf86> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6e29f6e5-e9ac-4372-8eb3-39ec2c618934> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6e29f6e5-e9ac-4372-8eb3-39ec2c618934> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/6e29f6e5-e9ac-4372-8eb3-39ec2c618934> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/993339ec-36fe-4e7b-90af-011c5407390d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/993339ec-36fe-4e7b-90af-011c5407390d> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel and Shoreham" .
+        <http://id.ukpds.org/993339ec-36fe-4e7b-90af-011c5407390d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/78ff84cf-ae3e-43a7-97d1-c9c2402f6cb4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/78ff84cf-ae3e-43a7-97d1-c9c2402f6cb4> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/78ff84cf-ae3e-43a7-97d1-c9c2402f6cb4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/1f29ee73-aa64-4512-97e0-31d812a86a60> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/1f29ee73-aa64-4512-97e0-31d812a86a60> <http://id.ukpds.org/schema/constituencyGroupName> "Anglesey" .
+        <http://id.ukpds.org/1f29ee73-aa64-4512-97e0-31d812a86a60> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/2b47f556-40b3-4780-b1ad-097378517424> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/2b47f556-40b3-4780-b1ad-097378517424> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeenshire and Kincardineshire, Kincardine and Western" .
+        <http://id.ukpds.org/2b47f556-40b3-4780-b1ad-097378517424> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d5870447-90f5-4867-b0e1-e6c264a188c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d5870447-90f5-4867-b0e1-e6c264a188c6> <http://id.ukpds.org/schema/constituencyGroupName> "Alyn and Deeside" .
+        <http://id.ukpds.org/d5870447-90f5-4867-b0e1-e6c264a188c6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/84117c2d-d2a1-4c79-b214-53849321375a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/84117c2d-d2a1-4c79-b214-53849321375a> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/84117c2d-d2a1-4c79-b214-53849321375a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/705bb348-3f62-45c4-8865-c4d78147ee36> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/705bb348-3f62-45c4-8865-c4d78147ee36> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/705bb348-3f62-45c4-8865-c4d78147ee36> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6ccafb93-fc10-477f-a223-f97002b285cc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6ccafb93-fc10-477f-a223-f97002b285cc> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/6ccafb93-fc10-477f-a223-f97002b285cc> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/ff311636-2be1-4f8c-9095-7b6ea78fb16e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ff311636-2be1-4f8c-9095-7b6ea78fb16e> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/ff311636-2be1-4f8c-9095-7b6ea78fb16e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c86ccdbb-57b2-471f-b796-97683fb7178d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c86ccdbb-57b2-471f-b796-97683fb7178d> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/c86ccdbb-57b2-471f-b796-97683fb7178d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6781288b-4733-4af5-8b59-0ad57ecc6623> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6781288b-4733-4af5-8b59-0ad57ecc6623> <http://id.ukpds.org/schema/constituencyGroupName> "Angus East" .
+        <http://id.ukpds.org/6781288b-4733-4af5-8b59-0ad57ecc6623> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9e54065d-a00b-49b1-a3e7-a5511f367369> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9e54065d-a00b-49b1-a3e7-a5511f367369> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/9e54065d-a00b-49b1-a3e7-a5511f367369> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/4f633429-0f25-4714-8246-6e93a9918e03> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/4f633429-0f25-4714-8246-6e93a9918e03> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/4f633429-0f25-4714-8246-6e93a9918e03> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/ccd1a12a-5b4f-4f19-9c14-b9a4e1d87570> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ccd1a12a-5b4f-4f19-9c14-b9a4e1d87570> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/ccd1a12a-5b4f-4f19-9c14-b9a4e1d87570> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/bd025484-d949-4027-a507-969f794bc051> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/bd025484-d949-4027-a507-969f794bc051> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/bd025484-d949-4027-a507-969f794bc051> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f696bdd2-b41e-4126-b6bd-4420b3c4526d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f696bdd2-b41e-4126-b6bd-4420b3c4526d> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/f696bdd2-b41e-4126-b6bd-4420b3c4526d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/0d4e8aa0-45f0-486f-ae3f-4d01de57f23f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/0d4e8aa0-45f0-486f-ae3f-4d01de57f23f> <http://id.ukpds.org/schema/constituencyGroupName> "Abingdon" .
+        <http://id.ukpds.org/0d4e8aa0-45f0-486f-ae3f-4d01de57f23f> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b40c7f91-8b3c-4941-bc1e-fec322824fb9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/b40c7f91-8b3c-4941-bc1e-fec322824fb9> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/b40c7f91-8b3c-4941-bc1e-fec322824fb9> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d9491e4b-0689-4dd2-badc-11adfa8a2f51> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d9491e4b-0689-4dd2-badc-11adfa8a2f51> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/d9491e4b-0689-4dd2-badc-11adfa8a2f51> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/535f3690-5ced-4882-9188-9e9516e8a3a6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/535f3690-5ced-4882-9188-9e9516e8a3a6> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/535f3690-5ced-4882-9188-9e9516e8a3a6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/76f6a22e-47c5-4424-9a76-ad96f98632e6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/76f6a22e-47c5-4424-9a76-ad96f98632e6> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll" .
+        <http://id.ukpds.org/76f6a22e-47c5-4424-9a76-ad96f98632e6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e6ffdcdc-97e4-4481-9891-4cd082fe6ffe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e6ffdcdc-97e4-4481-9891-4cd082fe6ffe> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/e6ffdcdc-97e4-4481-9891-4cd082fe6ffe> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/5c1b540c-b4e3-428d-b426-d6a74e6df8ab> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/5c1b540c-b4e3-428d-b426-d6a74e6df8ab> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/5c1b540c-b4e3-428d-b426-d6a74e6df8ab> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/62bb4084-e271-435b-80a9-e6a8df535a41> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/62bb4084-e271-435b-80a9-e6a8df535a41> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/62bb4084-e271-435b-80a9-e6a8df535a41> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6e06d5fb-a9f2-41f1-a013-a434069700aa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/6e06d5fb-a9f2-41f1-a013-a434069700aa> <http://id.ukpds.org/schema/constituencyGroupName> "Accrington" .
+        <http://id.ukpds.org/6e06d5fb-a9f2-41f1-a013-a434069700aa> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c34601ec-4604-4104-976d-696ee087a82e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c34601ec-4604-4104-976d-696ee087a82e> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeenshire and Kincardineshire, Eastern" .
+        <http://id.ukpds.org/c34601ec-4604-4104-976d-696ee087a82e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/be1ed6c3-82c9-4170-bcb8-d6b773172eda> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/be1ed6c3-82c9-4170-bcb8-d6b773172eda> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel and South Downs" .
+        <http://id.ukpds.org/be1ed6c3-82c9-4170-bcb8-d6b773172eda> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/52c94d8c-6718-4953-b95a-48e72f245360> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/52c94d8c-6718-4953-b95a-48e72f245360> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/52c94d8c-6718-4953-b95a-48e72f245360> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9d65a056-04c9-4aa5-999c-1a5905ce54fd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9d65a056-04c9-4aa5-999c-1a5905ce54fd> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/060d5869-c013-4213-868f-936e141d406d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/060d5869-c013-4213-868f-936e141d406d> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/060d5869-c013-4213-868f-936e141d406d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/186fbfc1-257f-4942-a2bd-049e4837351f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/186fbfc1-257f-4942-a2bd-049e4837351f> <http://id.ukpds.org/schema/constituencyGroupName> "Angus" .
+        <http://id.ukpds.org/186fbfc1-257f-4942-a2bd-049e4837351f> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7f6ee9ae-c3f5-4fe6-9ef8-d57f6d1d27df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7f6ee9ae-c3f5-4fe6-9ef8-d57f6d1d27df> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale West" .
+        <http://id.ukpds.org/01cf0f3b-7787-424f-be62-60d14b8476c8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/01cf0f3b-7787-424f-be62-60d14b8476c8> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/adb4f3eb-bd82-41d0-8b95-f66425041bf9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/adb4f3eb-bd82-41d0-8b95-f66425041bf9> <http://id.ukpds.org/schema/constituencyGroupName> "Amber Valley" .
+        <http://id.ukpds.org/7266e31d-f02e-4310-9e6b-d5fdf131c8fe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7266e31d-f02e-4310-9e6b-d5fdf131c8fe> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/774a1213-5eb5-4ccb-958f-a17b04b3cc5d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/774a1213-5eb5-4ccb-958f-a17b04b3cc5d> <http://id.ukpds.org/schema/constituencyGroupName> "Armagh" .
+        <http://id.ukpds.org/774a1213-5eb5-4ccb-958f-a17b04b3cc5d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e2f9a7b9-953a-40a6-92d8-ca8c5d70ef4d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e2f9a7b9-953a-40a6-92d8-ca8c5d70ef4d> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/e2f9a7b9-953a-40a6-92d8-ca8c5d70ef4d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/37d27017-b7c6-4b5f-ad39-77cf5f5c057a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/37d27017-b7c6-4b5f-ad39-77cf5f5c057a> <http://id.ukpds.org/schema/constituencyGroupName> "Amber Valley" .
+        <http://id.ukpds.org/37d27017-b7c6-4b5f-ad39-77cf5f5c057a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/4ab0c3c0-5fce-42b5-a99b-6d872e0e796b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/4ab0c3c0-5fce-42b5-a99b-6d872e0e796b> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/4ab0c3c0-5fce-42b5-a99b-6d872e0e796b> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/3c09642f-bff1-4ca8-86cb-f23f5fc128fe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/3c09642f-bff1-4ca8-86cb-f23f5fc128fe> <http://id.ukpds.org/schema/constituencyGroupName> "Abingdon" .
+        <http://id.ukpds.org/3c09642f-bff1-4ca8-86cb-f23f5fc128fe> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/17df4803-a6b8-4236-abb7-fe5324e5fd7a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/17df4803-a6b8-4236-abb7-fe5324e5fd7a> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/17df4803-a6b8-4236-abb7-fe5324e5fd7a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9e3e594c-a1fa-4926-a295-890d8dbeb095> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9e3e594c-a1fa-4926-a295-890d8dbeb095> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/9e3e594c-a1fa-4926-a295-890d8dbeb095> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/0409c984-9d18-416f-a21a-fedd7485b4c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/0409c984-9d18-416f-a21a-fedd7485b4c6> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/0409c984-9d18-416f-a21a-fedd7485b4c6> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/40483726-b8e5-41cf-a3ca-3f6a9ecf4772> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/40483726-b8e5-41cf-a3ca-3f6a9ecf4772> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/40483726-b8e5-41cf-a3ca-3f6a9ecf4772> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/856973eb-4037-4d15-9469-31a35c0dbabe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/856973eb-4037-4d15-9469-31a35c0dbabe> <http://id.ukpds.org/schema/constituencyGroupName> "Abingdon" .
+        <http://id.ukpds.org/856973eb-4037-4d15-9469-31a35c0dbabe> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9d0ab9a2-4f4e-47a0-99fd-4dec7e6529a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9d0ab9a2-4f4e-47a0-99fd-4dec7e6529a9> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/9d0ab9a2-4f4e-47a0-99fd-4dec7e6529a9> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d3322e02-f457-4f13-9ee1-1b5a49caa7ca> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d3322e02-f457-4f13-9ee1-1b5a49caa7ca> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/d3322e02-f457-4f13-9ee1-1b5a49caa7ca> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/fdc8eb74-f3fd-4e3a-ba4f-6f1e1741a15a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/fdc8eb74-f3fd-4e3a-ba4f-6f1e1741a15a> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/fdc8eb74-f3fd-4e3a-ba4f-6f1e1741a15a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/64ac2774-8b73-48e0-afcc-5f86ccecd5c1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/64ac2774-8b73-48e0-afcc-5f86ccecd5c1> <http://id.ukpds.org/schema/constituencyGroupName> "Antrim" .
+        <http://id.ukpds.org/64ac2774-8b73-48e0-afcc-5f86ccecd5c1> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7c41f5c6-80c3-4ca4-bde8-8e4bc82499c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7c41f5c6-80c3-4ca4-bde8-8e4bc82499c0> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll and Bute" .
+        <http://id.ukpds.org/7c41f5c6-80c3-4ca4-bde8-8e4bc82499c0> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/ce53834d-a866-4bf3-bd5a-0d7ed4439084> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ce53834d-a866-4bf3-bd5a-0d7ed4439084> <http://id.ukpds.org/schema/constituencyGroupName> "Ayrshire and Bute, Bute and Northern" .
+        <http://id.ukpds.org/ce53834d-a866-4bf3-bd5a-0d7ed4439084> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a67ac1ec-b778-4e40-92d8-573a7bfe142e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a67ac1ec-b778-4e40-92d8-573a7bfe142e> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll and Bute" .
+        <http://id.ukpds.org/a67ac1ec-b778-4e40-92d8-573a7bfe142e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d9c2ee06-7537-4a9b-97b7-1739482fe617> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d9c2ee06-7537-4a9b-97b7-1739482fe617> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel" .
+        <http://id.ukpds.org/d9c2ee06-7537-4a9b-97b7-1739482fe617> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/36481f73-71b2-430a-9c34-b244e6a37f8a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/36481f73-71b2-430a-9c34-b244e6a37f8a> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdare" .
+        <http://id.ukpds.org/36481f73-71b2-430a-9c34-b244e6a37f8a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9196c526-d10e-44ff-8b9b-a2f7dc1e6971> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9196c526-d10e-44ff-8b9b-a2f7dc1e6971> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll" .
+        <http://id.ukpds.org/9196c526-d10e-44ff-8b9b-a2f7dc1e6971> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d502b8cc-e9a7-4e44-a92b-c346c88e633c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d502b8cc-e9a7-4e44-a92b-c346c88e633c> <http://id.ukpds.org/schema/constituencyGroupName> "Anglesey" .
+        <http://id.ukpds.org/d502b8cc-e9a7-4e44-a92b-c346c88e633c> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/43f1a472-40b5-4c10-b3a9-1a55303949be> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/43f1a472-40b5-4c10-b3a9-1a55303949be> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/43f1a472-40b5-4c10-b3a9-1a55303949be> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/493830be-750c-4c8b-b43c-5f80da7b71ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/493830be-750c-4c8b-b43c-5f80da7b71ec> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeenshire and Kincardineshire, Central" .
+        <http://id.ukpds.org/493830be-750c-4c8b-b43c-5f80da7b71ec> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/abc45e14-e2a8-40b0-ae34-478769e98a9d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/abc45e14-e2a8-40b0-ae34-478769e98a9d> <http://id.ukpds.org/schema/constituencyGroupName> "Anglesey" .
+        <http://id.ukpds.org/abc45e14-e2a8-40b0-ae34-478769e98a9d> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c567216a-2b73-4f03-b2b6-5ae81ea1d80c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c567216a-2b73-4f03-b2b6-5ae81ea1d80c> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr, Carrick and Cumnock" .
+        <http://id.ukpds.org/15f0f50f-b6d1-4106-b6d6-3eb78ea63b61> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/15f0f50f-b6d1-4106-b6d6-3eb78ea63b61> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/15f0f50f-b6d1-4106-b6d6-3eb78ea63b61> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/1e861202-981b-493b-b072-3ef3c5492086> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/1e861202-981b-493b-b072-3ef3c5492086> <http://id.ukpds.org/schema/constituencyGroupName> "Abertillery" .
+        <http://id.ukpds.org/1e861202-981b-493b-b072-3ef3c5492086> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7539afc7-c3ad-4083-966a-3de16e21e956> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7539afc7-c3ad-4083-966a-3de16e21e956> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale" .
+        <http://id.ukpds.org/7539afc7-c3ad-4083-966a-3de16e21e956> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/1d0708d9-b385-476e-94d1-c3ea05350d1a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/1d0708d9-b385-476e-94d1-c3ea05350d1a> <http://id.ukpds.org/schema/constituencyGroupName> "Amber Valley" .
+        <http://id.ukpds.org/1d0708d9-b385-476e-94d1-c3ea05350d1a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/359e162d-6ac0-4e41-98d8-edcd9e3c894f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/359e162d-6ac0-4e41-98d8-edcd9e3c894f> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/359e162d-6ac0-4e41-98d8-edcd9e3c894f> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/57cbbfdd-8195-4ea8-bc85-70551073d334> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/57cbbfdd-8195-4ea8-bc85-70551073d334> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/57cbbfdd-8195-4ea8-bc85-70551073d334> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/69ba40aa-7ba5-4ba8-841b-44f1bbd944e3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/69ba40aa-7ba5-4ba8-841b-44f1bbd944e3> <http://id.ukpds.org/schema/constituencyGroupName> "Aldershot" .
+        <http://id.ukpds.org/69ba40aa-7ba5-4ba8-841b-44f1bbd944e3> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/018f4629-0232-4ff0-9710-58b7412551d7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/018f4629-0232-4ff0-9710-58b7412551d7> <http://id.ukpds.org/schema/constituencyGroupName> "Armagh" .
+        <http://id.ukpds.org/018f4629-0232-4ff0-9710-58b7412551d7> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/af827a42-c8e0-4d81-8e0d-9ba6a5f0de67> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/af827a42-c8e0-4d81-8e0d-9ba6a5f0de67> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/06a0d86c-4454-4618-b123-be5b555f78a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/06a0d86c-4454-4618-b123-be5b555f78a8> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/06a0d86c-4454-4618-b123-be5b555f78a8> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/4bae3228-7919-4ec7-ac7e-2ff3339febad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/4bae3228-7919-4ec7-ac7e-2ff3339febad> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/4bae3228-7919-4ec7-ac7e-2ff3339febad> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f958b452-5d40-49c0-a7ff-13de206c3715> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f958b452-5d40-49c0-a7ff-13de206c3715> <http://id.ukpds.org/schema/constituencyGroupName> "Alyn and Deeside" .
+        <http://id.ukpds.org/f958b452-5d40-49c0-a7ff-13de206c3715> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/82398040-943f-44b3-9132-8c8df54440a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/82398040-943f-44b3-9132-8c8df54440a8> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/82398040-943f-44b3-9132-8c8df54440a8> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/cd4365fe-ac1a-4c4b-be0b-c4b3c5b453e0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/cd4365fe-ac1a-4c4b-be0b-c4b3c5b453e0> <http://id.ukpds.org/schema/constituencyGroupName> "Arfon" .
+        <http://id.ukpds.org/3d42eb41-2623-455f-86a8-0647a72a42d4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/3d42eb41-2623-455f-86a8-0647a72a42d4> <http://id.ukpds.org/schema/constituencyGroupName> "Ashton-under-Lyne" .
+        <http://id.ukpds.org/3d42eb41-2623-455f-86a8-0647a72a42d4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/19b4facd-5514-4914-9bb0-431158646c0e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/19b4facd-5514-4914-9bb0-431158646c0e> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen Central" .
+        <http://id.ukpds.org/19b4facd-5514-4914-9bb0-431158646c0e> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e34872e2-0e71-4e85-98ce-7c64ac0993aa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e34872e2-0e71-4e85-98ce-7c64ac0993aa> <http://id.ukpds.org/schema/constituencyGroupName> "Armagh" .
+        <http://id.ukpds.org/e34872e2-0e71-4e85-98ce-7c64ac0993aa> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/71739344-f089-4447-a9d1-1c8c95360b61> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/71739344-f089-4447-a9d1-1c8c95360b61> <http://id.ukpds.org/schema/constituencyGroupName> "Abertillery" .
+        <http://id.ukpds.org/71739344-f089-4447-a9d1-1c8c95360b61> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/f0690ecd-70c5-4bf8-8e57-b2fecafcbcb3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f0690ecd-70c5-4bf8-8e57-b2fecafcbcb3> <http://id.ukpds.org/schema/constituencyGroupName> "Airdrie and Shotts" .
+        <http://id.ukpds.org/acbea447-fc64-4441-83be-417eb31e5dbb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/acbea447-fc64-4441-83be-417eb31e5dbb> <http://id.ukpds.org/schema/constituencyGroupName> "Aberconwy" .
+        <http://id.ukpds.org/e1ee42c8-aaf2-49af-be49-9a0e079724c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e1ee42c8-aaf2-49af-be49-9a0e079724c6> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll and Bute" .
+        <http://id.ukpds.org/293d12cf-830c-4b70-8d40-27f5cba94767> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/293d12cf-830c-4b70-8d40-27f5cba94767> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+        <http://id.ukpds.org/293d12cf-830c-4b70-8d40-27f5cba94767> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/d3eec094-fe05-4ae5-84e4-c5d7197e9879> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d3eec094-fe05-4ae5-84e4-c5d7197e9879> <http://id.ukpds.org/schema/constituencyGroupName> "Accrington" .
+        <http://id.ukpds.org/d3eec094-fe05-4ae5-84e4-c5d7197e9879> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/c213ca82-3148-4885-8d57-e45cfbbdae7c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/c213ca82-3148-4885-8d57-e45cfbbdae7c> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/c213ca82-3148-4885-8d57-e45cfbbdae7c> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/aea4cd36-04b0-4534-9863-5ec4c112f532> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/aea4cd36-04b0-4534-9863-5ec4c112f532> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/aea4cd36-04b0-4534-9863-5ec4c112f532> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7ab98f29-2f09-467a-a01e-abe0e8a42e97> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7ab98f29-2f09-467a-a01e-abe0e8a42e97> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr" .
+        <http://id.ukpds.org/7ab98f29-2f09-467a-a01e-abe0e8a42e97> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/60976313-2714-42fe-98ea-3d38013b1938> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/60976313-2714-42fe-98ea-3d38013b1938> <http://id.ukpds.org/schema/constituencyGroupName> "Ayr District of Burghs" .
+        <http://id.ukpds.org/60976313-2714-42fe-98ea-3d38013b1938> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/597b13bd-82ec-47c8-922c-0e7bfdaad916> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/597b13bd-82ec-47c8-922c-0e7bfdaad916> <http://id.ukpds.org/schema/constituencyGroupName> "Alyn and Deeside" .
+        <http://id.ukpds.org/d1c77d97-c99b-4206-8ff9-fc2107b1f012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/d1c77d97-c99b-4206-8ff9-fc2107b1f012> <http://id.ukpds.org/schema/constituencyGroupName> "Arundel and South Downs" .
+        <http://id.ukpds.org/f12d7f3b-798c-4de4-bdb8-97d4cee4e6be> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/f12d7f3b-798c-4de4-bdb8-97d4cee4e6be> <http://id.ukpds.org/schema/constituencyGroupName> "Acton" .
+        <http://id.ukpds.org/f12d7f3b-798c-4de4-bdb8-97d4cee4e6be> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/8238cdf7-fbcb-42b9-bb9d-c39b70e9a203> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/8238cdf7-fbcb-42b9-bb9d-c39b70e9a203> <http://id.ukpds.org/schema/constituencyGroupName> "Acton" .
+        <http://id.ukpds.org/8238cdf7-fbcb-42b9-bb9d-c39b70e9a203> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b3aebaaa-9b44-4743-a18d-c2613e8e2614> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/b3aebaaa-9b44-4743-a18d-c2613e8e2614> <http://id.ukpds.org/schema/constituencyGroupName> "Abertillery" .
+        <http://id.ukpds.org/b3aebaaa-9b44-4743-a18d-c2613e8e2614> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7fab43b7-603e-4053-8350-da34b0fd25e7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7fab43b7-603e-4053-8350-da34b0fd25e7> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/7fab43b7-603e-4053-8350-da34b0fd25e7> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/b247eaec-eacd-4a30-9eed-66a66fb9d878> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/b247eaec-eacd-4a30-9eed-66a66fb9d878> <http://id.ukpds.org/schema/constituencyGroupName> "Altrincham and Sale West" .
+        <http://id.ukpds.org/b247eaec-eacd-4a30-9eed-66a66fb9d878> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e85fc1f5-c286-458b-8ea3-8f1d05ea3c90> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e85fc1f5-c286-458b-8ea3-8f1d05ea3c90> <http://id.ukpds.org/schema/constituencyGroupName> "Aldridge-Brownhills" .
+        <http://id.ukpds.org/cf3c1f9a-c21a-4ab9-8615-190dea50d25b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/cf3c1f9a-c21a-4ab9-8615-190dea50d25b> <http://id.ukpds.org/schema/constituencyGroupName> "Angus" .
+        <http://id.ukpds.org/ebebbded-b2d6-442b-9137-b24c2b518687> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/ebebbded-b2d6-442b-9137-b24c2b518687> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/76fd672c-170b-42fe-b7eb-144d37528f83> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/76fd672c-170b-42fe-b7eb-144d37528f83> <http://id.ukpds.org/schema/constituencyGroupName> "Aberavon" .
+        <http://id.ukpds.org/76fd672c-170b-42fe-b7eb-144d37528f83> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1950-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/929e78e2-b8c4-4ae5-a51c-91d7be0de4f3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/929e78e2-b8c4-4ae5-a51c-91d7be0de4f3> <http://id.ukpds.org/schema/constituencyGroupName> "Argyll" .
+        <http://id.ukpds.org/929e78e2-b8c4-4ae5-a51c-91d7be0de4f3> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/a191c84a-5266-409c-8c53-4955287e1b6a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/a191c84a-5266-409c-8c53-4955287e1b6a> <http://id.ukpds.org/schema/constituencyGroupName> "Airdrie and Shotts" .
+        <http://id.ukpds.org/a191c84a-5266-409c-8c53-4955287e1b6a> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/9f643baf-e469-462c-89c9-854db823ef57> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/9f643baf-e469-462c-89c9-854db823ef57> <http://id.ukpds.org/schema/constituencyGroupName> "Ashford" .
+        <http://id.ukpds.org/9f643baf-e469-462c-89c9-854db823ef57> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/2ae2581c-34b8-49af-b177-d62705aba6b4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/2ae2581c-34b8-49af-b177-d62705aba6b4> <http://id.ukpds.org/schema/constituencyGroupName> "Ashfield" .
+        <http://id.ukpds.org/2ae2581c-34b8-49af-b177-d62705aba6b4> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1974-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/60347c2a-8d34-4c61-a728-fc196e842339> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/60347c2a-8d34-4c61-a728-fc196e842339> <http://id.ukpds.org/schema/constituencyGroupName> "Aylesbury" .
+        <http://id.ukpds.org/dd35a30d-ea9b-4274-8a27-f193246191a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/dd35a30d-ea9b-4274-8a27-f193246191a7> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen North" .
+        <http://id.ukpds.org/e2fe9722-1a81-43ac-a598-d6598a7b313e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/e2fe9722-1a81-43ac-a598-d6598a7b313e> <http://id.ukpds.org/schema/constituencyGroupName> "Aberdeen South" .
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 20:08:34 GMT
+recorded_with: VCR 3.0.3

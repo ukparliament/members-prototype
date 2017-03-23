@@ -1,3 +1,12 @@
+
+GIT
+  remote: https://github.com/ukparliament/parliament.uk-pugin-components-rails
+  revision: cea1a2117c6d44121b56423a9c841d58474c1186
+  branch: master
+  specs:
+    pugin (0.5.0)
+      haml (~> 4.0)
+      rails (~> 5.0)
 GEM
   remote: https://rubygems.org/
   specs:
@@ -237,4 +246,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.14.6
+   1.13.7

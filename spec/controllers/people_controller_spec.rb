@@ -318,14 +318,23 @@ RSpec.describe PeopleController, vcr: true do
   end
 
   describe 'GET letters' do
+    context 'there is a response' do
+      before(:each) do
+        get :letters, params: {letter: 't'}
+      end
     before(:each) do
       get :letters, params: { letter: 't' }
     end
 
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
+      it 'should have a response with http status ok (200)' do
+        expect(response).to have_http_status(:ok)
+      end
+      it 'assigns @people' do
+        assigns(:people).each do |person|
+          expect(person).to be_a(Grom::Node)
+          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+        end
+      end
     it 'assigns @people and @letters' do
       assigns(:people).each do |person|
         expect(person).to be_a(Grom::Node)
@@ -335,69 +344,96 @@ RSpec.describe PeopleController, vcr: true do
       expect(assigns(:letters)).to be_a(Array)
     end
 
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - forename')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - forename')
-    end
+      it 'assigns @people in alphabetical order' do
+        expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
+        expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      end
 
-    it 'renders the letters template' do
-      expect(response).to render_template('letters')
+      it 'renders the letters template' do
+        expect(response).to render_template('letters')
+      end
+     end
+
+    context 'there is no response' do
+      it 'raises an actioncontroller error' do
+        expect { get :letters, params: { letter: "x"} }.to raise_error(ActionController::RoutingError)
+      end
     end
   end
 
   describe "GET members_letters" do
+    context ' there is a response ' do
+      before(:each) do
+        get :members_letters, params: {letter: "t"}
+      end
     before(:each) do
       get :members_letters, params: { letter: 't' }
     end
 
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @people and @letters' do
-      assigns(:people).each do |person|
-        expect(person).to be_a(Grom::Node)
-        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+      it 'should have a response with http status ok (200)' do
+        expect(response).to have_http_status(:ok)
       end
 
-      expect(assigns(:letters)).to be_a(Array)
+      it 'assigns @people and @letters' do
+        assigns(:people).each do |person|
+          expect(person).to be_a(Grom::Node)
+          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+        end
+
+        expect(assigns(:letters)).to be_a(Array)
+      end
+
+      it 'assigns @people in alphabetical order' do
+        expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
+        expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      end
+
+      it 'renders the members_letters template' do
+        expect(response).to render_template('members_letters')
+      end
     end
 
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - forename')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - forename')
+    context 'there is no response' do
+      it 'raises an actioncontroller error' do
+        expect { get :members_letters, params: { letter: "x"} }.to raise_error(ActionController::RoutingError)
+      end
     end
-
-    it 'renders the members_letters template' do
-      expect(response).to render_template('members_letters')
-    end
-  end
+   end
 
   describe "GET current_members_letters" do
-    before(:each) do
-      get :current_members_letters, params: {letter: "t"}
-    end
 
-    it 'should have a response with http status ok (200)' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'assigns @people and @letters' do
-      assigns(:people).each do |person|
-        expect(person).to be_a(Grom::Node)
-        expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+    context 'there is a response' do
+      before(:each) do
+        get :current_members_letters, params: {letter: "t"}
       end
 
-      expect(assigns(:letters)).to be_a(Array)
+      it 'should have a response with http status ok (200)' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'assigns @people and @letters' do
+        assigns(:people).each do |person|
+          expect(person).to be_a(Grom::Node)
+          expect(person.type).to eq('http://id.ukpds.org/schema/Person')
+        end
+
+        expect(assigns(:letters)).to be_a(Array)
+      end
+
+      it 'assigns @people in alphabetical order' do
+        expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
+        expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      end
+
+      it 'renders the current_members_letters template' do
+        expect(response).to render_template('current_members_letters')
+      end
     end
 
-    it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
-    end
-
-    it 'renders the current_members_letters template' do
-      expect(response).to render_template('current_members_letters')
+    context 'there is no response' do
+      it 'raises an ActionController::RoutingError' do
+        expect { get :current_members_letters, params: { letter: "x"} }.to raise_error(ActionController::RoutingError)
+      end
     end
   end
 

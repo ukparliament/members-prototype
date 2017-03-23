@@ -2,32 +2,30 @@
 
 %section
   %h1= t('.title')
-  %p.lead= t('.title-context')
-%section.block--top
-  .highlight__box
-    %h2= t('.beta-highlight-title')
-    %p= t('.beta-highlight-text-1')
-    %p= t('.beta-highlight-text-2', parliamentlink: link_to(t('.links.current_website'), 'https://www.parliament.uk', target: '_blank', title: 'web site opens in a new window')).html_safe
-%section.block--top
-  %h2= t('.whats-on')
-  %h3= t('.members-info')
-  %ol.list
-    %li.list__item
-      %h4= link_to t('.links.members', members: t('members')), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
-      %p All current members of the House of Commons
-    %li.list__item
-      %h4= link_to t('.links.lords', lords: t('lords')), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a')
-      %p All current members of the House of Lords
-    %li.list__item
-      %h4= link_to t('.links.constituencies', constituencies: t('constituencies_title')), constituencies_current_a_z_letter_path('a')
-      %p Find MPs by the area they represent
-    %li.list__item
-      %h4= link_to t('.links.parties', parties: t('parties_title')), house_parties_current_path(HousesHelper.commons_id)
-      %p Find MPs and Lords by their party or group
-
-%section.block--top
+  .block
+    %p= t('.title-context-1', new_website_link: link_to(t('.links.new_website'), 'https://pds.blog.parliament.uk/2017/02/14/a-new-website-for-parliament-first-public-steps/', target: '_blank', title: 'web site opens in a new window')).html_safe
+    %p= t('.title-context-2', parliamentlink: link_to(t('.links.current_website'), 'https://www.parliament.uk', target: '_blank', title: 'web site opens in a new window')).html_safe
+%section
   %h2= t('.feedback')
-  %p= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), 'https://ukparliament-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-032e1b1d-958f-4402-9ab2-97a38ed9b899/AF-Stage9b7ecae8-0c85-4ee7-afda-b256cffe5f08/definition.json&redirectlink=%2F&cancelRedirectLink=%2F&category=AF-Category-48936b5c-9329-48c7-a0a5-563463aacadf', target: '_blank', title: 'web site opens in a new window')).html_safe
-%section.block--top
+  .block
+    %p= t('.feedback-text', feedbacklink: link_to(t('.links.feedback'), 'https://ukparliament-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-032e1b1d-958f-4402-9ab2-97a38ed9b899/AF-Stage9b7ecae8-0c85-4ee7-afda-b256cffe5f08/definition.json&redirectlink=%2F&cancelRedirectLink=%2F&category=AF-Category-48936b5c-9329-48c7-a0a5-563463aacadf', target: '_blank', title: 'web site opens in a new window')).html_safe
+%section
+  %h2= t('.whats-on')
+  .block
+    %h3= t('.members-info')
+    %ol.list
+      %li.list__item
+        %h4= link_to t('.links.members', members: t('members')), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
+        %p= t('.current_mps')
+      %li.list__item
+        %h4= link_to t('.links.lords', lords: t('lords')), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a')
+        %p= t('.current_lords')
+      %li.list__item
+        %h4= link_to t('.links.constituencies', constituencies: t('constituencies_title')), constituencies_current_a_z_letter_path('a')
+        %p= t('.current_constituencies')
+      %li.list__item
+        %h4= link_to t('.links.parties', parties: t('parties_title')), house_parties_current_path(HousesHelper.commons_id)
+        %p= t('.current_parties_groups')
+%section
   %h2= t('.follow')
   %p= t('.follow-text', bloglink: link_to(t('.links.blog'), 'https://pds.blog.parliament.uk', target: '_blank', title: 'web site opens in a new window')).html_safe

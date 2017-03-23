@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/parties/l
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"b6316fbddb8bb19756d045027b710c66"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b0822229-5fe9-4a45-91ba-a9268c75244c
+      X-Runtime:
+      - '0.169438'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
+        <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> <http://id.ukpds.org/schema/partyName> "Liberal Democrat" .
+        <http://id.ukpds.org/b8878666-5a8c-4644-bf63-f8beb4a5592b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/b8878666-5a8c-4644-bf63-f8beb4a5592b> <http://id.ukpds.org/schema/partyName> "Liberal" .
+        <http://id.ukpds.org/168e88b7-800d-47d2-94be-25f4a97ad056> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/168e88b7-800d-47d2-94be-25f4a97ad056> <http://id.ukpds.org/schema/partyName> "Labour Independent" .
+        <http://id.ukpds.org/e776b867-3fa0-46f6-a1f5-33db7ba31317> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
+        <http://id.ukpds.org/e776b867-3fa0-46f6-a1f5-33db7ba31317> <http://id.ukpds.org/schema/partyName> "Liberal Democrat Independent" .
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 13:56:52 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/parties/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"8b31967a75342729b5fc0d265cfb4169"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ae52c4cf-788f-4777-a728-0399c9f1498e
+      X-Runtime:
+      - '0.126490'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        _:node52535 <http://id.ukpds.org/schema/value> "L" .
+        _:node52536 <http://id.ukpds.org/schema/value> "C" .
+        _:node52537 <http://id.ukpds.org/schema/value> "S" .
+        _:node52538 <http://id.ukpds.org/schema/value> "I" .
+        _:node52539 <http://id.ukpds.org/schema/value> "N" .
+        _:node52540 <http://id.ukpds.org/schema/value> "O" .
+        _:node52541 <http://id.ukpds.org/schema/value> "P" .
+        _:node52542 <http://id.ukpds.org/schema/value> "A" .
+        _:node52543 <http://id.ukpds.org/schema/value> "D" .
+        _:node52544 <http://id.ukpds.org/schema/value> "R" .
+        _:node52545 <http://id.ukpds.org/schema/value> "U" .
+        _:node52546 <http://id.ukpds.org/schema/value> "B" .
+        _:node52547 <http://id.ukpds.org/schema/value> "G" .
+        _:node52548 <http://id.ukpds.org/schema/value> "V" .
+    http_version: 
+  recorded_at: Wed, 22 Mar 2017 13:56:52 GMT
+recorded_with: VCR 3.0.3

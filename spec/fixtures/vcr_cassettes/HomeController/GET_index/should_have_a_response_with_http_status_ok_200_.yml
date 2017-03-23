@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/parties/c5858995-6d25-4eb5-b92e-fba3fbd8ba47
+    uri: http://localhost:3030/houses
     body:
       encoding: US-ASCII
       string: ''
@@ -29,13 +29,13 @@ http_interactions:
       Content-Type:
       - application/n-triples; charset=utf-8
       Etag:
-      - W/"4cc24f8728b657f376a5e77dbb649a09"
+      - W/"f2b8452df137a5afa3eb1bc95b521e5c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cc6ee24b-5603-4b5c-b9e7-ac7f5eb2042b
+      - abbc5197-c0bf-4042-8091-3e7f2c137585
       X-Runtime:
-      - '0.638556'
+      - '0.064544'
       Transfer-Encoding:
       - chunked
     body:
@@ -43,9 +43,8 @@ http_interactions:
       string: |
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
-        <http://id.ukpds.org/c5858995-6d25-4eb5-b92e-fba3fbd8ba47> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
-        <http://id.ukpds.org/c5858995-6d25-4eb5-b92e-fba3fbd8ba47> <http://id.ukpds.org/schema/partyName> "Conservative" .
-        <http://id.ukpds.org/c5858995-6d25-4eb5-b92e-fba3fbd8ba47> <http://id.ukpds.org/schema/count> "330"^^<http://www.w3.org/2001/XMLSchema#integer> .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://id.ukpds.org/schema/houseName> "House of Lords" .
     http_version: 
-  recorded_at: Mon, 20 Mar 2017 11:30:06 GMT
+  recorded_at: Tue, 21 Mar 2017 15:23:31 GMT
 recorded_with: VCR 3.0.3

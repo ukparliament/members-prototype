@@ -1,6 +1,7 @@
-- page_title = title("#{@house.name} - #{t('.title', current: t('current'), parties: t('parties_title'))}")
+- page_title = title("#{t('.title', current: t('current'), parties: t('parties_title').downcase)} - #{@house.name}")
 
 %h1= page_title
+
 .block
   .link__tab
     - if HousesHelper.commons?(@house)
@@ -18,5 +19,6 @@
 
 %ul.list
   = render :partial => 'houses/party', collection: @parties
+
 .block
-  %p= link_to(t('past_and_present_parties'), house_parties_path(@house.graph_id))
+  %p= link_to("#{t('current_and_former_2')} #{t('parties_title').downcase} - #{@house.name}", house_parties_path(@house.graph_id))

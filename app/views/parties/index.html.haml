@@ -1,4 +1,4 @@
-- page_title = title("#{t('.title', parties: t('parties_title'))} #{t('past_present')}")
+- page_title = title(t('.title', parties: t('parties_title').downcase, current_and_former: t('current_and_former')))
 
 %h1= page_title
 = render partial: 'shared/a_to_z', locals: { route_symbol: :parties_a_z_letter_path }

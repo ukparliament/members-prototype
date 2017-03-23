@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/houses/lookup?id=1&source=mnisId
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 15beefa9-0683-4962-bf93-72217cd17a8d
+      X-Runtime:
+      - '0.023171'
+    body:
+      encoding: UTF-8
+      string: "<http://id.ukpds.org/9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                      <http://id.ukpds.org/schema/House> .\n"
+    http_version:
+  recorded_at: Wed, 22 Feb 2017 16:25:33 GMT
+recorded_with: VCR 3.0.3

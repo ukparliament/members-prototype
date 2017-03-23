@@ -1,13 +1,12 @@
-- if @house.graph_id == @commons_id
-  - page_title = title("#{@house.name} - #{t('.title', members: t('mps'))} #{t('past_present')}")
+- if HousesHelper.commons?(@house)
+  - page_title = title(t('.title', members: t('mps'), current_and_former_2: t('current_and_former_2')))
 - else
-  - page_title = title("#{@house.name} - #{t('.title', members: t('lords'))} #{t('past_present')}")
+  - page_title = title(t('.title', members: t('lords'), current_and_former_2: t('current_and_former_2')))
 
 %h1= page_title
 
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_a_z_letter_path, id: @house.graph_id }
-%ul.list
-  = render partial: 'pugin/cards/person-list', locals: { people: @people }
+= render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
 
 .block
   - if HousesHelper.commons?(@house)
@@ -17,6 +16,3 @@
     %p= link_to(t('members_commons'), house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
 
   %p= link_to(t('past_and_present_members'), house_members_a_z_letter_path(@house.graph_id, 'a'))
-
-
-

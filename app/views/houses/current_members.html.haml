@@ -1,14 +1,18 @@
 - page_title = title("#{@house.name} - #{t('.title', current: t('current'), members: t('members'))}")
 
-%h1= page_title
+- if HousesHelper.commons?(@house)
+  %h1= t('.title', current: t('current'), members: t('mps'))
+- if HousesHelper.lords?(@house)
+  %h1= t('.title', current: t('current'), members: t('lords'))
+
 = render partial: 'shared/id_a_to_z', locals: { route_symbol: :house_members_current_a_z_letter_path, id: @house.graph_id}
-%ul.list
-  = render partial: 'pugin/cards/person-list', locals: { people: @people }
+= render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
+
 .block
   - if HousesHelper.commons?(@house)
-    %p= link_to(t('members_hol'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
+    %p= link_to(t('houses.show.mps'), house_members_a_z_letter_path(@house.graph_id, 'a'))
+    %p= link_to(t('houses.show.members_all_lords'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
 
   - if HousesHelper.lords?(@house)
-    %p= link_to(t('members_commons'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
-
-  %p= link_to(t('past_and_present_members'), house_members_a_z_letter_path(@house.graph_id, 'a'))
+    %p= link_to(t('houses.show.lords'), house_members_a_z_letter_path(@house.graph_id, 'a'))
+    %p= link_to(t('houses.show.members_all_commons'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))

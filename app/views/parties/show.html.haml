@@ -12,5 +12,4 @@
   %p.lead= t('party_no_current_members')
   .block
     .list__item
-      %h2= link_to(t('past_members'), party_members_path(@party.graph_id))
-      %p= "#{t('.past')} #{@party.name} #{t('.party_members')}"
+      %h2= link_to("#{t('former').capitalize} #{@party.name} #{t('members').downcase}", party_members_path(@party.graph_id))

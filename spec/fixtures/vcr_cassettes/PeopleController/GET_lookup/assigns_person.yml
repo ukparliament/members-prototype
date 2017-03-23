@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/houses
+    uri: http://localhost:3030/people/lookup?id=3898&source=mnisId
     body:
       encoding: US-ASCII
       string: ''
@@ -29,22 +29,19 @@ http_interactions:
       Content-Type:
       - application/n-triples; charset=utf-8
       Etag:
-      - W/"f2b8452df137a5afa3eb1bc95b521e5c"
+      - W/"cef63e03e8318b86a5ac9edfcea4cec2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - feed529e-04ad-4a2f-8f86-df0b49276d8c
+      - 8e634f07-b3fc-4006-b153-b3a0285a0a6e
       X-Runtime:
-      - '0.054421'
+      - '0.062490'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: |
-        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
-        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
-        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
-        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://id.ukpds.org/schema/houseName> "House of Lords" .
+      string: "<http://id.ukpds.org/f5812d52-e221-4a51-a167-e74c84995ecb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Person> .\n"
     http_version: 
-  recorded_at: Tue, 21 Mar 2017 15:22:50 GMT
+  recorded_at: Wed, 22 Mar 2017 14:07:14 GMT
 recorded_with: VCR 3.0.3

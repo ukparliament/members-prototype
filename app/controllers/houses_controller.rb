@@ -71,8 +71,11 @@ class HousesController < ApplicationController
     data = Parliament::Request.new.houses(house_id).parties(party_id).get
 
     @house, @party = data.filter('http://id.ukpds.org/schema/House', 'http://id.ukpds.org/schema/Party')
+
     @house = @house.first
     @party = @party.first
+
+    raise ActionController::RoutingError, 'Invalid party id' if @party.nil?
   end
 
   def members_letters

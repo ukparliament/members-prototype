@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/houses
+    uri: http://localhost:3030/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/parties/123
     body:
       encoding: US-ASCII
       string: ''
@@ -29,13 +29,13 @@ http_interactions:
       Content-Type:
       - application/n-triples; charset=utf-8
       Etag:
-      - W/"f2b8452df137a5afa3eb1bc95b521e5c"
+      - W/"4f2ff06558502cf8469f59d1cd04a7ef"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - da6fa0a4-19c8-4305-9007-916a681495b3
+      - b08dc37a-7167-4151-abab-32882aa2a52f
       X-Runtime:
-      - '0.097001'
+      - '0.201243'
       Transfer-Encoding:
       - chunked
     body:
@@ -43,9 +43,6 @@ http_interactions:
       string: |
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
-        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
-        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://id.ukpds.org/schema/houseName> "House of Lords" .
-    http_version:
-  recorded_at: Wed, 22 Mar 2017 16:42:20 GMT
-
+    http_version: 
+  recorded_at: Tue, 21 Mar 2017 13:34:12 GMT
 recorded_with: VCR 3.0.3

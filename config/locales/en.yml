@@ -63,6 +63,14 @@ en:
   party_no_current_members: 'There are no MPs or Lords in this party.'
   party_no_current_members_house: 'There are currently no members of this party in this House.'
   mps: 'MPs'
+  mp_count:
+    zero: 'MPs'
+    one: 'MP'
+    other: 'MPs'
+  lord_count:
+    zero: 'Lords'
+    one: 'Lord'
+    other: 'Lords'
   lords: 'Lords'
   mps_and_lords: 'MPs and Lords'
   view_all_current: 'View all current'
@@ -156,9 +164,7 @@ en:
     a_to_z:
       title: ! '%{parties}'
     letters:
-      title: ! '%{parties} %{past_present}'
-    members:
-      title: ! '%{members}'
+      title: ! '%{parties} %{past_present}'    
     current:
       title: ! '%{current} %{parties_title}'
       current_and_former: ! '%{current_and_former} %{parties_title}'
@@ -166,6 +172,7 @@ en:
       party_members: 'party members.'
       past: 'All past'
     members:
+      title: ! '%{members}'
     a_to_z_members:
     members_letters:
       title: ! '%{members}'

@@ -14,4 +14,4 @@
       %p
         = party.member_count
         %span
-          = HousesHelper.commons?(@house) ? t('mps') : t('lords')
+          = HousesHelper.commons?(@house) ? t('mp_count', count: party.member_count) : t('lord_count', count: party.member_count)

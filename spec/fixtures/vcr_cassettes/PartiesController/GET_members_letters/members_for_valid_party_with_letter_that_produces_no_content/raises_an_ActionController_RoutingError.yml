@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/constituencies/current/z
+    uri: http://localhost:3030/parties/7a048f56-0ddd-48b0-85bd-cf5dd9fa5427/members/a_z_letters
     body:
       encoding: US-ASCII
       string: ''
@@ -29,12 +29,12 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - aea8eb36-a21e-47a7-a482-5825e59b775d
+      - e145876e-9ada-43c2-a660-d53537060bae
       X-Runtime:
-      - '0.277679'
+      - '0.623264'
     body:
       encoding: UTF-8
       string: ''
-    http_version:
-  recorded_at: Wed, 22 Mar 2017 20:40:09 GMT
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 13:23:49 GMT
 recorded_with: VCR 3.0.3

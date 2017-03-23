@@ -58,7 +58,7 @@ en:
   former_mp: 'Former MP'
   former_lord: 'Former Lord'
   current_constituency: 'Current Constituency'
-  past_constituency: 'Past Constituency'
+  past_constituency: 'Former Constituency'
   past_members: 'Past members'
   party_no_current_members: 'There are no MPs or Lords in this party.'
   party_no_current_members_house: 'There are currently no members of this party in this House.'
@@ -175,7 +175,7 @@ en:
       title: ! '%{current} %{members}'
   constituencies:
     index:
-      title: ! '%{constituencies}'
+      title: ! '%{current_and_former} %{constituencies}'
     current:
       title: ! '%{current} %{constituencies}'
     members:

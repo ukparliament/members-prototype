@@ -5,9 +5,15 @@
 .env
 .env.sample
 .gitignore
+.hound.yml
+.rubocop.yml
+.travis.yml
+.yardoc
 Dockerfile
 Procfile
 Makefile
 tmp
+coverage
+doc
 aws_ecs
 log

@@ -1,59 +1,77 @@
 .PHONY: build run dev test push rmi deploy-ecs
 
+##
+# Makefile used to build, test and (locally) run the parliament.uk-prototype project.
+##
+
+##
+# ENVRONMENT VARIABLES
+#   We use a number of environment  variables to customer the Docker image createad at build time. These are set and
+#   detailed below.
+##
+
+# App name used to created our Docker image. This name is important in the context of the AWS docker repository.
 APP_NAME = parliamentukprototype
 
-# The value assigned here is for execution in local machines
-# When executed by GoCD it may inject another value from a GoCD environment variable
-AWS_ACCOUNT_ID = $(shell aws sts get-caller-identity --output text --query "Account" 2> /dev/null)
+# AWS account ID used to create our Docker image. This value is important in the context of the AWS docker repository.
+# When executed in GoCD, AWS_ACCOUNT_ID may be set by an environment variable
+AWS_ACCOUNT_ID ?= $(or $(shell aws sts get-caller-identity --output text --query "Account" 2 > /dev/null), unknown)
 
-# GO_PIPELINE_COUNTER is the pipeline number, passed from our build agent.
-GO_PIPELINE_COUNTER? = unknown
+# A counter that represents the build number within GoCD. Used to tag and version our images.
+GO_PIPELINE_COUNTER ?= unknown
+
+# Which Rack environment will our docker image be configured to run in?
+RACK_ENV ?= production
 
 # VERSION is used to tag the Docker images
-VERSION=0.2.$(GO_PIPELINE_COUNTER)
+VERSION = 0.2.$(GO_PIPELINE_COUNTER)
 
-# ECS-related
+# ECS related varuabked ysed to build our image name
 ECS_CLUSTER = ecs
 AWS_REGION = eu-west-1
+
+# The name of our Docker image
 IMAGE = $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(APP_NAME)
 
-build:
+# Container port used for mapping when running our Docker image.
+CONTAINER_PORT = 3000
+
+# Host port used for mapping when running our Docker image.
+HOST_PORT = 80
+
+##
+# MAKE TASKS
+#   Tasks used locally and within our build pipelines to build, test and run our Docker image.
+##
+
+build: # Using the variables defined above, run `docker build`, tagging the image and passing in the required arguments.
 	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest \
 		--build-arg PARLIAMENT_BASE_URL=$(PARLIAMENT_BASE_URL) \
 		--build-arg GTM_KEY=$(GTM_KEY) \
 		--build-arg ASSET_LOCATION_URL=$(ASSET_LOCATION_URL) \
 		--build-arg SECRET_KEY_BASE=$(SECRET_KEY_BASE) \
+		--build-arg RACK_ENV=$(RACK_ENV) \
 		.
 
-# Container port 3000 is specified in the Dockerfile
-CONTAINER_PORT = 3000
-# Host port of 80 can be changed to any value but remember the app URL would be http://localhost:<host-port>
-HOST_PORT = 80
-
-run:
+run: # Run the Docker image we have created, mapping the HOST_PORT and CONTAINER_PORT
 	docker run --rm -p $(HOST_PORT):$(CONTAINER_PORT) $(IMAGE)
 
-dev:
-	docker run -p $(HOST_PORT):$(CONTAINER_PORT) -v ${PWD}:/opt/$(APP_NAME) $(IMAGE)
+dev: # Build the Dcoker image in development mode then run the Docker image we have created. Mapping the HOST_PORT and CONTAINER_PORT, we also add a volume so that code changes we make on the host machine are reflected in the container.
+	RACK_ENV=development make build
+	docker run -p $(HOST_PORT):$(CONTAINER_PORT) -v ${PWD}:/app $(IMAGE)
 
-test:
-	rvm --version
-	rvm use 2.3.1 --install
-	ruby --version
-	gem --version
-	gem install bundler
-	bundle --version
-	bundle install --jobs=3 --retry=3
-	PARLIAMENT_BASE_URL=http://localhost:3030 bundle exec rake
+test: # Build the docker image in development mode, using a test PARLIAMENT_BASE_URL. Then run rake within a Docker container using our image.
+	RACK_ENV=development PARLIAMENT_BASE_URL=http://localhost:3030 make build
+	docker run $(IMAGE):latest bundle exec rake
 
-push:
+push: # Push the Docker images we have build to the configured Docker repository (Run in GoCD to push the image to AWS)
 	docker push $(IMAGE):$(VERSION)
 	docker push $(IMAGE):latest
 
-rmi:
+rmi: # Remove local versions of our images.
 	docker rmi $(IMAGE):$(VERSION)
 	docker rmi $(IMAGE):latest
 
-deploy-ecs:
+deploy-ecs: # Deploy our new Docker image onto an AWS cluster (Run in GoCD to deploy to various environments).
 	./aws_ecs/register-task-definition.sh $(APP_NAME)
 	aws ecs update-service --service $(APP_NAME) --cluster $(ECS_CLUSTER) --region $(AWS_REGION) --task-definition $(APP_NAME)

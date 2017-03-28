@@ -11,10 +11,9 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
   response:
     status:
       code: 200
@@ -29,43 +28,43 @@ http_interactions:
       Content-Type:
       - application/n-triples; charset=utf-8
       Etag:
-      - W/"6f13c4c5f2284fa9b8edefa19073e39a"
+      - W/"6bfeec19fe21006e3766c1358218e08c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 069d7043-3921-40e6-9f74-abfa5bf2a25f
+      - 52c7aafe-d5a9-473d-8ebd-35c4f85b455f
       X-Runtime:
-      - '0.367670'
+      - '0.213742'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: |
-        _:node121004 <http://id.ukpds.org/schema/value> "G" .
-        _:node121005 <http://id.ukpds.org/schema/value> "W" .
-        _:node121006 <http://id.ukpds.org/schema/value> "H" .
-        _:node121007 <http://id.ukpds.org/schema/value> "A" .
-        _:node121008 <http://id.ukpds.org/schema/value> "S" .
-        _:node121009 <http://id.ukpds.org/schema/value> "C" .
-        _:node121010 <http://id.ukpds.org/schema/value> "P" .
-        _:node121011 <http://id.ukpds.org/schema/value> "M" .
-        _:node121012 <http://id.ukpds.org/schema/value> "T" .
-        _:node121013 <http://id.ukpds.org/schema/value> "J" .
-        _:node121014 <http://id.ukpds.org/schema/value> "L" .
-        _:node121015 <http://id.ukpds.org/schema/value> "B" .
-        _:node121016 <http://id.ukpds.org/schema/value> "R" .
-        _:node121017 <http://id.ukpds.org/schema/value> "K" .
-        _:node121018 <http://id.ukpds.org/schema/value> "D" .
-        _:node121019 <http://id.ukpds.org/schema/value> "Q" .
-        _:node121020 <http://id.ukpds.org/schema/value> "O" .
-        _:node121021 <http://id.ukpds.org/schema/value> "F" .
-        _:node121022 <http://id.ukpds.org/schema/value> "E" .
-        _:node121023 <http://id.ukpds.org/schema/value> "N" .
-        _:node121024 <http://id.ukpds.org/schema/value> "V" .
-        _:node121025 <http://id.ukpds.org/schema/value> "Z" .
-        _:node121026 <http://id.ukpds.org/schema/value> "U" .
+        _:node759780 <http://id.ukpds.org/schema/value> "G" .
+        _:node759781 <http://id.ukpds.org/schema/value> "W" .
+        _:node759782 <http://id.ukpds.org/schema/value> "H" .
+        _:node759783 <http://id.ukpds.org/schema/value> "A" .
+        _:node759784 <http://id.ukpds.org/schema/value> "S" .
+        _:node759785 <http://id.ukpds.org/schema/value> "C" .
+        _:node759786 <http://id.ukpds.org/schema/value> "P" .
+        _:node759787 <http://id.ukpds.org/schema/value> "M" .
+        _:node759788 <http://id.ukpds.org/schema/value> "T" .
+        _:node759789 <http://id.ukpds.org/schema/value> "J" .
+        _:node759790 <http://id.ukpds.org/schema/value> "L" .
+        _:node759791 <http://id.ukpds.org/schema/value> "B" .
+        _:node759792 <http://id.ukpds.org/schema/value> "R" .
+        _:node759793 <http://id.ukpds.org/schema/value> "K" .
+        _:node759794 <http://id.ukpds.org/schema/value> "D" .
+        _:node759795 <http://id.ukpds.org/schema/value> "Q" .
+        _:node759796 <http://id.ukpds.org/schema/value> "O" .
+        _:node759797 <http://id.ukpds.org/schema/value> "F" .
+        _:node759798 <http://id.ukpds.org/schema/value> "E" .
+        _:node759799 <http://id.ukpds.org/schema/value> "N" .
+        _:node759800 <http://id.ukpds.org/schema/value> "V" .
+        _:node759801 <http://id.ukpds.org/schema/value> "Z" .
+        _:node759802 <http://id.ukpds.org/schema/value> "U" .
     http_version: 
-  recorded_at: Thu, 23 Mar 2017 22:00:41 GMT
+  recorded_at: Tue, 28 Mar 2017 18:30:44 GMT
 - request:
     method: get
     uri: http://localhost:3030/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52
@@ -77,10 +76,9 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
   response:
     status:
       code: 200
@@ -99,9 +97,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6d7ce334-35ed-4f2e-83f5-78f4a813702c
+      - c16b94a6-43fa-4fab-b1a1-8439c944c030
       X-Runtime:
-      - '0.293737'
+      - '0.111100'
       Transfer-Encoding:
       - chunked
     body:
@@ -110,7 +108,7 @@ http_interactions:
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
     http_version: 
-  recorded_at: Thu, 23 Mar 2017 22:00:42 GMT
+  recorded_at: Tue, 28 Mar 2017 18:30:44 GMT
 - request:
     method: get
     uri: http://localhost:3030/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/members/current/a
@@ -122,10 +120,9 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
   response:
     status:
       code: 200
@@ -144,9 +141,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9c75ceed-deb6-44e0-8877-81a388df6463
+      - 2e2bd6e1-02b4-4051-a2d4-76664fd665aa
       X-Runtime:
-      - '0.471413'
+      - '0.354440'
       Transfer-Encoding:
       - chunked
     body:
@@ -497,5 +494,51 @@ http_interactions:
         <http://id.ukpds.org/aa975103-dd43-486a-b7e1-db3d359e2dd2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
         <http://id.ukpds.org/aa975103-dd43-486a-b7e1-db3d359e2dd2> <http://id.ukpds.org/schema/constituencyGroupName> "Oldham East and Saddleworth" .
     http_version: 
-  recorded_at: Thu, 23 Mar 2017 22:00:42 GMT
+  recorded_at: Tue, 28 Mar 2017 18:30:44 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/houses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"f2b8452df137a5afa3eb1bc95b521e5c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3ec8917a-0590-4ae6-ae64-e24f92ec037b
+      X-Runtime:
+      - '0.099836'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://id.ukpds.org/schema/houseName> "House of Lords" .
+    http_version: 
+  recorded_at: Tue, 28 Mar 2017 18:30:44 GMT
 recorded_with: VCR 3.0.3

@@ -66,7 +66,7 @@ http_interactions:
         _:node121241 <http://id.ukpds.org/schema/value> "I" .
         _:node121242 <http://id.ukpds.org/schema/value> "V" .
         _:node121243 <http://id.ukpds.org/schema/value> "Z" .
-    http_version: 
+    http_version:
   recorded_at: Thu, 23 Mar 2017 22:03:53 GMT
 - request:
     method: get
@@ -111,7 +111,7 @@ http_interactions:
       string: |
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
-    http_version: 
+    http_version:
   recorded_at: Thu, 23 Mar 2017 22:03:54 GMT
 - request:
     method: get
@@ -157,7 +157,7 @@ http_interactions:
         <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
         <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
         <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/count> "442"^^<http://www.w3.org/2001/XMLSchema#integer> .
-    http_version: 
+    http_version:
   recorded_at: Thu, 23 Mar 2017 22:03:54 GMT
 - request:
     method: get
@@ -919,6 +919,52 @@ http_interactions:
         <http://id.ukpds.org/87bc6cdc-76aa-470d-9a24-4197ac1a65bf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
         <http://id.ukpds.org/87bc6cdc-76aa-470d-9a24-4197ac1a65bf> <http://id.ukpds.org/schema/partyMembershipStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/d5a375d9-dc2d-4745-851f-50252a13dbcc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Incumbency> .
-    http_version: 
+    http_version:
   recorded_at: Thu, 23 Mar 2017 22:03:55 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/houses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"f2b8452df137a5afa3eb1bc95b521e5c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d700a6a9-09e4-4714-bf09-3e7863790437
+      X-Runtime:
+      - '0.092083'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> <http://id.ukpds.org/schema/houseName> "House of Lords" .
+    http_version:
+  recorded_at: Tue, 28 Mar 2017 19:49:30 GMT
 recorded_with: VCR 3.0.3

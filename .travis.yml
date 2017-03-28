@@ -1,2 +1,9 @@
-sudo: false
-language: ruby
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+script:
+  - make test

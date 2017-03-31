@@ -25,6 +25,9 @@ gem 'tzinfo-data'
 gem 'puma'
 gem 'rack-timeout'
 
+# Build JSON views
+gem 'jbuilder'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

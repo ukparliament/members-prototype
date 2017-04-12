@@ -53,6 +53,7 @@ en:
   lords: 'Lords'
   # global generic translations
   view_all: 'view all'
+  all: 'all'
   find: 'find'
   current: 'current'
   former: 'former'
@@ -93,6 +94,7 @@ en:
       contact: 'contact'
       membership_history: 'membership history'
       election_history: 'election history'
+      biography: 'biography'
     constituencies:
       title: '%{current_and_former} %{constituency_plural}'
     current_constituency:
@@ -109,7 +111,8 @@ en:
   # contact points translations
   contact_points:
     index:
-      title: 'contact points'
+      web-title: 'contact points'
+      page-title: 'contact details'
     email: 'email'
     phone: 'phone'
     fax: 'fax'

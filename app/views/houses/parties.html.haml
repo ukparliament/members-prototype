@@ -1,6 +1,6 @@
-- page_title = title("#{@house.name} - #{t('current_and_former').capitalize} #{t('parties_and_groups')}")
+- title("#{@house.name} - #{t('current_and_former').capitalize} #{t('parties_and_groups')}")
 
-%h1= page_title
+%h1= "#{t('current_and_former').capitalize} #{HousesHelper.commons?(@house) ? t('party_plural') : t('parties_and_groups')}"
 
 .block
   .link__tab

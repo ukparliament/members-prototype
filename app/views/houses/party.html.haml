@@ -1,19 +1,16 @@
-- page_title = title("#{@house.name} - #{@party.name}")
+- title("#{@house.name} - #{@party.name}")
 
-%h1= page_title
+%h1= "#{@party.name} - #{@house.name}"
 
 - if @party.member_count > 0
   .block
     .list__item
-      - if HousesHelper.commons?(@house)
-        %h2= link_to("#{t('current').capitalize} #{@party.name} #{t('mp_plural')}", house_parties_party_members_current_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
-      - if HousesHelper.lords?(@house)
-        %h2= link_to("#{t('current').capitalize} #{@party.name} #{t('lord_plural')}", house_parties_party_members_current_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
-      %p= "#{t('view_all').capitalize} #{t('current')} #{@party.name} #{t('member_plural')} #{t('in_the')} #{@house.name}"
+      %h2= link_to("#{@party.name} #{@current_person_type}", house_parties_party_members_current_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
+      %p= "#{t('view_all').capitalize} #{@party.name} #{t('member_plural')} #{t('in_the')} #{@house.name}"
 
 - if @party.member_count == 0
   %p.lead= t('.house_no_current_party_members')
   .block
     .list__item
-      %h2= link_to("#{t('current_and_former').capitalize} #{t('member_plural')}", house_parties_party_members_path(@house.graph_id, @party.graph_id))
+      %h2= link_to("#{t('current_and_former').capitalize} #{@party.name} #{@current_person_type}", house_parties_party_members_path(@house.graph_id, @party.graph_id))
       %p= "#{t('view_all').capitalize} #{t('current_and_former')} #{@party.name} #{t('member_plural')}"

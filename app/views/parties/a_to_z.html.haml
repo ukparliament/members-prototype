@@ -1,1 +1,6 @@
+- page_title = title(t('.title', current_and_former: t('current_and_former').capitalize, parties_and_groups: t('parties_and_groups')))
+
+%h1= page_title
+
 = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :parties_a_z_letter_path }
+= render 'party_list'

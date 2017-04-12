@@ -36,6 +36,32 @@ module HousesHelper
     @lords_id
   end
 
+  # Returns the current house id for the page alongside the other house id.
+  #
+  # @param [Grom::Node] house The house that a particular person is linked to.
+  # @return [Array<String, String>] The current house id and other house id.
+  def self.house_id_string(house)
+    is_commons = HousesHelper.commons?(house)
+
+    house_ids = [commons_id, lords_id]
+    return house_ids if is_commons
+    return house_ids.reverse
+  end
+
+  # Returns the current
+  #
+  # @param [Grom::Node] house The house that a particular person is linked to.
+  # @return [Array<String, String>] The current person type and other person type.
+  def self.person_type_string(house)
+    is_mp = HousesHelper.commons?(house)
+
+    # TODO: Clean up this horrible code small
+    types = [I18n.t('mp_plural'), I18n.t('lord_plural')]
+
+    return types if is_mp
+    return types.reverse
+  end
+
   private_class_method
 
   def self.set_ids

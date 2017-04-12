@@ -1,7 +1,7 @@
 - page_title = title("#{@constituency.name} - #{t('.title', current: t('current').capitalize, mp: t('mp'))}")
 
 %h1= page_title
-
+%p= @constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
 %p
   = "#{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
   = @constituency.current? ? " #{t('to_present')}" : " #{t('to')} #{l(@constituency.end_date, format: :default)}"

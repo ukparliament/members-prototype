@@ -16,45 +16,45 @@
             = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
           - if !@person.statuses[:house_membership_status].empty? && @person.statuses[:house_membership_status].include?('Former Lord')
             %p
-              = link_to("#{t('view_all').capitalize} #{t('current')} #{t('mp_plural')}", house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
+              = link_to("#{t('all').capitalize} #{t('current')} #{t('mp_plural')}", house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
               = " / "
-              = link_to("#{t('view_all').capitalize} #{t('lord_plural')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
+              = link_to("#{t('all').capitalize} #{t('lord_plural')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
           -else
-            %p= link_to("#{t('view_all').capitalize} #{t('current')} #{t('mp_plural')}", house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
+            %p= link_to("#{t('all').capitalize} #{t('current')} #{t('mp_plural')}", house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
         - else
           %p.lead
             - if @person.statuses[:house_membership_status].include?('Lord')
               - if @person.statuses[:house_membership_status].include?('Former MP')
                 = @person.statuses[:house_membership_status].join(' and ')
                 %p
-                  = link_to("#{t('view_all').capitalize} #{t('current')} #{t('lord_plural')}", house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
+                  = link_to("#{t('all').capitalize} #{t('current')} #{t('lord_plural')}", house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
                   = " / "
-                  = link_to("#{t('view_all').capitalize} #{t('mp_plural')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
+                  = link_to("#{t('all').capitalize} #{t('mp_plural')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
               - else
                 = @person.statuses[:house_membership_status].join(' and ')
-                %p= link_to("#{t('view_all').capitalize} #{t('current')} #{t('lord_plural')}", house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
+                %p= link_to("#{t('all').capitalize} #{t('current')} #{t('lord_plural')}", house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a'))
             - else
               - if @person.statuses[:house_membership_status].include?('Former MP')
                 - if @person.statuses[:house_membership_status].include?('Former Lord')
                   = @person.statuses[:house_membership_status].join(' and ')
                   %p
-                    = link_to("#{t('view_all').capitalize} #{t('lord_plural')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
+                    = link_to("#{t('all').capitalize} #{t('current_and_former')} #{t('lord_plural')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
                     = " / "
-                    = link_to("#{t('view_all').capitalize} #{t('mp_plural')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
+                    = link_to("#{t('all').capitalize} #{t('current_and_former')} #{t('mp_plural')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
                 - else
                   = @person.statuses[:house_membership_status].join(' and ')
                   %p
-                    = link_to("#{t('view_all').capitalize} #{t('mp_plural')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
+                    = link_to("#{t('all').capitalize} #{t('current_and_former')} #{t('mp_plural')}", house_members_a_z_letter_path(HousesHelper.commons_id, 'a'))
               - else
                 = @person.statuses[:house_membership_status].join(' and ')
                 %p
-                  = link_to("#{t('view_all').capitalize} #{t('lord_plural')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
+                  = link_to("#{t('all').capitalize} #{t('current_and_former')} #{t('lord_plural')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
       - if @current_party_membership && @current_incumbency
         .block--border
           %p.lead= link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
 - if @current_incumbency && @current_party_membership
   %section.block--top
-    %h2= "#{t('.contact').capitalize} #{@person.display_name}"
+    %h2= "#{t('.contact').capitalize}"
     - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Lord')
       - if @current_incumbency.contact_points.empty?
         .block
@@ -80,10 +80,10 @@
                 .line-break-heavy
 
 - if @house_incumbencies.present? || @seat_incumbencies.present?
+  %h2= t('.biography').capitalize
   %section.block--top
     - if @house_incumbencies.present?
-      %h2= t('.membership_history').capitalize
-      %h3= t('house_of_lords')
+      %h3= "#{t('member').capitalize} #{t('of_the')} #{t('house_of_lords')}"
       %ol.list
         - @house_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |house_incumbency|
           %li.list__item--secondary
@@ -93,8 +93,7 @@
                 = house_incumbency.current? ? t( 'to_present') : " #{t('to')} #{l(house_incumbency.end_date, format: :default)}"
 
     - if @seat_incumbencies.present?
-      %h2= t('.election_history').capitalize
-      %h3= t('house_of_commons')
+      %h3= "#{t('member').capitalize} #{t('of_the')} #{t('house_of_commons')}"
       %ol.list
         - @seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
           %li.list__item--secondary

@@ -1,6 +1,6 @@
-- page_title = title("#{@person.display_name} - #{t('contact_points.index.title').capitalize}")
+- title("#{@person.display_name} - #{t('contact_points.index.web-title').capitalize}")
 
-%h1= page_title
+%h1= "#{@person.display_name} - #{t('contact_points.index.page-title').capitalize}"
 
 - unless @contact_points.empty?
   - @contact_points.each do |contact_point|

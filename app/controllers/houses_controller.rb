@@ -30,6 +30,8 @@ class HousesController < ApplicationController
     @house = @house.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
+    @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
   def current_members
@@ -42,6 +44,8 @@ class HousesController < ApplicationController
     @house = @house.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
+    @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
   def parties
@@ -74,6 +78,7 @@ class HousesController < ApplicationController
 
     @house = @house.first
     @party = @party.first
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
 
     raise ActionController::RoutingError, 'Invalid party id' if @party.nil?
   end
@@ -91,6 +96,8 @@ class HousesController < ApplicationController
     response = RequestHelper.handler(request) { @people = [] }
 
     @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
+    @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
   def current_members_letters
@@ -106,6 +113,8 @@ class HousesController < ApplicationController
     response = RequestHelper.handler(request) { @people = [] }
 
     @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
+    @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end
 
   def party_members

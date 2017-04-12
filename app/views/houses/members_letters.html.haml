@@ -1,16 +1,9 @@
-- if HousesHelper.commons?(@house)
-  - page_title = title("#{@house.name} - #{t('.title', current_and_former: t('current_and_former').capitalize, member_type: t('mp_plural'))}")
-- else
-  - page_title = title("#{@house.name} - #{t('.title', current_and_former: t('current_and_former').capitalize, member_type: t('lord_plural'))}")
+- title("#{@house.name} - #{t('.title', current_and_former: t('current_and_former').capitalize, member_type: @current_person_type)}")
 
-%h1= page_title
+%h1= "#{t('current_and_former').capitalize} #{@current_person_type}"
 
 = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_members_a_z_letter_path, primary_id: @house.graph_id }
 = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
 
 .block
-  - if HousesHelper.commons?(@house)
-    %p= link_to("#{t('view_all').capitalize} #{t('member_plural')} #{t('of_the')} #{t('house_of_lords')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
-
-  - if HousesHelper.lords?(@house)
-    %p= link_to("#{t('view_all').capitalize} #{t('member_plural')} #{t('of_the')} #{t('house_of_commons')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
+  %p= link_to("#{t('current_and_former').capitalize} #{@other_person_type}", house_members_a_z_letter_path(@other_house_id, 'a'))

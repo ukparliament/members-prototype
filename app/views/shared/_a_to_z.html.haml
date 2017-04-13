@@ -3,7 +3,7 @@
     A to Z -
     = params[:letter].present? ? "Showing results for #{params[:letter].upcase}" : 'select a letter'
   %nav{ aria:{ label: t('a_to_z.aria_label') } }
-    %ul.navigation__letter
+    %ul.navigation
       - ('a'..'z').each do |letter|
         %li{ data: { letter: letter }, class: ('active' if (params[:letter] == letter)) }
           - if @letters.include?(letter.upcase)

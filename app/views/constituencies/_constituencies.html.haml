@@ -4,6 +4,5 @@
   %ul.list
     - @constituencies.each do |constituency|
       %li.list__item
-        %ul
-          %li= link_to constituency.name, constituency_path(constituency.graph_id)
-          %li= constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
+        %h2= link_to constituency.name, constituency_path(constituency.graph_id)
+        %p= constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"

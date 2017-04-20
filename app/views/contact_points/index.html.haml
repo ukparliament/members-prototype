@@ -5,7 +5,7 @@
 %ul.list
   - @contact_points.each do |contact_point|
     %li.list__item
-      %dl.list__definition--list-item
+      %dl.list__definition--secondary
         - if contact_point.email.present?
           %dt= "#{t('contact_points.email')}:"
           %dd= contact_point.email

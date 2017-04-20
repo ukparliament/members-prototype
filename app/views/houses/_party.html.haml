@@ -4,13 +4,13 @@
     = "(#{party.member_count} members)" unless party.member_count.nil?
 - else
   %li.list__item
-    .column-75
+    .column__float--left-80
       %h2= link_to(party.name, house_parties_party_members_current_path(@house.graph_id, party.graph_id))
       - if party.name === "Speaker"
         %p= "#{t('house_of_commons_speaker')}"
       - else
         %p= "#{t('view_all')} #{t('current')} #{party.name} #{HousesHelper.commons?(@house) ? t('mp_plural') : t('lord_plural')}"
-    .column-25
+    .column__float--right-20
       %p
         = party.member_count
         %span

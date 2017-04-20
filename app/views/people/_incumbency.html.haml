@@ -4,7 +4,6 @@
   - else
     %h2= link_to(incumbency.house.name, house_path(incumbency.house.graph_id))
 
-  %ol
-    %li
-      = "#{l(incumbency.start_date, format: :default)}" unless incumbency.start_date.nil?
-      = incumbency.current? ? t('to_present') : " #{t('to')} #{l(incumbency.end_date, format: :default)}"
+  %p
+    = "#{l(incumbency.start_date, format: :default)}" unless incumbency.start_date.nil?
+    = incumbency.current? ? t('to_present') : " #{t('to')} #{l(incumbency.end_date, format: :default)}"

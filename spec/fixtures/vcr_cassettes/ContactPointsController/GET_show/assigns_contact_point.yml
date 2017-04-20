@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/contact_points/a11425ca-6a47-4170-80b9-d6e9f3800a52
+    uri: http://localhost:3030/contact_points/fFm9NQmr
     body:
       encoding: US-ASCII
       string: ''
@@ -11,52 +11,56 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/n-triples; charset=utf-8
-      Etag:
-      - W/"e855994682d8df852465137707181dda"
       Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 87f81c46-619f-4e06-9d07-cb531900edb3
-      X-Runtime:
-      - '0.031890'
-      Transfer-Encoding:
-      - chunked
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '1674'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 20 Apr 2017 15:37:54 GMT
     body:
       encoding: UTF-8
-      string: |
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/contactPointHasIncumbency> <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3801234> .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3801234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Incumbency> .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3801234> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/08a3dfac-652a-44d6-8a43-00bb13c60e47> .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/email> "walpolerh@parliament.uk" .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/phoneNumber> "01263 587763" .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> .
-        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PostalAddress> .
-        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/postCode> "NR11 7BB" .
-        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/addressLine1> "Mannington Hall" .
-        <http://id.ukpds.org/17e446b1-04ef-4405-a772-0ee8d6e498bc> <http://id.ukpds.org/schema/addressLine2> "Norwich" .
-        <http://id.ukpds.org/a11425ca-6a47-4170-80b9-d6e9f3800a52> <http://id.ukpds.org/schema/contactPointHasPerson> <http://id.ukpds.org/08a3dfac-652a-44d6-8a43-00bb13c60e47> .
-        <http://id.ukpds.org/08a3dfac-652a-44d6-8a43-00bb13c60e47> <http://id.ukpds.org/schema/personGivenName> "Person 1 - givenName" .
-        <http://id.ukpds.org/08a3dfac-652a-44d6-8a43-00bb13c60e47> <http://id.ukpds.org/schema/personFamilyName> "Person 1 - familyName" .
-        <http://id.ukpds.org/08a3dfac-652a-44d6-8a43-00bb13c60e47> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-
-    http_version:
-  recorded_at: Thu, 09 Feb 2017 12:55:25 GMT
+      string: "<http://id.ukpds.org/fFm9NQmr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/ContactPoint> .\r\n<http://id.ukpds.org/fFm9NQmr>
+        <http://id.ukpds.org/schema/email> \"email - 1\" .\r\n<http://id.ukpds.org/fFm9NQmr>
+        <http://id.ukpds.org/schema/phoneNumber> \"phoneNumber - 1\" .\r\n<http://id.ukpds.org/fFm9NQmr>
+        <http://id.ukpds.org/schema/faxNumber> \"faxNumber - 1\" .\r\n<http://id.ukpds.org/fFm9NQmr>
+        <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/jCw34ExT>
+        .\r\n<http://id.ukpds.org/fFm9NQmr> <http://id.ukpds.org/schema/contactPointHasIncumbency>
+        <http://id.ukpds.org/dLwzmwl8> .\r\n<http://id.ukpds.org/dLwzmwl8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Incumbency> .\r\n<http://id.ukpds.org/dLwzmwl8>
+        <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/d3YMqEwB>
+        .\r\n<http://id.ukpds.org/jCw34ExT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/PostalAddress> .\r\n<http://id.ukpds.org/jCw34ExT>
+        <http://id.ukpds.org/schema/postCode> \"postCode - 1\" .\r\n<http://id.ukpds.org/jCw34ExT>
+        <http://id.ukpds.org/schema/addressLine1> \"addressLine1 - 1\" .\r\n<http://id.ukpds.org/jCw34ExT>
+        <http://id.ukpds.org/schema/addressLine2> \"addressLine2 - 1\" .\r\n<http://id.ukpds.org/d3YMqEwB>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person>
+        .\r\n<http://id.ukpds.org/d3YMqEwB> <http://id.ukpds.org/schema/personGivenName>
+        \"personGivenName - 1\" .\r\n<http://id.ukpds.org/d3YMqEwB> <http://id.ukpds.org/schema/personFamilyName>
+        \"personFamilyName - 1\" .\r\n<http://id.ukpds.org/d3YMqEwB> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF>
+        \"F31CBD81AD8343898B49DC65743F0BDF - 1\" .\r\n"
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 15:38:49 GMT
 recorded_with: VCR 3.0.3

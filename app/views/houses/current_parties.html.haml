@@ -20,5 +20,4 @@
 %ul.list
   = render :partial => 'houses/party', collection: @parties
 
-.block
-  %p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('parties_and_groups')}", house_parties_path(@house.graph_id))
+%p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('parties_and_groups')}", house_parties_path(@house.graph_id))

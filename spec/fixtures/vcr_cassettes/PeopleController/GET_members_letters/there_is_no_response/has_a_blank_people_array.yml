@@ -11,64 +11,56 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/n-triples; charset=utf-8
-      Etag:
-      - W/"ba32e58d782ca1819106885634d45e7c"
       Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 3b79e87b-4bb1-493e-a604-9a05d165624b
-      X-Runtime:
-      - '0.564750'
-      Transfer-Encoding:
-      - chunked
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '1383'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 21 Apr 2017 10:40:35 GMT
     body:
       encoding: UTF-8
-      string: |
-        _:node118282 <http://id.ukpds.org/schema/value> "C" .
-        _:node118283 <http://id.ukpds.org/schema/value> "A" .
-        _:node118284 <http://id.ukpds.org/schema/value> "M" .
-        _:node118285 <http://id.ukpds.org/schema/value> "G" .
-        _:node118286 <http://id.ukpds.org/schema/value> "O" .
-        _:node118287 <http://id.ukpds.org/schema/value> "R" .
-        _:node118288 <http://id.ukpds.org/schema/value> "S" .
-        _:node118289 <http://id.ukpds.org/schema/value> "B" .
-        _:node118290 <http://id.ukpds.org/schema/value> "L" .
-        _:node118291 <http://id.ukpds.org/schema/value> "D" .
-        _:node118292 <http://id.ukpds.org/schema/value> "H" .
-        _:node118293 <http://id.ukpds.org/schema/value> "J" .
-        _:node118294 <http://id.ukpds.org/schema/value> "F" .
-        _:node118295 <http://id.ukpds.org/schema/value> "K" .
-        _:node118296 <http://id.ukpds.org/schema/value> "E" .
-        _:node118297 <http://id.ukpds.org/schema/value> "P" .
-        _:node118298 <http://id.ukpds.org/schema/value> "T" .
-        _:node118299 <http://id.ukpds.org/schema/value> "W" .
-        _:node118300 <http://id.ukpds.org/schema/value> "U" .
-        _:node118301 <http://id.ukpds.org/schema/value> "V" .
-        _:node118302 <http://id.ukpds.org/schema/value> "Q" .
-        _:node118303 <http://id.ukpds.org/schema/value> "N" .
-        _:node118304 <http://id.ukpds.org/schema/value> "I" .
-        _:node118305 <http://id.ukpds.org/schema/value> "Y" .
-        _:node118306 <http://id.ukpds.org/schema/value> "Z" .
-        _:node118307 <http://id.ukpds.org/schema/value> "\u00D6" .
+      string: "_:node7435 <http://id.ukpds.org/schema/value> \"P\" .\r\n_:node7436
+        <http://id.ukpds.org/schema/value> \"N\" .\r\n_:node7437 <http://id.ukpds.org/schema/value>
+        \"H\" .\r\n_:node7438 <http://id.ukpds.org/schema/value> \"C\" .\r\n_:node7439
+        <http://id.ukpds.org/schema/value> \"M\" .\r\n_:node7440 <http://id.ukpds.org/schema/value>
+        \"S\" .\r\n_:node7441 <http://id.ukpds.org/schema/value> \"E\" .\r\n_:node7442
+        <http://id.ukpds.org/schema/value> \"W\" .\r\n_:node7443 <http://id.ukpds.org/schema/value>
+        \"D\" .\r\n_:node7444 <http://id.ukpds.org/schema/value> \"F\" .\r\n_:node7445
+        <http://id.ukpds.org/schema/value> \"R\" .\r\n_:node7446 <http://id.ukpds.org/schema/value>
+        \"K\" .\r\n_:node7447 <http://id.ukpds.org/schema/value> \"G\" .\r\n_:node7448
+        <http://id.ukpds.org/schema/value> \"Y\" .\r\n_:node7449 <http://id.ukpds.org/schema/value>
+        \"B\" .\r\n_:node7450 <http://id.ukpds.org/schema/value> \"A\" .\r\n_:node7451
+        <http://id.ukpds.org/schema/value> \"U\" .\r\n_:node7452 <http://id.ukpds.org/schema/value>
+        \"O\" .\r\n_:node7453 <http://id.ukpds.org/schema/value> \"T\" .\r\n_:node7454
+        <http://id.ukpds.org/schema/value> \"L\" .\r\n_:node7455 <http://id.ukpds.org/schema/value>
+        \"Q\" .\r\n_:node7456 <http://id.ukpds.org/schema/value> \"J\" .\r\n_:node7457
+        <http://id.ukpds.org/schema/value> \"V\" .\r\n_:node7458 <http://id.ukpds.org/schema/value>
+        \"I\" .\r\n_:node7459 <http://id.ukpds.org/schema/value> \"Z\" .\r\n_:node7460
+        <http://id.ukpds.org/schema/value> \"\\u00D6\" .\r\n"
     http_version: 
-  recorded_at: Thu, 23 Mar 2017 16:49:35 GMT
+  recorded_at: Fri, 21 Apr 2017 10:41:32 GMT
 - request:
     method: get
     uri: http://localhost:3030/people/members/x
@@ -80,30 +72,35 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
   response:
     status:
-      code: 204
-      message: No Content
+      code: 200
+      message: OK
     headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
       Cache-Control:
       - no-cache
-      X-Request-Id:
-      - b6031d57-fc9d-4244-a5e7-3410658ed252
-      X-Runtime:
-      - '0.555873'
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '0'
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 21 Apr 2017 10:40:36 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 23 Mar 2017 16:49:36 GMT
+  recorded_at: Fri, 21 Apr 2017 10:41:32 GMT
 recorded_with: VCR 3.0.3

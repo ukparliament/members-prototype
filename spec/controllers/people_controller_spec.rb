@@ -21,8 +21,8 @@ RSpec.describe PeopleController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - forename')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - forename')
+      expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
     end
 
     it 'renders the index template' do
@@ -45,13 +45,13 @@ RSpec.describe PeopleController, vcr: true do
     end
 
     it 'redirects to people/:id' do
-      expect(response).to redirect_to(person_path('581ade57-3805-4a4a-82c9-8d622cb352a4'))
+      expect(response).to redirect_to(person_path('xKrfpZSp'))
     end
   end
 
   describe "GET show" do
     before(:each) do
-      get :show, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
+      get :show, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -108,8 +108,8 @@ RSpec.describe PeopleController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - forename')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - forename')
+      expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
     end
 
     it 'renders the members template' do
@@ -136,8 +136,8 @@ RSpec.describe PeopleController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
     end
 
     it 'renders the current_members template' do
@@ -147,7 +147,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET contact_points" do
     before(:each) do
-      get :contact_points, params: { person_id: '08a3dfac-652a-44d6-8a43-00bb13c60e47' }
+      get :contact_points, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -170,7 +170,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET parties" do
     before(:each) do
-      get :parties, params: {person_id: 'a9bd4923-9964-4196-b6b7-e42ada6e5284'}
+      get :parties, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -189,7 +189,7 @@ RSpec.describe PeopleController, vcr: true do
 
     it 'assigns @party_memberships in reverse chronological order' do
       expect(assigns(:party_memberships)[0].start_date).to eq(DateTime.new(2015, 5, 7))
-      expect(assigns(:party_memberships)[1].start_date).to eq(DateTime.new(2014, 10, 9))
+      expect(assigns(:party_memberships)[1].start_date).to eq(DateTime.new(1987, 6, 11))
     end
 
     it 'renders the parties template' do
@@ -199,7 +199,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_party" do
     before(:each) do
-      get :current_party, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
+      get :current_party, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -220,7 +220,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET constituencies" do
     before(:each) do
-      get :constituencies, params: { person_id: '626b57f9-6ef0-475a-ae12-40a44aca7eff' }
+      get :constituencies, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -237,8 +237,8 @@ RSpec.describe PeopleController, vcr: true do
     end
 
     it 'assigns @seat_incumbencies in reverse chronological order' do
-      expect(assigns(:seat_incumbencies)[0].start_date).to eq(DateTime.new(2010, 5, 6))
-      expect(assigns(:seat_incumbencies)[1].start_date).to eq(DateTime.new(2005, 5, 5))
+      expect(assigns(:seat_incumbencies)[0].start_date).to eq(DateTime.new(2015, 5, 7))
+      expect(assigns(:seat_incumbencies)[1].start_date).to eq(DateTime.new(2010, 5, 6))
     end
 
     it 'renders the parties template' do
@@ -248,7 +248,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_constituency" do
     before(:each) do
-      get :current_constituency, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+      get :current_constituency, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -269,7 +269,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET houses" do
     before(:each) do
-      get :houses, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+      get :houses, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -298,7 +298,7 @@ RSpec.describe PeopleController, vcr: true do
 
   describe "GET current_house" do
     before(:each) do
-      get :current_house, params: { person_id: 'ff75cd0c-1a8b-49ab-8292-f00d153588e5' }
+      get :current_house, params: { person_id: '7TX8ySd4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -320,7 +320,7 @@ RSpec.describe PeopleController, vcr: true do
   describe 'GET letters' do
     context 'there is a response' do
       before(:each) do
-        get :letters, params: {letter: 't'}
+        get :letters, params: { letter: 't' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -337,8 +337,8 @@ RSpec.describe PeopleController, vcr: true do
       end
 
       it 'assigns @people in alphabetical order' do
-        expect(assigns(:people)[0].given_name).to eq('Person 1 - forename')
-        expect(assigns(:people)[1].given_name).to eq('Person 2 - forename')
+        expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+        expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
       end
 
       it 'renders the letters template' do
@@ -348,7 +348,7 @@ RSpec.describe PeopleController, vcr: true do
 
     context 'there is no response' do
       before(:each) do
-        get :letters, params: {letter: 'x'}
+        get :letters, params: { letter: 'x' }
       end
 
       it 'http status of 200' do
@@ -362,9 +362,9 @@ RSpec.describe PeopleController, vcr: true do
   end
 
   describe 'GET members_letters' do
-    context ' there is a response ' do
+    context 'there is a response' do
       before(:each) do
-        get :members_letters, params: {letter: 't'}
+        get :members_letters, params: { letter: 't' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -381,8 +381,8 @@ RSpec.describe PeopleController, vcr: true do
       end
 
       it 'assigns @people in alphabetical order' do
-        expect(assigns(:people)[0].given_name).to eq('Person 1 - forename')
-        expect(assigns(:people)[1].given_name).to eq('Person 2 - forename')
+        expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+        expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
       end
 
       it 'renders the members_letters template' do
@@ -392,7 +392,7 @@ RSpec.describe PeopleController, vcr: true do
 
     context 'there is no response' do
       before(:each) do
-        get :members_letters, params: {letter: 'x'}
+        get :members_letters, params: { letter: 'x' }
       end
 
       it 'http status of 200' do
@@ -408,7 +408,7 @@ RSpec.describe PeopleController, vcr: true do
   describe "GET current_members_letters" do
     context 'there is a response' do
       before(:each) do
-        get :current_members_letters, params: {letter: 't'}
+        get :current_members_letters, params: { letter: 't' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -425,8 +425,8 @@ RSpec.describe PeopleController, vcr: true do
       end
 
       it 'assigns @people in alphabetical order' do
-        expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-        expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+        expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+        expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
       end
 
       it 'renders the current_members_letters template' do
@@ -436,7 +436,7 @@ RSpec.describe PeopleController, vcr: true do
 
     context 'there is no response' do
       before(:each) do
-        get :current_members_letters, params: {letter: 'x'}
+        get :current_members_letters, params: { letter: 'x' }
       end
 
       it 'should have a response with a http status of 200' do
@@ -506,7 +506,7 @@ RSpec.describe PeopleController, vcr: true do
   describe 'GET lookup_by_letters' do
     context 'it returns multiple results' do
       before(:each) do
-        get :lookup_by_letters, params: {letters: 'cam'}
+        get :lookup_by_letters, params: { letters: 'cam' }
       end
 
       it 'should have a response with http status redirect (302)' do
@@ -520,7 +520,7 @@ RSpec.describe PeopleController, vcr: true do
 
     context 'it returns a single result' do
       before(:each) do
-        get :lookup_by_letters, params: {letters: 'creasy'}
+        get :lookup_by_letters, params: { letters: 'creasy' }
       end
 
       it 'should have a response with http status redirect (302)' do
@@ -528,14 +528,14 @@ RSpec.describe PeopleController, vcr: true do
       end
 
       it 'redirects to people/:id' do
-        expect(response).to redirect_to(person_path('c9e343c4-0c1f-4d74-b966-b2c8260b8382'))
+        expect(response).to redirect_to(person_path('LzzPGdFd'))
       end
     end
   end
 
-  describe 'rescue_from Parliament::NoContentError' do
-    it 'raises an ActionController::RoutingError' do
-      expect{ get :show, params: { person_id: 'a11425ca-6a47-4170-80b9-d6e9f3800a52' } }.to raise_error(ActionController::RoutingError)
-    end
-  end
+  # describe 'rescue_from Parliament::NoContentError' do
+  #   it 'raises an ActionController::RoutingError' do
+  #     expect{ get :members_letters, params: { letter: 'x' } }.to raise_error(ActionController::RoutingError)
+  #   end
+  # end
 end

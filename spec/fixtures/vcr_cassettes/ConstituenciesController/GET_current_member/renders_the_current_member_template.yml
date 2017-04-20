@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/constituencies/f9216185-f3dc-417c-a02e-455faedb2ac2/members/current
+    uri: http://localhost:3030/constituencies/vTNSMo38/members/current
     body:
       encoding: US-ASCII
       string: ''
@@ -11,47 +11,55 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/n-triples; charset=utf-8
-      Etag:
-      - W/"4fb5ebfc921ce86b2b8978bfaa7eb82a"
       Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - e8cd3e8b-089d-4e66-ba0d-e5149e84282b
-      X-Runtime:
-      - '0.120872'
-      Transfer-Encoding:
-      - chunked
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '1518'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 20 Apr 2017 15:22:32 GMT
     body:
       encoding: UTF-8
-      string: |
-       <http://id.ukpds.org/f9216185-f3dc-417c-a02e-455faedb2ac2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
-               <http://id.ukpds.org/f9216185-f3dc-417c-a02e-455faedb2ac2> <http://id.ukpds.org/schema/constituencyGroupName> "Arfon" .
-               <http://id.ukpds.org/f9216185-f3dc-417c-a02e-455faedb2ac2> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/f18f4e29-617f-4d04-8f01-69d8b637ced4> .
-               <http://id.ukpds.org/f18f4e29-617f-4d04-8f01-69d8b637ced4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
-               <http://id.ukpds.org/f18f4e29-617f-4d04-8f01-69d8b637ced4> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/612cb96f-b6bb-42d5-a7c1-7ae9d8b5ae94> .
-               <http://id.ukpds.org/612cb96f-b6bb-42d5-a7c1-7ae9d8b5ae94> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-               <http://id.ukpds.org/612cb96f-b6bb-42d5-a7c1-7ae9d8b5ae94> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/367d126b-620c-475d-99dc-c58bdca6966d> .
-               <http://id.ukpds.org/612cb96f-b6bb-42d5-a7c1-7ae9d8b5ae94> <http://id.ukpds.org/schema/incumbencyStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-               <http://id.ukpds.org/367d126b-620c-475d-99dc-c58bdca6966d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-               <http://id.ukpds.org/367d126b-620c-475d-99dc-c58bdca6966d> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
-               <http://id.ukpds.org/367d126b-620c-475d-99dc-c58bdca6966d> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
-    http_version:
-  recorded_at: Fri, 24 Feb 2017 11:40:16 GMT
+      string: "<http://id.ukpds.org/vTNSMo38> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/vTNSMo38>
+        <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
+        - 336\" .\r\n<http://id.ukpds.org/vTNSMo38> <http://id.ukpds.org/schema/constituencyGroupStartDate>
+        \"2010-05-06\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/vTNSMo38>
+        <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/RilYXl2W>
+        .\r\n<http://id.ukpds.org/RilYXl2W> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/HouseSeat> .\r\n<http://id.ukpds.org/RilYXl2W>
+        <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/BAKx90Xd>
+        .\r\n<http://id.ukpds.org/BAKx90Xd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/BAKx90Xd>
+        <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/MaIprmfu>
+        .\r\n<http://id.ukpds.org/BAKx90Xd> <http://id.ukpds.org/schema/incumbencyStartDate>
+        \"2015-05-07\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/MaIprmfu>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person>
+        .\r\n<http://id.ukpds.org/MaIprmfu> <http://id.ukpds.org/schema/personGivenName>
+        \"personGivenName - 15\" .\r\n<http://id.ukpds.org/MaIprmfu> <http://id.ukpds.org/schema/personFamilyName>
+        \"personFamilyName - 15\" .\r\n<http://id.ukpds.org/MaIprmfu> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF>
+        \"F31CBD81AD8343898B49DC65743F0BDF - 15\" .\r\n"
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 15:23:26 GMT
 recorded_with: VCR 3.0.3

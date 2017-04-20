@@ -5,5 +5,4 @@
 = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_members_a_z_letter_path, primary_id: @house.graph_id }
 = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
 
-.block
-  %p= link_to("#{t('current_and_former').capitalize} #{@other_person_type}", house_members_a_z_letter_path(@other_house_id, 'a'))
+%p= link_to("#{t('current_and_former').capitalize} #{@other_person_type}", house_members_a_z_letter_path(@other_house_id, 'a'))

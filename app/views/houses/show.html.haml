@@ -2,27 +2,23 @@
 
 %h1= page_title
 
-.block
+.list__item
+  - if HousesHelper.commons?(@house)
+    %h2= link_to("#{t('mp_plural')}", house_members_current_a_z_letter_path(@house.graph_id, 'a'))
+  - else
+    %h2= link_to("#{t('lord_plural')}", house_members_current_a_z_letter_path(@house.graph_id, 'a'))
+  %p= "#{t('all').capitalize} #{t('current')} #{t('member_plural')} #{t('of_the')} #{@house.name}."
+
+- if HousesHelper.commons?(@house)
   .list__item
-    - if HousesHelper.commons?(@house)
-      %h2= link_to("#{t('mp_plural')}", house_members_current_a_z_letter_path(@house.graph_id, 'a'))
-    - else
-      %h2= link_to("#{t('lord_plural')}", house_members_current_a_z_letter_path(@house.graph_id, 'a'))
-    %p= "#{t('all').capitalize} #{t('current')} #{t('member_plural')} #{t('of_the')} #{@house.name}."
-
-- if HousesHelper.commons?(@house)
-  .block
-    .list__item
-      %h2= link_to("#{t('party_plural').capitalize}", house_parties_current_path(@house.graph_id))
-      %p= "#{t('all').capitalize} #{t('current')} #{t('party_plural')} #{t('in_the')} #{@house.name}."
+    %h2= link_to("#{t('party_plural').capitalize}", house_parties_current_path(@house.graph_id))
+    %p= "#{t('all').capitalize} #{t('current')} #{t('party_plural')} #{t('in_the')} #{@house.name}."
 -else
-  .block
-    .list__item
-      %h2= link_to("#{t('parties_and_groups').capitalize}", house_parties_current_path(@house.graph_id))
-      %p= "#{t('all').capitalize} #{t('current')} #{t('parties_and_groups')} #{t('in_the')} #{@house.name}."
+  .list__item
+    %h2= link_to("#{t('parties_and_groups').capitalize}", house_parties_current_path(@house.graph_id))
+    %p= "#{t('all').capitalize} #{t('current')} #{t('parties_and_groups')} #{t('in_the')} #{@house.name}."
 
 - if HousesHelper.commons?(@house)
-  .block
-    .list__item
-      %h2= link_to("#{t('constituency_plural').capitalize}", constituencies_current_a_z_letter_path('a'))
-      %p= "#{t('find').capitalize} #{t('mp_plural')} #{t('.area_they_represent')}."
+  .list__item
+    %h2= link_to("#{t('constituency_plural').capitalize}", constituencies_current_a_z_letter_path('a'))
+    %p= "#{t('find').capitalize} #{t('mp_plural')} #{t('.area_they_represent')}."

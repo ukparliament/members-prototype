@@ -1,5 +1,12 @@
 %li.list__item
-  %h2= link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
-  %p
+  %h2
+    = link_to(constituency_path(seat_incumbency.constituency.graph_id)) do
+      = seat_incumbency.constituency.name
+      %span.sr-only
+        = " #{t('constituency')} #{t('from')} "
+        = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
+        = seat_incumbency.current? ? t('to_present') : " #{t('to')} #{l(seat_incumbency.end_date, format: :default)}"
+
+  %p(aria-hidden="true")
     = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
     = seat_incumbency.current? ? t('to_present') : " #{t('to')} #{l(seat_incumbency.end_date, format: :default)}"

@@ -92,8 +92,8 @@ scan-image:
 	docker push $(TENABLEIO_REGISTRY)/$(TENABLEIO_REPO)/$(APP_NAME):$(VERSION)
 
 rmi: # Remove local versions of our images.
-	docker rmi $(IMAGE):$(VERSION)
-	docker rmi $(IMAGE):latest
+	docker rmi -f $(IMAGE):$(VERSION)
+	docker rmi -f $(IMAGE):latest
 
 deploy-ecs: # Deploy our new Docker image onto an AWS cluster (Run in GoCD to deploy to various environments).
 	./aws_ecs/register-task-definition.sh $(APP_NAME)

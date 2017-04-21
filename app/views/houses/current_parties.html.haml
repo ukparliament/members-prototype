@@ -1,8 +1,9 @@
 - title("#{@house.name} - #{t('current').capitalize} #{t('parties_and_groups')}")
 
-%h1= "#{t('current').capitalize} #{HousesHelper.commons?(@house) ? t('party_plural') : t('parties_and_groups')}"
+#content.section--primary
+  %h1= "#{t('current').capitalize} #{HousesHelper.commons?(@house) ? t('party_plural') : t('parties_and_groups')}"
 
-.block
+%section
   .link__tab
     - if HousesHelper.commons?(@house)
       .link__tab--item.active
@@ -17,7 +18,7 @@
       .link__tab--item
         = link_to(t('lords'),house_parties_current_path(HousesHelper.lords_id))
 
-%ul.list
-  = render :partial => 'houses/party', collection: @parties
+  %ul.list
+    = render :partial => 'houses/party', collection: @parties
 
-%p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('parties_and_groups')}", house_parties_path(@house.graph_id))
+  %p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('parties_and_groups')}", house_parties_path(@house.graph_id))

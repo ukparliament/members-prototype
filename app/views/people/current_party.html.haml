@@ -1,8 +1,12 @@
 - page_title = title("#{@person.display_name} - #{t('.title', current: t('current').capitalize, party: t('party'))}")
 
-%h1= page_title
+#content.section--primary
+  .container
+    %h1= page_title
 
 - unless @party.nil?
-  .list__item
-    %h2= link_to(@party.name, party_path(@party.graph_id))
-    %p= "#{l(@party.party_memberships.first.start_date, format: :default)} #{t('to_present')}" unless @party.party_memberships.first.start_date.nil?
+  %section
+    .container
+      .list__item
+        %h2= link_to(@party.name, party_path(@party.graph_id))
+        %p= "#{l(@party.party_memberships.first.start_date, format: :default)} #{t('to_present')}" unless @party.party_memberships.first.start_date.nil?

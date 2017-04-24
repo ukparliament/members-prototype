@@ -1,14 +1,18 @@
 - title("#{@house.name} - #{@party.name}")
 
-%h1= "#{@party.name} - #{@house.name}"
+#content.section--primary
+  .container
+    %h1= "#{@party.name} - #{@house.name}"
 
-- if @party.member_count > 0
-  .list__item
-    %h2= link_to("#{@party.name} #{@current_person_type}", house_parties_party_members_current_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
-    %p= "#{t('view_all').capitalize} #{@party.name} #{t('member_plural')} #{t('in_the')} #{@house.name}"
+%section
+  .container
+    - if @party.member_count > 0
+      .list__item
+        %h2= link_to("#{@party.name} #{@current_person_type}", house_parties_party_members_current_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
+        %p= "#{t('view_all').capitalize} #{@party.name} #{t('member_plural')} #{t('in_the')} #{@house.name}"
 
-- if @party.member_count == 0
-  %p.lead= t('.house_no_current_party_members')
-  .list__item
-    %h2= link_to("#{t('current_and_former').capitalize} #{@party.name} #{@current_person_type}", house_parties_party_members_path(@house.graph_id, @party.graph_id))
-    %p= "#{t('view_all').capitalize} #{t('current_and_former')} #{@party.name} #{t('member_plural')}"
+    - if @party.member_count == 0
+      %p.lead= t('.house_no_current_party_members')
+      .list__item
+        %h2= link_to("#{t('current_and_former').capitalize} #{@party.name} #{@current_person_type}", house_parties_party_members_path(@house.graph_id, @party.graph_id))
+        %p= "#{t('view_all').capitalize} #{t('current_and_former')} #{@party.name} #{t('member_plural')}"

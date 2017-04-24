@@ -1,9 +1,15 @@
 - title("#{ @house.name } - #{ t( '.title', current: t('current').capitalize, member_type: @current_person_type ) }")
 
-%h1= "#{t('current').capitalize} #{@current_person_type}"
+.section--primary
+  .container
+    %h1= "#{t('current').capitalize} #{@current_person_type}"
 
-= render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_members_current_a_z_letter_path, primary_id: @house.graph_id }
-= render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
+    = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_members_current_a_z_letter_path, primary_id: @house.graph_id }
+  
+%section#content
+  .container
+    = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
 
-%p= link_to("#{t('all').capitalize} #{t('current_and_former')} #{@current_person_type}", house_members_a_z_letter_path(@house.graph_id, 'a'))
-%p= link_to("#{t('current').capitalize} #{@other_person_type}", house_members_current_a_z_letter_path(@other_house_id, 'a'))
+    %p= link_to("#{t('all').capitalize} #{t('current_and_former')} #{@current_person_type}", house_members_a_z_letter_path(@house.graph_id, 'a'))
+    %p= link_to("#{t('current').capitalize} #{@other_person_type}", house_members_current_a_z_letter_path(@other_house_id, 'a'))
+

@@ -4,9 +4,7 @@
   .container
     %h1= "#{@person.display_name} - #{t('contact_points.index.page-title').capitalize}"
 
-- unless @contact_points.empty?
-  %section
-    .container
+    - unless @contact_points.empty?
       - @contact_points.each do |contact_point|
         %dl.list__definition
           - if contact_point.email.present?

@@ -1,34 +1,38 @@
 - page_title = title(t('.title'))
 
-%h1= page_title
-.block
-  %p= t('.cookie.definition')
+#content.section--primary
+  .container
+    %h1= page_title
+    %p= t('.cookie.definition')
 
-%h2= t('.subtitle')
-.block
-  %p= t('.cookie.explanation')
-  %p= t('.cookie.anonymous_statement')
+%section
+  .container
+    %h2= t('.subtitle')
+    %p= t('.cookie.explanation')
+    %p= t('.cookie.anonymous_statement')
 
-%h2= t('.which_cookies')
-.block
-  %table
-    %thead
-      %tr
-        %th= t('.cookie_table.meta.name')
-        %th= t('.cookie_table.meta.purpose')
-        %th= t('.cookie_table.meta.expires')
-    %tbody
-      %tr
-        %td _ga
-        %td= t('.cookie_table.explanations.ga')
-        %td= t('.cookie_table.meta.expiration.years', time: 2)
-      %tr
-        %td _gat
-        %td= t('.cookie_table.explanations.gat')
-        %td= t('.cookie_table.meta.expiration.minutes', time: 10)
+%section
+  .container
+    %h2= t('.which_cookies')
+    %table
+      %thead
+        %tr
+          %th= t('.cookie_table.meta.name')
+          %th= t('.cookie_table.meta.purpose')
+          %th= t('.cookie_table.meta.expires')
+      %tbody
+        %tr
+          %td _ga
+          %td= t('.cookie_table.explanations.ga')
+          %td= t('.cookie_table.meta.expiration.years', time: 2)
+        %tr
+          %td _gat
+          %td= t('.cookie_table.explanations.gat')
+          %td= t('.cookie_table.meta.expiration.minutes', time: 10)
 
-%h2= t('.managing_cookies.title')
-.block
-  %p= t('.managing_cookies.subtitle')
-  %p= t('.managing_cookies.find_out', link: link_to(t('.managing_cookies.find_out_link'), 'http://www.aboutcookies.org/', target: '_blank')).html_safe
-  %p= t('.managing_cookies.opt_out', link: link_to(t('.managing_cookies.opt_out_link'), 'https://tools.google.com/dlpage/gaoptout', target: '_blank')).html_safe
+%section
+  .container
+    %h2= t('.managing_cookies.title')
+    %p= t('.managing_cookies.subtitle')
+    %p= t('.managing_cookies.find_out', link: link_to(t('.managing_cookies.find_out_link'), 'http://www.aboutcookies.org/', target: '_blank')).html_safe
+    %p= t('.managing_cookies.opt_out', link: link_to(t('.managing_cookies.opt_out_link'), 'https://tools.google.com/dlpage/gaoptout', target: '_blank')).html_safe

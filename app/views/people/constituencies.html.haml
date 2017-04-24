@@ -1,7 +1,11 @@
 - page_title = title("#{@person.display_name} - #{t('.title', current_and_former: t('current_and_former').capitalize, constituency_plural: t('constituency_plural'))}")
 
-%h1= page_title
+#content.section--primary
+  .container
+    %h1= page_title
 
 - unless @seat_incumbencies.empty?
-  %ol.list
-    = render :partial => 'people/seat_incumbency', collection: @seat_incumbencies
+  %section
+    .container
+      %ol.list
+        = render :partial => 'people/seat_incumbency', collection: @seat_incumbencies

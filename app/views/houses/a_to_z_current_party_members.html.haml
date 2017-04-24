@@ -1,2 +1,3 @@
 #content.section--primary
-  = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, primary_id: @house_id, secondary_id: @party_id}
+  .container
+    = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, primary_id: @house_id, secondary_id: @party_id}

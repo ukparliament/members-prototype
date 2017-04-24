@@ -1,12 +1,16 @@
 - page_title = title("#{@person.display_name} - #{t('.title', current: t('current').capitalize, house: t('house'))}")
 
-%h1= page_title
+#content.section--primary
+  .container
+    %h1= page_title
 
 - unless @house.nil?
-  .list__item
-    %h2= link_to(@house.name, house_path(@house.graph_id))
-    - unless @house.seat_incumbencies.empty?
-      %p= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} #{t('to_present')}" unless @house.seat_incumbencies.first.start_date.nil?
+  %section
+    .container
+      .list__item
+        %h2= link_to(@house.name, house_path(@house.graph_id))
+        - unless @house.seat_incumbencies.empty?
+          %p= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} #{t('to_present')}" unless @house.seat_incumbencies.first.start_date.nil?
 
-    - unless @house.house_incumbencies.empty?
-      %p= "#{l(@house.house_incumbencies.first.start_date, format: :default)} #{t('to_present')} " unless @house.house_incumbencies.first.start_date.nil?
+        - unless @house.house_incumbencies.empty?
+          %p= "#{l(@house.house_incumbencies.first.start_date, format: :default)} #{t('to_present')} " unless @house.house_incumbencies.first.start_date.nil?

@@ -66,7 +66,7 @@ run: # Run the Docker image we have created, mapping the HOST_PORT and CONTAINER
 
 test: # Build the docker image in development mode, using a test PARLIAMENT_BASE_URL. Then run rake within a Docker container using our image.
 	RACK_ENV=development PARLIAMENT_BASE_URL=http://localhost:3030 make build
-	docker run $(IMAGE):latest bundle exec rake
+	docker run --rm $(IMAGE):latest bundle exec rake
 
 dev: # Build, bundle and run a development version of our application
 	make dev-build

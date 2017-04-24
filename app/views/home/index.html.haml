@@ -1,28 +1,35 @@
 - title 'beta.parliament.uk Home page' # Special case of a title - home page
 
+#content.section--primary.highlight--success
+  .container
+    %h1= t('.title')
+    %p= t('.new_website', link: link_to(t('.new_website_link'), 'https://pds.blog.parliament.uk/2017/02/14/a-new-website-for-parliament-first-public-steps/', target: '_blank', title: t('open_new_window'))).html_safe
+    %p= t('.old_website', link: link_to(t('.old_website_link'), 'https://www.parliament.uk')).html_safe
+
 %section
-  %h1= t('.title')
-  %p= t('.new_website', link: link_to(t('.new_website_link'), 'https://pds.blog.parliament.uk/2017/02/14/a-new-website-for-parliament-first-public-steps/', target: '_blank', title: t('open_new_window'))).html_safe
-  %p= t('.old_website', link: link_to(t('.old_website_link'), 'https://www.parliament.uk')).html_safe
+  .container
+    %h2= t('.feedback.title')
+    %p= t('.feedback.provide', link: link_to(t('.feedback.provide_link'), 'https://ukparliament-self.achieveservice.com/AchieveForms/?form_uri=sandbox://AF-Form-337e2b87-4c8b-40f7-bb72-a80f15284b21&category=AF-Category-108691b0-e15c-46d7-9d16-7ad0d35cdb2a&isPublished=false', target: '_blank', title: t('open_new_window'))).html_safe
+
 %section
-  %h2= t('.feedback.title')
-  %p= t('.feedback.provide', link: link_to(t('.feedback.provide_link'), 'https://ukparliament-self.achieveservice.com/AchieveForms/?form_uri=sandbox://AF-Form-337e2b87-4c8b-40f7-bb72-a80f15284b21&category=AF-Category-108691b0-e15c-46d7-9d16-7ad0d35cdb2a&isPublished=false', target: '_blank', title: t('open_new_window'))).html_safe
+  .container
+    %h2= t('.whats_on.title')
+    %h3= t('.members_info.title')
+    %ol.list
+      %li.list__item
+        %h4= link_to t('mp_plural'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
+        %p= t('.members_info.current_mps')
+      %li.list__item
+        %h4= link_to t('lord_plural'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a')
+        %p= t('.members_info.current_lords')
+      %li.list__item
+        %h4= link_to t('constituency_plural').capitalize, constituencies_current_a_z_letter_path('a')
+        %p= t('.members_info.current_constituencies')
+      %li.list__item
+        %h4= link_to t('parties_and_groups').capitalize, house_parties_current_path(HousesHelper.commons_id)
+        %p= t('.members_info.current_parties')
+
 %section
-  %h2= t('.whats_on.title')
-  %h3= t('.members_info.title')
-  %ol.list
-    %li.list__item
-      %h4= link_to t('mp_plural'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
-      %p= t('.members_info.current_mps')
-    %li.list__item
-      %h4= link_to t('lord_plural'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a')
-      %p= t('.members_info.current_lords')
-    %li.list__item
-      %h4= link_to t('constituency_plural').capitalize, constituencies_current_a_z_letter_path('a')
-      %p= t('.members_info.current_constituencies')
-    %li.list__item
-      %h4= link_to t('parties_and_groups').capitalize, house_parties_current_path(HousesHelper.commons_id)
-      %p= t('.members_info.current_parties')
-%section
-  %h2= t('.follow_progress.title')
-  %p= t('.follow_progress.blog', link: link_to(t('.follow_progress.blog_link'), 'https://pds.blog.parliament.uk')).html_safe
+  .container
+    %h2= t('.follow_progress.title')
+    %p= t('.follow_progress.blog', link: link_to(t('.follow_progress.blog_link'), 'https://pds.blog.parliament.uk')).html_safe

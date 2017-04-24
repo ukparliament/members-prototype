@@ -1,8 +1,11 @@
 - page_title = title(t('.title', current: t('current').capitalize, mps_and_lords: t('mps_and_lords')))
 
-%h1= page_title
-
-= render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :people_members_current_a_z_letter_path }
-= render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
-
-%p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('member_plural')}", people_members_a_z_letter_path('a'))
+.section--primary
+  .container
+    %h1= page_title
+%section
+  .container
+    = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :people_members_current_a_z_letter_path }
+%section#content
+  .container
+    = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }

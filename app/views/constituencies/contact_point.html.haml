@@ -1,6 +1,21 @@
-%h2= @constituency.name
+- title("#{@constituency.name} - #{t('contact_points.index.web-title').capitalize}")
 
-%h3= t('contact_points.index.title')
+%h1= "#{@constituency.name} - #{t('contact_points.index.page-title').capitalize}"
 
 - @constituency.contact_points.each do |contact_point|
-  = render partial: 'contact_points/contact_point', locals: { contact_point: contact_point }
+  %li.list__item
+    %dl.list__definition--secondary
+      - if contact_point.email.present?
+        %dt= "#{t('contact_points.email')}:"
+        %dd= contact_point.email
+      - if contact_point.phone_number.present?
+        %dt= "#{t('contact_points.phone')}:"
+        %dd= contact_point.phone_number
+      - if contact_point.fax_number.present?
+        %dt= "#{t('contact_points.fax')}:"
+        %dd= contact_point.fax_number
+      - contact_point.postal_addresses.each do |postal_address|
+        - if postal_address.full_address.present?
+          %dt= "#{t('contact_points.address')}:"
+          %dd= postal_address.full_address
+    %p= link_to "#{t('contact_points.add_address_book').capitalize}", contact_point_path(contact_point.graph_id), target: '_blank'

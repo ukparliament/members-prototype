@@ -57,6 +57,8 @@ build: # Using the variables defined above, run `docker build`, tagging the imag
 		--build-arg ASSET_LOCATION_URL=$(ASSET_LOCATION_URL) \
 		--build-arg SECRET_KEY_BASE=$(SECRET_KEY_BASE) \
 		--build-arg RACK_ENV=$(RACK_ENV) \
+		--build-arg GIT_SHA="$(GO_REVISION)" \
+		--build-arg GIT_TAG="$(shell git describe --tags --exact-match 2> /dev/null)" \
 		.
 
 run: # Run the Docker image we have created, mapping the HOST_PORT and CONTAINER_PORT
@@ -90,9 +92,10 @@ scan-image:
 	docker push $(TENABLEIO_REGISTRY)/$(TENABLEIO_REPO)/$(APP_NAME):$(VERSION)
 
 rmi: # Remove local versions of our images.
-	docker rmi $(IMAGE):$(VERSION)
-	docker rmi $(IMAGE):latest
+	docker rmi -f $(IMAGE):$(VERSION)
+	docker rmi -f $(IMAGE):latest
 
 deploy-ecs: # Deploy our new Docker image onto an AWS cluster (Run in GoCD to deploy to various environments).
 	./aws_ecs/register-task-definition.sh $(APP_NAME)
 	aws ecs update-service --service $(APP_NAME) --cluster $(ECS_CLUSTER) --region $(AWS_REGION) --task-definition $(APP_NAME)
+

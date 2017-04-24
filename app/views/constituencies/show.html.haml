@@ -1,5 +1,9 @@
 - page_title = title(@constituency.name)
 
-%h1= page_title
+.section--primary
+  .container
+    %h1= page_title
 
-= render 'constituencies/constituency'
+%section#content
+  .container
+    = render 'constituencies/constituency'

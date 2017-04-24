@@ -1,5 +1,9 @@
 - page_title = title("#{@constituency.name} - #{t('.title', current_and_former: t('current_and_former').capitalize, mp_plural: t('mp_plural'))}")
 
-%h1= page_title
+.section--primary
+  .container
+    %h1= page_title
 
-= render 'constituencies/constituency'
+%section#content
+  .container
+    = render 'constituencies/constituency'

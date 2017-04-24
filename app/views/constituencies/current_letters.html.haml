@@ -1,6 +1,11 @@
 - page_title = title(t('.title', current: t('current').capitalize, constituency_plural: t('constituency_plural')))
 
-%h1= page_title
+.section--primary
+  .container
+    %h1= page_title
 
-= render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :constituencies_current_a_z_letter_path }
-= render 'constituencies/current_constituencies'
+    = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :constituencies_current_a_z_letter_path }
+
+%section#content
+  .container
+    = render 'constituencies/current_constituencies'

@@ -1,4 +1,6 @@
-%h1= @constituency.name
+- page_title = @constituency.name
 
-.block
-  = @constituency.area.polygon unless @constituency.area.nil?
+.section--primary
+  .container
+    %h1= page_title
+    = @constituency.area.polygon unless @constituency.area.nil?

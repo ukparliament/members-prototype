@@ -3,9 +3,11 @@
 .section--primary
   .container
     %h1= page_title
+
 %section
   .container
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :people_members_a_z_letter_path }
+    
 %section#content
   .container
     = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }

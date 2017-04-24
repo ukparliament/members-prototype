@@ -52,33 +52,34 @@
       - if @current_party_membership && @current_incumbency
         .block--border
           %p.lead= link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
+
 %section
   .container
     - if @current_incumbency && @current_party_membership
-      %section
-        %h2= "#{t('.contact').capitalize}"
-        - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Lord')
-          - if @current_incumbency.contact_points.empty?
-            %p= t('.empty_contact_details')
-          - else
-            %dl.list__definition
-              - @current_incumbency.contact_points.each do |contact_point|
-                - if contact_point.email.present?
-                  %dt= t('contact_points.email').capitalize + ": "
-                  %dd
-                    %a{ :href => "mailto:#{contact_point.email}" }= contact_point.email
-                - if contact_point.phone_number.present?
-                  %dt= t('contact_points.phone').capitalize + ": "
-                  %dd
-                    %a{ :href => "tel:#{contact_point.phone_number.gsub(/\s+/, "")}"}= contact_point.phone_number
-                - if contact_point.postal_addresses.present?
-                  %dt
-                    = t('contact_points.address').capitalize + ": "
-                  - contact_point.postal_addresses.each do |postal_address|
-                    %dd= postal_address.full_address
-                - if @current_incumbency.contact_points.length > 1
-                  - unless contact_point.equal?(@current_incumbency.contact_points.last)
-                    .line-break-heavy
+      %h2= "#{t('.contact').capitalize}"
+      - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Lord')
+        - if @current_incumbency.contact_points.empty?
+          %p= t('.empty_contact_details')
+        - else
+          %dl.list__definition
+            - @current_incumbency.contact_points.each do |contact_point|
+              - if contact_point.email.present?
+                %dt= t('contact_points.email').capitalize + ": "
+                %dd
+                  %a{ :href => "mailto:#{contact_point.email}" }= contact_point.email
+              - if contact_point.phone_number.present?
+                %dt= t('contact_points.phone').capitalize + ": "
+                %dd
+                  %a{ :href => "tel:#{contact_point.phone_number.gsub(/\s+/, "")}"}= contact_point.phone_number
+              - if contact_point.postal_addresses.present?
+                %dt
+                  = t('contact_points.address').capitalize + ": "
+                - contact_point.postal_addresses.each do |postal_address|
+                  %dd= postal_address.full_address
+              - if @current_incumbency.contact_points.length > 1
+                - unless contact_point.equal?(@current_incumbency.contact_points.last)
+                  .line-break-heavy
+
 %section
   .container
     - if @house_incumbencies.present? || @seat_incumbencies.present?

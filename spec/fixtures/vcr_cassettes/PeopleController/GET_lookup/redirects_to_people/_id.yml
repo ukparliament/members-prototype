@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/people/lookup?id=3898&source=mnisId
+    uri: http://localhost:3030/people/lookup/mnisId/3898
     body:
       encoding: US-ASCII
       string: ''
@@ -11,37 +11,38 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/n-triples; charset=utf-8
-      Etag:
-      - W/"7ecd9bb2fa266203794866922f7da6e0"
       Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4b0f1002-80d0-45c9-817a-2d1aa717d3a0
-      X-Runtime:
-      - '0.023386'
-      Transfer-Encoding:
-      - chunked
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '120'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 21 Apr 2017 10:18:07 GMT
     body:
       encoding: UTF-8
-      string: "<http://id.ukpds.org/581ade57-3805-4a4a-82c9-8d622cb352a4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
-        <http://id.ukpds.org/schema/Person> .\n"
+      string: "<http://id.ukpds.org/xKrfpZSp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Person> .\r\n"
     http_version: 
-  recorded_at: Wed, 22 Feb 2017 16:11:05 GMT
+  recorded_at: Fri, 21 Apr 2017 10:19:03 GMT
 recorded_with: VCR 3.0.3

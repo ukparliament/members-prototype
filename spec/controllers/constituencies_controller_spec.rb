@@ -21,8 +21,8 @@ RSpec.describe ConstituenciesController, vcr: true do
     end
 
     it 'assigns @constituencies in alphabetical order' do
-      expect(assigns(:constituencies)[0].name).to eq('Aberavon')
-      expect(assigns(:constituencies)[1].name).to eq('Aberavon')
+      expect(assigns(:constituencies)[0].name).to eq('constituencyGroupName - 1')
+      expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 10')
     end
 
     it 'renders the index template' do
@@ -45,13 +45,13 @@ RSpec.describe ConstituenciesController, vcr: true do
     end
 
     it 'redirects to constituencies/:id' do
-      expect(response).to redirect_to(constituency_path('95e3953e-a2bf-4ec0-bc57-5d073661f43a'))
+      expect(response).to redirect_to(constituency_path('beRgFrSo'))
     end
   end
 
   describe 'GET show' do
     before(:each) do
-      get :show, params: { constituency_id: 'dd35a30d-ea9b-4274-8a27-f193246191a7' }
+      get :show, params: { constituency_id: 'vUPobpVT' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -105,8 +105,8 @@ RSpec.describe ConstituenciesController, vcr: true do
     end
 
     it 'assigns @constituencies in alphabetical order' do
-      expect(assigns(:constituencies)[0].name).to eq('Normanton, Pontefract and Castleford')
-      expect(assigns(:constituencies)[1].name).to eq('Stockport')
+      expect(assigns(:constituencies)[0].name).to eq('constituencyGroupName - 1')
+      expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 10')
     end
 
     it 'renders the current template' do
@@ -116,7 +116,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
   describe 'GET map' do
     before(:each) do
-      get :map, params: { constituency_id: 'f9216185-f3dc-417c-a02e-455faedb2ac2' }
+      get :map, params: { constituency_id: 'vUPobpVT' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -135,7 +135,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
   describe 'GET contact_point' do
     before(:each) do
-      get :contact_point, params: { constituency_id: '8d895ffc-c2bf-43d2-b756-95ab3e987919' }
+      get :contact_point, params: { constituency_id: 'MtbjxRrE' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -154,7 +154,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
   describe 'GET members' do
     before(:each) do
-      get :members, params: { constituency_id: 'f9216185-f3dc-417c-a02e-455faedb2ac2' }
+      get :members, params: { constituency_id: 'vTNSMo38' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -190,7 +190,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
   describe 'GET current_member' do
     before(:each) do
-      get :current_member, params: { constituency_id: 'f9216185-f3dc-417c-a02e-455faedb2ac2' }
+      get :current_member, params: { constituency_id: 'vTNSMo38' }
     end
 
     it 'should have a response with a http status ok (200)' do
@@ -230,8 +230,8 @@ RSpec.describe ConstituenciesController, vcr: true do
       end
 
       it 'assigns @constituencies in alphabetical order' do
-        expect(assigns(:constituencies)[0].name).to eq('Aberavon')
-        expect(assigns(:constituencies)[1].name).to eq('Aberavon')
+        expect(assigns(:constituencies)[0].name).to eq('constituencyGroupName - 1')
+        expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 10')
       end
 
       it 'renders the letters template' do
@@ -274,8 +274,8 @@ RSpec.describe ConstituenciesController, vcr: true do
       end
 
       it 'assigns @constituencies in alphabetical order' do
-        expect(assigns(:constituencies)[0].name).to eq('Aberavon')
-        expect(assigns(:constituencies)[1].name).to eq('Aberconwy')
+        expect(assigns(:constituencies)[0].name).to eq('constituencyGroupName - 123')
+        expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 141')
       end
 
       it 'renders the current_letters template' do
@@ -359,7 +359,7 @@ RSpec.describe ConstituenciesController, vcr: true do
       end
 
       it 'redirects to constituencies/:id' do
-        expect(response).to redirect_to(constituency_path('f9216185-f3dc-417c-a02e-455faedb2ac2'))
+        expect(response).to redirect_to(constituency_path('vTNSMo38'))
       end
     end
   end

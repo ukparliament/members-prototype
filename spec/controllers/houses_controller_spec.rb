@@ -19,8 +19,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @houses in alphabetical order' do
-      expect(assigns(:houses)[0].name).to eq('House of Commons')
-      expect(assigns(:houses)[1].name).to eq('House of Lords')
+      expect(assigns(:houses)[0].name).to eq('houseName - 1')
+      expect(assigns(:houses)[1].name).to eq('houseName - 2')
     end
 
     it 'renders the index template' do
@@ -43,13 +43,13 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'redirects to houses/:id' do
-      expect(response).to redirect_to(house_path('9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703'))
+      expect(response).to redirect_to(house_path('KL2k1BGP'))
     end
   end
 
   describe "GET show" do
     before(:each) do
-      get :show, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+      get :show, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -68,7 +68,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET members" do
     before(:each) do
-      get :members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+      get :members, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -87,8 +87,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
     end
 
     it 'renders the members template' do
@@ -98,7 +98,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_members" do
     before(:each) do
-      get :current_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+      get :current_members, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -117,8 +117,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
     end
 
     it 'renders the current_members template' do
@@ -128,7 +128,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET parties" do
     before(:each) do
-      get :parties, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+      get :parties, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -146,8 +146,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @parties in alphabetical order' do
-      expect(assigns(:parties)[0].name).to eq('Alliance')
-      expect(assigns(:parties)[1].name).to eq('Anti H Block')
+      expect(assigns(:parties)[0].name).to eq('partyName - 1')
+      expect(assigns(:parties)[1].name).to eq('partyName - 10')
     end
 
     it 'renders the parties template' do
@@ -157,7 +157,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_parties" do
     before(:each) do
-      get :current_parties, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+      get :current_parties, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -174,8 +174,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @parties in member_count order' do
-      expect(assigns(:parties)[0].name).to eq('Conservative')
-      expect(assigns(:parties)[1].name).to eq('Labour')
+      expect(assigns(:parties)[0].name).to eq('partyName - 3')
+      expect(assigns(:parties)[1].name).to eq('partyName - 5')
     end
 
     it 'renders the current_parties template' do
@@ -186,7 +186,7 @@ RSpec.describe HousesController, vcr: true do
   describe "GET party" do
     context 'both house and party have a valid id' do
       before(:each) do
-        get :party, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'f4e62fb8-2cf4-41b2-b7a3-7e621522a30d' }
+        get :party, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
       end
 
       it 'should have a response with http status ok (200)' do
@@ -207,8 +207,8 @@ RSpec.describe HousesController, vcr: true do
 
     context 'party id is invalid' do
       it 'raises an error if @party is nil' do
-        house_id = '4b77dd58-f6ba-4121-b521-c8ad70465f52'
-        party_id = '123'
+        house_id = 'KL2k1BGP'
+        party_id = 'P6LNyUn5'
 
         expect{ get :party, params: { house_id: house_id, party_id: party_id } }.to raise_error(ActionController::RoutingError, 'Invalid party id')
       end
@@ -217,7 +217,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET members_letters" do
     before(:each) do
-      get :members_letters, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', letter: 'a' }
+      get :members_letters, params: { house_id: 'KL2k1BGP', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -236,8 +236,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].sort_name).to eq('Abbott, Ms Diane')
-      expect(assigns(:people)[1].sort_name).to eq('Abrahams, Debbie')
+      expect(assigns(:people)[0].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 1')
+      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 10')
     end
 
     it 'renders the members_letters template' do
@@ -247,7 +247,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_members_letters" do
     before(:each) do
-      get :current_members_letters, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', letter: 'a' }
+      get :current_members_letters, params: { house_id: 'KL2k1BGP', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -266,8 +266,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].sort_name).to eq('Abbott, Ms Diane')
-      expect(assigns(:people)[1].sort_name).to eq('Abrahams, Debbie')
+      expect(assigns(:people)[0].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 1')
+      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 10')
     end
 
     it 'renders the current_members_letters template' do
@@ -277,7 +277,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET party_members" do
     before(:each) do
-      get :party_members, params: { house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980' }
+      get :party_members, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -298,8 +298,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
     end
 
     it 'renders the party_members template' do
@@ -309,7 +309,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET party_members_letters" do
     before(:each) do
-      get :party_members_letters, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'f4e62fb8-2cf4-41b2-b7a3-7e621522a30d', letter: 't' }
+      get :party_members_letters, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4', letter: 't' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -330,8 +330,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].sort_name).to eq('Tami, Mark')
-      expect(assigns(:people)[1].sort_name).to eq('Taylor of Bolton, B.')
+      expect(assigns(:people)[0].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 1')
+      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 10')
     end
 
     it 'renders the party_members_letters template' do
@@ -341,7 +341,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_party_members" do
     before(:each) do
-      get :current_party_members, params: {house_id: 'c2d41b82-d4df-4f50-b0f9-f52b84a6a788', party_id: 'ab77ae5d-7559-4636-ac25-2a23fd961980'}
+      get :current_party_members, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -362,8 +362,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].given_name).to eq('Person 1 - givenName')
-      expect(assigns(:people)[1].given_name).to eq('Person 2 - givenName')
+      expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
     end
 
     it 'renders the current_party_members template' do
@@ -373,7 +373,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_party_members_letters" do
     before(:each) do
-      get :current_party_members_letters, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'f4e62fb8-2cf4-41b2-b7a3-7e621522a30d', letter: 't' }
+      get :current_party_members_letters, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4', letter: 't' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -394,8 +394,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @people in alphabetical order' do
-      expect(assigns(:people)[0].sort_name).to eq('Tami, Mark')
-      expect(assigns(:people)[1].sort_name).to eq('Thomas, Gareth')
+      expect(assigns(:people)[0].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 1')
+      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 10')
     end
 
     it 'renders the current_party_members_letters template' do
@@ -405,7 +405,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET a_to_z_members" do
     before(:each) do
-      get :a_to_z_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+      get :a_to_z_members, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -423,7 +423,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET a_to_z_current_members" do
     before(:each) do
-      get :a_to_z_current_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52' }
+      get :a_to_z_current_members, params: { house_id: 'KL2k1BGP' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -441,7 +441,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET a_to_z_party_members" do
     before(:each) do
-      get :a_to_z_party_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'c5858995-6d25-4eb5-b92e-fba3fbd8ba47' }
+      get :a_to_z_party_members, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -459,7 +459,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET a_to_z_current_party_members" do
     before(:each) do
-      get :a_to_z_current_party_members, params: { house_id: '4b77dd58-f6ba-4121-b521-c8ad70465f52', party_id: 'c5858995-6d25-4eb5-b92e-fba3fbd8ba47' }
+      get :a_to_z_current_party_members, params: { house_id: 'KL2k1BGP', party_id: 'P6LNyUn4' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -492,7 +492,7 @@ RSpec.describe HousesController, vcr: true do
 
     context 'it returns a single result' do
       before(:each) do
-        get :lookup_by_letters, params: {letters: 'commons'}
+        get :lookup_by_letters, params: { letters: 'commons' }
       end
 
       it 'should have a response with http status redirect (302)' do
@@ -500,7 +500,7 @@ RSpec.describe HousesController, vcr: true do
       end
 
       it 'redirects to houses/:id' do
-        expect(response).to redirect_to(house_path('c2d41b82-d4df-4f50-b0f9-f52b84a6a788'))
+        expect(response).to redirect_to(house_path('KL2k1BGP'))
       end
     end
   end

@@ -1,6 +1,0 @@
-- if @people.empty?
-  = render partial: 'shared/empty_list', locals: { title: nil, description: t('no_content.empty_list.houses.description', letter: params[:letter].upcase)}
-- else
-%li.list__item
-  %h2= link_to(person.display_name, person_path(person.graph_id))
-  %p= person.statuses[:general_membership_status].join(' and ')

@@ -133,6 +133,8 @@ class HousesController < ApplicationController
     @party = @party.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
+
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
   def party_members_letters
@@ -150,6 +152,8 @@ class HousesController < ApplicationController
     response = RequestHelper.handler(request) { @people = [] }
 
     @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
   def current_party_members
@@ -169,6 +173,8 @@ class HousesController < ApplicationController
     @party = @party.first
     @people = @people.sort_by(:sort_name)
     @letters = letter_data.map(&:value)
+
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
   def current_party_members_letters
@@ -186,6 +192,8 @@ class HousesController < ApplicationController
     response = RequestHelper.handler(request) { @people = [] }
 
     @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+
+    @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
   end
 
   def a_to_z_members

@@ -1,11 +1,6 @@
-- if HousesHelper.commons?(@house)
-  - page_title = title("#{@party.name} - #{t('.title', current: t('current').capitalize, member_type: t('mp_plural'))}")
-- if HousesHelper.lords?(@house)
-  - page_title = title("#{@party.name} - #{t('.title', current: t('current').capitalize, member_type: t('lord_plural'))}")
-
-.section--primary 
+.section--primary
   .container
-    %h1= page_title
+    %h1= title("#{@party.name} - #{t('.title', current: t('current').capitalize, member_type: @current_person_type)}")
 
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, primary_id: @house.graph_id, secondary_id: @party.graph_id}
 

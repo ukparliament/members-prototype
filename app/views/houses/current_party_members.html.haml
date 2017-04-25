@@ -1,8 +1,6 @@
-- page_title = title("#{@party.name} - #{t('.title', current: t('current').capitalize, member_type: @current_person_type)}")
-
 .section--primary
   .container
-    %h1= page_title
+    %h1= title("#{@party.name} - #{t('.title', current: t('current').capitalize, member_type: @current_person_type)}")
 
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, primary_id: @house.graph_id, secondary_id: @party.graph_id}
 

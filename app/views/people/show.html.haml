@@ -1,8 +1,6 @@
-- page_title = title(@person.display_name)
-
 #content.section--primary
   .container
-    %h1= page_title
+    %h1= title(@person.display_name)
 
     - if @most_recent_incumbency.nil? || @most_recent_incumbency.house.name == 'House of Lords'
       %p= @person.full_title

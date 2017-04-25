@@ -94,8 +94,8 @@ scan-image:
 rmi: # Remove local versions of our images.
 	docker rmi -f $(IMAGE):$(VERSION)
 	docker rmi -f $(IMAGE):latest
+	docker rmi $(docker images | grep "^<none>" | awk ‘{print $3}’)
 
 deploy-ecs: # Deploy our new Docker image onto an AWS cluster (Run in GoCD to deploy to various environments).
 	./aws_ecs/register-task-definition.sh $(APP_NAME)
 	aws ecs update-service --service $(APP_NAME) --cluster $(ECS_CLUSTER) --region $(AWS_REGION) --task-definition $(APP_NAME)
-

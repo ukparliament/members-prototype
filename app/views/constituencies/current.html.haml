@@ -1,7 +1,9 @@
-%h1= title(t('.title', current: t('current').capitalize, constituency: t('constituency_plural')))
+.section--primary
+  .container
+    %h1= title(t('.title', current: t('current').capitalize, constituency: t('constituency_plural')))
 
-= render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :constituencies_current_a_z_letter_path }
-= render 'constituencies/current_constituencies'
+    = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :constituencies_current_a_z_letter_path }
 
-.block
-  %p= link_to("#{t('all').capitalize} #{t('current_and_former')} #{t('constituency_plural')}", constituencies_path)
+%section#content
+  .container
+    = render 'constituencies/current_constituencies'

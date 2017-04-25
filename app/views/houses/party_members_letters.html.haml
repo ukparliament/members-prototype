@@ -1,7 +1,5 @@
-- if HousesHelper.commons?(@house)
-  - page_title = title("#{@party.name} - #{t('.title', current_and_former: t('current_and_former').capitalize, member_type: t('mp_plural'))}")
-- if HousesHelper.lords?(@house)
-  - page_title = title("#{@party.name} - #{t('.title', current_and_former: t('current_and_former').capitalize, member_type: t('lord_plural'))}")
+- page_title = title("#{@party.name} - #{t('.title', current_and_former: t('current_and_former').capitalize, member_type: @current_person_type)}")
+
 
 .section--primary
   .container

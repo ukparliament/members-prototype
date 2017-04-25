@@ -1,13 +1,15 @@
-- page_title = title("#{@constituency.name} - #{t('.title', current: t('current').capitalize, mp: t('mp'))}")
-
-%h1= page_title
-%p= @constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
-%p
-  = "#{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
-  = @constituency.current? ? " #{t('to_present')}" : " #{t('to')} #{l(@constituency.end_date, format: :default)}"
+#content.section--primary
+  .container
+    %h1= title("#{@constituency.name} - #{t('.title', current: t('current').capitalize, mp: t('mp'))}")
+    %p= @constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
+    %p
+      = "#{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
+      = @constituency.current? ? " #{t('to_present')}" : " #{t('to')} #{l(@constituency.end_date, format: :default)}"
 
 - unless @seat_incumbency.nil?
-  .list
-    .list__item--secondary
-      %h2= link_to @seat_incumbency.member.display_name, person_path(@seat_incumbency.member.graph_id)
-      %p= "#{l(@seat_incumbency.start_date, format: :default)} #{t('to_present')}" unless @seat_incumbency.start_date.nil?
+  %section
+    .container
+      .list
+        .list__item--secondary
+          %h2= link_to @seat_incumbency.member.display_name, person_path(@seat_incumbency.member.graph_id)
+          %p= "#{l(@seat_incumbency.start_date, format: :default)} #{t('to_present')}" unless @seat_incumbency.start_date.nil?

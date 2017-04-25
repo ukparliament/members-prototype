@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/people/626b57f9-6ef0-475a-ae12-40a44aca7eff/constituencies
+    uri: http://localhost:3030/people/7TX8ySd4/constituencies
     body:
       encoding: US-ASCII
       string: ''
@@ -11,81 +11,106 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/n-triples; charset=utf-8
-      Etag:
-      - W/"244dd40de69cffe66053b77c1c510e48"
       Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 776dd3f8-321a-46dd-a322-aa8838897dcb
-      X-Runtime:
-      - '0.040332'
-      Transfer-Encoding:
-      - chunked
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '6127'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 21 Apr 2017 08:52:18 GMT
     body:
       encoding: UTF-8
-      string: |
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/af098235-f250-4325-8ad9-20593f98aa0c> .
-        <http://id.ukpds.org/ebd5fb77-1fec-4743-9c01-4e5bf89d95a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
-        <http://id.ukpds.org/ebd5fb77-1fec-4743-9c01-4e5bf89d95a9> <http://id.ukpds.org/schema/constituencyGroupName> "Dulwich" .
-        <http://id.ukpds.org/ebd5fb77-1fec-4743-9c01-4e5bf89d95a9> <http://id.ukpds.org/schema/constituencyGroupStartDate> "1983-06-09"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/ebd5fb77-1fec-4743-9c01-4e5bf89d95a9> <http://id.ukpds.org/schema/constituencyGroupEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/258bd1b0-adf6-49bf-9cf8-d9e9a6b30b9f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
-        <http://id.ukpds.org/258bd1b0-adf6-49bf-9cf8-d9e9a6b30b9f> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/ebd5fb77-1fec-4743-9c01-4e5bf89d95a9> .
-        <http://id.ukpds.org/af098235-f250-4325-8ad9-20593f98aa0c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/af098235-f250-4325-8ad9-20593f98aa0c> <http://id.ukpds.org/schema/incumbencyEndDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/af098235-f250-4325-8ad9-20593f98aa0c> <http://id.ukpds.org/schema/incumbencyStartDate> "1992-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/af098235-f250-4325-8ad9-20593f98aa0c> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/258bd1b0-adf6-49bf-9cf8-d9e9a6b30b9f> .
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/5faf0adc-31bd-4e3d-a798-eb8865949a0a> .
-        <http://id.ukpds.org/175c2d0a-53e2-4a8a-8766-a0f9a3f381dd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
-        <http://id.ukpds.org/175c2d0a-53e2-4a8a-8766-a0f9a3f381dd> <http://id.ukpds.org/schema/constituencyGroupName> "Dulwich and West Norwood" .
-        <http://id.ukpds.org/175c2d0a-53e2-4a8a-8766-a0f9a3f381dd> <http://id.ukpds.org/schema/constituencyGroupStartDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/175c2d0a-53e2-4a8a-8766-a0f9a3f381dd> <http://id.ukpds.org/schema/constituencyGroupEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/9de54717-6faa-48d5-b400-784a1a1bf298> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
-        <http://id.ukpds.org/9de54717-6faa-48d5-b400-784a1a1bf298> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/175c2d0a-53e2-4a8a-8766-a0f9a3f381dd> .
-        <http://id.ukpds.org/5faf0adc-31bd-4e3d-a798-eb8865949a0a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/5faf0adc-31bd-4e3d-a798-eb8865949a0a> <http://id.ukpds.org/schema/incumbencyEndDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/5faf0adc-31bd-4e3d-a798-eb8865949a0a> <http://id.ukpds.org/schema/incumbencyStartDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/5faf0adc-31bd-4e3d-a798-eb8865949a0a> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/9de54717-6faa-48d5-b400-784a1a1bf298> .
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/ed9d2f9d-7244-4182-961f-87827b42f0d0> .
-        <http://id.ukpds.org/ed9d2f9d-7244-4182-961f-87827b42f0d0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/ed9d2f9d-7244-4182-961f-87827b42f0d0> <http://id.ukpds.org/schema/incumbencyEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/ed9d2f9d-7244-4182-961f-87827b42f0d0> <http://id.ukpds.org/schema/incumbencyStartDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/ed9d2f9d-7244-4182-961f-87827b42f0d0> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/9de54717-6faa-48d5-b400-784a1a1bf298> .
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/d954cbde-455a-4b66-8e02-bf7c3fc9ecbf> .
-        <http://id.ukpds.org/d954cbde-455a-4b66-8e02-bf7c3fc9ecbf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/d954cbde-455a-4b66-8e02-bf7c3fc9ecbf> <http://id.ukpds.org/schema/incumbencyEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/d954cbde-455a-4b66-8e02-bf7c3fc9ecbf> <http://id.ukpds.org/schema/incumbencyStartDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/d954cbde-455a-4b66-8e02-bf7c3fc9ecbf> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/9de54717-6faa-48d5-b400-784a1a1bf298> .
-        <http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/07a5faa8-96a2-4945-876b-d437e804c9c8> .
-        <http://id.ukpds.org/b53e9a24-716e-483a-a743-2c5e88752e32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
-        <http://id.ukpds.org/b53e9a24-716e-483a-a743-2c5e88752e32> <http://id.ukpds.org/schema/constituencyGroupName> "Dulwich and West Norwood" .
-        <http://id.ukpds.org/b53e9a24-716e-483a-a743-2c5e88752e32> <http://id.ukpds.org/schema/constituencyGroupStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/9647ee95-850b-432b-ba95-79b2a9517bcc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
-        <http://id.ukpds.org/9647ee95-850b-432b-ba95-79b2a9517bcc> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/b53e9a24-716e-483a-a743-2c5e88752e32> .
-        <http://id.ukpds.org/07a5faa8-96a2-4945-876b-d437e804c9c8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/07a5faa8-96a2-4945-876b-d437e804c9c8> <http://id.ukpds.org/schema/incumbencyEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/07a5faa8-96a2-4945-876b-d437e804c9c8> <http://id.ukpds.org/schema/incumbencyStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/07a5faa8-96a2-4945-876b-d437e804c9c8> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/9647ee95-850b-432b-ba95-79b2a9517bcc> .
-    http_version:
-  recorded_at: Wed, 08 Feb 2017 09:57:54 GMT
+      string: "<http://id.ukpds.org/7TX8ySd4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Person> .\r\n<http://id.ukpds.org/7TX8ySd4> <http://id.ukpds.org/schema/personGivenName>
+        \"personGivenName - 1\" .\r\n<http://id.ukpds.org/7TX8ySd4> <http://id.ukpds.org/schema/personFamilyName>
+        \"personFamilyName - 1\" .\r\n<http://id.ukpds.org/7TX8ySd4> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF>
+        \"F31CBD81AD8343898B49DC65743F0BDF - 1\" .\r\n<http://id.ukpds.org/qwMCp9zW>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup>
+        .\r\n<http://id.ukpds.org/qwMCp9zW> <http://id.ukpds.org/schema/constituencyGroupName>
+        \"constituencyGroupName - 1\" .\r\n<http://id.ukpds.org/qwMCp9zW> <http://id.ukpds.org/schema/constituencyGroupStartDate>
+        \"1983-06-09\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/qwMCp9zW>
+        <http://id.ukpds.org/schema/constituencyGroupEndDate> \"1997-05-01\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/PYif22pl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/HouseSeat> .\r\n<http://id.ukpds.org/PYif22pl>
+        <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/qwMCp9zW>
+        .\r\n<http://id.ukpds.org/0mfPjwmr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/0mfPjwmr>
+        <http://id.ukpds.org/schema/incumbencyEndDate> \"1992-04-09\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/0mfPjwmr> <http://id.ukpds.org/schema/incumbencyStartDate>
+        \"1987-06-11\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/0mfPjwmr>
+        <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/PYif22pl>
+        .\r\n<http://id.ukpds.org/EQYcteIx> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/EQYcteIx>
+        <http://id.ukpds.org/schema/incumbencyEndDate> \"1997-05-01\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/EQYcteIx> <http://id.ukpds.org/schema/incumbencyStartDate>
+        \"1992-04-09\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/EQYcteIx>
+        <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/PYif22pl>
+        .\r\n<http://id.ukpds.org/qAHu9wEI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/qAHu9wEI>
+        <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
+        - 2\" .\r\n<http://id.ukpds.org/qAHu9wEI> <http://id.ukpds.org/schema/constituencyGroupStartDate>
+        \"1997-05-01\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/qAHu9wEI>
+        <http://id.ukpds.org/schema/constituencyGroupEndDate> \"2010-05-06\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/iROqL8zb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/HouseSeat> .\r\n<http://id.ukpds.org/iROqL8zb>
+        <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/qAHu9wEI>
+        .\r\n<http://id.ukpds.org/qLe4wHHG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/qLe4wHHG>
+        <http://id.ukpds.org/schema/incumbencyEndDate> \"2001-06-07\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/qLe4wHHG> <http://id.ukpds.org/schema/incumbencyStartDate>
+        \"1997-05-01\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/qLe4wHHG>
+        <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/iROqL8zb>
+        .\r\n<http://id.ukpds.org/FZhkHRIO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/FZhkHRIO>
+        <http://id.ukpds.org/schema/incumbencyEndDate> \"2005-05-05\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/FZhkHRIO> <http://id.ukpds.org/schema/incumbencyStartDate>
+        \"2001-06-07\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/FZhkHRIO>
+        <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/iROqL8zb>
+        .\r\n<http://id.ukpds.org/kEZrRzZo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/kEZrRzZo>
+        <http://id.ukpds.org/schema/incumbencyEndDate> \"2010-05-06\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/kEZrRzZo> <http://id.ukpds.org/schema/incumbencyStartDate>
+        \"2005-05-05\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/kEZrRzZo>
+        <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/iROqL8zb>
+        .\r\n<http://id.ukpds.org/x45XdVJD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/x45XdVJD>
+        <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
+        - 3\" .\r\n<http://id.ukpds.org/x45XdVJD> <http://id.ukpds.org/schema/constituencyGroupStartDate>
+        \"2010-05-06\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/hlhMqQXr>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat>
+        .\r\n<http://id.ukpds.org/hlhMqQXr> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup>
+        <http://id.ukpds.org/x45XdVJD> .\r\n<http://id.ukpds.org/PFxyzLg9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/PFxyzLg9>
+        <http://id.ukpds.org/schema/incumbencyEndDate> \"2015-03-30\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/PFxyzLg9> <http://id.ukpds.org/schema/incumbencyStartDate>
+        \"2010-05-06\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/PFxyzLg9>
+        <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/hlhMqQXr>
+        .\r\n<http://id.ukpds.org/20p2np4L> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n<http://id.ukpds.org/20p2np4L>
+        <http://id.ukpds.org/schema/incumbencyStartDate> \"2015-05-07\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<http://id.ukpds.org/20p2np4L> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat>
+        <http://id.ukpds.org/hlhMqQXr> .\r\n"
+    http_version: 
+  recorded_at: Fri, 21 Apr 2017 08:53:14 GMT
 recorded_with: VCR 3.0.3

@@ -1,3 +1,5 @@
+require 'parliament_helper'
+
 # Namespace for helpers of the HousesController.
 module HousesHelper
   # Checks if house is the House of Commons and sets @commons_id and @lords_id if not already set.
@@ -55,7 +57,6 @@ module HousesHelper
   def self.person_type_string(house)
     is_mp = HousesHelper.commons?(house)
 
-    # TODO: Clean up this horrible code small
     types = [I18n.t('mp_plural'), I18n.t('lord_plural')]
 
     return types if is_mp
@@ -66,7 +67,7 @@ module HousesHelper
 
   def self.set_ids
     return if @commons_id && @lords_id
-    houses = Parliament::Request.new.houses.get.filter('http://id.ukpds.org/schema/House').sort_by(:name)
+    houses = ParliamentHelper.parliament_request.houses.get.filter('http://id.ukpds.org/schema/House').sort_by(:name)
 
     @commons_id = houses.first.graph_id
     @lords_id = houses.last.graph_id

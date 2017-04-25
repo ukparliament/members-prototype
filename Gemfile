@@ -10,10 +10,16 @@ gem 'json-ld', '2.1.2'
 gem 'vcard', '0.2.15'
 
 # Parliament Ruby is a wrapper for the internal Parliament data API
-gem 'parliament-ruby', '0.6.3'
+gem 'parliament-ruby', '~> 0.7.6'
+
+# Parliament NTriple processes N-triple data
+gem 'parliament-ntriple', '~> 0.1.0'
+
+# Parliament Grom Decorators decorates Grom nodes
+gem 'parliament-grom-decorators', '~> 0.1.0'
 
 # Pugin is the front-end component library used by Parliament
-gem 'pugin', git: 'https://github.com/ukparliament/parliament.uk-pugin-components-rails', :tag => '0.5.5'
+gem 'pugin', '~> 0.5.0.pre'
 
 # HAML is used for front-end template rendering
 gem 'haml', '4.0.7'

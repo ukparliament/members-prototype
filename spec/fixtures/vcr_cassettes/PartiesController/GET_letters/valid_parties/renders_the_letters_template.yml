@@ -1,0 +1,110 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/parties/a_z_letters
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '742'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 20 Apr 2017 14:48:34 GMT
+    body:
+      encoding: UTF-8
+      string: "_:node3525 <http://id.ukpds.org/schema/value> \"A\" .\r\n_:node3526
+        <http://id.ukpds.org/schema/value> \"L\" .\r\n_:node3527 <http://id.ukpds.org/schema/value>
+        \"B\" .\r\n_:node3528 <http://id.ukpds.org/schema/value> \"U\" .\r\n_:node3529
+        <http://id.ukpds.org/schema/value> \"O\" .\r\n_:node3530 <http://id.ukpds.org/schema/value>
+        \"R\" .\r\n_:node3531 <http://id.ukpds.org/schema/value> \"I\" .\r\n_:node3532
+        <http://id.ukpds.org/schema/value> \"S\" .\r\n_:node3533 <http://id.ukpds.org/schema/value>
+        \"C\" .\r\n_:node3534 <http://id.ukpds.org/schema/value> \"P\" .\r\n_:node3535
+        <http://id.ukpds.org/schema/value> \"V\" .\r\n_:node3536 <http://id.ukpds.org/schema/value>
+        \"G\" .\r\n_:node3537 <http://id.ukpds.org/schema/value> \"N\" .\r\n_:node3538
+        <http://id.ukpds.org/schema/value> \"D\" .\r\n"
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 14:49:29 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/parties/l
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '1050'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 20 Apr 2017 14:48:35 GMT
+    body:
+      encoding: UTF-8
+      string: "<http://id.ukpds.org/EP4KNfma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Party> .\r\n<http://id.ukpds.org/EP4KNfma> <http://id.ukpds.org/schema/partyName>
+        \"partyName - 1\" .\r\n<http://id.ukpds.org/aB3uRf7k> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Party> .\r\n<http://id.ukpds.org/aB3uRf7k> <http://id.ukpds.org/schema/partyName>
+        \"partyName - 2\" .\r\n<http://id.ukpds.org/1rw6ILam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Party> .\r\n<http://id.ukpds.org/1rw6ILam> <http://id.ukpds.org/schema/partyName>
+        \"partyName - 3\" .\r\n<http://id.ukpds.org/fvWE466u> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Party> .\r\n<http://id.ukpds.org/fvWE466u> <http://id.ukpds.org/schema/partyName>
+        \"partyName - 4\" .\r\n<http://id.ukpds.org/P6LNyUn4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Party> .\r\n<http://id.ukpds.org/P6LNyUn4> <http://id.ukpds.org/schema/partyName>
+        \"partyName - 5\" .\r\n"
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 14:49:29 GMT
+recorded_with: VCR 3.0.3

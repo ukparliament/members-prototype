@@ -1,13 +1,17 @@
-- page_title = title(@party.name) if @party.name.present?
-
-%h1= page_title
+#content.section--primary
+  .container
+    %h1= title(@party.name) if @party.name.present?
 
 - if @party.member_count > 0
-  .list__item
-    %h2= link_to("#{t('current').capitalize} #{t('member_plural')}", party_members_current_path(@party.graph_id))
-    %p= "#{t('view_all').capitalize} #{t('current')} #{@party.name} #{t('member_plural')}"
+  %section
+    .container
+      .list__item
+        %h2= link_to("#{t('current').capitalize} #{t('member_plural')}", party_members_current_path(@party.graph_id))
+        %p= "#{t('view_all').capitalize} #{t('current')} #{@party.name} #{t('member_plural')}"
 
 - if @party.member_count == 0
-  %p.lead= t('.party_no_current_members')
-  .list__item
-    %h2= link_to("#{t('view_all').capitalize} #{t('former')} #{@party.name} #{t('member_plural')}", party_members_path(@party.graph_id))
+  %section
+    .container
+      %p.lead= t('.party_no_current_members')
+      .list__item
+        %h2= link_to("#{t('view_all').capitalize} #{t('former')} #{@party.name} #{t('member_plural')}", party_members_path(@party.graph_id))

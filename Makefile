@@ -53,6 +53,7 @@ HOST_PORT = 80
 build: # Using the variables defined above, run `docker build`, tagging the image and passing in the required arguments.
 	docker build -t $(IMAGE):$(VERSION) -t $(IMAGE):latest \
 		--build-arg PARLIAMENT_BASE_URL=$(PARLIAMENT_BASE_URL) \
+		--build-arg PARLIAMENT_AUTH_TOKEN=$(PARLIAMENT_AUTH_TOKEN) \
 		--build-arg GTM_KEY=$(GTM_KEY) \
 		--build-arg ASSET_LOCATION_URL=$(ASSET_LOCATION_URL) \
 		--build-arg SECRET_KEY_BASE=$(SECRET_KEY_BASE) \
@@ -94,8 +95,8 @@ scan-image:
 rmi: # Remove local versions of our images.
 	docker rmi -f $(IMAGE):$(VERSION)
 	docker rmi -f $(IMAGE):latest
+	docker rmi -f $(docker images | grep "^<none>" | awk '{print $3}') || true
 
 deploy-ecs: # Deploy our new Docker image onto an AWS cluster (Run in GoCD to deploy to various environments).
 	./aws_ecs/register-task-definition.sh $(APP_NAME)
 	aws ecs update-service --service $(APP_NAME) --cluster $(ECS_CLUSTER) --region $(AWS_REGION) --task-definition $(APP_NAME)
-

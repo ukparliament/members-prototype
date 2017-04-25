@@ -1,8 +1,8 @@
 class ConstituenciesController < ApplicationController
   def index
-    letter_data = Parliament::Request.new.constituencies.a_z_letters.get
+    letter_data = parliament_request.constituencies.a_z_letters.get
 
-    @constituencies = Parliament::Request.new.constituencies.get.sort_by(:name)
+    @constituencies = parliament_request.constituencies.get.sort_by(:name)
     @letters = letter_data.map(&:value)
   end
 
@@ -10,7 +10,7 @@ class ConstituenciesController < ApplicationController
     source = params[:source]
     id = params[:id]
 
-    @constituency = Parliament::Request.new.constituencies.lookup.get(params: { source: source, id: id }).first
+    @constituency = parliament_request.constituencies.lookup(source, id).get.first
 
     redirect_to constituency_path(@constituency.graph_id)
   end
@@ -18,7 +18,7 @@ class ConstituenciesController < ApplicationController
   def show
     constituency_id = params[:constituency_id]
 
-    data = Parliament::Request.new.constituencies(constituency_id).get
+    data = parliament_request.constituencies(constituency_id).get
 
     @constituency, @seat_incumbencies = data.filter(
       'http://id.ukpds.org/schema/ConstituencyGroup',
@@ -31,9 +31,9 @@ class ConstituenciesController < ApplicationController
   end
 
   def current
-    letter_data = Parliament::Request.new.constituencies.current.a_z_letters.get
+    letter_data = parliament_request.constituencies.current.a_z_letters.get
 
-    data = Parliament::Request.new.constituencies.current.get
+    data = parliament_request.constituencies.current.get
 
     @constituencies = data.filter('http://id.ukpds.org/schema/ConstituencyGroup')
     @constituencies = @constituencies.sort_by(:name)
@@ -43,7 +43,7 @@ class ConstituenciesController < ApplicationController
   def map
     constituency_id = params[:constituency_id]
 
-    data = Parliament::Request.new.constituencies(constituency_id).get
+    data = parliament_request.constituencies(constituency_id).get
 
     @constituency = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
   end
@@ -51,7 +51,7 @@ class ConstituenciesController < ApplicationController
   def contact_point
     constituency_id = params[:constituency_id]
 
-    data = Parliament::Request.new.constituencies(constituency_id).contact_point.get
+    data = parliament_request.constituencies(constituency_id).contact_point.get
 
     @constituency = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
   end
@@ -59,7 +59,7 @@ class ConstituenciesController < ApplicationController
   def members
     constituency_id = params[:constituency_id]
 
-    data = Parliament::Request.new.constituencies(constituency_id).members.get
+    data = parliament_request.constituencies(constituency_id).members.get
 
     @constituency, @seat_incumbencies = data.filter(
       'http://id.ukpds.org/schema/ConstituencyGroup',
@@ -73,7 +73,7 @@ class ConstituenciesController < ApplicationController
   def current_member
     constituency_id = params[:constituency_id]
 
-    data = Parliament::Request.new.constituencies(constituency_id).members.current.get
+    data = parliament_request.constituencies(constituency_id).members.current.get
 
     @constituency, @seat_incumbency = data.filter(
       'http://id.ukpds.org/schema/ConstituencyGroup',
@@ -86,10 +86,10 @@ class ConstituenciesController < ApplicationController
   def letters
     letter = params[:letter]
 
-    letter_data = Parliament::Request.new.constituencies.a_z_letters.get
+    letter_data = parliament_request.constituencies.a_z_letters.get
     @letters = letter_data.map(&:value)
 
-    request = Parliament::Request.new.constituencies(letter)
+    request = parliament_request.constituencies(letter)
     response = RequestHelper.handler(request) { @constituencies = [] }
 
     @constituencies = response[:response].sort_by(:name) if response[:success]
@@ -98,23 +98,23 @@ class ConstituenciesController < ApplicationController
   def current_letters
     letter = params[:letter]
 
-    letter_data = Parliament::Request.new.constituencies.current.a_z_letters.get
+    letter_data = parliament_request.constituencies.current.a_z_letters.get
     @letters = letter_data.map(&:value)
 
-    request = Parliament::Request.new.constituencies.current(letter)
+    request = parliament_request.constituencies.current(letter)
     response = RequestHelper.handler(request) { @constituencies = [] }
 
     @constituencies = response[:response].filter('http://id.ukpds.org/schema/ConstituencyGroup').sort_by(:name) if response[:success]
   end
 
   def a_to_z
-    letter_data = Parliament::Request.new.constituencies.a_z_letters.get
+    letter_data = parliament_request.constituencies.a_z_letters.get
 
     @letters = letter_data.map(&:value)
   end
 
   def a_to_z_current
-    letter_data = Parliament::Request.new.constituencies.current.a_z_letters.get
+    letter_data = parliament_request.constituencies.current.a_z_letters.get
 
     @letters = letter_data.map(&:value)
   end
@@ -122,7 +122,7 @@ class ConstituenciesController < ApplicationController
   def lookup_by_letters
     letters = params[:letters]
 
-    data = Parliament::Request.new.constituencies(letters).get
+    data = parliament_request.constituencies(letters).get
 
     if data.size == 1
       redirect_to constituency_path(data.first.graph_id)

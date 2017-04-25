@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get '/:letters', to: action
   end
 
-  id_format_regex = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/
+  id_format_regex = /\w{8}/
 
 
   ### Root ###

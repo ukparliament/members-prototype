@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/parties/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d
+    uri: http://localhost:3030/parties/P6LNyUn4
     body:
       encoding: US-ASCII
       string: ''
@@ -11,39 +11,40 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
+      - application/n-triples
       User-Agent:
       - Ruby
-      Host:
-      - localhost:3030
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/n-triples; charset=utf-8
-      Etag:
-      - W/"2eec2755b2c22ff65ae2b142f2954fa9"
       Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 7b813b1b-e89f-4608-a767-f51e373ed52e
-      X-Runtime:
-      - '0.140273'
-      Transfer-Encoding:
-      - chunked
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '320'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 20 Apr 2017 14:00:43 GMT
     body:
       encoding: UTF-8
-      string: |
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/count> "442"^^<http://www.w3.org/2001/XMLSchema#integer> .
+      string: "<http://id.ukpds.org/P6LNyUn4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Party> .\r\n<http://id.ukpds.org/P6LNyUn4> <http://id.ukpds.org/schema/partyName>
+        \"partyName - 1\" .\r\n<http://id.ukpds.org/P6LNyUn4> <http://id.ukpds.org/schema/count>
+        \"442\"^^<http://www.w3.org/2001/XMLSchema#integer> .\r\n"
     http_version: 
-  recorded_at: Wed, 22 Mar 2017 13:51:02 GMT
+  recorded_at: Thu, 20 Apr 2017 14:01:37 GMT
 recorded_with: VCR 3.0.3

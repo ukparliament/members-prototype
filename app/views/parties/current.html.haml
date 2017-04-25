@@ -1,7 +1,7 @@
-.section--primary
+#content.section--primary
   .container
     %h1= title(t('.title', current: t('current').capitalize, parties_and_groups: t('parties_and_groups')))
 
-%section#content
+%section
   .container
     = render 'party_list'

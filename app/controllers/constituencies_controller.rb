@@ -1,11 +1,10 @@
 class ConstituenciesController < ApplicationController
   def index
     letter_data = parliament_request.constituencies.a_z_letters.get
-    @letters = letter_data.map(&:value)
-
     data = parliament_request.constituencies.get
 
     @constituencies = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').sort_by(:name)
+    @letters = letter_data.map(&:value)
   end
 
   def lookup
@@ -18,6 +17,7 @@ class ConstituenciesController < ApplicationController
   end
 
   def show
+    @postcode = params[:postcode]
     constituency_id = params[:constituency_id]
 
     data = parliament_request.constituencies(constituency_id).get
@@ -30,6 +30,18 @@ class ConstituenciesController < ApplicationController
     @seat_incumbencies = @seat_incumbencies.reverse_sort_by(:start_date)
 
     @current_incumbency = @seat_incumbencies.shift if !@seat_incumbencies.empty? && @seat_incumbencies.first.current?
+
+    return unless @postcode
+
+    begin
+      response = PostcodeHelper.lookup(@postcode)
+      @postcode_constituency = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
+      postcode_correct = @postcode_constituency.graph_id == @constituency.graph_id
+      @postcode_constituency.correct = postcode_correct
+    rescue PostcodeHelper::PostcodeError => error
+      flash[:error] = error.message
+      @postcode = nil
+    end
   end
 
   def current

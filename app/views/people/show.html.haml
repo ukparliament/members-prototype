@@ -55,7 +55,19 @@
   .container
     - if @current_incumbency && @current_party_membership
       %h2= "#{t('.contact').capitalize}"
-      - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Lord')
+      - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Member of the House of Lords')
+        - if @postcode
+          - if @postcode_constituency.correct?
+            %p= t('.correct_mp', name: @person.display_name)
+          - else
+            %p
+              = t('.incorrect_mp', name: @person.display_name)
+              = "#{link_to(@postcode_constituency.members.first.display_name, person_path(@postcode_constituency.members.first.graph_id))}.".html_safe
+        - else
+          %h3= t('.check_mp', name: @person.display_name)
+
+          = render partial: 'postcodes/postcode_lookup', locals: { path: person_path(@person.graph_id) }
+
         - if @current_incumbency.contact_points.empty?
           %p= t('.empty_contact_details')
         - else

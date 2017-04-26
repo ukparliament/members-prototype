@@ -71,6 +71,11 @@ en:
   time:
     formats:
       default: '%-d %b %Y'
+  # global error message translations
+  error:
+    no_constituency: 'No constituency found for the postcode entered.'
+    lookup_unavailable: 'Postcode lookup is currently unavailable.'
+    postcode_invalid: 'Your postcode is invalid.'
   # people translations
   people:
     index:
@@ -95,6 +100,9 @@ en:
       membership_history: 'membership history'
       election_history: 'election history'
       biography: 'biography'
+      check_mp: 'Check if %{name} is your MP'
+      correct_mp: '%{name} is the MP for the postcode entered.'
+      incorrect_mp: '%{name} is not the MP for the postcode entered.  Your MP is '
     constituencies:
       title: '%{current_and_former} %{constituency_plural}'
     current_constituency:
@@ -145,6 +153,12 @@ en:
       title: # title does not require translation
     shared_translations:
       vacant: 'Vacant'
+    constituency:
+      title: # title does not require translation
+      correct_constituency: 'This is the constituency for your postcode.'
+      incorrect_constituency: 'This is not your constituency.'
+      constituency_for_postcode: 'is the constituency for the postcode entered.'
+      check_constituency: 'Check if this is your constituency'
   # parties translations
   parties:
     index:
@@ -210,6 +224,21 @@ en:
       title: # needs title
     current_party_members_letters:
       title: '%{current} %{member_type}'
+  # postcodes translations
+  postcodes:
+    find_mp_constituency: 'Find your MP and constituency'
+    index:
+      title: 'Find your constituency'
+    show:
+      title: # title does not require translation
+      your_mp: 'Your MP'
+      your_constituency: 'Your constituency'
+    postcode_lookup:
+      title: # title does not require translation
+      search_by_postcode: 'Enter your full postcode, for example, SW1A 0AA.'
+      do_not_know_postcode: "Don't know your postcode?  Find your postcode on the %{link}."
+      do_not_know_postcode_link: 'Royal Mail postcode finder'
+
   # no content translations
   no_content:
     empty_list:

@@ -11,6 +11,19 @@
       %p
         = "#{l(@current_incumbency.start_date, format: :default)} #{t('to_present')}" unless @current_incumbency.start_date.nil?
 
+- if @constituency.current?
+  - if @postcode
+    - if @postcode_constituency.correct?
+      %p= t('.correct_constituency')
+    - else
+      %p
+        = t('.incorrect_constituency')
+        = "#{link_to(@postcode_constituency.name, constituency_path(@postcode_constituency.graph_id))} #{t('.constituency_for_postcode')}".html_safe
+  - else
+    %h3= t('.check_constituency')
+
+    = render partial: 'postcodes/postcode_lookup', locals: { path: constituency_path(@constituency.graph_id) }
+
 - if @seat_incumbencies.size > 0
   %h2= "#{t('former').capitalize} #{t('mp_plural')}"
   %ul.list

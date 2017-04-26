@@ -6,6 +6,6 @@
       %li.list__item
         %h2= link_to(constituency.name, constituency_path(constituency.graph_id))
         - if constituency.members.empty?
-          %p= t('constituencies.shared_translations.vacant_by_election').capitalize
+          %p= t('constituencies.shared_translations.vacant').capitalize
         - else
           %p= "#{constituency.members.first.display_name} #{t('mp')}"

@@ -144,7 +144,7 @@ en:
     contact_point:
       title: # title does not require translation
     shared_translations:
-      vacant_by_election: 'Vacant until by-election'
+      vacant: 'Vacant'
   # parties translations
   parties:
     index:

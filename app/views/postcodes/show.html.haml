@@ -1,0 +1,9 @@
+- page_title = title(@postcode)
+
+%h1= page_title
+%h3= t('.your_mp')
+%h4= link_to(@constituency.members.first.display_name, person_path(@constituency.members.first.graph_id))
+%p= @constituency.members.first.parties.first.name
+
+%h3= t('.your_constituency')
+%h4= link_to(@constituency.name, constituency_path(@constituency.graph_id))

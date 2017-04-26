@@ -2,6 +2,9 @@
   .container
     %h1= title(t('.title', current_and_former: t('current_and_former').capitalize, mps_and_lords: t('mps_and_lords')))
 
+    %h3= t('postcodes.find_mp_constituency')
+    = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
+
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :people_a_z_letter_path }
 
 %section#content

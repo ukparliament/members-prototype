@@ -1,0 +1,7 @@
+- page_title = title(t('.title'))
+
+%h1= page_title
+
+- if flash[:error]
+  = flash[:error]
+= render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }

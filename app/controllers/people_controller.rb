@@ -16,6 +16,7 @@ class PeopleController < ApplicationController
   end
 
   def show
+    @postcode = params[:postcode]
     person_id = params[:person_id]
 
     data = parliament_request.people(person_id).get
@@ -38,6 +39,18 @@ class PeopleController < ApplicationController
 
     @most_recent_incumbency = sorted_incumbencies.last
     @current_incumbency = @most_recent_incumbency && @most_recent_incumbency.current? ? @most_recent_incumbency : nil
+
+    return unless @postcode
+
+    begin
+      response = PostcodeHelper.lookup(@postcode)
+      @postcode_constituency = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
+      postcode_correct = @postcode_constituency.graph_id == @current_incumbency.constituency.graph_id
+      @postcode_constituency.correct = postcode_correct
+    rescue PostcodeHelper::PostcodeError => error
+      flash[:error] = error.message
+      @postcode = nil
+    end
   end
 
   def members

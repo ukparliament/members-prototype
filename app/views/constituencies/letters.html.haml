@@ -4,6 +4,11 @@
 
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :constituencies_a_z_letter_path }
 
+    %h3= t('postcodes.find_mp_constituency')
+    = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
+
+    = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :constituencies_a_z_letter_path }
+
 %section#content
   .container
     = render 'constituencies/constituencies'

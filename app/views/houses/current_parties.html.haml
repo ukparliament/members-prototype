@@ -20,6 +20,9 @@
         .link__tab--item
           = link_to(t('lords'),house_parties_current_path(HousesHelper.lords_id))
 
+    - if HousesHelper.commons?(@house)
+      = render partial: 'shared/dissolution_message'
+
     %ul.list
       = render :partial => 'houses/party', collection: @parties
 

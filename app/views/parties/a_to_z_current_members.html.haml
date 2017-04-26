@@ -1,3 +1,4 @@
 #content.section--primary
   .container
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :party_members_current_a_z_letter_path, primary_id: @party_id }
+    = render partial: 'shared/dissolution_message'

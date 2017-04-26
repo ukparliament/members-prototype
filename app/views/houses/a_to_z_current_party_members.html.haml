@@ -2,5 +2,5 @@
   .container
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, primary_id: @house_id, secondary_id: @party_id}
 
-    - if HousesHelper.commons?(@house)
+    - if HousesHelper.commons?(@house_id)
       = render partial: 'shared/dissolution_message'

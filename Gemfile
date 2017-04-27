@@ -16,7 +16,7 @@ gem 'parliament-ruby', '~> 0.7.6'
 gem 'parliament-ntriple', '~> 0.1.0'
 
 # Parliament Grom Decorators decorates Grom nodes
-gem 'parliament-grom-decorators', '~> 0.1.0'
+gem 'parliament-grom-decorators', '~> 0.1.2'
 
 # Pugin is the front-end component library used by Parliament
 gem 'pugin', '0.6.0'

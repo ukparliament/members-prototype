@@ -646,4 +646,35 @@ http_interactions:
         \"houseName - 2\" .\r\n"
     http_version:
   recorded_at: Thu, 20 Apr 2017 12:33:08 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - localhost:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '17'
+    body:
+      encoding: UTF-8
+      string: '{"response":true}'
+    http_version:
+  recorded_at: Wed, 26 Apr 2017 15:38:11 GMT
 recorded_with: VCR 3.0.3

@@ -57,7 +57,7 @@ http_interactions:
         <http://id.ukpds.org/schema/value> \"V\" .\r\n_:node4365 <http://id.ukpds.org/schema/value>
         \"Y\" .\r\n_:node4366 <http://id.ukpds.org/schema/value> \"J\" .\r\n_:node4367
         <http://id.ukpds.org/schema/value> \"U\" .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 20 Apr 2017 15:23:14 GMT
 - request:
     method: get
@@ -367,6 +367,37 @@ http_interactions:
         \"personGivenName - 19\" .\r\n<http://id.ukpds.org/tDzpbTmd> <http://id.ukpds.org/schema/personFamilyName>
         \"personFamilyName - 19\" .\r\n<http://id.ukpds.org/tDzpbTmd> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF>
         \"F31CBD81AD8343898B49DC65743F0BDF - 19\" .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 20 Apr 2017 15:23:15 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - localhost:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '17'
+    body:
+      encoding: UTF-8
+      string: '{"response":true}'
+    http_version:
+  recorded_at: Wed, 26 Apr 2017 15:38:11 GMT
 recorded_with: VCR 3.0.3

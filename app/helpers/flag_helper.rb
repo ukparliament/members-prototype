@@ -1,5 +1,5 @@
 module FlagHelper
   def self.dissolution?
-    true
+    BANDIERA_CLIENT.enabled?('parliament', 'show-dissolution')
   end
 end

@@ -2,8 +2,10 @@ class ConstituenciesController < ApplicationController
   def index
     letter_data = parliament_request.constituencies.a_z_letters.get
     @letters = letter_data.map(&:value)
-    @constituencies = parliament_request.constituencies.get.filter('http://id.ukpds.org/schema/ConstituencyGroup').sort_by(:name)
 
+    data = parliament_request.constituencies.get
+
+    @constituencies = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').sort_by(:name)
   end
 
   def lookup
@@ -93,7 +95,6 @@ class ConstituenciesController < ApplicationController
     response = RequestHelper.handler(request) { @constituencies = [] }
 
     @constituencies = response[:response].filter('http://id.ukpds.org/schema/ConstituencyGroup').sort_by(:name) if response[:success]
-
   end
 
   def current_letters

@@ -19,14 +19,18 @@ VCR.configure do |config|
 
   # Create a simple matcher which will 'filter' any request URIs on the fly
   config.register_request_matcher :filtered_uri do |request_1, request_2|
-    request_1.uri.sub(ENV['PARLIAMENT_BASE_URL'], 'http://localhost:3030') == request_2.uri.sub(ENV['PARLIAMENT_BASE_URL'], 'http://localhost:3030')
+    parliament_match = request_1.uri.sub(ENV['PARLIAMENT_BASE_URL'], 'http://localhost:3030') == request_2.uri.sub(ENV['PARLIAMENT_BASE_URL'], 'http://localhost:3030')
+    bandiera_match = request_1.uri.sub(ENV['BANDIERA_URL'], 'http://localhost:5000') == request_2.uri.sub(ENV['BANDIERA_URL'], 'http://localhost:5000')
+
+    parliament_match || bandiera_match
   end
 
   config.default_cassette_options = { match_requests_on: [:method, :filtered_uri] }
 
-  # Dynamically filter our authentication token
+  # Dynamically filter our sensitive information
   config.filter_sensitive_data('<AUTH_TOKEN>') { ENV['PARLIAMENT_AUTH_TOKEN'] }
   config.filter_sensitive_data('http://localhost:3030') { ENV['PARLIAMENT_BASE_URL'] }
+  config.filter_sensitive_data('http://localhost:5000') { ENV['BANDIERA_URL'] }
 
   # Dynamically filter n-triple data
   config.before_record do |interaction|
@@ -64,8 +68,6 @@ VCR.configure do |config|
 
         # Replace the object value
         index = object.index('"')
-
-        'initial value" . \r'
 
         object[0..index] = new_object if index
 

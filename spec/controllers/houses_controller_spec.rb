@@ -86,6 +86,24 @@ RSpec.describe HousesController, vcr: true do
       end
     end
 
+    describe '@current_person_type' do
+      context 'when the house of commons' do
+        it 'has the expected value' do
+          expect(assigns(:current_person_type)).to eq('MPs')
+        end
+      end
+
+      context 'when the house of lords' do
+        before(:each) do
+          get :members, params: { house_id: 'm1EgVTLj' }
+        end
+
+        it 'has the expected value' do
+          expect(assigns(:current_person_type)).to eq('Lords')
+        end
+      end
+    end
+
     it 'assigns @people in alphabetical order' do
       expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
       expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')

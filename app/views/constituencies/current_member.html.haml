@@ -6,7 +6,8 @@
       = "#{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
       = @constituency.current? ? " #{t('to_present')}" : " #{t('to')} #{l(@constituency.end_date, format: :default)}"
 
-= render partial: 'shared/dissolution_message'
+    = render partial: 'shared/dissolution_message'
+
 - unless @seat_incumbency.nil?
   %section
     .container

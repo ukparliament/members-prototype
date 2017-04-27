@@ -1,8 +1,6 @@
-- page_title = title("#{@person.display_name} - #{t('.title', current_and_former: t('current_and_former').capitalize, parties_and_groups: t('parties_and_groups'))}")
-
 #content.section--primary
   .container
-    %h1= page_title
+    %h1= title("#{@person.display_name} - #{t('.title', current_and_former: t('current_and_former').capitalize, parties_and_groups: t('parties_and_groups'))}")
 
 %section
   .container

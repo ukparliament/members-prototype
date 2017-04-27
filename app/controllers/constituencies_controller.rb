@@ -1,11 +1,11 @@
 class ConstituenciesController < ApplicationController
   def index
     letter_data = parliament_request.constituencies.a_z_letters.get
+    @letters = letter_data.map(&:value)
 
     data = parliament_request.constituencies.get
 
     @constituencies = data.filter('http://id.ukpds.org/schema/ConstituencyGroup').sort_by(:name)
-    @letters = letter_data.map(&:value)
   end
 
   def lookup

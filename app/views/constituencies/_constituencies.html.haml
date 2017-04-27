@@ -7,6 +7,8 @@
         %h2
           = link_to(constituency_path(constituency.graph_id)) do
             = constituency.name
+
+
             %span.sr-only
               = constituency.current? ? "#{t('current')} #{t('constituency')}" : "#{t('former')} #{t('constituency')}"
               = "#{t('from')} #{l(constituency.start_date, format: :default)}" unless constituency.start_date.nil?

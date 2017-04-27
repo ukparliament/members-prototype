@@ -28,6 +28,8 @@
       %li.list__item
         %h4= link_to t('parties_and_groups').capitalize, house_parties_current_path(HousesHelper.commons_id)
         %p= t('.members_info.current_parties')
+    .highlight__box.highlight--primary__soft
+      %p= t('.latest_members.blog', link: link_to(t('.latest_members.blog_link'), 'https://pds.blog.parliament.uk/2017/03/27/uk-parliament-website-public-beta/')).html_safe
 
 %section
   .container

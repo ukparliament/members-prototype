@@ -1,2 +1,3 @@
-.highlight__box.highlight--primary__soft
-  %p Parliament has been dissolved before the general election on 8 June. There are currently no MPs.
+- if FlagHelper.dissolution?
+  .highlight__box.highlight--primary__soft
+    %p= t('shared.dissolution_message.description')

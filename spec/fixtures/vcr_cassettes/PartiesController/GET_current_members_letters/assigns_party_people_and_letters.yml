@@ -58,7 +58,7 @@ http_interactions:
         \"Y\" .\r\n_:node1767 <http://id.ukpds.org/schema/value> \"V\" .\r\n_:node1768
         <http://id.ukpds.org/schema/value> \"I\" .\r\n_:node1769 <http://id.ukpds.org/schema/value>
         \"U\" .\r\n_:node1770 <http://id.ukpds.org/schema/value> \"Z\" .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 20 Apr 2017 14:20:17 GMT
 - request:
     method: get
@@ -105,7 +105,7 @@ http_interactions:
         <http://id.ukpds.org/schema/Party> .\r\n<http://id.ukpds.org/P6LNyUn4> <http://id.ukpds.org/schema/partyName>
         \"partyName - 1\" .\r\n<http://id.ukpds.org/P6LNyUn4> <http://id.ukpds.org/schema/count>
         \"442\"^^<http://www.w3.org/2001/XMLSchema#integer> .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 20 Apr 2017 14:20:17 GMT
 - request:
     method: get
@@ -501,6 +501,37 @@ http_interactions:
         <http://id.ukpds.org/schema/PartyMembership> .\r\n<http://id.ukpds.org/DUO9cjZ5>
         <http://id.ukpds.org/schema/partyMembershipStartDate> \"2015-05-07\"^^<http://www.w3.org/2001/XMLSchema#date>
         .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 20 Apr 2017 14:20:18 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - localhost:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '17'
+    body:
+      encoding: UTF-8
+      string: '{"response":true}'
+    http_version:
+  recorded_at: Wed, 26 Apr 2017 15:38:11 GMT
 recorded_with: VCR 3.0.3

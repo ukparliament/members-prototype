@@ -3,6 +3,7 @@ FROM ruby:2-alpine
 # Add command line argument variables used to cusomise the image at build-time.
 ARG PARLIAMENT_BASE_URL
 ARG PARLIAMENT_AUTH_TOKEN
+ARG BANDIERA_URL
 ARG GTM_KEY
 ARG ASSET_LOCATION_URL
 ARG SECRET_KEY_BASE
@@ -16,7 +17,7 @@ ADD Gemfile.lock /app/
 WORKDIR /app
 
 # Install system and application dependencies.
-RUN apk --update add --virtual build-dependencies build-base ruby-dev git && \
+RUN apk --update add --virtual build-dependencies build-base ruby-dev && \
     gem install bundler --no-ri --no-rdoc && \
     echo "Environment (RACK_ENV): $RACK_ENV" && \
     if [ "$RACK_ENV" == "production" ]; then \
@@ -40,6 +41,7 @@ RUN if [ "$RACK_ENV" == "production" ]; then \
 USER nobody
 ENV PARLIAMENT_BASE_URL $PARLIAMENT_BASE_URL
 ENV PARLIAMENT_AUTH_TOKEN $PARLIAMENT_AUTH_TOKEN
+ENV BANDIERA_URL $BANDIERA_URL
 ENV GTM_KEY $GTM_KEY
 ENV ASSET_LOCATION_URL $ASSET_LOCATION_URL
 ENV SECRET_KEY_BASE $SECRET_KEY_BASE

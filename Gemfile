@@ -19,7 +19,7 @@ gem 'parliament-ntriple', '~> 0.1.0'
 gem 'parliament-grom-decorators', '~> 0.1.0'
 
 # Pugin is the front-end component library used by Parliament
-gem 'pugin', '~> 0.5.0.pre'
+gem 'pugin', '0.6.0'
 
 # HAML is used for front-end template rendering
 gem 'haml', '4.0.7'
@@ -30,6 +30,9 @@ gem 'tzinfo-data'
 # Use Puma as our web server
 gem 'puma'
 gem 'rack-timeout'
+
+# Client for Bandiera feature flagging
+gem 'bandiera-client'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

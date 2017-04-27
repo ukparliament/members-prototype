@@ -243,7 +243,7 @@ en:
         blog: 'Read the latest Members service %{link}.'
         blog_link: 'blog post'
       follow_progress:
-        title: 'Members Information'
+        title: 'Follow our progress'
         blog: 'Follow all %{link}.'
         blog_link: 'new website developments on our blog'
   # meta information translations

@@ -118,7 +118,7 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
-    parliament-grom-decorators (0.1.0)
+    parliament-grom-decorators (0.1.2)
     parliament-ntriple (0.1.0)
       grom (~> 0.3.6)
       parliament-ruby (~> 0.7.5.pre)
@@ -266,7 +266,7 @@ DEPENDENCIES
   foreman
   haml (= 4.0.7)
   json-ld (= 2.1.2)
-  parliament-grom-decorators (~> 0.1.0)
+  parliament-grom-decorators (~> 0.1.2)
   parliament-ntriple (~> 0.1.0)
   parliament-ruby (~> 0.7.6)
   pry

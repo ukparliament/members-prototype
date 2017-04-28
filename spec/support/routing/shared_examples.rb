@@ -62,3 +62,14 @@ RSpec.shared_examples 'a_to_z route with an id and letter' do |controller, id, r
     )
   end
 end
+
+# e.g. postcodes#show - postcodes/SW1A-2AA
+RSpec.shared_examples 'nested routes with a postcode' do |controller, postcode, routes, action|
+  it "GET #{controller}##{action}" do
+    expect(get: "/#{controller}/#{postcode}/#{routes.join('/')}").to route_to(
+                                                                 controller:                     controller,
+                                                                 action:                         action,
+                                                                 "#{controller.singularize}":    postcode
+                                                               )
+  end
+end

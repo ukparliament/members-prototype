@@ -2,8 +2,9 @@
 begin
   require 'rspec/core/rake_task'
   RSpec::Core::RakeTask.new(:spec)
-  task :default => :spec
-rescue LoadError
+  task default: :spec
+rescue LoadError => e
+  Rails.logger.warn(e.message)
   # rspec is not available
 end
 

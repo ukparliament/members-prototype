@@ -47,7 +47,8 @@ module HousesHelper
 
     house_ids = [commons_id, lords_id]
     return house_ids if is_commons
-    return house_ids.reverse
+
+    house_ids.reverse
   end
 
   # Returns the current
@@ -60,7 +61,8 @@ module HousesHelper
     types = [I18n.t('mp_plural'), I18n.t('lord_plural')]
 
     return types if is_mp
-    return types.reverse
+
+    types.reverse
   end
 
   private_class_method

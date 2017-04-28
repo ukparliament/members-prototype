@@ -18,25 +18,25 @@ RSpec.describe 'parties', type: :routing do
 
     context 'party' do
       # parties#show
-      include_examples 'nested routes with an id', 'parties', '9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703', [], 'show'
+      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', [], 'show'
 
       # parties#members
-      include_examples 'nested routes with an id', 'parties', '9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703', ['members'], 'members'
+      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members'], 'members'
 
       # parties#a_to_z_members
-      include_examples 'nested routes with an id', 'parties', '9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703', ['members', 'a-z'], 'a_to_z_members'
+      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members', 'a-z'], 'a_to_z_members'
 
       # parties#current_members
-      include_examples 'nested routes with an id', 'parties', '9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703', %w(members current), 'current_members'
+      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', %w(members current), 'current_members'
 
       # parties#a_to_z_current_members
-      include_examples 'nested routes with an id', 'parties', '9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703', ['members', 'current', 'a-z'], 'a_to_z_current_members'
+      include_examples 'nested routes with an id', 'parties', 'jF43Jxoc', ['members', 'current', 'a-z'], 'a_to_z_current_members'
 
       # parties#members_letters
-      include_examples 'a_to_z route with an id and letter', 'parties', '9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703', ['members', 'a-z'], 'members_letters', 'a'
+      include_examples 'a_to_z route with an id and letter', 'parties', 'jF43Jxoc', ['members', 'a-z'], 'members_letters', 'a'
 
       # parties#current_members_letters
-      include_examples 'a_to_z route with an id and letter', 'parties', '9fc46fca-4a66-4fa9-a4af-d4c2bf1a2703', ['members', 'current', 'a-z'], 'current_members_letters', 'a'
+      include_examples 'a_to_z route with an id and letter', 'parties', 'jF43Jxoc', ['members', 'current', 'a-z'], 'current_members_letters', 'a'
     end
 
     it 'GET parties#lookup_by_letters' do

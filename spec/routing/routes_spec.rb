@@ -5,19 +5,19 @@ RSpec.describe 'routes', type: :routing do
     context 'id_format_regex' do
       context 'matches regex' do
         it 'GET people#show' do
-          expect(get: '/people/581ade57-3805-4a4a-82c9-8d622cb352a4').to route_to(
+          expect(get: '/people/B4qvo8kI').to route_to(
             controller: 'people',
             action:     'show',
-            person_id:  '581ade57-3805-4a4a-82c9-8d622cb352a4'
+            person_id:  'B4qvo8kI'
           )
         end
       end
       context 'does not match regex' do
         it 'GET people#lookup_by_letters' do
-          expect(get: '/people/82c9-8d622cb352a4').to route_to(
+          expect(get: '/people/a').to route_to(
             controller: 'people',
             action:     'lookup_by_letters',
-            letters:    '82c9-8d622cb352a4'
+            letters:    'a'
           )
         end
       end

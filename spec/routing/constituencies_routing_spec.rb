@@ -24,19 +24,19 @@ RSpec.describe 'constituencies', type: :routing do
 
     context 'constituency' do
       # constituencies#show
-      include_examples 'nested routes with an id', 'constituencies', '95e3953e-a2bf-4ec0-bc57-5d073661f43a', [], 'show'
+      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', [], 'show'
 
       # constituencies#contact_point
-      include_examples 'nested routes with an id', 'constituencies', '95e3953e-a2bf-4ec0-bc57-5d073661f43a', ['contact-point'], 'contact_point'
+      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['contact-point'], 'contact_point'
 
       # constituencies#map
-      include_examples 'nested routes with an id', 'constituencies', '95e3953e-a2bf-4ec0-bc57-5d073661f43a', ['map'], 'map'
+      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['map'], 'map'
 
       # constituencies#members
-      include_examples 'nested routes with an id', 'constituencies', '95e3953e-a2bf-4ec0-bc57-5d073661f43a', ['members'], 'members'
+      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', ['members'], 'members'
 
       # constituencies#current_member
-      include_examples 'nested routes with an id', 'constituencies', '95e3953e-a2bf-4ec0-bc57-5d073661f43a', %w(members current), 'current_member'
+      include_examples 'nested routes with an id', 'constituencies', 'MtbjxRrE', %w(members current), 'current_member'
     end
 
     it 'GET constituencies#lookup_by_letters' do

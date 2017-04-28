@@ -42,35 +42,35 @@ RSpec.describe 'people', type: :routing do
 
     context 'person' do
       # people#show
-      include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', [], 'show'
+      include_examples 'nested routes with an id', 'people', 'B4qvo8kI', [], 'show'
 
       context 'constituencies' do
         # people#costituencies
-        include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', ['constituencies'], 'constituencies'
+        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['constituencies'], 'constituencies'
 
         # people#current_constituency
-        include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', %w(constituencies current), 'current_constituency'
+        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', %w(constituencies current), 'current_constituency'
       end
 
       context 'contact points' do
         # people#contact_points
-        include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', ['contact-points'], 'contact_points'
+        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['contact-points'], 'contact_points'
       end
 
       context 'houses' do
         # people#houses
-        include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', ['houses'], 'houses'
+        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['houses'], 'houses'
 
         # people#current_house
-        include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', %w(houses current), 'current_house'
+        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', %w(houses current), 'current_house'
       end
 
       context 'parties' do
         # people#parties
-        include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', ['parties'], 'parties'
+        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', ['parties'], 'parties'
 
         # people#current_party
-        include_examples 'nested routes with an id', 'people', '581ade57-3805-4a4a-82c9-8d622cb352a4', %w(parties current), 'current_party'
+        include_examples 'nested routes with an id', 'people', 'B4qvo8kI', %w(parties current), 'current_party'
       end
     end
   end

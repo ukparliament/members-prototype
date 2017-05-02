@@ -4,6 +4,10 @@
   .container
     %h1= "#{t('current_and_former').capitalize} #{@current_person_type}"
 
+    - if HousesHelper.commons?(@house)
+      %h3= t('postcodes.find_mp_constituency')
+      = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
+
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_members_a_z_letter_path, primary_id: @house.graph_id }
 
 %section#content

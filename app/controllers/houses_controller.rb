@@ -80,7 +80,7 @@ class HousesController < ApplicationController
     )
 
     @house = @house.first
-    @parties = @parties.reverse_sort_by(:member_count)
+    @parties = @parties.multi_direction_sort({ member_count: :desc, name: :asc })
   end
 
   def party

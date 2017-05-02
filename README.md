@@ -1,5 +1,5 @@
 # Parliament.uk prototype
-Parliament.uk prototype is a [Rails 5][rails] application designed to be the beginnings of a new [parliament.uk][parliament] website and API.
+[Parliament.uk Prototype][parliament.uk-prototype] is a [Rails][rails] application designed to be the beginnings of a new [parliament.uk][parliament] website and API.
 
 [![Build][shield-build]][info-build] [![Gemnasium][shield-dependencies]][info-dependencies] [![License][shield-license]][info-license]
 
@@ -7,103 +7,94 @@ Parliament.uk prototype is a [Rails 5][rails] application designed to be the beg
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
+  - [Application architecture](#application-architecture)
+    - [Parliamentary Data API](#parliamentary-data-api)
+    - [Bandiera](#bandiera)
+    - [Parliament Rails Application](#parliament-rails-application)
   - [Running the application](#running-the-application)
-    - [Member Service API?](#member-service-api)
-    - [Running with Foreman and a Local Version of the API](#running-with-foreman-and-a-local-version-of-the-api)
-      - [Foreman?](#foreman)
-    - [Running the application standalone, without an API](#running-the-application-standalone-without-an-api)
   - [Running the tests](#running-the-tests)
+    - [Running them within the running application image](#running-them-within-the-running-application-image)
 - [Contributing](#contributing)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Requirements
-Parliament.uk prototype requires the following:
+[Parliament.uk Prototype][parliament.uk-prototype] requires the following:
 * [Ruby][ruby] - for the exact version, [click here][ruby-version].
-* [Node][node]
-* [NPM][npm]
+* [Docker][docker]
+
 
 ## Getting Started
-Setup the main application repository:
+Clone the repository:
 ```bash
 git clone https://github.com/ukparliament/parliament.uk-prototype.git
 cd parliament.uk-prototype
-bundle install
-cp .env.sample .env
 ```
+
+### Application architecture
+[Parliament.uk Prototype][parliament.uk-prototype] is made up of three main components:
+
+* Parliamentary Data API
+* [Bandiera][bandiera]
+* [Parliament.uk Prototype][parliament.uk-prototype] Rails Application
+
+There are a number of additional side pieces but for now, these are our main focus.
+
+#### Parliamentary Data API
+Behind the prototype is an API that provides our application with all the data it needs to run. This data is served in an [RDF][rdf] format called [n-triples][n-triples].
+
+In production, there is an API application that serves dynamic data to our Rails application. For local development, we use the [parliament.uk-static-api][parliament.uk-static-api] application/docker image.
+
+Using the static application allows us to quickly prototype data responses without a reliance on the internal parliament API.
+
+#### Bandiera
+['Bandiera is a simple, stand-alone feature flagging service'][bandiera] which we use to enable and disable certain features within the parliament application.
+
+We use Bandiera to enable and disable time-boxed states such as [dissolution][dissolution] within the application. When enabled, banners display on certain pages of the site.
+
+#### Parliament Rails Application
+This is the [Parliament.uk Prototype][parliament.uk-prototype] application itself, the routes, controllers and views that make up our application.
+
 
 ### Running the application
-There are two options for running the parliament.uk prototype, either with a local version of the member API at the same time, or as a standalone rails application.
-
-#### Member Service API?
-Along with this prototype there is a paired [member-service-api][member-service-api] project. This API's role is to consume data from a triple store and generate .ttl files which our parliament.uk prototype can consume.
-
-#### Running with Foreman and a Local Version of the API
-> **NOTE:** In order to use [foreman][foreman] to run the API and application together, we are assuming you have the [member-service-api][member-service-api] project cloned and set-up in the same location as the parliament.uk-prototype project. For example, your folders should look something like the following:
-> ```
-> /                         (projects root)
-> /parliament.uk-prototype/ (prototype)
-> /member-service-api/      (api)
-> ```
-> With this setup, foreman runs the API directly from within the member-service-api directory.
-
+Running the application locally is done using docker-compose, but there is a one-off set up command needed the first time:
 ```bash
-bundle exec foreman start
+make dev
 ```
 
-The application and API should now be viewable in your local browser at http://localhost:3000 (application) and http://localhost:3030 (API). With this setup, you can make changes to the local API repository and test them right away.
+This command will set up the dependent docker images and databases that the application uses to run.
 
-##### Foreman?
-[Foreman][foreman] allows us to run multiple applications concurrently, making local development of the Parliament.uk prototype much faster. Using foreman you can make changes to both the member-service-api and prototype in tandem without the need for deployment delays.
-
-
-#### Running the application standalone, without an API
-> **NOTE:** In order to run the application without a local copy of the [member-service-api][member-service-api], you'll need to update your `.env` file to include remote `API_ENDPOINT` and `API_ENDPOINT_HOST` values. The included sample assumes you are running the API locally with foreman.
-
+Once this step has been completed, you can simply run:
 ```bash
-bundle exec rails s
+docker-compose up
 ```
 
-The application should now be viewable in your local browser at: http://localhost:3000.
+Now the three main applications should be available as follows:
+ * Prototype Rails Application - [http://localhost:3000](http://localhost:3000)
+ * Static API - [http://localhost:3030](http://localhost:3030)
+ * Bandiera - [http://localhost:5000](http://localhost:5000)
 
 
 ### Running the tests
-We use [RSpec][rspec] as our testing framework and tests can be run using:
+We use [RSpec][rspec] as our testing framework, and run our tests inside of Docker. Use the below command to run the full suite.
 ```bash
+make test
+```
+
+#### Running them within the running application image
+The downside to running `make test` is speed, virtually every time, we will be rebuilding the Docker image just to run our tests.
+
+To get around this, whilst developing we can first connect to the running application and run tests within it. The following commands assume you have the application running via `docker-compose up`:
+```bash
+docker-compose exec app /bin/sh
 bundle exec rspec
 ```
 
-
-### Running the application using Docker Compose
-
-To run the application using Docker Compose, make sure that you have checked out
-the [member-service-api][member-service-api] project into the same location as
-the parliament.uk-prototype project as described above in
-[Running with Foreman and a Local Version of the API](#running-with-foreman-and-a-local-version-of-the-api).
-
-Next create a folder in your home directory called `~/.ukpds` and within this,
-create two files:
-
-**~/.ukpds/parliament.uk-prototype.env**
-```
-GTM_KEY=<GTM key>
-ASSET_LOCATION_URL=<asset location URL>
-```
-
-**~/.ukpds/member-service-api.env**
-```
-UKPDS_DATA_URI_PREFIX=<UKPDS data URI prefix>
-UKPDS_DATA_ENDPOINT=<UKPDS data endpoint URL>
-```
-
-Then in this folder, run `docker-compose up` or, if you prefer to run it in the
-background, `docker-compose up -d`.
-
-You should then be able to access the web application on http://localhost:3000/
-and the members' service on http://localhost:3030/ as above.
+This will first open an sh terminal within the running application server, then execute the tests right away without the need to re-build the image.
 
 
 ## Contributing
@@ -119,16 +110,18 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 ## License
 [Parliament.uk Prototype][parliament.uk-prototype] is licensed under the [Open Parliament Licence][info-license].
 
-[rails]:                   http://rubyonrails.org
-[parliament]:              http://www.parliament.uk
-[ruby]:                    https://www.ruby-lang.org/en/
-[node]:                    https://nodejs.org/en/
-[npm]:                     https://www.npmjs.com
-[member-service-api]:      https://github.com/ukparliament/member-service-api
-[foreman]:                 https://github.com/ddollar/foreman
-[rspec]:                   http://rspec.info
-[parliament.uk-prototype]: https://github.com/ukparliament/parliament.uk-prototype
-[ruby-version]:            https://github.com/ukparliament/parliament.uk-prototype/blob/master/.ruby-version
+[rails]:                    http://rubyonrails.org
+[parliament]:               http://www.parliament.uk
+[ruby]:                     https://www.ruby-lang.org/en/
+[docker]:                   https://www.docker.com
+[rspec]:                    http://rspec.info
+[parliament.uk-prototype]:  https://github.com/ukparliament/parliament.uk-prototype
+[ruby-version]:             https://github.com/ukparliament/parliament.uk-prototype/blob/master/.ruby-version
+[bandiera]:                 https://github.com/springernature/bandiera
+[rdf]:                      https://en.wikipedia.org/wiki/Resource_Description_Framework
+[n-triples]:                https://en.wikipedia.org/wiki/N-Triples
+[parliament.uk-static-api]: https://github.com/ukparliament/parliament.uk-static-api
+[dissolution]:              http://www.parliament.uk/about/how/elections-and-voting/general/dissolution/
 
 [info-license]:   http://www.parliament.uk/site-information/copyright/open-parliament-licence/
 [shield-license]: https://img.shields.io/badge/license-Open%20Parliament%20Licence-blue.svg

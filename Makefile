@@ -71,18 +71,8 @@ test: # Build the docker image in development mode, using a test PARLIAMENT_BASE
 	docker run --rm $(IMAGE):latest bundle exec rake
 
 dev: # Build, bundle and run a development version of our application
-	make dev-build
-	make dev-bundle
-	make dev-run
-
-dev-build: # Run make build, but with the application set to run in the development environment
-	RACK_ENV=development make build
-
-dev-bundle: # Run a bundle install on our image (designed to work with dev-build and dev-run)
-	docker run -p $(HOST_PORT):$(CONTAINER_PORT) -v ${PWD}:/app $(IMAGE) bundle install --path vendor/bundle
-
-dev-run: # Build the Dcoker image in development mode then run the Docker image we have created. Mapping the HOST_PORT and CONTAINER_PORT, we also add a volume so that code changes we make on the host machine are reflected in the container.
-	docker run -p $(HOST_PORT):$(CONTAINER_PORT) -v ${PWD}:/app $(IMAGE) bundle exec rails s Puma
+	docker-compose up -d bandiera_db
+	docker-compose run bandiera bundle exec rake db:migrate
 
 push: # Push the Docker images we have build to the configured Docker repository (Run in GoCD to push the image to AWS)
 	docker push $(IMAGE):$(VERSION)

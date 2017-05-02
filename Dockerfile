@@ -17,9 +17,9 @@ ADD Gemfile.lock /app/
 WORKDIR /app
 
 # Install system and application dependencies.
-RUN apk --update add --virtual build-dependencies build-base ruby-dev && \
+RUN echo "Environment (RACK_ENV): $RACK_ENV" && \
+    apk --update add --virtual build-dependencies build-base ruby-dev && \
     gem install bundler --no-ri --no-rdoc && \
-    echo "Environment (RACK_ENV): $RACK_ENV" && \
     if [ "$RACK_ENV" == "production" ]; then \
       bundle install --without development test --path vendor/bundle; \
       apk del build-dependencies; \
@@ -59,5 +59,8 @@ LABEL git-sha=$GIT_SHA \
 	    rack-env=$RACK_ENV \
 	    maintainer=mattrayner1@gmail.com
 
+# Expose port 3000
+EXPOSE 3000
+
 # Launch puma
-CMD ["bundle", "exec", "rails", "s", "Puma"]
+CMD ["bundle", "exec", "rails", "s"]

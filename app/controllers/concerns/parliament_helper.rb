@@ -1,4 +1,5 @@
 require 'parliament/grom/decorator'
+require 'parliament/ntriple'
 
 module ParliamentHelper
   def self.parliament_request

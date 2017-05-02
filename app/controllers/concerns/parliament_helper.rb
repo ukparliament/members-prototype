@@ -1,4 +1,5 @@
 require 'parliament/grom/decorator'
+require 'parliament'
 require 'parliament/ntriple'
 
 module ParliamentHelper

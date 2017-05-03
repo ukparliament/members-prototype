@@ -1,9 +1,7 @@
 class PartiesController < ApplicationController
   def index
-    letter_data = parliament_request.parties.a_z_letters.get
-
     @parties = parliament_request.parties.get.sort_by(:name)
-    @letters = letter_data.map(&:value)
+    @letters = RequestHelper.process_available_letters(parliament_request.parties.a_z_letters)
   end
 
   def lookup
@@ -30,89 +28,88 @@ class PartiesController < ApplicationController
   def members
     party_id = params[:party_id]
 
-    data = parliament_request.parties(party_id).members.get
-    letter_data = parliament_request.parties(party_id).members.a_z_letters.get
+    @party, @people = RequestHelper.filter_response_data(
+      parliament_request.parties(party_id).members,
+      'http://id.ukpds.org/schema/Party',
+      'http://id.ukpds.org/schema/Person'
+    )
 
-    @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
     @people = @people.sort_by(:sort_name)
-    @letters = letter_data.map(&:value)
+    @letters = RequestHelper.process_available_letters(parliament_request.parties(party_id).members.a_z_letters)
   end
 
   def current_members
     party_id = params[:party_id]
 
-    data = parliament_request.parties(party_id).members.current.get
-    letter_data = parliament_request.parties(party_id).members.current.a_z_letters.get
+    @party, @people = RequestHelper.filter_response_data(
+      parliament_request.parties(party_id).members.current,
+      'http://id.ukpds.org/schema/Party',
+      'http://id.ukpds.org/schema/Person'
+    )
 
-    @party, @people = data.filter('http://id.ukpds.org/schema/Party', 'http://id.ukpds.org/schema/Person')
     @party = @party.first
     @people = @people.sort_by(:sort_name)
-    @letters = letter_data.map(&:value)
+    @letters = RequestHelper.process_available_letters(parliament_request.parties(party_id).members.current.a_z_letters)
   end
 
   def letters
     letter = params[:letter]
 
-    letter_data = parliament_request.parties.a_z_letters.get
-    @letters = letter_data.map(&:value)
-
     request = parliament_request.parties(letter)
-    response = RequestHelper.handler(request) { @parties = [] }
+    response = RequestHelper.handle(request) { @parties = [] }
 
     @parties = response[:response].filter('http://id.ukpds.org/schema/Party').sort_by(:name) if response[:success]
+    @letters = RequestHelper.process_available_letters(parliament_request.parties.a_z_letters)
   end
 
   def members_letters
     letter = params[:letter]
     party_id = params[:party_id]
 
-    letter_data = parliament_request.parties(party_id).members.a_z_letters.get
-    @letters = letter_data.map(&:value)
-
-    @party = parliament_request.parties(party_id).get.filter('http://id.ukpds.org/schema/Party').first
+    @party = RequestHelper.filter_response_data(
+      parliament_request.parties(party_id),
+      'http://id.ukpds.org/schema/Party'
+    ).first
 
     request = parliament_request.parties(party_id).members(letter)
-    response = RequestHelper.handler(request) { @people = [] }
+    response = RequestHelper.handle(request) { @people = [] }
 
     @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+    @letters = RequestHelper.process_available_letters(parliament_request.parties(party_id).members.a_z_letters)
   end
 
   def current_members_letters
     letter = params[:letter]
     party_id = params[:party_id]
 
-    letter_data = parliament_request.parties(party_id).members.current.a_z_letters.get
-    @letters = letter_data.map(&:value)
-
-    @party = parliament_request.parties(party_id).get.filter('http://id.ukpds.org/schema/Party').first
+    @party = RequestHelper.filter_response_data(
+      parliament_request.parties(party_id),
+      'http://id.ukpds.org/schema/Party'
+    ).first
 
     request = parliament_request.parties(party_id).members.current(letter)
-    response = RequestHelper.handler(request) { @people = [] }
+    response = RequestHelper.handle(request) { @people = [] }
 
     @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+
+    @letters = RequestHelper.process_available_letters(parliament_request.parties(party_id).members.current.a_z_letters)
   end
 
   def a_to_z
-    letter_data = parliament_request.parties.a_z_letters.get
-
-    @letters = letter_data.map(&:value)
+    @letters = RequestHelper.process_available_letters(parliament_request.parties.a_z_letters)
   end
 
   def a_to_z_members
     @party_id = params[:party_id]
 
-    letter_data = parliament_request.parties(@party_id).members.a_z_letters.get
-
-    @letters = letter_data.map(&:value)
+    @letters = RequestHelper.process_available_letters(parliament_request.parties(@party_id).members.a_z_letters)
   end
 
   def a_to_z_current_members
     @party_id = params[:party_id]
 
-    letter_data = parliament_request.parties(@party_id).members.current.a_z_letters.get
-
-    @letters = letter_data.map(&:value)
+    @letters = RequestHelper.process_available_letters(parliament_request.parties(@party_id).members.current.a_z_letters)
   end
 
   def lookup_by_letters

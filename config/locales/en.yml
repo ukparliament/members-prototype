@@ -233,6 +233,7 @@ en:
       title: # title does not require translation
       your_mp: 'Your MP'
       your_constituency: 'Your constituency'
+      no_mp: 'There is no current MP for your constituency.'
     postcode_lookup:
       title: # title does not require translation
       search_by_postcode: 'Enter your full postcode, for example, SW1A 0AA.'

@@ -1,4 +1,6 @@
 class MetaController < ApplicationController
+  before_action :disable_navigation_main
+
   def index
     @meta_routes = []
     Rails.application.routes.routes.each do |route|

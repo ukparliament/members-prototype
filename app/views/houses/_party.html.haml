@@ -1,9 +1,9 @@
 - if party.member_count.nil?
-  %li.list__item
+  %li
     %h2= link_to(party.name, house_parties_party_members_current_path(@house.graph_id, party.graph_id))
     = "(#{party.member_count} members)" unless party.member_count.nil?
 - else
-  %li.list__item
+  %li
     .column-75
       %h2= link_to(party.name, house_parties_party_members_current_path(@house.graph_id, party.graph_id))
       - if party.name === "Speaker"

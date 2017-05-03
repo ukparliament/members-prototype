@@ -1,4 +1,4 @@
-%li.list__item
+%li
   - if incumbency.house.nil?
     %h2= link_to(incumbency.seat.house.name, house_path(incumbency.seat.house.graph_id))
   - else

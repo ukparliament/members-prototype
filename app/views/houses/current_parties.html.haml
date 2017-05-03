@@ -23,7 +23,7 @@
     - if HousesHelper.commons?(@house)
       = render partial: 'shared/dissolution_message'
 
-    %ul.list
+    %ul.list--box
       = render :partial => 'houses/party', collection: @parties
 
     %p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('parties_and_groups')}", house_parties_path(@house.graph_id))

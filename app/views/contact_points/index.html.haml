@@ -6,10 +6,10 @@
 
 %section
   .container
-    %ul.list
+    %ul.list--box
       - @contact_points.each do |contact_point|
-        %li.list__item
-          %dl.list__definition--secondary
+        %li
+          %dl.list--definition
             - if contact_point.email.present?
               %dt= "#{t('contact_points.email')}:"
               %dd= contact_point.email

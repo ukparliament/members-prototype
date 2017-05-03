@@ -5,8 +5,8 @@
 
 - if !@current_incumbency.nil?
   %h2= "#{t('current').capitalize} #{t('mp')}"
-  .list
-    .list__item--secondary
+  %ul.list--pipe
+    %li
       %h3= link_to @current_incumbency.member.display_name, person_path(@current_incumbency.member.graph_id)
       %p
         = "#{l(@current_incumbency.start_date, format: :default)} #{t('to_present')}" unless @current_incumbency.start_date.nil?
@@ -26,10 +26,10 @@
 
 - if @seat_incumbencies.size > 0
   %h2= "#{t('former').capitalize} #{t('mp_plural')}"
-  %ul.list
+  %ul.list--pipe
     - @seat_incumbencies.each do |seat_incumbency|
       - if !seat_incumbency.current?
-        %li.list__item--secondary
+        %li
           %h3= link_to seat_incumbency.member.display_name, person_path(seat_incumbency.member.graph_id)
           %p
             = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?

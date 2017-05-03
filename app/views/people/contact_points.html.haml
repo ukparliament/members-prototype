@@ -6,7 +6,7 @@
 
     - unless @contact_points.empty?
       - @contact_points.each do |contact_point|
-        %dl.list__definition
+        %dl.list--definition
           - if contact_point.email.present?
             %dt= "#{t('contact_points.email').capitalize}:"
             %dd= "#{contact_point.email}"

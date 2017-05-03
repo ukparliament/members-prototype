@@ -1,0 +1,11 @@
+- if flash[:error]
+  %p= flash[:error]
+
+%p= t('.search_by_postcode')
+
+= form_tag(path, method: :get) do
+  = hidden_field_tag('previous_path', request.env['PATH_INFO'])
+  = text_field_tag('postcode', @postcode)
+  = submit_tag('Check')
+
+%p= t('.do_not_know_postcode', link: link_to(t('.do_not_know_postcode_link'), 'http://www.royalmail.com/find-a-postcode', target: '_blank', title: t('open_new_window'))).html_safe

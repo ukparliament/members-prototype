@@ -109,6 +109,20 @@ Rails.application.routes.draw do
     lookupable('parties#lookup_by_letters')
   end
 
+  ### Postcodes ###
+  # /postcodes (multiple 'postcodes' scope)
+  scope '/postcodes', as: 'postcodes' do
+    get '/', to:'postcodes#index'
+    get '/lookup', to: 'postcodes#lookup'
+  end
+
+  # /postcodes (single 'postcode' scope)
+  scope '/postcodes', as: 'postcode' do
+    # /postcodes/:postcode
+    scope '/:postcode' do
+      get '/', to: 'postcodes#show'
+    end
+  end
   ### Constituencies ###
   # /constituencies (multiple 'constituencies' scope)
   scope '/constituencies', as: 'constituencies' do

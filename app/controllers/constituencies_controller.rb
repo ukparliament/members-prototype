@@ -14,6 +14,7 @@ class ConstituenciesController < ApplicationController
   end
 
   def show
+    @postcode = params[:postcode]
     constituency_id = params[:constituency_id]
 
     @constituency, @seat_incumbencies = RequestHelper.filter_response_data(
@@ -26,6 +27,18 @@ class ConstituenciesController < ApplicationController
     @seat_incumbencies = @seat_incumbencies.reverse_sort_by(:start_date)
 
     @current_incumbency = @seat_incumbencies.shift if !@seat_incumbencies.empty? && @seat_incumbencies.first.current?
+
+    return unless @postcode
+
+    begin
+      response = PostcodeHelper.lookup(@postcode)
+      @postcode_constituency = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
+      postcode_correct = @postcode_constituency.graph_id == @constituency.graph_id
+      @postcode_constituency.correct = postcode_correct
+    rescue PostcodeHelper::PostcodeError => error
+      flash[:error] = error.message
+      @postcode = nil
+    end
   end
 
   def current

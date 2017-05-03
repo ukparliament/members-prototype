@@ -87,6 +87,30 @@ RSpec.describe PeopleController, vcr: true do
     it 'renders the show template' do
       expect(response).to render_template('show')
     end
+
+    context 'given a valid postcode' do
+      before(:each) do
+        get :show, params: { person_id: '7TX8ySd4', postcode: 'E2 0JA' }
+      end
+
+      it 'assigns @postcode, @postcode_constituency' do
+        expect(assigns(:postcode)).to eq('E2 0JA')
+
+        expect(assigns(:postcode_constituency)).to be_a(Grom::Node)
+        expect(assigns(:postcode_constituency).type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+      end
+    end
+
+    context 'given an invalid postcode' do
+      before(:each) do
+        get :show, params: { person_id: '7TX8ySd4', postcode: 'apple' }
+      end
+
+      it 'assigns @postcode and flash[:error]' do
+        expect(assigns(:postcode)).to be(nil)
+        expect(flash[:error]).to eq('No constituency found for the postcode entered.')
+      end
+    end
   end
 
   describe "GET members" do
@@ -532,10 +556,4 @@ RSpec.describe PeopleController, vcr: true do
       end
     end
   end
-
-  # describe 'rescue_from Parliament::NoContentError' do
-  #   it 'raises an ActionController::RoutingError' do
-  #     expect{ get :members_letters, params: { letter: 'x' } }.to raise_error(ActionController::RoutingError)
-  #   end
-  # end
 end

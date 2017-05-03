@@ -13,7 +13,7 @@ gem 'vcard', '0.2.15'
 gem 'parliament-ruby', '~> 0.7.6'
 
 # Parliament NTriple processes N-triple data
-gem 'parliament-ntriple', '~> 0.1.0'
+gem 'parliament-ntriple', '~> 0.1.1', require: false
 
 # Parliament Grom Decorators decorates Grom nodes
 gem 'parliament-grom-decorators', '~> 0.1.2'

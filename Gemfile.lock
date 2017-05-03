@@ -78,7 +78,8 @@ GEM
     grom (0.3.6)
       activesupport (>= 5.0.0.1)
       rdf (= 2.2.3)
-    haml (4.0.7)
+    haml (5.0.0)
+      temple (>= 0.8.0)
       tilt
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
@@ -130,8 +131,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.5)
-    pugin (0.6.0)
-      haml (~> 4.0)
+    pugin (0.6.1)
     puma (3.8.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -224,6 +224,7 @@ GEM
       sprockets (>= 3.0.0)
     subcontractor (0.9.0)
     syslog-logger (1.6.8)
+    temple (0.8.0)
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
@@ -264,13 +265,13 @@ DEPENDENCIES
   capybara
   dotenv-rails
   foreman
-  haml (= 4.0.7)
+  haml (= 5.0)
   json-ld (= 2.1.2)
   parliament-grom-decorators (~> 0.1.2)
   parliament-ntriple (~> 0.1.1)
   parliament-ruby (~> 0.7.6)
   pry
-  pugin (= 0.6.0)
+  pugin (= 0.6.1)
   puma
   rack-timeout
   rails (= 5.0.2)

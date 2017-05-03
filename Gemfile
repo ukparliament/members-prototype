@@ -19,10 +19,10 @@ gem 'parliament-ntriple', '~> 0.1.1', require: false
 gem 'parliament-grom-decorators', '~> 0.1.2'
 
 # Pugin is the front-end component library used by Parliament
-gem 'pugin', '0.6.0'
+gem 'pugin', '0.6.1'
 
 # HAML is used for front-end template rendering
-gem 'haml', '4.0.7'
+gem 'haml', '5.0'
 
 # Include time zone information
 gem 'tzinfo-data'

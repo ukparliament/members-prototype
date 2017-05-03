@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @postcode = params[:postcode]
+    @postcode = flash[:postcode]
     person_id = params[:person_id]
 
     @person, @seat_incumbencies, @house_incumbencies = RequestHelper.filter_response_data(
@@ -48,6 +48,12 @@ class PeopleController < ApplicationController
       flash[:error] = error.message
       @postcode = nil
     end
+  end
+
+  def postcode_lookup
+    flash[:postcode] = params[:postcode]
+
+    redirect_to person_path(params[:person_id])
   end
 
   def members

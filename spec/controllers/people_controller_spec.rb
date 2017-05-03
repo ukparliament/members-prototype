@@ -90,7 +90,7 @@ RSpec.describe PeopleController, vcr: true do
 
     context 'given a valid postcode' do
       before(:each) do
-        get :show, params: { person_id: '7TX8ySd4', postcode: 'E2 0JA' }
+        get :show, params: { person_id: '7TX8ySd4' }, flash: { postcode: 'E2 0JA' }
       end
 
       it 'assigns @postcode, @postcode_constituency' do
@@ -103,13 +103,27 @@ RSpec.describe PeopleController, vcr: true do
 
     context 'given an invalid postcode' do
       before(:each) do
-        get :show, params: { person_id: '7TX8ySd4', postcode: 'apple' }
+        get :show, params: { person_id: '7TX8ySd4' }, flash: { postcode: 'apple' }
       end
 
       it 'assigns @postcode and flash[:error]' do
         expect(assigns(:postcode)).to be(nil)
         expect(flash[:error]).to eq('No constituency found for the postcode entered.')
       end
+    end
+  end
+
+  describe "POST postcode_lookup" do
+    before(:each) do
+      post :postcode_lookup, params: { person_id: '7TX8ySd4', postcode: 'E2 0JA' }
+    end
+
+    it 'assigns flash[:postcode]' do
+      expect(flash[:postcode]).to eq('E2 0JA')
+    end
+
+    it 'redirects to people/:id' do
+      expect(response).to redirect_to(person_path('7TX8ySd4'))
     end
   end
 

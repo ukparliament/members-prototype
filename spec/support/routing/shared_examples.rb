@@ -19,6 +19,16 @@ RSpec.shared_examples 'top level routes' do |controller, action|
   end
 end
 
+# e.g. people#postcode_lookup - POST /people/postcode_lookup
+RSpec.shared_examples 'top level POST routes' do |controller, action|
+  it "GET #{controller}##{action}" do
+    expect(post: "/#{controller}/#{action}").to route_to(
+                                                 controller: controller,
+                                                 action:     action
+                                               )
+  end
+end
+
 # e.g. people#show - people/581ade57-3805-4a4a-82c9-8d622cb352a4
 RSpec.shared_examples 'nested routes with an id' do |controller, id, routes, action|
   it "GET #{controller}##{action}" do

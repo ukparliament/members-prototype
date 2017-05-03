@@ -6,7 +6,7 @@ RSpec.describe 'postcodes', type: :routing do
       include_examples  'index route', 'postcodes'
 
       # postcodes#lookup
-      include_examples 'top level routes', 'postcodes', 'lookup'
+      include_examples 'top level POST routes', 'postcodes', 'lookup'
 
     end
 

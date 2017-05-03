@@ -4,9 +4,11 @@
 
 %p= t('.search_by_postcode')
 
-= form_tag(path, method: :get) do
+= form_tag(path, method: :post) do
   .form-group
     = hidden_field_tag('previous_path', request.env['PATH_INFO'])
+    = hidden_field_tag('constituency_id', @constituency.graph_id) if @constituency
+    = hidden_field_tag('person_id', @person.graph_id) if @person
     = text_field_tag('postcode', @postcode)
     = submit_tag('Check', class: 'btn--primary')
 

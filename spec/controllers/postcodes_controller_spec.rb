@@ -52,7 +52,7 @@ RSpec.describe PostcodesController, vcr: true do
     end
   end
 
-  describe 'GET lookup' do
+  describe 'POST lookup' do
     before(:each) do
       get :lookup, params: { postcode: 'SW1A 2AA' }
     end

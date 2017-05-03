@@ -7,8 +7,12 @@ RSpec.describe 'people', type: :routing do
 
       # people#lookup
       include_examples 'top level routes', 'people', 'lookup'
+
       # people#member
       include_examples 'top level routes', 'people', 'members'
+
+      # people#postcode_lookup
+      include_examples 'top level POST routes', 'people', 'postcode_lookup'
 
       # people#a_to_z
       include_examples 'nested collection routes', 'people', ['a-z'], 'a_to_z'

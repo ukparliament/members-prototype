@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   scope '/people', as: 'people' do
     get '/', to: 'people#index'
     get 'lookup', to: 'people#lookup'
+    post '/postcode_lookup', to: 'people#postcode_lookup', as: 'postcode_lookup'
 
     listable('people#a_to_z', 'people#letters')
 
@@ -113,7 +114,7 @@ Rails.application.routes.draw do
   # /postcodes (multiple 'postcodes' scope)
   scope '/postcodes', as: 'postcodes' do
     get '/', to:'postcodes#index'
-    get '/lookup', to: 'postcodes#lookup'
+    post '/lookup', to: 'postcodes#lookup'
   end
 
   # /postcodes (single 'postcode' scope)
@@ -128,6 +129,7 @@ Rails.application.routes.draw do
   scope '/constituencies', as: 'constituencies' do
     get '/', to: 'constituencies#index'
     get '/lookup', to: 'constituencies#lookup'
+    post '/postcode_lookup', to: 'constituencies#postcode_lookup', as: 'postcode_lookup'
 
     listable('constituencies#a_to_z', 'constituencies#letters')
 

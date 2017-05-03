@@ -24,7 +24,7 @@
   - else
     %h2= t('.check_constituency')
 
-    = render partial: 'postcodes/postcode_lookup', locals: { path: constituency_path(@constituency.graph_id) }
+    = render partial: 'postcodes/postcode_lookup', locals: { path: constituencies_postcode_lookup_path }
 
 - if @seat_incumbencies.size > 0
   %h2= "#{t('former').capitalize} #{t('mp_plural')}"

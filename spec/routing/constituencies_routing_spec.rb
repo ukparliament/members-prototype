@@ -10,6 +10,9 @@ RSpec.describe 'constituencies', type: :routing do
     # constituencies#current
     include_examples 'top level routes', 'constituencies', 'current'
 
+    # constituencies#postcode_lookup
+    include_examples 'top level POST routes', 'constituencies', 'postcode_lookup'
+
     # constituencies#a_to_z
     include_examples 'nested collection routes', 'constituencies', ['a-z'], 'a_to_z'
 

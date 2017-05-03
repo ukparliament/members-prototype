@@ -42,7 +42,6 @@ class HousesController < ApplicationController
   def current_members
     house_id = params[:house_id]
 
-
     @house, @people = RequestHelper.filter_response_data(
       parliament_request.houses(house_id).members.current,
       'http://id.ukpds.org/schema/House',

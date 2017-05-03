@@ -44,7 +44,7 @@ module RequestHelper
   end
 
   # Takes a Parliament::Request and a optional amount of filters and calls the #get method on on the request.
-  # Then calls Parliament::Response#filter with the filters as the parameters on the resulting response 
+  # Then calls Parliament::Response#filter with the filters as the parameters on the resulting response.
   #
   # @param [Parliament::Request] request a built Parliament::Request object that can just be called with #get
   #

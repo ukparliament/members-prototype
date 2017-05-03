@@ -1,8 +1,10 @@
 - page_title = title(@postcode)
 
 %h1= page_title
-- unless @constituency.members.empty?
-  %h3= t('.your_mp')
+%h3= t('.your_mp')
+- if @constituency.members.empty?
+  %h4= t('.no_mp')
+- else
   %h4= link_to(@constituency.members.first.display_name, person_path(@constituency.members.first.graph_id))
   %p= @constituency.members.first.parties.first.name
 

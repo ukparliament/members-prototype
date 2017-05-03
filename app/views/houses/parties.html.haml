@@ -20,5 +20,5 @@
         .link__tab--item
           = link_to(t('lords'),house_parties_path(HousesHelper.lords_id))
 
-    %ol.list
+    %ol.list--box
       = render :partial => 'houses/party', collection: @parties

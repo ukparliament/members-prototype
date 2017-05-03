@@ -71,7 +71,7 @@
         - if @current_incumbency.contact_points.empty?
           %p= t('.empty_contact_details')
         - else
-          %dl.list__definition
+          %dl.list--definition
             - @current_incumbency.contact_points.each do |contact_point|
               - if contact_point.email.present?
                 %dt= t('contact_points.email').capitalize + ": "
@@ -88,7 +88,7 @@
                   %dd= postal_address.full_address
               - if @current_incumbency.contact_points.length > 1
                 - unless contact_point.equal?(@current_incumbency.contact_points.last)
-                  .line-break-sm
+                  .line-break--sm
 
 %section
   .container
@@ -96,18 +96,18 @@
       %h2= t('.biography').capitalize
       - if @house_incumbencies.present?
         %h3= "#{t('member').capitalize} #{t('of_the')} #{t('house_of_lords')}"
-        %ol.list
+        %ol.list--pipe
           - @house_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |house_incumbency|
-            %li.list__item--secondary
+            %li
               %ul
                 %li
                   = "#{l(house_incumbency.start_date, format: :default)}" unless house_incumbency.start_date.nil?
                   = house_incumbency.current? ? t( 'to_present') : " #{t('to')} #{l(house_incumbency.end_date, format: :default)}"
       - if @seat_incumbencies.present?
         %h3= "#{t('member').capitalize} #{t('of_the')} #{t('house_of_commons')}"
-        %ol.list
+        %ol.list--pipe
           - @seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
-            %li.list__item--secondary
+            %li
               %ul
                 %li
                   = t('.mp_for')

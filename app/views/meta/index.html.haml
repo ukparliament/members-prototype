@@ -6,7 +6,7 @@
 
 %section
   .container
-    %ul.list
+    %ul.list--box
       - @meta_routes.each do |route|
-        %li.list__item
+        %li
           %h2= link_to(t("meta.#{route[:translation].underscore}.title"), route[:url])

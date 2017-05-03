@@ -5,10 +5,11 @@
 - unless @house.nil?
   %section
     .container
-      .list__item
-        %h2= link_to(@house.name, house_path(@house.graph_id))
-        - unless @house.seat_incumbencies.empty?
-          %p= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} #{t('to_present')}" unless @house.seat_incumbencies.first.start_date.nil?
+      %ul.list--box
+        %li
+          %h2= link_to(@house.name, house_path(@house.graph_id))
+          - unless @house.seat_incumbencies.empty?
+            %p= "#{l(@house.seat_incumbencies.first.start_date, format: :default)} #{t('to_present')}" unless @house.seat_incumbencies.first.start_date.nil?
 
-        - unless @house.house_incumbencies.empty?
-          %p= "#{l(@house.house_incumbencies.first.start_date, format: :default)} #{t('to_present')} " unless @house.house_incumbencies.first.start_date.nil?
+          - unless @house.house_incumbencies.empty?
+            %p= "#{l(@house.house_incumbencies.first.start_date, format: :default)} #{t('to_present')} " unless @house.house_incumbencies.first.start_date.nil?

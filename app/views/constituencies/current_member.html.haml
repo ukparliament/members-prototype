@@ -11,7 +11,7 @@
 - unless @seat_incumbency.nil?
   %section
     .container
-      .list
-        .list__item--secondary
+      %ul.list--pipe
+        %li
           %h2= link_to @seat_incumbency.member.display_name, person_path(@seat_incumbency.member.graph_id)
           %p= "#{l(@seat_incumbency.start_date, format: :default)} #{t('to_present')}" unless @seat_incumbency.start_date.nil?

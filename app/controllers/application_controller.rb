@@ -18,6 +18,18 @@ class ApplicationController < ActionController::Base
 
   layout 'pugin/layouts/pugin'
 
+  before_action :enable_navigation_main
+
+  private
+
+  def enable_navigation_main
+    @enable_navigation_main = true
+  end
+
+  def disable_navigation_main
+    @enable_navigation_main = false
+  end
+
   # Rescues from a Parliament::NoContentResponseError and raises an ActionController::RoutingError
   # rescue_from Parliament::NoContentResponseError do |error|
   #   raise ActionController::RoutingError, error.message

@@ -9,7 +9,7 @@
     - unless @person.statuses[:house_membership_status].empty?
       .block--border
         - if @person.statuses[:house_membership_status].include?('Current MP')
-          %p.lead
+          %p
             = t('.mp_for')
             = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
           - if !@person.statuses[:house_membership_status].empty? && @person.statuses[:house_membership_status].include?('Former Lord')
@@ -20,7 +20,7 @@
           -else
             %p= link_to("#{t('all').capitalize} #{t('current')} #{t('mp_plural')}", house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a'))
         - else
-          %p.lead
+          %p
             - if @person.statuses[:house_membership_status].include?('Lord')
               - if @person.statuses[:house_membership_status].include?('Former MP')
                 = @person.statuses[:house_membership_status].join(' and ')
@@ -49,7 +49,7 @@
                   = link_to("#{t('all').capitalize} #{t('current_and_former')} #{t('lord_plural')}", house_members_a_z_letter_path(HousesHelper.lords_id, 'a'))
       - if @current_party_membership && @current_incumbency
         .block--border
-          %p.lead= link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
+          %p= link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
 
 %section
   .container
@@ -99,19 +99,17 @@
         %ol.list--pipe
           - @house_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |house_incumbency|
             %li
-              %ul
-                %li
-                  = "#{l(house_incumbency.start_date, format: :default)}" unless house_incumbency.start_date.nil?
-                  = house_incumbency.current? ? t( 'to_present') : " #{t('to')} #{l(house_incumbency.end_date, format: :default)}"
+              %p
+                = "#{l(house_incumbency.start_date, format: :default)}" unless house_incumbency.start_date.nil?
+                = house_incumbency.current? ? t( 'to_present') : " #{t('to')} #{l(house_incumbency.end_date, format: :default)}"
       - if @seat_incumbencies.present?
         %h3= "#{t('member').capitalize} #{t('of_the')} #{t('house_of_commons')}"
         %ol.list--pipe
           - @seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
             %li
-              %ul
-                %li
-                  = t('.mp_for')
-                  = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
-                %li
-                  = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
-                  = seat_incumbency.current? ? t( 'to_present') : " #{t('to')} #{l(seat_incumbency.end_date, format: :default)}"
+              %p
+                = t('.mp_for')
+                = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
+              %p
+                = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
+                = seat_incumbency.current? ? t( 'to_present') : " #{t('to')} #{l(seat_incumbency.end_date, format: :default)}"

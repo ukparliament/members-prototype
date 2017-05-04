@@ -13,7 +13,8 @@
 - if @party.member_count == 0
   %section
     .container
-      %p.lead= t('.party_no_current_members')
+      .highlight--box.highlight--primary
+        %p= t('.party_no_current_members')
       %ul.list--box
         %li
           %h2= link_to("#{t('view_all').capitalize} #{t('former')} #{@party.name} #{t('member_plural')}", party_members_path(@party.graph_id))

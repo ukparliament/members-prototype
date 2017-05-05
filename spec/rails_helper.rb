@@ -20,6 +20,11 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
 
+  config.default_cassette_options = {
+    # record: :new_episodes
+    record: :once
+  }
+
   # Create a simple matcher which will 'filter' any request URIs on the fly
   config.register_request_matcher :filtered_uri do |request_1, request_2|
     parliament_match = request_1.uri.sub(ENV['PARLIAMENT_BASE_URL'], 'http://localhost:3030') == request_2.uri.sub(ENV['PARLIAMENT_BASE_URL'], 'http://localhost:3030')

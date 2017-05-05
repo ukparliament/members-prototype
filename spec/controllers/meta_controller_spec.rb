@@ -1,8 +1,8 @@
 require 'rails_helper'
 include ActionView::Helpers::UrlHelper
 
-RSpec.describe MetaController do
-  render_views
+RSpec.describe MetaController, vcr: true do
+  # render_views
 
   describe 'GET index' do
     before(:each) do

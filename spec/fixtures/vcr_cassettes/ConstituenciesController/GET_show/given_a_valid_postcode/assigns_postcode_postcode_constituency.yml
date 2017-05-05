@@ -102,7 +102,7 @@ http_interactions:
         \"2015-03-30\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/mGAt1Udy>
         <http://id.ukpds.org/schema/incumbencyStartDate> \"2010-05-06\"^^<http://www.w3.org/2001/XMLSchema#date>
         .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Fri, 05 May 2017 14:15:44 GMT
 - request:
     method: get
@@ -206,7 +206,7 @@ http_interactions:
         \"2015-03-30\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/mGAt1Udy>
         <http://id.ukpds.org/schema/incumbencyStartDate> \"2010-05-06\"^^<http://www.w3.org/2001/XMLSchema#date>
         .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Fri, 05 May 2017 14:15:44 GMT
 - request:
     method: get
@@ -253,6 +253,132 @@ http_interactions:
         <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/paO1gsjM>
         <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
         - 1\" .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Fri, 05 May 2017 14:15:55 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - bandiera:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '17'
+    body:
+      encoding: UTF-8
+      string: '{"response":true}'
+    http_version:
+  recorded_at: Mon, 08 May 2017 13:13:11 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-register
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - bandiera:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '84'
+    body:
+      encoding: UTF-8
+      string: '{"response":false,"warning":"This feature does not exist in the Bandiera
+        database."}'
+    http_version:
+  recorded_at: Mon, 08 May 2017 13:13:11 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - bandiera:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '17'
+    body:
+      encoding: UTF-8
+      string: '{"response":true}'
+    http_version:
+  recorded_at: Mon, 08 May 2017 13:13:11 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-register
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - bandiera:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '84'
+    body:
+      encoding: UTF-8
+      string: '{"response":false,"warning":"This feature does not exist in the Bandiera
+        database."}'
+    http_version:
+  recorded_at: Mon, 08 May 2017 13:13:11 GMT
 recorded_with: VCR 3.0.3

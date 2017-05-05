@@ -91,7 +91,39 @@ http_interactions:
         <http://id.ukpds.org/schema/House> .\r\n<http://id.ukpds.org/KL2k1BGP> <http://id.ukpds.org/schema/houseName>
         \"houseName - 1\" .\r\n<http://id.ukpds.org/m1EgVTLj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/House> .\r\n<http://id.ukpds.org/m1EgVTLj> <http://id.ukpds.org/schema/houseName>
-        \"houseName - 2\" .\r\n"
+        \"houseName - 1\" .\r\n"
     http_version: 
   recorded_at: Fri, 21 Apr 2017 09:45:06 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - bandiera:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '82'
+    body:
+      encoding: UTF-8
+      string: '{"response":false,"warning":"This group does not exist in the Bandiera
+        database."}'
+    http_version: 
+  recorded_at: Mon, 08 May 2017 11:22:18 GMT
 recorded_with: VCR 3.0.3

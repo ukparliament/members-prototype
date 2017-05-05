@@ -57,4 +57,36 @@ http_interactions:
         _:node68595 <http://id.ukpds.org/schema/value> "V" .
     http_version: 
   recorded_at: Wed, 15 Mar 2017 13:49:58 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - bandiera:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '82'
+    body:
+      encoding: UTF-8
+      string: '{"response":false,"warning":"This group does not exist in the Bandiera
+        database."}'
+    http_version: 
+  recorded_at: Mon, 08 May 2017 08:34:46 GMT
 recorded_with: VCR 3.0.3

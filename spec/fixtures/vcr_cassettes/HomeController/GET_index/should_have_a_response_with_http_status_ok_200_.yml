@@ -43,9 +43,9 @@ http_interactions:
       encoding: UTF-8
       string: "<http://id.ukpds.org/KL2k1BGP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/House> .\r\n<http://id.ukpds.org/KL2k1BGP> <http://id.ukpds.org/schema/houseName>
-        \"houseName - 1\" .\r\n<http://id.ukpds.org/m1EgVTLj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        \"House of Commons\" .\r\n<http://id.ukpds.org/m1EgVTLj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/House> .\r\n<http://id.ukpds.org/m1EgVTLj> <http://id.ukpds.org/schema/houseName>
-        \"houseName - 2\" .\r\n"
+        \"House of Lords\" .\r\n"
     http_version: 
   recorded_at: Fri, 21 Apr 2017 10:15:26 GMT
 - request:

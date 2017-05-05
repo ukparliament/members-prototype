@@ -19,8 +19,8 @@ RSpec.describe HousesController, vcr: true do
     end
 
     it 'assigns @houses in alphabetical order' do
-      expect(assigns(:houses)[0].name).to eq('houseName - 1')
-      expect(assigns(:houses)[1].name).to eq('houseName - 1')
+      expect(assigns(:houses)[0].name).to eq('House of Commons')
+      expect(assigns(:houses)[1].name).to eq('House of Lords')
     end
 
     it 'renders the index template' do

@@ -21,4 +21,4 @@
           = link_to(t('lords'),house_parties_path(HousesHelper.lords_id))
 
     %ol.list--box
-      = render :partial => 'houses/party', collection: @parties
+      = render partial: 'houses/party', collection: @parties

@@ -45,7 +45,7 @@ http_interactions:
         <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/vUPobpVT>
         <http://id.ukpds.org/schema/constituencyGroupStartDate> \"2005-04-05\"^^<http://www.w3.org/2001/XMLSchema#date>
         .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupName>
-        \"constituencyGroupName - 1\" .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupOnsCode>
+        \"Bethnal Green and Bow\" .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupOnsCode>
         \"constituencyGroupOnsCode - 1\" .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupHasConstituencyArea>
         <http://id.ukpds.org/xkvMZT7t> .\r\n<http://id.ukpds.org/xkvMZT7t> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/ConstituencyArea> .\r\n<http://id.ukpds.org/xkvMZT7t>
@@ -148,7 +148,7 @@ http_interactions:
         <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/vUPobpVT>
         <http://id.ukpds.org/schema/constituencyGroupStartDate> \"2005-04-05\"^^<http://www.w3.org/2001/XMLSchema#date>
         .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupName>
-        \"constituencyGroupName - 1\" .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupOnsCode>
+        \"Bethnal Green and Bow\" .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupOnsCode>
         \"constituencyGroupOnsCode - 1\" .\r\n<http://id.ukpds.org/vUPobpVT> <http://id.ukpds.org/schema/constituencyGroupHasConstituencyArea>
         <http://id.ukpds.org/xkvMZT7t> .\r\n<http://id.ukpds.org/xkvMZT7t> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/ConstituencyArea> .\r\n<http://id.ukpds.org/xkvMZT7t>

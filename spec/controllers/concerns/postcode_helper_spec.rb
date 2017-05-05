@@ -10,7 +10,7 @@ RSpec.describe PostcodeHelper, vcr: true do
       result = PostcodeHelper.lookup('E20JA')
 
       expect(result).to be_a(Parliament::Response::NTripleResponse)
-      expect(result.nodes.first.constituencyGroupName).to eq('constituencyGroupName - 1')
+      expect(result.nodes.first.constituencyGroupName).to eq('Bethnal Green and Bow')
     end
   end
 
@@ -19,7 +19,7 @@ RSpec.describe PostcodeHelper, vcr: true do
       result = PostcodeHelper.lookup(' E2  0JA ')
 
       expect(result).to be_a(Parliament::Response::NTripleResponse)
-      expect(result.nodes.first.constituencyGroupName).to eq('constituencyGroupName - 1')
+      expect(result.nodes.first.constituencyGroupName).to eq('Bethnal Green and Bow')
     end
   end
 

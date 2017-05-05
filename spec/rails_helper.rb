@@ -87,7 +87,6 @@ VCR.configure do |config|
 end
 
 RSpec.configure do |config|
-
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -107,8 +106,16 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include ApplicationHelper
 
+  # Set HousesHelper#set_ids instance variables to nil after each spec.
+  # Calling certain HousesHelper methods (e.g. HousesHelper#commons?) causes
+  # HousesHelper#set_ids to be called which sets @commons_id and @lords_id.
+  # Setting these to nil causes each spec that requires them to make another
+  # ParliamentHelper request and generate a VCR cassette and stops any RSpec
+  # ordering issues where they may or may not have been set by the previous spec.
+  config.after(:each) do
+    HousesHelper.instance_variable_set(:@commons_id, nil)
+    HousesHelper.instance_variable_set(:@lords_id, nil)
+  end
 end
-
-
-

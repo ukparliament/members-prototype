@@ -37,7 +37,7 @@ class PeopleController < ApplicationController
     @most_recent_incumbency = sorted_incumbencies.last
     @current_incumbency = @most_recent_incumbency && @most_recent_incumbency.current? ? @most_recent_incumbency : nil
 
-    return unless @postcode
+    return unless @postcode && @current_incumbency
 
     begin
       response = PostcodeHelper.lookup(@postcode)

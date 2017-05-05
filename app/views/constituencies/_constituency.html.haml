@@ -14,13 +14,15 @@
 - if @constituency.current?
   - if @postcode
     - if @postcode_constituency.correct?
-      %p= t('.correct_constituency')
+      .highlight--box.highlight--success__soft
+        %p= t('.correct_constituency')
     - else
-      %p
-        = t('.incorrect_constituency')
-        = "#{link_to(@postcode_constituency.name, constituency_path(@postcode_constituency.graph_id))} #{t('.constituency_for_postcode')}".html_safe
+      .highlight--box.highlight--warning__soft
+        %p
+          = t('.incorrect_constituency')
+          = "#{link_to(@postcode_constituency.name, constituency_path(@postcode_constituency.graph_id))} #{t('.constituency_for_postcode')}".html_safe
   - else
-    %h3= t('.check_constituency')
+    %h2= t('.check_constituency')
 
     = render partial: 'postcodes/postcode_lookup', locals: { path: constituency_path(@constituency.graph_id) }
 

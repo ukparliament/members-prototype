@@ -1,12 +1,21 @@
-- page_title = title(@postcode)
+#content.section--primary
+  .container
+    %h1= title(@postcode)
+    %p
+      = t('.wrong_postcode')
+      = link_to(t('.search_again'), postcodes_path)
 
-%h1= page_title
-%h3= t('.your_mp')
-- if @constituency.members.empty?
-  %h4= t('.no_mp')
-- else
-  %h4= link_to(@constituency.members.first.display_name, person_path(@constituency.members.first.graph_id))
-  %p= @constituency.members.first.parties.first.name
+    %h2= t('.your_mp')
+    - if @constituency.members.empty?
+      .highlight--box.highlight--caution__soft
+        %p= t('.no_mp')
+    - else
+      %ul.list--box
+        %li
+          %p= link_to(@constituency.members.first.display_name, person_path(@constituency.members.first.graph_id))
+          %p= @constituency.members.first.parties.first.name
 
-%h3= t('.your_constituency')
-%h4= link_to(@constituency.name, constituency_path(@constituency.graph_id))
+    %h2= t('.your_constituency')
+    %ul.list--box
+      %li
+        %p= link_to(@constituency.name, constituency_path(@constituency.graph_id))

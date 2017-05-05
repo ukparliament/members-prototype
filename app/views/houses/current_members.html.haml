@@ -5,7 +5,8 @@
     %h1= "#{t('current').capitalize} #{@current_person_type}"
 
     - if HousesHelper.commons?(@house)
-      %h3= t('postcodes.find_mp_constituency')
+      %h2= t('postcodes.find_mp_constituency')
+
       = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
 
     = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_members_current_a_z_letter_path, primary_id: @house.graph_id }
@@ -20,4 +21,3 @@
 
     %p= link_to("#{t('all').capitalize} #{t('current_and_former')} #{@current_person_type}", house_members_a_z_letter_path(@house.graph_id, 'a'))
     %p= link_to("#{t('current').capitalize} #{@other_person_type}", house_members_current_a_z_letter_path(@other_house_id, 'a'))
-

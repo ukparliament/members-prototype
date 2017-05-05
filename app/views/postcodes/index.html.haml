@@ -1,7 +1,9 @@
-- page_title = title(t('.title'))
+#content.section--primary
+  .container
+    %h1= title(t('.title'))
 
-%h1= page_title
+    - if flash[:error]
+      .highlight--box.highlight--caution__soft
+        %p= flash[:error]
 
-- if flash[:error]
-  = flash[:error]
-= render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
+    = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }

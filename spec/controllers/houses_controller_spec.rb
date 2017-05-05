@@ -381,7 +381,7 @@ RSpec.describe HousesController, vcr: true do
 
     it 'assigns @people in alphabetical order' do
       expect(assigns(:people)[0].given_name).to eq('personGivenName - 1')
-      expect(assigns(:people)[1].given_name).to eq('personGivenName - 10')
+      expect(assigns(:people)[1].given_name).to eq('personGivenName - 2')
     end
 
     it 'renders the current_party_members template' do

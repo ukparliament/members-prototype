@@ -184,8 +184,10 @@ class HousesController < ApplicationController
     house_id = params[:house_id]
     party_id = params[:party_id]
 
+    request = parliament_request.houses(house_id).parties(party_id).members.current
+
     @house, @party, @people = RequestHelper.filter_response_data(
-      parliament_request.houses(house_id).parties(party_id).members.current,
+      request,
       'http://id.ukpds.org/schema/House',
       'http://id.ukpds.org/schema/Party',
       'http://id.ukpds.org/schema/Person'
@@ -193,7 +195,6 @@ class HousesController < ApplicationController
 
     @house = @house.first
     @party = @party.first
-    @people = @people.sort_by(:sort_name)
 
     @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
     @letters = RequestHelper.process_available_letters(parliament_request.houses(house_id).parties(party_id).members.current.a_z_letters)
@@ -203,6 +204,8 @@ class HousesController < ApplicationController
     house_id = params[:house_id]
     party_id = params[:party_id]
     letter = params[:letter]
+
+    request = parliament_request.houses(house_id).parties(party_id).members.current(letter)
 
     @letters = RequestHelper.process_available_letters(parliament_request.houses(house_id).parties(party_id).members.current.a_z_letters)
 
@@ -216,7 +219,6 @@ class HousesController < ApplicationController
       'http://id.ukpds.org/schema/Party'
     ).first
 
-    request = parliament_request.houses(house_id).parties(party_id).members.current(letter)
     response = RequestHelper.handle(request) { @people = [] }
 
     @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]

@@ -1109,7 +1109,7 @@ http_interactions:
         - 335\" .\r\n<http://id.ukpds.org/vTNSMo38> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/vTNSMo38>
         <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
-        - 336\" .\r\n<http://id.ukpds.org/BO2i09Rj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        - 1\" .\r\n<http://id.ukpds.org/BO2i09Rj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/BO2i09Rj>
         <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
         - 337\" .\r\n<http://id.ukpds.org/oI6lDjwC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
@@ -1871,7 +1871,7 @@ http_interactions:
         - 589\" .\r\n<http://id.ukpds.org/vUPobpVT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/vUPobpVT>
         <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
-        - 590\" .\r\n<http://id.ukpds.org/engyyIEK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        - 1\" .\r\n<http://id.ukpds.org/engyyIEK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/ConstituencyGroup> .\r\n<http://id.ukpds.org/engyyIEK>
         <http://id.ukpds.org/schema/constituencyGroupName> \"constituencyGroupName
         - 591\" .\r\n<http://id.ukpds.org/PJbTMvPS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
@@ -14962,4 +14962,36 @@ http_interactions:
         \"1974-02-28\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n"
     http_version: 
   recorded_at: Thu, 20 Apr 2017 15:22:45 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Bandiera Ruby Client / 3.0.4
+      Host:
+      - bandiera:5000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '82'
+    body:
+      encoding: UTF-8
+      string: '{"response":false,"warning":"This group does not exist in the Bandiera
+        database."}'
+    http_version: 
+  recorded_at: Mon, 08 May 2017 13:08:57 GMT
 recorded_with: VCR 3.0.3

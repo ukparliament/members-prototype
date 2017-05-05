@@ -9,7 +9,7 @@
 
       = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
 
-    = render partial: 'pugin/components/letter-navigation', locals: { route_symbol: :house_members_current_a_z_letter_path, primary_id: @house.graph_id }
+    = render partial: 'pugin/components/navigation-letter', locals: { route_symbol: :house_members_current_a_z_letter_path, primary_id: @house.graph_id }
 
     - if HousesHelper.commons?(@house)
       = render partial: 'shared/dissolution_message'

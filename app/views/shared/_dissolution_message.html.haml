@@ -1,3 +1,7 @@
 - if FlagHelper.dissolution?
   .highlight--box.highlight--primary__soft
-    %p= t('shared.dissolution_message.description')
+    %p
+      = t('shared.dissolution_message.description_text_1')
+      = link_to t('shared.dissolution_message.description_link'), postcodes_path
+      = t('shared.dissolution_message.description_text_2')
+

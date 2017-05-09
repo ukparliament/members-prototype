@@ -10,6 +10,6 @@
     = hidden_field_tag('constituency_id', @constituency.graph_id) if @constituency
     = hidden_field_tag('person_id', @person.graph_id) if @person
     = text_field_tag('postcode', @postcode)
-    = submit_tag('Check', class: 'btn--primary')
+    = submit_tag('Check', class: 'btn--secondary')
 
 %p= t('.do_not_know_postcode', link: link_to(t('.do_not_know_postcode_link'), 'http://www.royalmail.com/find-a-postcode', target: '_blank', title: t('open_new_window'))).html_safe

@@ -1,5 +1,5 @@
-%p= @constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
 %p
+  = @constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
   = "#{t('from').capitalize} #{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
   = @constituency.end_date.nil? ? t('to_present') : " #{t('to')} #{l(@constituency.end_date, format: :default)}"
 
@@ -15,14 +15,15 @@
   - if @postcode
     - if @postcode_constituency.correct?
       .highlight--box.highlight--success__soft
-        %p= t('.correct_constituency')
+        %p= "#{t('.correct_constituency').capitalize} #{@postcode}"
     - else
       .highlight--box.highlight--warning__soft
         %p
-          = t('.incorrect_constituency')
+          = t('.incorrect_constituency').capitalize
           = "#{link_to(@postcode_constituency.name, constituency_path(@postcode_constituency.graph_id))} #{t('.constituency_for_postcode')}".html_safe
+          = @postcode
   - else
-    %h2= t('.check_constituency')
+    %h2= t('.check_constituency').capitalize
 
     = render partial: 'postcodes/postcode_lookup', locals: { path: constituencies_postcode_lookup_path }
 

@@ -119,6 +119,9 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    parallel (1.11.2)
+    parallel_tests (2.14.1)
+      parallel
     parliament-grom-decorators (0.1.2)
     parliament-ntriple (0.1.1)
       grom (~> 0.3.6)
@@ -267,6 +270,7 @@ DEPENDENCIES
   foreman
   haml (= 5.0)
   json-ld (= 2.1.2)
+  parallel_tests
   parliament-grom-decorators (~> 0.1.2)
   parliament-ntriple (~> 0.1.1)
   parliament-ruby (~> 0.7.6)

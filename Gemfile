@@ -45,6 +45,9 @@ group :development, :test do
   gem 'foreman'
   gem 'subcontractor'
 
+  # Use parallel_tests to run specs across all CPU cores locally
+  gem 'parallel_tests'
+
   # Use Rubocop for static code quality analysis
   gem 'rubocop'
 end

@@ -155,10 +155,10 @@ en:
       vacant: 'Vacant'
     constituency:
       title: # title does not require translation
-      correct_constituency: 'This is the constituency for your postcode.'
-      incorrect_constituency: 'This is not your constituency.'
+      correct_constituency: "we couldn't find the postcode you entered."
+      incorrect_constituency: 'this is not your constituency.'
       constituency_for_postcode: 'is the constituency for the postcode entered.'
-      check_constituency: 'Check if this is your constituency'
+      check_constituency: 'check if this is your constituency'
   # parties translations
   parties:
     index:

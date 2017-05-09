@@ -1,6 +1,6 @@
 #content.section--primary
   .container
-    %h1= title(@postcode)
+    %h1= title(@postcode.upcase)
     %p
       = t('.wrong_postcode')
       = link_to(t('.search_again'), postcodes_path)

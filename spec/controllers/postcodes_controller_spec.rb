@@ -35,6 +35,22 @@ RSpec.describe PostcodesController, vcr: true do
       end
     end
 
+    context 'given an invalid postcode, but in the correct postcode format' do
+      before(:each) do
+        PostcodeHelper.previous_path = constituencies_current_path
+
+        get :show, params: { postcode: 'AA99 2AA' }
+      end
+
+      it 'assigns flash[:error]' do
+        expect(flash[:error]).to eq('No constituency found for the postcode entered.')
+      end
+
+      it 'redirects to constituencies_current' do
+        expect(response).to redirect_to(constituencies_current_path)
+      end
+    end
+
     context 'given an invalid postcode' do
       before(:each) do
         PostcodeHelper.previous_path = constituencies_current_path
@@ -43,7 +59,7 @@ RSpec.describe PostcodesController, vcr: true do
       end
 
       it 'assigns flash[:error]' do
-        expect(flash[:error]).to eq('No constituency found for the postcode entered.')
+        expect(flash[:error]).to eq('Your postcode is invalid.')
       end
 
       it 'redirects to constituencies_current' do

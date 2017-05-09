@@ -105,7 +105,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
       it 'assigns @postcode and flash[:error]' do
         expect(assigns(:postcode)).to be(nil)
-        expect(flash[:error]).to eq('No constituency found for the postcode entered.')
+        expect(flash[:error]).to eq('Your postcode is invalid.')
       end
     end
   end

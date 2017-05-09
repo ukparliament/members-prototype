@@ -2,8 +2,4 @@
   .container
     %h1= title(t('.title'))
 
-    - if flash[:error]
-      .highlight--box.highlight--caution__soft
-        %p= flash[:error]
-
     = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }

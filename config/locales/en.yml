@@ -155,9 +155,9 @@ en:
       vacant: 'Vacant'
     constituency:
       title: # title does not require translation
-      correct_constituency: "we couldn't find the postcode you entered."
+      correct_constituency: "this is the constituency for your postcode"
       incorrect_constituency: 'this is not your constituency.'
-      constituency_for_postcode: 'is the constituency for the postcode entered.'
+      constituency_for_postcode: 'is the constituency for'
       check_constituency: 'check if this is your constituency'
   # parties translations
   parties:
@@ -254,7 +254,9 @@ en:
   # shared partial translations
   shared:
     dissolution_message:
-      description: 'Parliament has been dissolved before the general election on 8 June. There are currently no MPs.'
+      description_text_1: 'Parliament has been dissolved before the general election on 8 June. Use our'
+      description_link: 'postcode tool'
+      description_text_2: 'to find your constituency and its former MPs.'
   # homepage translations
   home:
     index:

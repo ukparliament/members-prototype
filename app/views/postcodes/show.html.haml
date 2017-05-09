@@ -5,7 +5,7 @@
       = t('.wrong_postcode')
       = link_to(t('.search_again'), postcodes_path)
 
-    %h2= t('.your_mp')
+    %h2= t('mp')
     - if @constituency.members.empty?
       .highlight--box.highlight--caution__soft
         %p= t('.no_mp')
@@ -15,7 +15,7 @@
           %p= link_to(@constituency.members.first.display_name, person_path(@constituency.members.first.graph_id))
           %p= @constituency.members.first.parties.first.name
 
-    %h2= t('.your_constituency')
+    %h2= t('constituency').capitalize
     %ul.list--box
       %li
         %p= link_to(@constituency.name, constituency_path(@constituency.graph_id))

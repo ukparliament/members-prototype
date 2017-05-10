@@ -134,7 +134,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.5)
-    pugin (0.6.2)
+    pugin (0.6.3)
     puma (3.8.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -275,7 +275,7 @@ DEPENDENCIES
   parliament-ntriple (~> 0.1.1)
   parliament-ruby (~> 0.7.6)
   pry
-  pugin (= 0.6.2)
+  pugin (= 0.6.3)
   puma
   rack-timeout
   rails (= 5.0.2)

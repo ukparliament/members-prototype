@@ -1,6 +1,5 @@
 #content.section--primary
   .container
-    %h1= title(t('.title'))
+    %h1= title(t('.title')).capitalize
 
     = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
-

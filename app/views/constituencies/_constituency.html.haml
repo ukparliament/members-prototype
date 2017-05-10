@@ -1,6 +1,6 @@
 %p
   = @constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
-  = "#{t('from').capitalize} #{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
+  = "#{t('from')} #{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
   = @constituency.end_date.nil? ? t('to_present') : " #{t('to')} #{l(@constituency.end_date, format: :default)}"
 
 - if !@current_incumbency.nil?

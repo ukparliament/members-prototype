@@ -2,8 +2,8 @@
   .container
     %h1= title(@postcode.upcase)
     %p
-      = t('.wrong_postcode')
-      = link_to(t('.search_again'), postcodes_path)
+      = t('.wrong_postcode').capitalize
+      = link_to(t('.search_again').capitalize, postcodes_path)
 
     %h2= t('mp')
     - if @constituency.members.empty?

@@ -233,8 +233,6 @@ en:
       title: # title does not require translation
       wrong_postcode: 'Wrong postcode?'
       search_again: 'Search again'
-      your_mp: 'Your MP'
-      your_constituency: 'Your constituency'
       no_mp: 'There is no current MP for your constituency.'
     postcode_lookup:
       title: # title does not require translation

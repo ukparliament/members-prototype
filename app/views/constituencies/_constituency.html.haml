@@ -15,13 +15,13 @@
   - if @postcode
     - if @postcode_constituency.correct?
       .highlight--box.highlight--success__soft
-        %p= "#{t('.correct_constituency').capitalize} #{@postcode}"
+        %p= "#{t('.correct_constituency').capitalize} #{@postcode.upcase}"
     - else
       .highlight--box.highlight--warning__soft
         %p
           = t('.incorrect_constituency').capitalize
           = "#{link_to(@postcode_constituency.name, constituency_path(@postcode_constituency.graph_id))} #{t('.constituency_for_postcode')}".html_safe
-          = @postcode
+          = @postcode.upcase
   - else
     %h2= t('.check_constituency').capitalize
 

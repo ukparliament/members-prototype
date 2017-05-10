@@ -9,6 +9,6 @@
 
 %section#content
   .container
-    = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
+    = render partial: 'pugin/cards/person-list', locals: { people: @people }
 
     %p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('member_plural')}", house_parties_party_members_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))

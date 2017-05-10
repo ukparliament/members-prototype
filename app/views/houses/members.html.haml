@@ -9,4 +9,3 @@
 %section#content
   .container
     = render partial: 'pugin/cards/person-list', locals: { people: @people, letter: params[:letter] }
-    %p= link_to("#{t('current_and_former').capitalize} #{@other_person_type}", house_members_a_z_letter_path(@other_house_id, 'a'))

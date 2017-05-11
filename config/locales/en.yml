@@ -252,7 +252,7 @@ en:
   # shared partial translations
   shared:
     dissolution_message:
-      description_text_1: 'Parliament has been dissolved before the general election on 8 June. Use our'
+      description_text_1: 'Parliament has been dissolved before the general election on 8 June. There are currently no MPs. Use our'
       description_link: 'postcode tool'
       description_text_2: 'to find your constituency and its former MPs.'
   # homepage translations

@@ -265,7 +265,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_members_letters" do
     before(:each) do
-      get :current_members_letters, params: { house_id: 'KL2k1BGP', letter: 'a' }
+      get :current_members_letters, params: { house_id: 'm1EgVTLj', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do

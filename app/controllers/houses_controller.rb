@@ -123,15 +123,18 @@ class HousesController < ApplicationController
     letter = params[:letter]
 
     @letters = RequestHelper.process_available_letters(parliament_request.houses(house_id).members.current.a_z_letters)
-    @house = RequestHelper.filter_response_data(
-      parliament_request.houses(house_id),
-      'http://id.ukpds.org/schema/House'
-    ).first
 
     request = parliament_request.houses(house_id).members.current(letter)
-    response = RequestHelper.handle(request) { @people = [] }
 
-    @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+    @house, @people = RequestHelper.filter_response_data(
+      request,
+      'http://id.ukpds.org/schema/House',
+      'http://id.ukpds.org/schema/Person'
+    )
+
+    @people = @people.sort_by(:sort_name)
+    @house = @house.first
+
     @current_person_type, @other_person_type = HousesHelper.person_type_string(@house)
     @current_house_id, @other_house_id = HousesHelper.house_id_string(@house)
   end

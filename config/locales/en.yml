@@ -237,7 +237,7 @@ en:
     postcode_lookup:
       title: # title does not require translation
       search_by_postcode: 'Enter your full postcode, for example SW1A 0AA.'
-      do_not_know_postcode: "Don't know your postcode?  Find your postcode on the %{link}."
+      do_not_know_postcode: "Don't know your postcode? Find it on the %{link}."
       do_not_know_postcode_link: 'Royal Mail postcode finder'
 
   # no content translations

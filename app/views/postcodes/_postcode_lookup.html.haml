@@ -8,6 +8,7 @@
   .form-group
     = hidden_field_tag('previous_path', request.env['PATH_INFO'])
     = text_field_tag('postcode', @postcode)
-    = submit_tag('Check', class: 'btn--secondary')
+    - submit_text = @person.nil? && @constituency.nil? ? "Find" : "Check"
+    = submit_tag(submit_text, class: 'btn--secondary')
 
 %p= t('.do_not_know_postcode', link: link_to(t('.do_not_know_postcode_link'), 'http://www.royalmail.com/find-a-postcode', target: '_blank', title: t('open_new_window'))).html_safe

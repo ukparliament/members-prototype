@@ -25,13 +25,13 @@ RSpec.describe PostcodeHelper, vcr: true do
 
   context 'given an invalid postcode (containing non-postcode characters)' do
     it 'raises a PostcodeHelper::PostcodeError' do
-      expect{ PostcodeHelper.lookup("<E2'0JA>") }.to raise_error(PostcodeHelper::PostcodeError, 'Your postcode is invalid.')
+      expect{ PostcodeHelper.lookup("<E2'0JA>") }.to raise_error(PostcodeHelper::PostcodeError, "We couldn't find the postcode you entered.")
     end
   end
 
   context 'given an invalid postcode (containing valid postcode characters)' do
     it 'raises a PostcodeHelper::PostcodeError' do
-      expect{ PostcodeHelper.lookup('JE2 4NJ') }.to raise_error(PostcodeHelper::PostcodeError, 'No constituency found for the postcode entered.')
+      expect{ PostcodeHelper.lookup('JE2 4NJ') }.to raise_error(PostcodeHelper::PostcodeError, "We couldn't find the postcode you entered.")
     end
   end
 
@@ -40,7 +40,7 @@ RSpec.describe PostcodeHelper, vcr: true do
       stub_request(:get, "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/postcode_lookup/E20JA").
         to_return(status: [500, 'Internal Server Error'])
 
-      expect{ PostcodeHelper.lookup('E2 0JA') }.to raise_error(PostcodeHelper::PostcodeError, 'Postcode lookup is currently unavailable.')
+      expect{ PostcodeHelper.lookup('E2 0JA') }.to raise_error(PostcodeHelper::PostcodeError, 'Postcode check is currently unavailable.')
     end
   end
 

@@ -43,7 +43,7 @@ RSpec.describe PostcodesController, vcr: true do
       end
 
       it 'assigns flash[:error]' do
-        expect(flash[:error]).to eq('No constituency found for the postcode entered.')
+        expect(flash[:error]).to eq("We couldn't find the postcode you entered.")
       end
 
       it 'redirects to constituencies_current' do
@@ -59,7 +59,7 @@ RSpec.describe PostcodesController, vcr: true do
       end
 
       it 'assigns flash[:error]' do
-        expect(flash[:error]).to eq('Your postcode is invalid.')
+        expect(flash[:error]).to eq("We couldn't find the postcode you entered.")
       end
 
       it 'redirects to constituencies_current' do

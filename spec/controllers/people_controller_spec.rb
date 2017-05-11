@@ -108,7 +108,7 @@ RSpec.describe PeopleController, vcr: true do
 
       it 'assigns @postcode and flash[:error]' do
         expect(assigns(:postcode)).to be(nil)
-        expect(flash[:error]).to eq('Your postcode is invalid.')
+        expect(flash[:error]).to eq("We couldn't find the postcode you entered.")
       end
     end
   end

@@ -73,9 +73,9 @@ en:
       default: '%-d %b %Y'
   # global error message translations
   error:
-    no_constituency: 'No constituency found for the postcode entered.'
-    lookup_unavailable: 'Postcode lookup is currently unavailable.'
-    postcode_invalid: 'Your postcode is invalid.'
+    no_constituency: "we couldn't find the postcode you entered."
+    lookup_unavailable: 'postcode check is currently unavailable.'
+    postcode_invalid: "we couldn't find the postcode you entered."
   # people translations
   people:
     index:
@@ -228,15 +228,15 @@ en:
   postcodes:
     find_mp_constituency: 'Find your MP and constituency'
     index:
-      title: 'Find your constituency'
+      title: 'find your constituency'
     show:
       title: # title does not require translation
-      wrong_postcode: 'Wrong postcode?'
-      search_again: 'Search again'
-      no_mp: 'There is no current MP for your constituency.'
+      wrong_postcode: 'wrong postcode?'
+      search_again: 'search again'
+      no_mp: 'There is currently no MP for your constituency.'
     postcode_lookup:
       title: # title does not require translation
-      search_by_postcode: 'Enter your full postcode, for example, SW1A 0AA.'
+      search_by_postcode: 'Enter your full postcode, for example SW1A 0AA.'
       do_not_know_postcode: "Don't know your postcode?  Find your postcode on the %{link}."
       do_not_know_postcode_link: 'Royal Mail postcode finder'
 
@@ -252,8 +252,8 @@ en:
   # shared partial translations
   shared:
     dissolution_message:
-      description_text_1: 'Parliament has been dissolved before the general election on 8 June. Use our'
-      description_link: 'postcode tool'
+      description_text: 'Parliament has been dissolved before the general election on 8 June. There are currently no MPs.'
+      description_link: 'Find your constituency'
       description_text_2: 'to find your constituency and its former MPs.'
   # homepage translations
   home:

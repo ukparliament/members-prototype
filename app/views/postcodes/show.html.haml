@@ -5,6 +5,11 @@
       = t('.wrong_postcode').capitalize
       = link_to(t('.search_again').capitalize, postcodes_path)
 
+    %h2= t('constituency').capitalize
+    %ul.list--box
+      %li
+        %p= link_to(@constituency.name, constituency_path(@constituency.graph_id))
+
     %h2= t('mp')
     - if @constituency.members.empty?
       .highlight--box.highlight--caution__soft
@@ -14,8 +19,3 @@
         %li
           %p= link_to(@constituency.members.first.display_name, person_path(@constituency.members.first.graph_id))
           %p= @constituency.members.first.parties.first.name
-
-    %h2= t('constituency').capitalize
-    %ul.list--box
-      %li
-        %p= link_to(@constituency.name, constituency_path(@constituency.graph_id))

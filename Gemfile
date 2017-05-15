@@ -1,28 +1,28 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.2'
+gem 'rails', '~> 5.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '5.0.1'
 
-gem 'json-ld', '2.1.2'
+gem 'json-ld', '~> 2.1'
 gem 'vcard', '0.2.15'
 
 # Parliament Ruby is a wrapper for the internal Parliament data API
-gem 'parliament-ruby', '~> 0.7.6'
+gem 'parliament-ruby', '~> 0.7'
 
 # Parliament NTriple processes N-triple data
-gem 'parliament-ntriple', '~> 0.1.1', require: false
+gem 'parliament-ntriple', '~> 0.1', require: false
 
 # Parliament Grom Decorators decorates Grom nodes
-gem 'parliament-grom-decorators', '~> 0.1.2'
+gem 'parliament-grom-decorators', '~> 0.1'
 
 # Pugin is the front-end component library used by Parliament
-gem 'pugin', '0.6.4'
+gem 'pugin', '~> 0.6'
 
 # HAML is used for front-end template rendering
-gem 'haml', '5.0'
+gem 'haml', '~> 5.0'
 
 # Include time zone information
 gem 'tzinfo-data'
@@ -33,6 +33,9 @@ gem 'rack-timeout'
 
 # Client for Bandiera feature flagging
 gem 'bandiera-client'
+
+# Manually update mail to account for security issues
+gem 'mail', '~> 2.6.6.rc1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -52,6 +52,7 @@ module PostcodeHelper
   # We decided to use a loose regex - this matches the different postcode formats, but doesn't validate against invalid letters and numbers, only their positions.
   def self.clean_input(raw_input)
     postcode = raw_input.gsub(/\s+/, '').upcase
+
     postcode.match(/[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}/).nil? ? raise(PostcodeError, I18n.t('error.postcode_invalid').capitalize) : postcode
   end
 

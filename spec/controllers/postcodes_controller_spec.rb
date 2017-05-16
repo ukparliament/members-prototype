@@ -69,12 +69,28 @@ RSpec.describe PostcodesController, vcr: true do
   end
 
   describe 'POST lookup' do
-    before(:each) do
-      get :lookup, params: { postcode: 'SW1A 2AA' }
+    context 'given a valid postcode' do
+      before(:each) do
+        post :lookup, params: { postcode: 'SW1A 2AA' }
+      end
+
+      it 'redirects to show' do
+        expect(response).to redirect_to(postcode_path('SW1A-2AA'))
+      end
     end
 
-    it 'redirects to show' do
-      expect(response).to redirect_to(postcode_path('SW1A-2AA'))
+    context 'given a blank postcode' do
+      before(:each) do
+        post :lookup, params: { postcode: '', previous_path: postcodes_path }
+      end
+
+      it 'assigns flash[:error]' do
+        expect(flash[:error]).to eq("We couldn't find the postcode you entered.")
+      end
+
+      it 'redirects to postcodes index' do
+        expect(response).to redirect_to(postcodes_path)
+      end
     end
   end
 end

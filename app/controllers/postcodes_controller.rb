@@ -17,8 +17,17 @@ class PostcodesController < ApplicationController
 
   def lookup
     raw_postcode = params[:postcode]
-    hyphenated_postcode = PostcodeHelper.hyphenate(raw_postcode)
+
     PostcodeHelper.previous_path = params[:previous_path]
+
+    if raw_postcode.gsub(/\s+/, '').empty?
+      flash[:error] = I18n.t('error.postcode_invalid').capitalize
+
+      redirect_to(PostcodeHelper.previous_path)
+      return
+    end
+
+    hyphenated_postcode = PostcodeHelper.hyphenate(raw_postcode)
 
     redirect_to postcode_path(hyphenated_postcode)
   end

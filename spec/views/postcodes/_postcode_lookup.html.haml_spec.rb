@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'postcodes/_postcode_lookup', vcr: true do
   before do
-    render partial: 'postcodes/postcode_lookup', locals: { path: '/people/7TX8ySd4', flash: { error: 'Test Error Flash Message' } }
+    render partial: 'postcodes/postcode_lookup', locals: { path: '/people/7TX8ySd4', flash: { error: 'Test Error Flash Message', postcode: '1111111' } }
   end
 
   context 'flash' do
@@ -26,5 +26,9 @@ RSpec.describe 'postcodes/_postcode_lookup', vcr: true do
       expect(rendered).to have_link('Royal Mail postcode finder', href: 'http://www.royalmail.com/find-a-postcode')
       expect(rendered).to match(/title="website opens in a new window"/)
     end
+  end
+
+  it 'will repopulate the form if the user enters an invalid postcode' do
+    expect(rendered).to match('1111111')
   end
 end

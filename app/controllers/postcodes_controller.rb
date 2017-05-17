@@ -10,7 +10,7 @@ class PostcodesController < ApplicationController
       @constituency = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
     rescue PostcodeHelper::PostcodeError => error
       flash[:error] = error.message
-
+      flash[:postcode] = @postcode
       redirect_to(PostcodeHelper.previous_path)
     end
   end
@@ -22,7 +22,6 @@ class PostcodesController < ApplicationController
 
     if raw_postcode.gsub(/\s+/, '').empty?
       flash[:error] = I18n.t('error.postcode_invalid').capitalize
-
       redirect_to(PostcodeHelper.previous_path)
       return
     end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'parties/show', vcr: true do
   context 'header' do
     it 'will render the correct header' do
-      assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 10))
+      assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 10, current?: true))
       render
       expect(rendered).to match(/Conservative/)
     end
@@ -11,7 +11,7 @@ RSpec.describe 'parties/show', vcr: true do
 
   context '@party.member_count > 0' do
     before do
-      assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 10))
+      assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 10, current?: true))
       render
     end
 
@@ -28,7 +28,7 @@ RSpec.describe 'parties/show', vcr: true do
 
   context '@party.member_count == 0' do
     before do
-      assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 0))
+      assign(:party, double(:party, name: 'Conservative', graph_id: 'jF43Jxoc', member_count: 0, current?: false))
       render
     end
 

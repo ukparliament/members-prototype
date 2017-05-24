@@ -12,6 +12,7 @@ RSpec.describe 'routes', type: :routing do
           )
         end
       end
+
       context 'does not match regex' do
         it 'GET people#lookup_by_letters' do
           expect(get: '/people/a').to route_to(
@@ -21,6 +22,9 @@ RSpec.describe 'routes', type: :routing do
           )
         end
       end
+
     end
   end
+
+  
 end

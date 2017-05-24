@@ -144,7 +144,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
     it 'assigns @constituencies in alphabetical order' do
       expect(assigns(:constituencies)[0].name).to eq('constituencyGroupName - 1')
-      expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 1')
+      expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 10')
     end
 
     it 'renders the current template' do
@@ -313,7 +313,7 @@ RSpec.describe ConstituenciesController, vcr: true do
 
       it 'assigns @constituencies in alphabetical order' do
         expect(assigns(:constituencies)[0].name).to eq('constituencyGroupName - 1')
-        expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 1')
+        expect(assigns(:constituencies)[1].name).to eq('constituencyGroupName - 10')
       end
 
       it 'renders the current_letters template' do

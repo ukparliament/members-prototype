@@ -1,7 +1,13 @@
 class PeopleController < ApplicationController
   def index
-    @people = parliament_request.people.get.sort_by(:sort_name)
-    @letters = RequestHelper.process_available_letters(parliament_request.people.a_z_letters)
+    @people, @letters = RequestHelper.filter_response_data(
+      parliament_request.people,
+      'http://id.ukpds.org/schema/Person',
+      ::Grom::Node::BLANK
+    )
+
+    @people = @people.sort_by(:sort_name)
+    @letters = @letters.map(&:value)
   end
 
   def lookup
@@ -57,21 +63,25 @@ class PeopleController < ApplicationController
   end
 
   def members
-    @people = RequestHelper.filter_response_data(
+    @people, @letters = RequestHelper.filter_response_data(
       parliament_request.people.members,
-      'http://id.ukpds.org/schema/Person'
-    ).sort_by(:sort_name)
+      'http://id.ukpds.org/schema/Person',
+      ::Grom::Node::BLANK
+    )
 
-    @letters = RequestHelper.process_available_letters(parliament_request.people.members.a_z_letters)
+    @people = @people.sort_by(:sort_name)
+    @letters = @letters.map(&:value)
   end
 
   def current_members
-    @people = RequestHelper.filter_response_data(
+    @people, @letters = RequestHelper.filter_response_data(
       parliament_request.people.members.current,
-      'http://id.ukpds.org/schema/Person'
-    ).sort_by(:sort_name)
+      'http://id.ukpds.org/schema/Person',
+      ::Grom::Node::BLANK
+    )
 
-    @letters = RequestHelper.process_available_letters(parliament_request.people.members.current.a_z_letters)
+    @people = @people.sort_by(:sort_name)
+    @letters = @letters.map(&:value)
   end
 
   def contact_points
@@ -166,32 +176,41 @@ class PeopleController < ApplicationController
 
   def letters
     letter = params[:letter]
-    @letters = RequestHelper.process_available_letters(parliament_request.people.a_z_letters)
 
-    request = parliament_request.people(letter)
-    response = RequestHelper.handle(request) { @people = [] }
+    @people, @letters = RequestHelper.filter_response_data(
+      parliament_request.people(letter),
+      'http://id.ukpds.org/schema/Person',
+      ::Grom::Node::BLANK
+    )
 
-    @people = response[:response].sort_by(:sort_name) if response[:success]
+    @people = @people.sort_by(:sort_name)
+    @letters = @letters.map(&:value)
   end
 
   def members_letters
     letter = params[:letter]
-    @letters = RequestHelper.process_available_letters(parliament_request.people.members.a_z_letters)
 
-    request = parliament_request.people.members(letter)
-    response = RequestHelper.handle(request) { @people = [] }
+    @people, @letters = RequestHelper.filter_response_data(
+      parliament_request.people.members(letter),
+      'http://id.ukpds.org/schema/Person',
+      ::Grom::Node::BLANK
+    )
 
-    @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+    @people = @people.sort_by(:sort_name)
+    @letters = @letters.map(&:value)
   end
 
   def current_members_letters
     letter = params[:letter]
-    @letters = RequestHelper.process_available_letters(parliament_request.people.members.current.a_z_letters)
 
-    request = parliament_request.people.members.current(letter)
-    response = RequestHelper.handle(request) { @people = [] }
+    @people, @letters = RequestHelper.filter_response_data(
+      parliament_request.people.members.current(letter),
+      'http://id.ukpds.org/schema/Person',
+      ::Grom::Node::BLANK
+    )
 
-    @people = response[:response].filter('http://id.ukpds.org/schema/Person').sort_by(:sort_name) if response[:success]
+    @people = @people.sort_by(:sort_name)
+    @letters = @letters.map(&:value)
   end
 
   def a_to_z

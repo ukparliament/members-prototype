@@ -34,6 +34,9 @@ gem 'rack-timeout'
 # Client for Bandiera feature flagging
 gem 'bandiera-client'
 
+# Gem to remove trailing slashes
+gem 'rack-rewrite'
+
 # Manually update mail to account for security issues
 gem 'mail', '~> 2.6.6.rc1'
 

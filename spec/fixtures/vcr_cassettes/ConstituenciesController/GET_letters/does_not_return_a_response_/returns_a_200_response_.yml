@@ -2,66 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/constituencies/a_z_letters
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      - application/n-triples
-      User-Agent:
-      - Ruby
-      Ocp-Apim-Subscription-Key:
-      - "<AUTH_TOKEN>"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-cache
-      Pragma:
-      - no-cache
-      Content-Length:
-      - '1272'
-      Content-Type:
-      - application/n-triples
-      Expires:
-      - "-1"
-      Set-Cookie:
-      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Powered-By:
-      - ASP.NET
-      Date:
-      - Thu, 20 Apr 2017 15:23:38 GMT
-    body:
-      encoding: UTF-8
-      string: "_:node4627 <http://id.ukpds.org/schema/value> \"H\" .\r\n_:node4628
-        <http://id.ukpds.org/schema/value> \"B\" .\r\n_:node4629 <http://id.ukpds.org/schema/value>
-        \"F\" .\r\n_:node4630 <http://id.ukpds.org/schema/value> \"D\" .\r\n_:node4631
-        <http://id.ukpds.org/schema/value> \"N\" .\r\n_:node4632 <http://id.ukpds.org/schema/value>
-        \"S\" .\r\n_:node4633 <http://id.ukpds.org/schema/value> \"W\" .\r\n_:node4634
-        <http://id.ukpds.org/schema/value> \"E\" .\r\n_:node4635 <http://id.ukpds.org/schema/value>
-        \"G\" .\r\n_:node4636 <http://id.ukpds.org/schema/value> \"M\" .\r\n_:node4637
-        <http://id.ukpds.org/schema/value> \"T\" .\r\n_:node4638 <http://id.ukpds.org/schema/value>
-        \"R\" .\r\n_:node4639 <http://id.ukpds.org/schema/value> \"C\" .\r\n_:node4640
-        <http://id.ukpds.org/schema/value> \"I\" .\r\n_:node4641 <http://id.ukpds.org/schema/value>
-        \"O\" .\r\n_:node4642 <http://id.ukpds.org/schema/value> \"A\" .\r\n_:node4643
-        <http://id.ukpds.org/schema/value> \"L\" .\r\n_:node4644 <http://id.ukpds.org/schema/value>
-        \"P\" .\r\n_:node4645 <http://id.ukpds.org/schema/value> \"K\" .\r\n_:node4646
-        <http://id.ukpds.org/schema/value> \"V\" .\r\n_:node4647 <http://id.ukpds.org/schema/value>
-        \"Y\" .\r\n_:node4648 <http://id.ukpds.org/schema/value> \"J\" .\r\n_:node4649
-        <http://id.ukpds.org/schema/value> \"U\" .\r\n_:node4650 <http://id.ukpds.org/schema/value>
-        \"Q\" .\r\n"
-    http_version: 
-  recorded_at: Thu, 20 Apr 2017 15:24:32 GMT
-- request:
-    method: get
     uri: http://localhost:3030/constituencies/z
     body:
       encoding: US-ASCII
@@ -82,26 +22,44 @@ http_interactions:
       message: OK
     headers:
       Cache-Control:
-      - no-cache
+      - no-store, must-revalidate, no-cache
       Pragma:
       - no-cache
       Content-Length:
-      - '0'
+      - '1344'
+      Content-Type:
+      - application/n-triples
       Expires:
-      - "-1"
+      - Fri, 19 May 2017 11:23:52 GMT
       Set-Cookie:
-      - ARRAffinity=5869ab2b19db54ab1fc3138b40cd744a8060aae3ae1797c06555ae8e3eaaec5d;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
+      - ARRAffinity=a597504d04a4bb873c98faa2436077bc03bc8fb1fd56c877805eb305ea4ce58e;Path=/;Domain=20170412115159fixedquery.azurewebsites.net
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Thu, 20 Apr 2017 15:23:38 GMT
+      - Fri, 19 May 2017 11:23:52 GMT
     body:
       encoding: UTF-8
-      string: ''
-    http_version: 
-  recorded_at: Thu, 20 Apr 2017 15:24:33 GMT
+      string: "_:node1797234 <http://id.ukpds.org/schema/value> \"B\" .\r\n_:node1797235
+        <http://id.ukpds.org/schema/value> \"A\" .\r\n_:node1797236 <http://id.ukpds.org/schema/value>
+        \"C\" .\r\n_:node1797237 <http://id.ukpds.org/schema/value> \"D\" .\r\n_:node1797238
+        <http://id.ukpds.org/schema/value> \"E\" .\r\n_:node1797239 <http://id.ukpds.org/schema/value>
+        \"G\" .\r\n_:node1797240 <http://id.ukpds.org/schema/value> \"H\" .\r\n_:node1797241
+        <http://id.ukpds.org/schema/value> \"F\" .\r\n_:node1797242 <http://id.ukpds.org/schema/value>
+        \"L\" .\r\n_:node1797243 <http://id.ukpds.org/schema/value> \"K\" .\r\n_:node1797244
+        <http://id.ukpds.org/schema/value> \"I\" .\r\n_:node1797245 <http://id.ukpds.org/schema/value>
+        \"M\" .\r\n_:node1797246 <http://id.ukpds.org/schema/value> \"N\" .\r\n_:node1797247
+        <http://id.ukpds.org/schema/value> \"P\" .\r\n_:node1797248 <http://id.ukpds.org/schema/value>
+        \"R\" .\r\n_:node1797249 <http://id.ukpds.org/schema/value> \"O\" .\r\n_:node1797250
+        <http://id.ukpds.org/schema/value> \"S\" .\r\n_:node1797251 <http://id.ukpds.org/schema/value>
+        \"T\" .\r\n_:node1797252 <http://id.ukpds.org/schema/value> \"W\" .\r\n_:node1797253
+        <http://id.ukpds.org/schema/value> \"U\" .\r\n_:node1797254 <http://id.ukpds.org/schema/value>
+        \"V\" .\r\n_:node1797255 <http://id.ukpds.org/schema/value> \"Y\" .\r\n_:node1797256
+        <http://id.ukpds.org/schema/value> \"J\" .\r\n_:node1797257 <http://id.ukpds.org/schema/value>
+        \"Q\" .\r\n"
+    http_version:
+  recorded_at: Fri, 19 May 2017 11:25:30 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v2/groups/parliament/features/show-dissolution
@@ -116,7 +74,7 @@ http_interactions:
       User-Agent:
       - Bandiera Ruby Client / 3.0.4
       Host:
-      - bandiera:5000
+      - ec2-54-154-199-50.eu-west-1.compute.amazonaws.com
   response:
     status:
       code: 200
@@ -131,8 +89,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"response":true}'
-    http_version: 
-  recorded_at: Mon, 08 May 2017 13:13:19 GMT
+    http_version:
+  recorded_at: Fri, 19 May 2017 11:25:30 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v2/groups/parliament/features/show-register
@@ -147,7 +105,7 @@ http_interactions:
       User-Agent:
       - Bandiera Ruby Client / 3.0.4
       Host:
-      - bandiera:5000
+      - ec2-54-154-199-50.eu-west-1.compute.amazonaws.com
   response:
     status:
       code: 200
@@ -158,11 +116,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Content-Length:
-      - '84'
+      - '17'
     body:
       encoding: UTF-8
-      string: '{"response":false,"warning":"This feature does not exist in the Bandiera
-        database."}'
-    http_version: 
-  recorded_at: Mon, 08 May 2017 13:13:19 GMT
+      string: '{"response":true}'
+    http_version:
+  recorded_at: Fri, 19 May 2017 11:25:31 GMT
 recorded_with: VCR 3.0.3

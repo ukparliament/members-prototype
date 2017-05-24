@@ -18,8 +18,10 @@ class PostcodesController < ApplicationController
 
   def lookup
     raw_postcode = params[:postcode]
-
-    PostcodeHelper.previous_path = params[:previous_path]
+    previous_controller = params[:previous_controller]
+    previous_action = params[:previous_action]
+    previous_path = url_for(controller: previous_controller, action: previous_action)
+    PostcodeHelper.previous_path = previous_path
 
     if raw_postcode.gsub(/\s+/, '').empty?
       flash[:error] = I18n.t('error.postcode_invalid').capitalize

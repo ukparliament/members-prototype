@@ -58,7 +58,7 @@ RSpec.describe PartiesController, vcr: true do
     end
 
     it 'should return the current number of parties' do
-      expect(assigns(:parties).size).to eq(19)
+      expect(assigns(:parties).size).to eq(14)
     end
 
     it 'assigns @parties' do
@@ -99,7 +99,7 @@ RSpec.describe PartiesController, vcr: true do
 
   describe 'GET members' do
     before(:each) do
-      get :members, params: { party_id: 'P6LNyUn4' }
+      get :members, params: { party_id: 'lk3RZ8EB' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -129,7 +129,7 @@ RSpec.describe PartiesController, vcr: true do
 
   describe 'GET current members' do
     before(:each) do
-      get :current_members, params: { party_id: 'P6LNyUn4' }
+      get :current_members, params: { party_id: 'lk3RZ8EB' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -204,7 +204,7 @@ RSpec.describe PartiesController, vcr: true do
 
   describe 'GET members_letters' do
     before(:each) do
-      get :members_letters, params: { party_id: 'P6LNyUn4', letter: 'a' }
+      get :members_letters, params: { party_id: 'lk3RZ8EB', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -224,7 +224,7 @@ RSpec.describe PartiesController, vcr: true do
 
     it 'assigns @people in alphabetical order' do
       expect(assigns(:people)[0].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 1')
-      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 10')
+      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 11')
     end
 
     it 'renders the members_letters template' do
@@ -234,7 +234,7 @@ RSpec.describe PartiesController, vcr: true do
 
   describe 'GET current_members_letters' do
     before(:each) do
-      get :current_members_letters, params: { party_id: 'P6LNyUn4', letter: 'c' }
+      get :current_members_letters, params: { party_id: 'lk3RZ8EB', letter: 'c' }
     end
 
     it 'should have a response with http status ok (200)' do

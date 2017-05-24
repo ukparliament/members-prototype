@@ -75,7 +75,7 @@ RSpec.describe PostcodesController, vcr: true do
   describe 'POST lookup' do
     context 'given a valid postcode' do
       before(:each) do
-        post :lookup, params: { postcode: 'SW1A 2AA' }
+        post :lookup, params: { postcode: 'SW1A 2AA', previous_controller: 'postcodes', previous_action: 'index' }
       end
 
       it 'redirects to show' do
@@ -85,7 +85,7 @@ RSpec.describe PostcodesController, vcr: true do
 
     context 'given a blank postcode' do
       before(:each) do
-        post :lookup, params: { postcode: '', previous_path: postcodes_path }
+        post :lookup, params: { postcode: '', previous_controller: 'postcodes', previous_action: 'index' }
       end
 
       it 'assigns flash[:error]' do

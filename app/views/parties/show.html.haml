@@ -2,7 +2,7 @@
   .container
     %h1= title(@party.name) if @party.name.present?
 
-- if @party.member_count > 0
+- if @party.current?
   %section
     .container
       %ul.list--box
@@ -10,7 +10,7 @@
           %h2= link_to("#{t('current').capitalize} #{t('member_plural')}", party_members_current_path(@party.graph_id))
           %p= "#{t('view_all').capitalize} #{t('current')} #{@party.name} #{t('member_plural')}"
 
-- if @party.member_count == 0
+- else
   %section
     .container
       .highlight--box.highlight--primary

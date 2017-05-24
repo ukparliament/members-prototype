@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start 'rails'
 
 require 'webmock/rspec'
+require 'capybara/rspec'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 

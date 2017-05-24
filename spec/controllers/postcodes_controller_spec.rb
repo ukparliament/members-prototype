@@ -62,6 +62,10 @@ RSpec.describe PostcodesController, vcr: true do
         expect(flash[:error]).to eq("We couldn't find the postcode you entered.")
       end
 
+      it 'assigns flash[:postcode]' do
+        expect(flash[:postcode]).to eq("apple")
+      end
+
       it 'redirects to constituencies_current' do
         expect(response).to redirect_to(constituencies_current_path)
       end

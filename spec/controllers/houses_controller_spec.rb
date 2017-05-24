@@ -170,7 +170,7 @@ RSpec.describe HousesController, vcr: true do
 
   describe "GET current_parties" do
     before(:each) do
-      get :current_parties, params: { house_id: 'KL2k1BGP' }
+      get :current_parties, params: { house_id: 'm1EgVTLj' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -186,9 +186,13 @@ RSpec.describe HousesController, vcr: true do
       end
     end
 
-    it 'assigns @parties in member_count order' do
+    it 'assigns @parties in member_count, then name order' do
       expect(assigns(:parties)[0].name).to eq('partyName - 3')
-      expect(assigns(:parties)[1].name).to eq('partyName - 5')
+      expect(assigns(:parties)[1].name).to eq('partyName - 6')
+      expect(assigns(:parties)[8].name).to eq('partyName - 10')
+      expect(assigns(:parties)[8].member_count).to eq(2)
+      expect(assigns(:parties)[9].name).to eq('partyName - 11')
+      expect(assigns(:parties)[9].member_count).to eq(2)
     end
 
     it 'renders the current_parties template' do

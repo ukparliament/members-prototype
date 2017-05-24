@@ -10,6 +10,7 @@ class PostcodesController < ApplicationController
       @constituency = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
     rescue PostcodeHelper::PostcodeError => error
       flash[:error] = error.message
+      flash[:postcode] = @postcode
 
       redirect_to(PostcodeHelper.previous_path)
     end

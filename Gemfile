@@ -40,6 +40,9 @@ gem 'rack-rewrite'
 # Manually update mail to account for security issues
 gem 'mail', '~> 2.6.6.rc1'
 
+# Use Airbrake for production error reporting
+gem 'airbrake', '~> 6.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/people
+    uri: http://localhost:3030/people/creasy
     body:
       encoding: US-ASCII
       string: ''
@@ -26,11 +26,11 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '2242394'
+      - '401'
       Content-Type:
       - application/n-triples
       Expires:
-      - Fri, 26 May 2017 09:41:03 GMT
+      - Thu, 25 May 2017 11:19:46 GMT
       Set-Cookie:
       - ARRAffinity=2341b754ef97daa69db43f3b1555b5c9df8f30bc228f0c2a8a16f7cda08e30fa;Path=/;Domain=20170418155059fixedquery.azurewebsites.net
       X-Aspnet-Version:
@@ -38,16 +38,14 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 26 May 2017 09:41:03 GMT
+      - Thu, 25 May 2017 11:19:45 GMT
     body:
       encoding: UTF-8
-      string: "<http://id.ukpds.org/kbJkO3J9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
-        <http://id.ukpds.org/schema/Person> .\r\n<http://id.ukpds.org/kbJkO3J9> <http://id.ukpds.org/schema/personGivenName>
-        \"personGivenName - 1\" .\r\n<http://id.ukpds.org/kbJkO3J9> <http://id.ukpds.org/schema/personFamilyName>
-        \"personFamilyName - 1\" .\r\n<http://id.ukpds.org/kbJkO3J9> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF>
-        \"F31CBD81AD8343898B49DC65743F0BDF - 1\" .\r\n<http://id.ukpds.org/kbJkO3J9>
-        <http://example.com/A5EE13ABE03C4D3A8F1A274F57097B6C> \"A5EE13ABE03C4D3A8F1A274F57097B6C
-        - 1\" .\r\n"
-    http_version:
-  recorded_at: Fri, 26 May 2017 09:41:08 GMT
+      string: "<http://id.ukpds.org/LzzPGdFd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Person> .\r\n<http://id.ukpds.org/LzzPGdFd> <http://id.ukpds.org/schema/personGivenName>
+        \"personGivenName - 1\" .\r\n<http://id.ukpds.org/LzzPGdFd> <http://id.ukpds.org/schema/personFamilyName>
+        \"personFamilyName - 1\" .\r\n<http://id.ukpds.org/LzzPGdFd> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF>
+        \"F31CBD81AD8343898B49DC65743F0BDF - 1\" .\r\n"
+    http_version: 
+  recorded_at: Thu, 25 May 2017 11:19:46 GMT
 recorded_with: VCR 3.0.3

@@ -118,4 +118,10 @@ RSpec.configure do |config|
     HousesHelper.instance_variable_set(:@commons_id, nil)
     HousesHelper.instance_variable_set(:@lords_id, nil)
   end
+
+  #Stubs Bandiera::Client methods enabled? and get_features_for_group to clean up logs
+  #and streamline cassettes
+  config.before(:each) do
+    allow(BANDIERA_CLIENT).to receive(:enabled?).and_return(false)
+  end
 end

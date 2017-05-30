@@ -59,7 +59,7 @@ http_interactions:
         <http://id.ukpds.org/schema/value> \"V\" .\r\n_:node6174 <http://id.ukpds.org/schema/value>
         \"I\" .\r\n_:node6175 <http://id.ukpds.org/schema/value> \"Z\" .\r\n_:node6176
         <http://id.ukpds.org/schema/value> \"\\u00D6\" .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Fri, 21 Apr 2017 09:32:58 GMT
 - request:
     method: get
@@ -91,6 +91,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"response":false,"warning":"This group does not exist in the Bandiera
         database."}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 08 May 2017 11:34:25 GMT
 recorded_with: VCR 3.0.3

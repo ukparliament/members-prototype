@@ -70,6 +70,26 @@ RSpec.describe PostcodesController, vcr: true do
         expect(response).to redirect_to(constituencies_current_path)
       end
     end
+
+    context 'given a xss search' do
+      before(:each) do
+        PostcodeHelper.previous_path = constituencies_current_path
+
+        get :show, params: { postcode: '<script>alert(document.cookie)</script>' }
+      end
+
+      it 'assigns xss flash[:error]' do
+        expect(flash[:error]).to eq("We couldn't find the postcode you entered.")
+      end
+
+      it 'assigns xss flash[:postcode]' do
+        expect(flash[:postcode]).to eq('alert(document.cookie)')
+      end
+
+      it 'redirects xss to constituencies_current' do
+        expect(response).to redirect_to(constituencies_current_path)
+      end
+    end
   end
 
   describe 'POST lookup' do

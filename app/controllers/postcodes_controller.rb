@@ -1,8 +1,11 @@
+# Require gem to sanitize html to ensure safe postcode search
+require 'sanitize'
+
 class PostcodesController < ApplicationController
   def index; end
 
   def show
-    @postcode = PostcodeHelper.unhyphenate(params[:postcode])
+    @postcode = PostcodeHelper.unhyphenate(Sanitize.fragment(params[:postcode], Sanitize::Config::RELAXED))
 
     begin
       response = PostcodeHelper.lookup(@postcode)

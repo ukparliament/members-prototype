@@ -30,8 +30,13 @@ class ApplicationController < ActionController::Base
     @enable_navigation_main = false
   end
 
+  # Rescues from a Parliament::ClientError and raises an ActionController::RoutingError
+  rescue_from Parliament::ClientError do |error|
+    raise ActionController::RoutingError, error.message
+  end
+
   # Rescues from a Parliament::NoContentResponseError and raises an ActionController::RoutingError
-  # rescue_from Parliament::NoContentResponseError do |error|
-  #   raise ActionController::RoutingError, error.message
-  # end
+  rescue_from Parliament::NoContentResponseError do |error|
+    raise ActionController::RoutingError, error.message
+  end
 end

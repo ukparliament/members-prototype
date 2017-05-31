@@ -17,9 +17,13 @@ gem 'parliament-ntriple', '~> 0.1', require: false
 
 # Parliament Grom Decorators decorates Grom nodes
 gem 'parliament-grom-decorators', '~> 0.1'
+# gem 'parliament-grom-decorators', path: '../parliament-grom-decorators'
+
+# Client for Bandiera feature flagging
+gem 'bandiera-client'
 
 # Pugin is the front-end component library used by Parliament
-gem 'pugin', '~> 0.6'
+gem 'pugin', '~> 0.7'
 
 # HAML is used for front-end template rendering
 gem 'haml', '~> 5.0'
@@ -30,9 +34,6 @@ gem 'tzinfo-data'
 # Use Puma as our web server
 gem 'puma'
 gem 'rack-timeout'
-
-# Client for Bandiera feature flagging
-gem 'bandiera-client'
 
 # Gem to remove trailing slashes
 gem 'rack-rewrite'

@@ -26,10 +26,6 @@ RSpec.describe 'houses/current_parties', vcr: true do
   end
 
   context 'links' do
-    it 'will render house_parties_path' do
-      expect(rendered).to have_link('View all current and former parties and groups', href: house_parties_path('KL2k1BGP'))
-    end
-
     it 'will render tab link to house_parties_current_path' do
       expect(rendered).to have_link('Lords', href: house_parties_current_path('m1EgVTLj'))
     end

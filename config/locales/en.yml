@@ -99,7 +99,7 @@ en:
       contact: 'contact'
       membership_history: 'membership history'
       election_history: 'election history'
-      biography: 'biography'
+      roles: 'roles'
       check_mp: 'Check if %{name} is your MP'
       correct_mp: '%{name} is the MP for the postcode entered.'
       incorrect_mp: '%{name} is not the MP for the postcode entered.  Your MP is '

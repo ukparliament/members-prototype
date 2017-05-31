@@ -64,7 +64,7 @@
             = "#{link_to(@postcode_constituency.members.first.display_name, person_path(@postcode_constituency.members.first.graph_id))}.".html_safe
       - elsif @person.statuses[:house_membership_status].include?('Current MP')
         %h3= t('.check_mp', name: @person.display_name)
-        
+
         = render partial: 'postcodes/postcode_lookup', locals: { path: people_postcode_lookup_path }
 
       - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Member of the House of Lords')
@@ -93,7 +93,7 @@
 %section
   .container
     - if @house_incumbencies.present? || @seat_incumbencies.present?
-      %h2= t('.biography').capitalize
+      %h2= t('.roles').capitalize
       - if @house_incumbencies.present?
         %h3= "#{t('member').capitalize} #{t('of_the')} #{t('house_of_lords')}"
         %ol.list--pipe

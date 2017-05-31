@@ -48,10 +48,6 @@ RSpec.describe 'houses/party', vcr: true do
       render
     end
 
-    it 'will show no party members' do
-      expect(rendered).to match(/There are currently no members of this party in this House./)
-    end
-
     context 'link' do
       it 'will render house_parties_party_members_path' do
         expect(rendered).to have_link('Current and former Conservative MPs', href: house_parties_party_members_path('KL2k1BGP', 'jF43Jxoc'))

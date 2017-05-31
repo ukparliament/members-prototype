@@ -1,5 +1,6 @@
 .section--primary
   .container
+
     %h1= title("#{@party.name} - #{t('.title', current: t('current').capitalize, member_type: @current_person_type)}")
 
     = render partial: 'pugin/components/navigation-letter', locals: { route_symbol: :house_parties_party_members_current_a_z_letter_path, primary_id: @house.graph_id, secondary_id: @party.graph_id}
@@ -7,8 +8,9 @@
     - if HousesHelper.commons?(@house)
       = render partial: 'shared/dissolution_message'
 
-%section#content
-  .container
-    = render partial: 'pugin/cards/person-list', locals: { people: @people }
+- unless @letters.empty?
 
-    %p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('member_plural')}", house_parties_party_members_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
+  %section#content
+    .container
+
+      = render partial: 'pugin/cards/person-list', locals: { people: @people }

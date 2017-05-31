@@ -271,10 +271,10 @@ en:
         title: "What's on our test website"
       members_info:
         title: 'Members Information'
-        current_mps: 'View all current members of the House of Commons'
-        current_lords: 'View all current members of the House of Lords'
-        current_constituencies: 'Find current MPs by the area they represent'
-        current_parties: 'Find current MPs and Lords by their party or group'
+        current_mps: 'View all current members of the House of Commons.'
+        current_lords: 'View all current members of the House of Lords.'
+        current_constituencies: 'Find current MPs by the area they represent.'
+        current_parties: 'Find current MPs and Lords by their party or group.'
       latest_members:
         blog: 'Read the latest Members service %{link}.'
         blog_link: 'blog post'

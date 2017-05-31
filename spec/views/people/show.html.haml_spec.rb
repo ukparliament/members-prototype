@@ -176,12 +176,12 @@ RSpec.describe 'people/show', vcr: true do
             display_name: 'Test Display Name',
             full_title:   'Test Title',
             full_name:    'Test Full Name',
-            statuses:     { house_membership_status: ['Lord', 'Test Membership'] }))
+            statuses:     { house_membership_status: ['Member of the House of Lords', 'Test Membership'] }))
         render
       end
 
       it 'will render statuses' do
-        expect(rendered).to match(/Lord and Test Membership/)
+        expect(rendered).to match(/Member of the House of Lords and test Membership/)
       end
 
       it 'will render link to house_members_current_a_z_letter_path' do
@@ -195,13 +195,17 @@ RSpec.describe 'people/show', vcr: true do
               display_name: 'Test Display Name',
               full_title:   'Test Title',
               full_name:    'Test Full Name',
-              statuses:     { house_membership_status: ['Former MP', 'Lord'] },
+              statuses:     { house_membership_status: ['Former MP', 'Member of the House of Lords'] },
               graph_id:     '7TX8ySd4'))
           render
         end
 
         it 'will render statuses' do
-          expect(rendered).to match(/Former MP and Lord/)
+          expect(rendered).to match(/Former MP and member of the House of Lords/)
+        end
+
+        it 'will only keep the first house_membership_status capitalized' do
+          expect(rendered).not_to match(/Former MP and Member of the House of Lords/)
         end
 
         it 'will render link to house_members_current_a_z_letter_path' do
@@ -267,7 +271,7 @@ RSpec.describe 'people/show', vcr: true do
           end
 
           it 'will render statuses' do
-            expect(rendered).to match(/Former MP and Former Lord/)
+            expect(rendered).to match(/Former MP and former Lord/)
           end
 
           it 'will render link to house_members_a_z_letter_path for MPs' do

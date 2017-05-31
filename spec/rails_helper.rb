@@ -123,5 +123,7 @@ RSpec.configure do |config|
   #and streamline cassettes
   config.before(:each) do
     allow(BANDIERA_CLIENT).to receive(:enabled?).and_return(false)
+
+    allow(Pugin::BANDIERA_CLIENT).to receive(:get_features_for_group).and_return({})
   end
 end

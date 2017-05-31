@@ -26,7 +26,7 @@ RSpec.describe 'constituencies/current', vcr: true do
     end
   end
 
-  it 'will render constituencies/current_constituencies' do
-    expect(response).to render_template('constituencies/_current_constituencies')
+  it 'will render pugin/elements/_list' do
+      expect(response).to render_template('pugin/elements/_list')
   end
 end

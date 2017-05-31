@@ -280,8 +280,8 @@ en:
         blog_link: 'blog post'
       follow_progress:
         title: 'Follow our progress'
-        blog: 'Follow all %{link}.'
-        blog_link: 'new website developments on our blog'
+        blog: 'Follow all new website developments on %{link}.'
+        blog_link: 'our blog'
   # meta information translations
   meta:
     index:

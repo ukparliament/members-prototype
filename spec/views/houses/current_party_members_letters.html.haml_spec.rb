@@ -36,10 +36,4 @@ RSpec.describe 'houses/current_party_members_letters', vcr: true do
       expect(response).to render_template(partial: 'shared/_dissolution_message')
     end
   end
-
-  context 'links' do
-    it 'will render house_parties_party_members_a_z_letter_path' do
-      expect(rendered).to have_link('View all current and former members', href: house_parties_party_members_a_z_letter_path('KL2k1BGP', 'jF43Jxoc', 'a'))
-    end
-  end
 end

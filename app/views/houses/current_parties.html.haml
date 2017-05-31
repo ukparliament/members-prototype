@@ -2,6 +2,7 @@
 
 #content.section--primary
   .container
+
     %h1= "#{t('current').capitalize} #{HousesHelper.commons?(@house) ? t('party_plural') : t('parties_and_groups')}"
 
 %section
@@ -25,5 +26,3 @@
 
     %ul.list--box
       = render partial: 'houses/party', collection: @parties
-
-    %p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('parties_and_groups')}", house_parties_path(@house.graph_id))

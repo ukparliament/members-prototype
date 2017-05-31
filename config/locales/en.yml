@@ -276,7 +276,7 @@ en:
         current_constituencies: 'Find current MPs by the area they represent'
         current_parties: 'Find current MPs and Lords by their party or group'
       latest_members:
-        blog: 'Read the latest Members service %{link}.'
+        blog: 'Read the latest UK Parliament test website %{link}.'
         blog_link: 'blog post'
       follow_progress:
         title: 'Follow our progress'

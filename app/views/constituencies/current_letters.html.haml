@@ -8,4 +8,5 @@
 
 %section#content
   .container
-    = render 'constituencies/current_constituencies'
+    = render partial: "pugin/elements/list", locals: {item_type: "constituencies", data: @constituencies}
+

@@ -119,7 +119,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
       end
 
       it 'will render current MP' do
-        expect(rendered).to match(/Current MP/)
+        expect(rendered).to match(/MP/)
         expect(rendered).to match(/Test Display Name/)
       end
 

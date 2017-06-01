@@ -3,29 +3,22 @@
   = "#{t('from')} #{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
   = @constituency.end_date.nil? ? t('to_present') : " #{t('to')} #{l(@constituency.end_date, format: :default)}"
 
-- if !@current_incumbency.nil?
-  %h2= "#{t('current').capitalize} #{t('mp')}"
+- no_mp = @current_incumbency.nil?
+- no_mp_because_of_dissolution = (no_mp && FlagHelper.dissolution_singular?)
+
+%h2= "#{t('mp')}"
+- if no_mp_because_of_dissolution
+  = render partial: 'shared/dissolution_singular'
+- elsif no_mp
+  .highlight--box.highlight--caution__soft
+    %p
+      = t('no_content.empty_list.no_mp')
+- else
   %ul.list--pipe
     %li
       %h3= link_to @current_incumbency.member.display_name, person_path(@current_incumbency.member.graph_id)
       %p
         = "#{l(@current_incumbency.start_date, format: :default)} #{t('to_present')}" unless @current_incumbency.start_date.nil?
-
-- if @constituency.current?
-  - if @postcode
-    - if @postcode_constituency.correct?
-      .highlight--box.highlight--success__soft
-        %p= "#{t('.correct_constituency').capitalize} #{@postcode.upcase}"
-    - else
-      .highlight--box.highlight--warning__soft
-        %p
-          = t('.incorrect_constituency').capitalize
-          = "#{link_to(@postcode_constituency.name, constituency_path(@postcode_constituency.graph_id))} #{t('.constituency_for_postcode')}".html_safe
-          = @postcode.upcase
-  - else
-    %h2= t('.check_constituency').capitalize
-
-    = render partial: 'postcodes/postcode_lookup', locals: { path: constituencies_postcode_lookup_path }
 
 - if @seat_incumbencies.size > 0
   %h2= "#{t('former').capitalize} #{t('mp_plural')}"

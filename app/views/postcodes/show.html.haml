@@ -13,7 +13,7 @@
     %h2= t('mp')
     - if @constituency.members.empty?
       .highlight--box.highlight--caution__soft
-        %p= t('.no_mp')
+        %p= t('shared.dissolution_singular.description_text')
     - else
       %ul.list--box
         %li

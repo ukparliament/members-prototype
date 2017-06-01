@@ -249,12 +249,15 @@ en:
         description: "Sorry there are no results for '%{letter}'"
       parties:
         description: "Sorry there are no results for '%{letter}'"
+      no_mp: 'There is currently no MP for your constituency.'
   # shared partial translations
   shared:
     dissolution_message:
-      description_text: 'Parliament has been dissolved before the general election on 8 June. There are currently no MPs.'
+      description_text: 'There are currently no MPs because Parliament has been dissolved before the general election on 8 June.'
       description_link: 'Find your constituency'
       description_text_2: 'to find your constituency and its former MPs.'
+    dissolution_singular:
+      description_text: 'There are currently no MPs because Parliament has been dissolved before the general election on 8 June.'
   # homepage translations
   home:
     index:

@@ -2,17 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'constituencies/_constituency', vcr: true do
   context 'constituency?' do
-    context 'current' do
-      before do
-        assign(:constituency, double(:constituency, name: 'Aberavon', graph_id: 'MtbjxRrE', start_date: Time.zone.now - 1.month, end_date: nil, current?: true))
-        assign(:seat_incumbencies, [double(:seat_incumbencies, start_date: Time.zone.now - 1.month, end_date: nil, current?: true)])
-        render
-      end
-
-      it 'will render current name' do
-        expect(rendered).to match(/Current constituency/)
-      end
-    end
 
     context 'not current' do
       before do
@@ -22,7 +11,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
       end
 
       it 'will render former name' do
-        expect(rendered).to match(/Former constituency/)
+        expect(rendered).to match(/Constituency/)
       end
     end
   end
@@ -45,7 +34,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
 
     context 'is not nil' do
       before do
-        assign(:constituency, double(:constituency, name: 'Aberavon', graph_id: 'MtbjxRrE', start_date: Time.zone.now - 1.month, end_date: nil, current?: true))
+        assign(:constituency, double(:constituency, name: 'Aberavon', graph_id: 'MtbjxRrE', start_date: Time.zone.now - 1.month, end_date: nil, current?: false))
         render
       end
 
@@ -60,23 +49,6 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
       assign(:seat_incumbencies, [double(:seat_incumbencies, start_date: Time.zone.now - 1.month, end_date: nil, current?: true)])
     end
 
-    context 'is nil' do
-      before do
-        assign(:constituency, double(:constituency,
-          name:       'Aberavon',
-          graph_id:   'MtbjxRrE',
-          start_date: Time.zone.now - 1.month,
-          end_date:   nil,
-          current?:   true))
-
-        render
-      end
-
-      it 'will not render the end date' do
-        expect(rendered).to match(/to present/)
-      end
-    end
-
     context 'is not nil' do
       before do
         assign(:constituency, double(:constituency,
@@ -84,7 +56,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
           graph_id:   'MtbjxRrE',
           start_date: Time.zone.now - 1.month,
           end_date:   Time.zone.now - 1.day,
-          current?:   true))
+          current?:   false))
 
         render
       end
@@ -173,14 +145,26 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
   context 'constituency is not empty' do
     before do
       assign(:seat_incumbencies, [double(:seat_incumbencies, start_date: Time.zone.now - 1.month, end_date: nil, current?: true)])
-      assign(:constituency, double(:constituency, name: 'Aberavon', graph_id: 'MtbjxRrE', current?: true, start_date: Time.zone.now - 1.month, end_date: nil))
+      assign(:constituency, double(:constituency, name: 'Aberavon', graph_id: 'MtbjxRrE', current?: false, start_date: Time.zone.now - 1.month, end_date: Time.now - 1.day))
       render
     end
 
     it 'will list constituency' do
-      expect(rendered).to match(/Current constituency/)
+      expect(rendered).to match(/Constituency/)
       expect(rendered).to match("from #{(Time.zone.now - 1.month).strftime('%-e %b %Y')}")
-      expect(rendered).to match(/to present/)
+      expect(rendered).to match("to #{(Time.zone.now - 1.day).strftime('%-e %b %Y')}")
+    end
+  end
+
+  context 'current constituency' do
+    before do
+      assign(:constituency, double(:constituency, name: 'Aberavon', graph_id: 'MtbjxRrE', current?: true, start_date: Time.zone.now - 1.month, end_date: Time.now - 1.day))
+      assign(:seat_incumbencies, [double(:seat_incumbencies, start_date: Time.zone.now - 1.month, end_date: nil, current?: true)])
+      render
+    end
+
+    it 'will not render the dates for a current constituency' do
+      expect(rendered).not_to match(/Current Constituency/)
     end
   end
 end

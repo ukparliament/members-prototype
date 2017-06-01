@@ -7,22 +7,23 @@
 
 %section
   .container
-    .link__tab
+
+    %ul.list--tab
       - if HousesHelper.commons?(@house)
-        .link__tab--item.active
-          %p= t('commons')
+        %li.active
+          = t('commons')
       - else
-        .link__tab--item
+        %li
           = link_to(t('commons'),house_parties_current_path(HousesHelper.commons_id))
       - if HousesHelper.lords?(@house)
-        .link__tab--item.active
-          %p= t('lords')
+        %li.active
+          = t('lords')
       - else
-        .link__tab--item
+        %li
           = link_to(t('lords'),house_parties_current_path(HousesHelper.lords_id))
 
     - if HousesHelper.commons?(@house)
       = render partial: 'shared/dissolution_message'
 
-    %ul.list--box
+    %ol.list--box
       = render partial: 'houses/party', collection: @parties

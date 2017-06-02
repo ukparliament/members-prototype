@@ -98,7 +98,7 @@ GEM
     link_header (0.0.8)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    macmillan-utils (1.0.42)
+    macmillan-utils (1.0.43)
       activesupport (>= 3.2.0)
       codeclimate-test-reporter
       colorize
@@ -123,7 +123,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
-    nokogumbo (1.4.11)
+    nokogumbo (1.4.12)
       nokogiri
     parallel (1.11.2)
     parallel_tests (2.14.1)
@@ -140,8 +140,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.5)
-    pugin (0.7.0)
-    puma (3.8.2)
+    pugin (0.7.1)
+    puma (3.9.0)
     rack (2.0.3)
     rack-rewrite (1.5.1)
     rack-test (0.6.3)

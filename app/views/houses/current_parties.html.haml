@@ -2,28 +2,31 @@
 
 #content.section--primary
   .container
+
     %h1= "#{t('current').capitalize} #{HousesHelper.commons?(@house) ? t('party_plural') : t('parties_and_groups')}"
 
 %section
   .container
-    .link__tab
+
+    %ul.list--tab
       - if HousesHelper.commons?(@house)
-        .link__tab--item.active
-          %p= t('commons')
+        %li.active
+          = t('commons')
       - else
-        .link__tab--item
+        %li
           = link_to(t('commons'),house_parties_current_path(HousesHelper.commons_id))
       - if HousesHelper.lords?(@house)
-        .link__tab--item.active
-          %p= t('lords')
+        %li.active
+          = t('lords')
       - else
-        .link__tab--item
+        %li
           = link_to(t('lords'),house_parties_current_path(HousesHelper.lords_id))
 
     - if HousesHelper.commons?(@house)
-      = render partial: 'shared/dissolution_message'
+      - if FlagHelper.dissolution?
+        = render partial: 'shared/dissolution_message'
+      - elsif FlagHelper.election?
+        = render partial: 'shared/election_message'
 
-    %ul.list--box
+    %ol.list--box
       = render partial: 'houses/party', collection: @parties
-
-    %p= link_to("#{t('view_all').capitalize} #{t('current_and_former')} #{t('parties_and_groups')}", house_parties_path(@house.graph_id))

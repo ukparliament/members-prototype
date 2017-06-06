@@ -570,4 +570,11 @@ RSpec.describe PeopleController, vcr: true do
       end
     end
   end
+
+  # Test for ApplicationController Parliament::ClientError handling
+  describe 'rescue_from Parliament::ClientError' do
+    it 'raises an ActionController::RoutingError' do
+      expect{ get :show, params: { person_id: '12345678' } }.to raise_error(ActionController::RoutingError)
+    end
+  end
 end

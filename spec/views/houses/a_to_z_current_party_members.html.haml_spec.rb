@@ -11,7 +11,7 @@ RSpec.describe 'houses/a_to_z_current_party_members', vcr: true do
   it 'will render pugin/components/_navigation-letter' do
     expect(response).to render_template(
       partial: 'pugin/components/_navigation-letter',
-      locals:  { primary_id: 'KL2k1BGP', secondary_id: 'pPvA9vKP' }
+      locals:  { route_args: ['KL2k1BGP', 'pPvA9vKP'] }
     )
   end
 end

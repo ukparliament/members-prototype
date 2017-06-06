@@ -8,6 +8,6 @@ RSpec.describe 'houses/a_to_z_current_members', vcr: true do
   end
 
   it 'will render pugin/components/_navigation-letter' do
-    expect(response).to render_template(partial: 'pugin/components/_navigation-letter', locals: { primary_id: 'KL2k1BGP' })
+    expect(response).to render_template(partial: 'pugin/components/_navigation-letter', locals: { route_args: ['KL2k1BGP'] })
   end
 end

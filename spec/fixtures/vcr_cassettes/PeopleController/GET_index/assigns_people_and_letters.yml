@@ -95,10 +95,9 @@ http_interactions:
         \"1992-04-09\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<http://id.ukpds.org/BNZIphuE>
         <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/6fhXm0Wb>
         .\r\n<http://id.ukpds.org/6fhXm0Wb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
-        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n_:node2665619
-        <http://id.ukpds.org/schema/value> \"B\" .\r\n_:node2665620 <http://id.ukpds.org/schema/value>
-        \"M\" .\r\n"
-    http_version:
+        <http://id.ukpds.org/schema/SeatIncumbency> .\r\n_:node2665619 <http://id.ukpds.org/schema/value>
+        \"B\" .\r\n_:node2665620 <http://id.ukpds.org/schema/value> \"M\" .\r\n"
+    http_version: 
   recorded_at: Fri, 19 May 2017 13:02:54 GMT
 - request:
     method: get
@@ -129,6 +128,54 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"response":true}'
-    http_version:
+    http_version: 
   recorded_at: Fri, 19 May 2017 12:22:16 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/houses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, must-revalidate, no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '420'
+      Content-Type:
+      - application/n-triples
+      Expires:
+      - Fri, 02 Jun 2017 10:41:55 GMT
+      Set-Cookie:
+      - ARRAffinity=b33f2cf26cbb655976ea24d5d2dea6f44e1f8349a0c5eef4404e4762da5fe1ce;Path=/;Domain=20170412115159fixedquery.azurewebsites.net
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 02 Jun 2017 10:41:55 GMT
+    body:
+      encoding: UTF-8
+      string: "<http://id.ukpds.org/cqIATgUK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/House> .\r\n<http://id.ukpds.org/cqIATgUK> <http://id.ukpds.org/schema/houseName>
+        \"houseName - 1\" .\r\n<http://id.ukpds.org/mG2ur5TF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/House> .\r\n<http://id.ukpds.org/mG2ur5TF> <http://id.ukpds.org/schema/houseName>
+        \"houseName - 2\" .\r\n"
+    http_version: 
+  recorded_at: Fri, 02 Jun 2017 10:41:57 GMT
 recorded_with: VCR 3.0.3

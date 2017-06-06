@@ -1,0 +1,8 @@
+- if FlagHelper.election? || FlagHelper.post_election?
+  .highlight--box.highlight--caution__soft
+    %p
+      - if FlagHelper.election?
+        = t('shared.election_message.description_text')
+        = "#{(link_to t('shared.dissolution_message.description_link'), postcodes_path)}.".html_safe
+      - else
+        = t('shared.post_election_message.description_text')

@@ -39,7 +39,8 @@ class ConstituenciesController < ApplicationController
       'http://id.ukpds.org/schema/ConstituencyGroup',
       'http://id.ukpds.org/schema/SeatIncumbency'
     )
-
+    # Instance variable for single MP pages
+    @single_mp = true
     @constituency = @constituency.first
     @seat_incumbencies = @seat_incumbencies.reverse_sort_by(:start_date)
 

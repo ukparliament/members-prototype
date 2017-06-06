@@ -8,12 +8,6 @@
 
 %section
   .container
-    %h2= t('.feedback.title')
-    %p= t('.feedback.provide', link: link_to(t('.feedback.provide_link'), 'http://www.smartsurvey.co.uk/s/ukparliament-beta-website-feedback/', target: '_blank', title: t('open_new_window'))).html_safe
-
-
-%section
-  .container
     %h2= t('.whats_on.title')
     %h3= t('.members_info.title')
     %ol.list--box
@@ -32,7 +26,16 @@
     .highlight--box.highlight--primary__soft
       %p= t('.latest_members.blog', link: link_to(t('.latest_members.blog_link'), 'https://pds.blog.parliament.uk/2017/03/27/uk-parliament-website-public-beta/')).html_safe
 
+    %h3= t('search').capitalize
+    %ol.list--box
+      %li
+        %h4= link_to t('search').capitalize, '/search'
+        %p= t('find_results')
+
 %section
   .container
+    %h2= t('.feedback.title')
+    %p= t('.feedback.provide', link: link_to(t('.feedback.provide_link'), 'http://www.smartsurvey.co.uk/s/ukparliament-beta-website-feedback/', target: '_blank', title: t('open_new_window'))).html_safe
+
     %h2= t('.follow_progress.title')
     %p= t('.follow_progress.blog', link: link_to(t('.follow_progress.blog_link'), 'https://pds.blog.parliament.uk/category/parliament-uk/')).html_safe

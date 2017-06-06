@@ -12,8 +12,12 @@
 
     %h2= t('mp')
     - if @constituency.members.empty?
-      .highlight--box.highlight--caution__soft
-        %p= t('.no_mp')
+      - if FlagHelper.dissolution?
+        = render partial: 'shared/dissolution_message'
+      - else
+        .highlight--box.highlight--caution__soft
+          %p
+            = t('no_content.empty_list.no_mp')
     - else
       %ul.list--box
         %li

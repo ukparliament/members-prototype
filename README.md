@@ -91,7 +91,7 @@ The downside to running `make test` is speed, virtually every time, we will be r
 To get around this, whilst developing we can first connect to the running application and run tests within it. The following commands assume you have the application running via `docker-compose up`:
 ```bash
 docker-compose exec app /bin/sh
-bundle exec rspec
+bundle exec rake parallel:spec
 ```
 
 This will first open an sh terminal within the running application server, then execute the tests right away without the need to re-build the image.

@@ -4,8 +4,12 @@
 
     = render partial: 'pugin/components/navigation-letter', locals: { route_symbol: :constituencies_current_a_z_letter_path }
 
-    = render partial: 'shared/dissolution_message'
+    - if FlagHelper.dissolution?
+      = render partial: 'shared/dissolution_message'
+    - elsif FlagHelper.election?
+      = render partial: 'shared/election_message'
 
 %section#content
   .container
-    = render 'constituencies/current_constituencies'
+    = render partial: "pugin/elements/list", locals: {item_type: "constituencies", data: @constituencies}
+

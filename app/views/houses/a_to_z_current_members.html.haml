@@ -1,4 +1,4 @@
 #content.section--primary
   .container
-    = render partial: 'pugin/components/navigation-letter', locals: { route_symbol: :house_members_current_a_z_letter_path, primary_id: @house_id }
+    = render partial: 'pugin/components/navigation-letter', locals: { route_symbol: :house_members_current_a_z_letter_path, route_args: [@house_id]}
 

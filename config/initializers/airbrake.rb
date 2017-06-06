@@ -58,6 +58,15 @@ if ENV['AIRBRAKE_PROJECT_ID'].present? && ENV['AIRBRAKE_PROJECT_KEY'].present?
   # https://github.com/airbrake/airbrake#requestbodyfilter
   # Airbrake.add_filter(Airbrake::Rack::RequestBodyFilter.new)
 
+  # A filter method that chooses which errors to ignore before sending them to
+  # Airbrake. This can be based on type, message, file, region or any other part
+  # of the error's JSON
+  Airbrake.add_filter do |notice|
+    if notice[:errors].any? { |error| error[:type] == 'ActionController::RoutingError' }
+      notice.ignore!
+    end
+  end
+
   # If you want to convert your log messages to Airbrake errors, we offer an
   # integration with the Logger class from stdlib.
   # https://github.com/airbrake/airbrake#logger

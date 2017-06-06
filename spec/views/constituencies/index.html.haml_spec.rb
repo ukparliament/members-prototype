@@ -19,8 +19,8 @@ RSpec.describe 'constituencies/index', vcr: true do
       expect(response).to render_template(partial: 'pugin/components/_navigation-letter')
     end
 
-    it 'will render constituencies/current_constituencies' do
-      expect(response).to render_template('constituencies/_constituencies')
+    it 'will render pugin/elements/_list' do
+      expect(response).to render_template('pugin/elements/_list')
     end
   end
 end

@@ -17,6 +17,8 @@ class PostcodesController < ApplicationController
 
       redirect_to(PostcodeHelper.previous_path)
     end
+    # Instance variable for single MP pages
+    @single_mp = true
   end
 
   def lookup

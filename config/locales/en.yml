@@ -63,6 +63,9 @@ en:
   from: 'from'
   of_the: 'of the'
   in_the: 'in the'
+  search: 'search'
+  find_results: 'Find results from current parliament.uk websites.'
+  does_not_search_beta: "This search doesn't search beta.parliament.uk"
   open_new_window: "website opens in a new window"
   # global a-z navigation translations
   a_to_z:
@@ -99,7 +102,7 @@ en:
       contact: 'contact'
       membership_history: 'membership history'
       election_history: 'election history'
-      biography: 'biography'
+      roles: 'roles'
       check_mp: 'Check if %{name} is your MP'
       correct_mp: '%{name} is the MP for the postcode entered.'
       incorrect_mp: '%{name} is not the MP for the postcode entered.  Your MP is '
@@ -249,12 +252,19 @@ en:
         description: "Sorry there are no results for '%{letter}'"
       parties:
         description: "Sorry there are no results for '%{letter}'"
+      no_mp: 'There is currently no MP for your constituency.'
   # shared partial translations
   shared:
     dissolution_message:
-      description_text: 'Parliament has been dissolved before the general election on 8 June. There are currently no MPs.'
+      description_text: 'There are currently no MPs because Parliament has been dissolved before the general election on 8 June.'
       description_link: 'Find your constituency'
       description_text_2: 'to find your constituency and its former MPs.'
+    dissolution_singular:
+      description_text: 'There are currently no MPs because Parliament has been dissolved before the general election on 8 June.'
+    election_message:
+      description_text: 'There are currently no MPs. Vote today in the general election to choose yours.'
+    post_election_message:
+      description_text: "As new MPs are announced following the general election, we're updating our pages."
   # homepage translations
   home:
     index:
@@ -270,18 +280,18 @@ en:
       whats_on:
         title: "What's on our test website"
       members_info:
-        title: 'Members Information'
-        current_mps: 'View all current members of the House of Commons'
-        current_lords: 'View all current members of the House of Lords'
-        current_constituencies: 'Find current MPs by the area they represent'
-        current_parties: 'Find current MPs and Lords by their party or group'
+        title: 'MPs and Lords information'
+        current_mps: 'View all current members of the House of Commons.'
+        current_lords: 'View all current members of the House of Lords.'
+        current_constituencies: 'Find current MPs by the area they represent.'
+        current_parties: 'Find current MPs and Lords by their party or group.'
       latest_members:
-        blog: 'Read the latest Members service %{link}.'
-        blog_link: 'blog post'
+        blog: 'Read the %{link}.'
+        blog_link: 'MPs and Lords information blog post'
       follow_progress:
         title: 'Follow our progress'
-        blog: 'Follow all %{link}.'
-        blog_link: 'new website developments on our blog'
+        blog: 'Follow all new website developments on %{link}.'
+        blog_link: 'our blog'
   # meta information translations
   meta:
     index:

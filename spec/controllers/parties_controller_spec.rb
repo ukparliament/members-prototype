@@ -345,4 +345,11 @@ RSpec.describe PartiesController, vcr: true do
       end
     end
   end
+
+  # Test for ApplicationController Parliament::NoContentResponseError handling
+  describe 'rescue_from Parliament::ClientError' do
+    it 'raises an ActionController::RoutingError' do
+      expect{ get :members, params: { party_id: '12345678' } }.to raise_error(ActionController::RoutingError)
+    end
+  end
 end

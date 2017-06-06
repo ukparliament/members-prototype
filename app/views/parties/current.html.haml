@@ -2,7 +2,10 @@
   .container
     %h1= title(t('.title', current: t('current').capitalize, parties_and_groups: t('parties_and_groups')))
 
-    = render partial: 'shared/dissolution_message'
+    - if FlagHelper.dissolution?
+      = render partial: 'shared/dissolution_message'
+    - elsif FlagHelper.election?
+      = render partial: 'shared/election_message'
 %section
   .container
     = render 'party_list'

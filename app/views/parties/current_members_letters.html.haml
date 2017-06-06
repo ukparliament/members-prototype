@@ -2,8 +2,11 @@
   .container
     %h1= title("#{@party.name} - #{t('.title', current: t('current').capitalize, member_plural: t('member_plural'))}")
 
-    = render partial: 'pugin/components/navigation-letter', locals: { route_symbol: :party_members_current_a_z_letter_path, primary_id: @party.graph_id }
-    = render partial: 'shared/dissolution_message'
+    = render partial: 'pugin/components/navigation-letter', locals: { route_symbol: :party_members_current_a_z_letter_path, route_args: [@party.graph_id] }
+    - if FlagHelper.dissolution?
+      = render partial: 'shared/dissolution_message'
+    - elsif FlagHelper.election?
+      = render partial: 'shared/election_message'
 
 %section#content
   .container

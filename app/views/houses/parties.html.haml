@@ -2,22 +2,24 @@
 
 #content.section--primary
   .container
+
     %h1= "#{t('current_and_former').capitalize} #{HousesHelper.commons?(@house) ? t('party_plural') : t('parties_and_groups')}"
 
 %section
   .container
-    .link__tab
+
+    %ul.list--tab
       - if HousesHelper.commons?(@house)
-        .link__tab--item.active
-          %p= t('commons')
+        %li.active
+          = t('commons')
       - else
-        .link__tab--item
+        %li
           = link_to(t('commons'),house_parties_path(HousesHelper.commons_id))
       - if HousesHelper.lords?(@house)
-        .link__tab--item.active
-          %p= t('lords')
+        %li.active
+          = t('lords')
       - else
-        .link__tab--item
+        %li
           = link_to(t('lords'),house_parties_path(HousesHelper.lords_id))
 
     %ol.list--box

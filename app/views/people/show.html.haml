@@ -12,6 +12,7 @@
           %p
             = t('.mp_for')
             = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
+        - ViewHelper.convert_house_membership_status(@person.statuses[:house_membership_status])
         = @person.statuses[:house_membership_status].join(' and ')
       - if @current_party_membership && @current_incumbency
         .block--border

@@ -12,8 +12,8 @@
 
     %h2= t('mp')
     - if @constituency.members.empty?
-      - if FlagHelper.dissolution?
-        = render partial: 'shared/dissolution_message'
+      - if FlagHelper.post_election?
+        = render partial: 'shared/election_message'
       - else
         .highlight--box.highlight--caution__soft
           %p

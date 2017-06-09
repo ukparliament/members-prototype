@@ -27,6 +27,9 @@
         = render partial: 'shared/dissolution_message'
       - elsif FlagHelper.election?
         = render partial: 'shared/election_message'
+    - if HousesHelper.commons?(@house)
+      - if FlagHelper.post_election?
+        = render partial: 'shared/election_message'
 
     %ol.list--box
       = render partial: 'houses/party', collection: @parties

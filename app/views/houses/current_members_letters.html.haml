@@ -10,7 +10,7 @@
     - if HousesHelper.commons?(@house)
       - if FlagHelper.dissolution?
         = render partial: 'shared/dissolution_message'
-      - elsif FlagHelper.election?
+      - elsif FlagHelper.post_election?
         = render partial: 'shared/election_message'
 
 - unless @letters.empty?

@@ -10,7 +10,8 @@ gem 'json-ld', '~> 2.1'
 gem 'vcard', '0.2.15'
 
 # Parliament Ruby is a wrapper for the internal Parliament data API
-gem 'parliament-ruby', '~> 0.7'
+# gem 'parliament-ruby', '~> 0.7'
+gem 'parliament-ruby', path: '../parliament-ruby'
 
 # Parliament NTriple processes N-triple data
 gem 'parliament-ntriple', '~> 0.1', require: false

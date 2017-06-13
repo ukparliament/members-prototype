@@ -1,3 +1,8 @@
+PATH
+  remote: ../parliament-ruby
+  specs:
+    parliament-ruby (0.7.8.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -131,7 +136,6 @@ GEM
     parliament-grom-decorators (0.2.0)
     parliament-ntriple (0.1.2)
       grom (~> 0.3.6)
-    parliament-ruby (0.7.7)
     parser (2.4.0.0)
       ast (~> 2.2)
     powerpack (0.1.1)
@@ -287,7 +291,7 @@ DEPENDENCIES
   parallel_tests
   parliament-grom-decorators (~> 0.2.0)
   parliament-ntriple (~> 0.1)
-  parliament-ruby (~> 0.7)
+  parliament-ruby!
   pry
   pugin (~> 0.8.3)
   puma

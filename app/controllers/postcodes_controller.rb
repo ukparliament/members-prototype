@@ -31,8 +31,7 @@ class PostcodesController < ApplicationController
     if raw_postcode.gsub(/\s+/, '').empty?
       flash[:error] = I18n.t('error.postcode_invalid').capitalize
 
-      redirect_to(PostcodeHelper.previous_path)
-      return
+      redirect_to(PostcodeHelper.previous_path) and return
     end
 
     hyphenated_postcode = PostcodeHelper.hyphenate(raw_postcode)

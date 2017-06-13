@@ -1,7 +1,11 @@
 class PartiesController < ApplicationController
   def index
+    url_request = parliament_request.parties
+
+    data_check(url_request); return if performed?
+
     @parties, @letters = RequestHelper.filter_response_data(
-      parliament_request.parties,
+      url_request,
       'http://id.ukpds.org/schema/Party',
       ::Grom::Node::BLANK
     )

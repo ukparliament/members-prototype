@@ -23,8 +23,8 @@ RSpec.describe 'houses/party_members_letters', vcr: true do
       expect(response).to render_template(partial: 'pugin/components/_navigation-letter')
     end
 
-    it 'will render person list' do
-      expect(response).to render_template(partial: 'pugin/cards/_person-list')
+    it 'will render pugin/elements/_list' do
+      expect(response).to render_template('pugin/elements/_list')
     end
   end
 end

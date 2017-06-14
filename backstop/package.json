@@ -1,0 +1,21 @@
+{
+  "name": "parliamentuk-prototype",
+  "version": "1.0.0",
+  "description": "parliamentuk-prototype",
+  "author": "UK Parliament",
+  "license": "MIT",
+  "engines": {
+    "node": "7.x"
+  },
+  "homepage": "https://github.com/ukparliament/parliament.uk-prototype#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukparliament/parliament.uk-prototype.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ukparliament/parliament.uk-prototype/issues"
+  },
+  "devDependencies": {
+    "backstopjs": "^2.7.3"
+  }
+}

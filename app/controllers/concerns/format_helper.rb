@@ -6,6 +6,5 @@ module FormatHelper
                   'application/rdf+xml',
                   'application/rdf+json',
                   'text/tab-separated-values',
-                  'text/turtle']
+                  'text/turtle'].freeze
 end
-

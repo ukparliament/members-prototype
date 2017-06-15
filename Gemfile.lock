@@ -79,7 +79,7 @@ GEM
       thor (~> 0.19.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    grom (0.3.8)
+    grom (0.3.7)
       activesupport (>= 5.0.0.1)
       rdf (= 2.2.3)
     haml (5.0.1)
@@ -285,6 +285,7 @@ DEPENDENCIES
   capybara
   dotenv-rails
   foreman
+  grom (= 0.3.7)
   haml (~> 5.0)
   json-ld (~> 2.1)
   mail (~> 2.6.6.rc1)

@@ -3,6 +3,7 @@ require 'parliament'
 require 'houses_helper'
 require 'request_helper'
 require 'parliament_helper'
+require 'format_helper'
 require 'pugin/helpers/controller_helpers'
 
 # Base class for all other controllers
@@ -13,7 +14,7 @@ class ApplicationController < ActionController::Base
   include RequestHelper
   include ParliamentHelper
   include ResourceHelper
-
+  include FormatHelper
   include Pugin::Helpers::ControllerHelpers
 
   # Prevent CSRF attacks by raising an exception.
@@ -35,5 +36,16 @@ class ApplicationController < ActionController::Base
   # Rescues from a Parliament::NoContentResponseError and raises an ActionController::RoutingError
   rescue_from Parliament::NoContentResponseError do |error|
     raise ActionController::RoutingError, error.message
+  end
+
+  def data_check(request_object)
+    return unless DATA_FORMATS.include?(request.formats.first)
+
+    response.headers['Accept'] = request.formats.first
+    # return unless DATA_FORMATS.include?(request.headers['Accept'])
+    #
+    # response.headers['Accept'] = request.headers['Accept']
+
+    redirect_to(request_object.query_url) && return
   end
 end

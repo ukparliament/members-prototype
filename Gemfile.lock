@@ -42,7 +42,7 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     airbrake (6.1.1)
       airbrake-ruby (~> 2.2, >= 2.2.5)
-    airbrake-ruby (2.2.5)
+    airbrake-ruby (2.2.6)
     arel (8.0.0)
     ast (2.3.0)
     bandiera-client (3.0.4)
@@ -51,7 +51,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
-    capybara (2.14.1)
+    capybara (2.14.3)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -109,7 +109,7 @@ GEM
       simplecov-rcov
       syslog-logger
       webmock
-    mail (2.6.6.rc1)
+    mail (2.6.6)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (3.1)
@@ -128,10 +128,10 @@ GEM
     parallel (1.11.2)
     parallel_tests (2.14.1)
       parallel
-    parliament-grom-decorators (0.1.8)
+    parliament-grom-decorators (0.2.1)
     parliament-ntriple (0.1.2)
       grom (~> 0.3.6)
-    parliament-ruby (0.7.7)
+    parliament-ruby (0.7.8)
     parser (2.4.0.0)
       ast (~> 2.2)
     powerpack (0.1.1)
@@ -281,13 +281,14 @@ DEPENDENCIES
   capybara
   dotenv-rails
   foreman
+  grom (= 0.3.7)
   haml (~> 5.0)
   json-ld (~> 2.1)
   mail (~> 2.6.6.rc1)
   parallel_tests
   parliament-grom-decorators (~> 0.1)
   parliament-ntriple (~> 0.1)
-  parliament-ruby (~> 0.7)
+  parliament-ruby (~> 0.7.8)
   pry
   pugin (~> 0.8.3)
   puma

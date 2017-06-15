@@ -15,6 +15,8 @@ gem 'vcard', '0.2.15'
 # Parliament NTriple processes N-triple data
 gem 'parliament-ntriple', '~> 0.1', require: false
 
+gem 'grom', '0.3.7'
+
 # Parliament Grom Decorators decorates Grom nodes
 gem 'parliament-grom-decorators', '~> 0.1'
 

@@ -39,10 +39,13 @@ class ApplicationController < ActionController::Base
   end
 
   def data_check(request_object)
-    return unless DATA_FORMATS.include?(request.headers['Accept'])
+    return unless DATA_FORMATS.include?(request.formats.first)
 
-    response.headers['Accept'] = request.headers['Accept']
+    response.headers['Accept'] = request.formats.first
+    # return unless DATA_FORMATS.include?(request.headers['Accept'])
+    #
+    # response.headers['Accept'] = request.headers['Accept']
 
-    redirect_to(request_object.query_url) and return
+    redirect_to(request_object.query_url) && return
   end
 end

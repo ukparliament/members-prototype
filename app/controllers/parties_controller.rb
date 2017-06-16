@@ -1,9 +1,9 @@
 class PartiesController < ApplicationController
+  before_action do
+    data_format_check(parliament_request.parties)
+  end
+
   def index
-    url_request = parliament_request.parties
-
-    data_check(url_request); return if performed?
-
     @parties, @letters = RequestHelper.filter_response_data(
       url_request,
       'http://id.ukpds.org/schema/Party',

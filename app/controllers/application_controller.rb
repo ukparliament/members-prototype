@@ -38,6 +38,10 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError, error.message
   end
 
+  def data_format_check(url_request)
+    data_check(url_request); return if performed?
+  end
+
   def data_check(request_object)
     return unless DATA_FORMATS.include?(request.formats.first)
 

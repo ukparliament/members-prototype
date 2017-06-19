@@ -1,5 +1,7 @@
 module Parties
   class MembersController < ApplicationController
+    before_action :data_check
+    
     def index
       party_id = params[:party_id]
 

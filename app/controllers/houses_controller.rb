@@ -1,4 +1,6 @@
 class HousesController < ApplicationController
+  before_action :data_check
+  
   def index
     @houses = parliament_request.houses.get.sort_by(:name)
   end

@@ -1,5 +1,6 @@
 class ResourceController < ApplicationController
   before_action :resource_params, only: :show
+  # before_action :data_check
 
   def index
     raise ActionController::RoutingError, 'Not Found'

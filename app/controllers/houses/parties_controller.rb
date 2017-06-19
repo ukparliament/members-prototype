@@ -1,5 +1,7 @@
 module Houses
   class PartiesController < ApplicationController
+    before_action :data_check
+    
     def index
       house_id = params[:house_id]
 

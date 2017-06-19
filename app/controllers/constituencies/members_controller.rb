@@ -1,5 +1,7 @@
 module Constituencies
   class MembersController < ApplicationController
+    before_action :data_check
+    
     def index
       constituency_id = params[:constituency_id]
 

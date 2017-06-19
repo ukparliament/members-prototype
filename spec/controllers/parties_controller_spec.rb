@@ -216,6 +216,17 @@ RSpec.describe PartiesController, vcr: true do
       end
     end
 
+    context 'an available id is requested' do
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+        get :show, params: { party_id: 'jF43Jxoc' }
+      end
+      it 'redirects to the data service with specific ids' do
+        expect(response).to redirect_to("#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc")
+      end
+    end
+
     context 'an unavailable data format is requested' do
       before(:each) do
         headers = { 'Accept' => 'application/n-quads' }

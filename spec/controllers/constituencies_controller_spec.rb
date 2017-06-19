@@ -333,4 +333,33 @@ RSpec.describe ConstituenciesController, vcr: true do
       end
     end
   end
+
+  describe '#data_check' do
+    context 'an available data format is requested' do
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+        get :index
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to the data service' do
+        expect(response).to redirect_to("#{ENV['PARLIAMENT_BASE_URL']}/constituencies")
+      end
+    end
+
+    context 'an unavailable data format is requested' do
+      before(:each) do
+        headers = { 'Accept' => 'application/n-quads' }
+        request.headers.merge(headers)
+      end
+
+      it 'should raise ActionController::UnknownFormat error' do
+        expect{ get :index }.to raise_error(ActionController::UnknownFormat)
+      end
+    end
+  end
 end

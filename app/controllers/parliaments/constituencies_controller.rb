@@ -1,5 +1,7 @@
 module Parliaments
   class ConstituenciesController < ApplicationController
+    before_action :data_check
+    
     def index
       parliament_id = params[:parliament_id]
 

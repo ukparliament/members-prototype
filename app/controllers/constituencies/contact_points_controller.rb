@@ -1,5 +1,7 @@
 module Constituencies
   class ContactPointsController < ApplicationController
+    before_action :data_check
+    
     # Renders a contact point given a constituency id.
     # @controller_action_param :constituency_id [String] 8 character identifier that identifies constituency in graph database.
     # @return [Grom::Node] object with type 'http://id.ukpds.org/schema/ConstituencyGroup' which has a contact point.

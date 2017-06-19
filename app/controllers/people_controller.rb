@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  before_action :data_check
+  
   def index
     @people, @letters = RequestHelper.filter_response_data(
       parliament_request.people,

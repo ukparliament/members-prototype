@@ -1,5 +1,7 @@
 module People
   class ContactPointsController < ApplicationController
+    before_action :data_check
+    
     def index
       person_id = params[:person_id]
 

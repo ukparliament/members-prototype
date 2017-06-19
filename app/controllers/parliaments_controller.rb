@@ -1,4 +1,6 @@
 class ParliamentsController < ApplicationController
+  before_action :data_check
+  
   def index
     @parliaments = parliament_request.parliaments.get.reverse_sort_by(:number)
   end

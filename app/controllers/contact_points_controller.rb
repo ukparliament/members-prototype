@@ -1,4 +1,6 @@
 class ContactPointsController < ApplicationController
+  before_action :data_check
+  
   def index
     @contact_points = RequestHelper.filter_response_data(
       parliament_request.contact_points,

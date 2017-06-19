@@ -2,6 +2,8 @@
 require 'sanitize'
 
 class PostcodesController < ApplicationController
+  before_action :data_check
+  
   def index; end
 
   def show

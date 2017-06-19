@@ -1,5 +1,6 @@
 class MetaController < ApplicationController
   before_action :disable_top_navigation
+  before_action :data_check
 
   def index
     @meta_routes = []

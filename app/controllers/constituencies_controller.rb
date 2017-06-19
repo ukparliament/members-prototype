@@ -2,9 +2,7 @@ class ConstituenciesController < ApplicationController
   # Renders a list of all constituencies with current incumbents and sorted in ascending order by name from a GET request. Shown with an a - z partial view.
   # @return [Array] Grom::Nodes of type 'http://id.ukpds.org/schema/ConstituencyGroup'.
 
-  before_action do
-    data_check
-  end
+  before_action :data_check
 
   def index
     @constituencies, @letters = RequestHelper.filter_response_data(

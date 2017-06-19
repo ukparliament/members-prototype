@@ -38,7 +38,6 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError, error.message
   end
 
-
   def data_check
     return unless DATA_FORMATS.include?(request.formats.first)
     response.headers['Accept'] = request.formats.first

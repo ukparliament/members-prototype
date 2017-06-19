@@ -199,19 +199,11 @@ RSpec.describe PartiesController, vcr: true do
     end
   end
 
-  # Test for ApplicationController Parliament::NoContentResponseError handling
-  describe 'rescue_from Parliament::ClientError' do
-    it 'raises an ActionController::RoutingError' do
-      expect{ get :members, params: { party_id: '12345678' } }.to raise_error(ActionController::RoutingError)
-    end
-  end
-
   describe '#data_check' do
     context 'an available data format is requested' do
       before(:each) do
         headers = { 'Accept' => 'application/rdf+xml' }
         request.headers.merge(headers)
-
         get :index
       end
 
@@ -231,8 +223,9 @@ RSpec.describe PartiesController, vcr: true do
       end
 
       it 'should raise ActionController::UnknownFormat error' do
-        expect{get :index }.to raise_error(ActionController::UnknownFormat)
+        expect{ get :index }.to raise_error(ActionController::UnknownFormat)
       end
     end
   end
+
 end

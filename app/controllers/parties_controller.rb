@@ -1,11 +1,9 @@
 class PartiesController < ApplicationController
-  before_action do
-    data_check
-  end
+  before_action :data_check
 
   def index
     @parties, @letters = RequestHelper.filter_response_data(
-      url_request,
+      parliament_request.parties,
       'http://id.ukpds.org/schema/Party',
       ::Grom::Node::BLANK
     )

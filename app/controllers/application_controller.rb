@@ -38,18 +38,11 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError, error.message
   end
 
-  def data_format_check(url_request)
-    data_check(url_request); return if performed?
-  end
 
-  def data_check(request_object)
+  def data_check
     return unless DATA_FORMATS.include?(request.formats.first)
-
     response.headers['Accept'] = request.formats.first
-    # return unless DATA_FORMATS.include?(request.headers['Accept'])
-    #
-    # response.headers['Accept'] = request.headers['Accept']
-
-    redirect_to(request_object.query_url) && return
+    request.original_fullpath.slice!(0)
+    redirect_to(parliament_request.send(request.original_fullpath).query_url) && return
   end
 end

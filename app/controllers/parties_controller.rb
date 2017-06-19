@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
   before_action do
-    data_format_check(parliament_request.parties)
+    data_check
   end
 
   def index

@@ -3,7 +3,7 @@ class ConstituenciesController < ApplicationController
   # @return [Array] Grom::Nodes of type 'http://id.ukpds.org/schema/ConstituencyGroup'.
 
   before_action do
-    data_format_check(parliament_request.constituencies)
+    data_check
   end
 
   def index

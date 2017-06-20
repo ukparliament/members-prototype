@@ -38,10 +38,23 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError, error.message
   end
 
+  def get_data_url
+    raise StandardError('Must provide valid data')
+  end
+
   def data_check
+    # check format to see if it can be rendered
     return unless DATA_FORMATS.include?(request.formats.first)
-    response.headers['Accept'] = request.formats.first
-    request.original_fullpath.slice!(0)
-    redirect_to(parliament_request.send(request.original_fullpath).query_url) && return
+
+    # find corresponding data url
+    @data_url = get_data_url
+    # redirect
+    if @data_url != nil
+      # if so, set headers
+      response.headers['Accept'] = request.formats.first
+      redirect_to(@data_url.call.query_url) && return
+    else
+      raise StandardError('Data URL does not exist')
+    end
   end
 end

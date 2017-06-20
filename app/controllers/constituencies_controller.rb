@@ -172,4 +172,16 @@ class ConstituenciesController < ApplicationController
     @constituencies = @constituencies.sort_by(:name)
     @letters = @letters.map(&:value)
   end
+
+  ROUTE_MAP = {
+    index: proc { ParliamentHelper.parliament_request.constituencies }
+  }
+
+  private
+
+  def get_data_url
+    ROUTE_MAP[params[:action].to_sym]
+  end
+
+
 end

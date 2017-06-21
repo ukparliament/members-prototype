@@ -9,7 +9,7 @@
       - if party.name === "Speaker"
         %p= "#{t('house_of_commons_speaker')}"
       - else
-        %p= "#{t('view_all')} #{t('current')} #{party.name} #{HousesHelper.commons?(@house) ? t('mp_plural') : t('lord_plural')}"
+        %p= "#{t('view_all').capitalize} #{t('current')} #{party.name} #{HousesHelper.commons?(@house) ? t('mp_plural') : t('lord_plural')}"
     .column--25
       %p
         = party.member_count

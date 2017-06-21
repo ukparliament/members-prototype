@@ -86,7 +86,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
 
     context 'is not nil' do
       before do
-        assign(:current_incumbency, double(:current_incumbency, start_date: Time.zone.now - 2.month, member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
+        assign(:current_incumbency, double(:current_incumbency, date_range: "#{Time.zone.now} - #{2.month}", start_date: Time.zone.now - 2.month, member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
         render
       end
 
@@ -98,7 +98,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
       context '@current_incumbency.start_date.nil?' do
         context 'is nil' do
           before do
-            assign(:current_incumbency, double(:current_incumbency, start_date: nil, member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
+            assign(:current_incumbency, double(:current_incumbency, date_range: "[Date unavailable]", start_date: nil, member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
             render
           end
 
@@ -109,7 +109,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
 
         context 'is not nil' do
           before do
-            assign(:current_incumbency, double(:current_incumbency, start_date: Time.zone.now - 1.month, member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
+            assign(:current_incumbency, double(:current_incumbency, date_range: "#{(Time.zone.now - 1.month).strftime('%-e %b %Y')} to present", member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
             render
           end
 
@@ -130,7 +130,7 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
         end_date:   Time.now - 1.day,
         current?:   true))
 
-      assign(:current_incumbency, double(:current_incumbency, start_date: nil, member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
+      assign(:current_incumbency, double(:current_incumbency, date_range: '[Date unavailable]', start_date: nil, member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
     end
 
     context 'is not greater than 0' do

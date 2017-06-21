@@ -12,7 +12,7 @@
       %li
         %h3= link_to @current_incumbency.member.display_name, person_path(@current_incumbency.member.graph_id)
         %p
-          = "#{l(@current_incumbency.start_date, format: :default)} #{t('to_present')}" unless @current_incumbency.start_date.nil?
+          = @current_incumbency.date_range
   - elsif FlagHelper.election_period?
     = render partial: 'shared/election_message'
   - else @current_incumbency.nil?
@@ -33,5 +33,4 @@
         %li
           %h3= link_to seat_incumbency.member.display_name, person_path(seat_incumbency.member.graph_id)
           %p
-            = "#{l(seat_incumbency.start_date, format: :default)}" unless seat_incumbency.start_date.nil?
-            = seat_incumbency.current? ? t('to_present') : " #{t('to')} #{l(seat_incumbency.end_date, format: :default)}"
+            = seat_incumbency.date_range

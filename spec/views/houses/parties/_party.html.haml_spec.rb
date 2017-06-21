@@ -31,7 +31,7 @@ RSpec.describe 'houses/parties/_party', vcr: true do
       end
 
       it 'will render link description' do
-        expect(rendered).to match(/view all current Test Party With Members MPs/)
+        expect(rendered).to match(/View all current Test Party With Members MPs/)
       end
 
       context 'party is the Speaker of the House' do

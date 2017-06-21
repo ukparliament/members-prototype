@@ -176,6 +176,8 @@ en:
       incorrect_constituency: 'this is not your constituency.'
       constituency_for_postcode: 'is the constituency for'
       check_constituency: 'check if this is your constituency'
+      former_constituency: 'This is a former constituency. %{current_constituencies_link}.'
+      current_constituencies_link: 'view current constituencies'
   # parties translations
   parties:
     index:
@@ -254,9 +256,9 @@ en:
       title: 'find your constituency'
     show:
       title: # title does not require translation
-      wrong_postcode: 'wrong postcode?'
-      search_again: 'search again'
+      check_different_postcode: 'Check for a different postcode'
       no_mp: 'There is currently no MP for your constituency.'
+      results_for: 'Results for'
     postcode_lookup:
       title: # title does not require translation
       search_by_postcode: 'Enter your full postcode, for example SW1A 0AA.'
@@ -321,10 +323,21 @@ en:
       latest_members:
         blog: 'Read the %{link}.'
         blog_link: 'MPs and Lords information blog post'
+      search:
+        blog: 'Read the %{link}.'
+        blog_link: 'Search blog post'
       follow_progress:
         title: 'Follow our progress'
         blog: 'Follow all %{link}.'
         blog_link: 'new website developments on our blog'
+    mps:
+      find_mp: 'Find your MP'
+      a_z_surname: 'A - Z by surname'
+      view_list_constituencies: 'View list of constituencies'
+      find_mp_party: 'Find an MP by party.'
+      find_mp_date_range: 'Find a former MP by date range'
+      speaker_link: 'The Speaker'
+      speaker_clarification: '%{speaker_link} is not a member of a party.'
   # meta information translations
   meta:
     index:

@@ -1,3 +1,48 @@
-#content.section--primary
+.section--primary
   .container
     %h1= title(t('mp_plural'))
+
+- if FlagHelper.dissolution?
+  %section
+    .container
+      = render partial: 'shared/dissolution_message'
+- elsif FlagHelper.election?
+  %section
+    .container
+      = render partial: 'shared/election_message'
+
+%section#content
+  .container
+    .block--border__bottom
+      .inner-container--focus
+        %h2= t('.find_mp')
+        = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
+        = link_to t('.view_list_constituencies'), constituencies_path
+      %ol.list--box
+        %li
+          %h2= link_to t('.a_z_surname'), people_path
+          %p= "#{t('view_all').capitalize} #{t('mp_plural')}."
+%section
+  .container
+    .block--border__bottom
+      %h2= t('party_plural').capitalize
+      %p= t('.find_mp_party')
+      %ul.list--inline__box
+        - @parties.each do |party|
+          %li
+            %h3= link_to(party.name, party_path(party.graph_id))
+            %p= "- #{party.count} #{t('mp_plural')}"
+      %p= t('.speaker_clarification', speaker_link: link_to(t('.the_speaker'), person_path(@speaker.first.graph_id))).html_safe
+
+%section
+  .container
+    .block--border__bottom
+      %h2= "#{t('former').capitalize} #{t('member_plural')}"
+      %p= t('.find_mp_date_range')
+      %ul.list--box
+        - @parliaments.each do |parliament|
+          %li
+            %h3= link_to "#{parliament.date_range(date_format: '%Y')} #{t('parliament').capitalize}", parliament_path(parliament.graph_id)
+        %li
+          %h3= link_to "#{t('view_all').capitalize} #{t('parliament_plural').capitalize}", parliaments_path
+

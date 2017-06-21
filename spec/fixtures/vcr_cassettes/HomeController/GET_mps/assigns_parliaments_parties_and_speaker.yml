@@ -30,7 +30,7 @@ http_interactions:
       Content-Type:
       - application/n-triples
       Expires:
-      - Tue, 20 Jun 2017 15:10:42 GMT
+      - Tue, 20 Jun 2017 08:56:55 GMT
       Set-Cookie:
       - ARRAffinity=84da135d793d1a6b30cd9dc12f2e362e46368d998b5277708a22eabe7aaf7896;Path=/;Domain=20170412115159fixedquery.azurewebsites.net
       X-Aspnet-Version:
@@ -38,7 +38,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Tue, 20 Jun 2017 15:10:41 GMT
+      - Tue, 20 Jun 2017 08:56:55 GMT
     body:
       encoding: UTF-8
       string: "<http://id.ukpds.org/lk3RZ8EB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
@@ -97,7 +97,7 @@ http_interactions:
         .\r\n<http://id.ukpds.org/nXcpOCyL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <http://id.ukpds.org/schema/Person> .\r\n"
     http_version: 
-  recorded_at: Tue, 20 Jun 2017 15:10:48 GMT
+  recorded_at: Tue, 20 Jun 2017 08:57:02 GMT
 - request:
     method: get
     uri: http://localhost:3030/houses
@@ -128,7 +128,7 @@ http_interactions:
       Content-Type:
       - application/n-triples
       Expires:
-      - Tue, 20 Jun 2017 15:10:42 GMT
+      - Tue, 20 Jun 2017 08:56:55 GMT
       Set-Cookie:
       - ARRAffinity=84da135d793d1a6b30cd9dc12f2e362e46368d998b5277708a22eabe7aaf7896;Path=/;Domain=20170412115159fixedquery.azurewebsites.net
       X-Aspnet-Version:
@@ -136,7 +136,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Tue, 20 Jun 2017 15:10:41 GMT
+      - Tue, 20 Jun 2017 08:56:55 GMT
     body:
       encoding: UTF-8
       string: "<http://id.ukpds.org/cqIATgUK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
@@ -145,5 +145,5 @@ http_interactions:
         <http://id.ukpds.org/schema/House> .\r\n<http://id.ukpds.org/mG2ur5TF> <http://id.ukpds.org/schema/houseName>
         \"houseName - 2\" .\r\n"
     http_version: 
-  recorded_at: Tue, 20 Jun 2017 15:10:48 GMT
+  recorded_at: Tue, 20 Jun 2017 08:57:02 GMT
 recorded_with: VCR 3.0.3

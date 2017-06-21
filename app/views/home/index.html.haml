@@ -31,6 +31,8 @@
       %li
         %h4= link_to t('search').capitalize, '/search'
         %p= t('find_results')
+    .highlight--box.highlight--primary__soft
+      %p= t('.search.blog', link: link_to(t('.search.blog_link'), 'https://pds.blog.parliament.uk/2017/06/14/improving-the-search-function-on-parliament-uk/')).html_safe
 
 %section
   .container

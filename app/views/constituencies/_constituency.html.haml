@@ -3,21 +3,27 @@
     = "#{t('constituency').capitalize}"
     = "#{t('from')} #{l(@constituency.start_date, format: :default)}" unless @constituency.start_date.nil?
     = @constituency.end_date.nil? ? t('to_present') : " #{t('to')} #{l(@constituency.end_date, format: :default)}"
-%h2= "#{t('mp')}"
-- if FlagHelper.dissolution?
-  = render partial: 'shared/dissolution_message'
-- elsif FlagHelper.election_period?
-  = render partial: 'shared/election_message'
-- elsif @current_incumbency.nil?
-  .highlight--box.highlight--caution__soft
-    %p
-      = t('no_content.empty_list.no_mp')
-- else
-  %ul.list--pipe
-    %li
-      %h3= link_to @current_incumbency.member.display_name, person_path(@current_incumbency.member.graph_id)
+- if @constituency.current?
+  %h2= "#{t('mp')}"
+  - if FlagHelper.dissolution?
+    = render partial: 'shared/dissolution_message'
+  - elsif @current_incumbency
+    %ul.list--pipe
+      %li
+        %h3= link_to @current_incumbency.member.display_name, person_path(@current_incumbency.member.graph_id)
+        %p
+          = "#{l(@current_incumbency.start_date, format: :default)} #{t('to_present')}" unless @current_incumbency.start_date.nil?
+  - elsif FlagHelper.election_period?
+    = render partial: 'shared/election_message'
+  - else @current_incumbency.nil?
+    .highlight--box.highlight--caution__soft
       %p
-        = "#{l(@current_incumbency.start_date, format: :default)} #{t('to_present')}" unless @current_incumbency.start_date.nil?
+        = t('no_content.empty_list.no_mp')
+
+- else
+  .highlight--box.highlight--caution__soft
+    %p= t('.former_constituency', current_constituencies_link: link_to(t('.view_current_constituencies'), constituencies_current_path)).html_safe
+
 
 - if @seat_incumbencies.size > 0
   %h2= "#{t('former').capitalize} #{t('mp_plural')}"

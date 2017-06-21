@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
     if @data_url != nil
       # if so, set headers
       response.headers['Accept'] = request.formats.first
-      redirect_to(@data_url.call.query_url) && return
+      redirect_to(@data_url.call(params).query_url) && return
     else
       raise StandardError('Data URL does not exist')
     end

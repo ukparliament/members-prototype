@@ -38,8 +38,8 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError, error.message
   end
 
-  def get_data_url
-    raise StandardError('Must provide valid data')
+  def data_url
+    raise StandardError, 'Must provide valid data'
   end
 
   def data_check
@@ -47,14 +47,14 @@ class ApplicationController < ActionController::Base
     return unless DATA_FORMATS.include?(request.formats.first)
 
     # find corresponding data url
-    @data_url = get_data_url
+    @data_url = data_url
     # redirect
     if @data_url != nil
       # if so, set headers
       response.headers['Accept'] = request.formats.first
       redirect_to(@data_url.call(params).query_url) && return
     else
-      raise StandardError('Data URL does not exist')
+      raise StandardError, 'Data URL does not exist'
     end
   end
 end

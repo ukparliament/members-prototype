@@ -187,9 +187,9 @@ class ConstituenciesController < ApplicationController
     letters: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:letter]) },
     current_letters: proc { |params| ParliamentHelper.parliament_request.constituencies.current(params[:letter]) },
     a_to_z: proc { ParliamentHelper.parliament_request.constituencies.a_z_letters }
-  }
+  }.freeze
 
-  def get_data_url
+  def data_url
     ROUTE_MAP[params[:action].to_sym]
   end
 end

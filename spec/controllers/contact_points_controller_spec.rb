@@ -47,5 +47,50 @@ RSpec.describe ContactPointsController, vcr: true do
         get :show, params: { contact_point_id: 'fFm9NQmr' }
       end
     end
+
+    describe '#data_check' do
+      context 'an available data format is requested' do
+        methods = [
+            {
+              route: 'index',
+              data_url: "#{ENV['PARLIAMENT_BASE_URL']}/contact_points"
+            },
+            {
+              route: 'show',
+              parameters: { contact_point_id: 'fFm9NQmr' },
+              data_url: "#{ENV['PARLIAMENT_BASE_URL']}/contact_points/fFm9NQmr"
+            }
+          ]
+
+        before(:each) do
+          headers = { 'Accept' => 'application/rdf+xml' }
+          request.headers.merge(headers)
+        end
+
+        it 'should have a response with http status redirect (302)' do
+          methods.each do |method|
+            if method.include?(:parameters)
+              get method[:route].to_sym, params: method[:parameters]
+            else
+              get method[:route].to_sym
+            end
+            expect(response).to have_http_status(302)
+          end
+        end
+
+        it 'redirects to the data service' do
+          methods.each do |method|
+            if method.include?(:parameters)
+              get method[:route].to_sym, params: method[:parameters]
+            else
+              get method[:route].to_sym
+            end
+            expect(response).to redirect_to(method[:data_url])
+          end
+        end
+
+      end
+    end
+
   end
 end

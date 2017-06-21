@@ -2,7 +2,7 @@ module Parliaments
   module Parties
     class MembersController < ApplicationController
       before_action :data_check
-      
+
       def index
         parliament_id = params[:parliament_id]
         party_id      = params[:party_id]
@@ -54,6 +54,18 @@ module Parliaments
         @party      = @party.first
         @people     = @people.sort_by(:sort_name)
         @letters    = @letters.map(&:value)
+      end
+
+      private
+
+      ROUTE_MAP = {
+        index: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties(params[:party_id]).members },
+        a_to_z: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties(params[:party_id]).members.a_z_letters },
+        letters: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties(params[:party_id]).members(params[:letter]) }
+      }.freeze
+
+      def data_url
+        ROUTE_MAP[params[:action].to_sym]
       end
     end
   end

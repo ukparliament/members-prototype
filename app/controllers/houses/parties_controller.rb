@@ -1,7 +1,7 @@
 module Houses
   class PartiesController < ApplicationController
     before_action :data_check
-    
+
     def index
       house_id = params[:house_id]
 
@@ -43,6 +43,17 @@ module Houses
 
       @house = @house.first
       @parties = @parties.multi_direction_sort({ member_count: :desc, name: :asc })
+    end
+
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties },
+      current: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties.current },
+      show: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties(params[:party_id]) },
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

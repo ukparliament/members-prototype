@@ -165,4 +165,69 @@ RSpec.describe Parties::MembersController, vcr: true do
     end
   end
 
+  describe '#data_check' do
+    context 'an available data format is requested' do
+      methods = [
+          {
+            route: 'index',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members"
+          },
+          {
+            route: 'current',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/current"
+          },
+          {
+            route: 'letters',
+            parameters: { party_id: 'jF43Jxoc', letter: 'c' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/c"
+          },
+          {
+            route: 'current_letters',
+            parameters: { party_id: 'jF43Jxoc', letter: 'c' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/current/c"
+          },
+          {
+            route: 'a_to_z',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/a_z_letters"
+          },
+          {
+            route: 'a_to_z_current',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/current/a_z_letters"
+          }
+        ]
+
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to have_http_status(302)
+        end
+      end
+
+      it 'redirects to the data service' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to redirect_to(method[:data_url])
+        end
+      end
+
+    end
+  end
+
 end

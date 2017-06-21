@@ -1,7 +1,7 @@
 module Houses
   class MembersController < ApplicationController
     before_action :data_check
-    
+
     def index
       house_id = params[:house_id]
 
@@ -84,6 +84,21 @@ module Houses
       @house_id = params[:house_id]
 
       @letters = RequestHelper.process_available_letters(parliament_request.houses(@house_id).members.current.a_z_letters)
+    end
+
+    private
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).members },
+      a_to_z_current: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).members.current.a_z_letters },
+      current: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).members.current },
+      letters: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).members(params[:letter]) },
+      current_letters: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).members.current(params[:letter]) },
+      a_to_z: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).members.a_z_letters }
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

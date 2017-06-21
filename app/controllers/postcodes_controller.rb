@@ -3,7 +3,7 @@ require 'sanitize'
 
 class PostcodesController < ApplicationController
   before_action :data_check
-  
+
   def index; end
 
   def show
@@ -41,5 +41,15 @@ class PostcodesController < ApplicationController
     hyphenated_postcode = PostcodeHelper.hyphenate(raw_postcode)
 
     redirect_to postcode_path(hyphenated_postcode)
+  end
+
+  private
+
+  ROUTE_MAP = {
+    show: proc { |params| ParliamentHelper.parliament_request.constituencies.postcode_lookup(params[:postcode]) }
+  }.freeze
+
+  def data_url
+    ROUTE_MAP[params[:action].to_sym]
   end
 end

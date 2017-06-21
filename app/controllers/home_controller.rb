@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :disable_top_navigation, :disable_status_banner
+  before_action :disable_top_navigation, :disable_status_banner, :data_check
 
   def index; end
 
@@ -14,5 +14,15 @@ class HomeController < ApplicationController
     )
 
     @parties = @parties.multi_direction_sort({ member_count: :desc, name: :asc })
+  end
+
+  private
+
+  ROUTE_MAP = {
+    mps: proc { ParliamentHelper.parliament_request.people.mps }
+  }.freeze
+
+  def data_url
+    ROUTE_MAP[params[:action].to_sym]
   end
 end

@@ -201,41 +201,68 @@ RSpec.describe PartiesController, vcr: true do
 
   describe '#data_check' do
     context 'an available data format is requested' do
+      methods = [
+          {
+            route: 'index',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties"
+          },
+          {
+            route: 'show',
+            parameters: { party_id: 'P6LNyUn4' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/P6LNyUn4"
+          },
+          {
+            route: 'lookup',
+            parameters: { source: 'mnisId', id: '96' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/lookup/mnisId/96"
+          },
+          {
+            route: 'current',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/current"
+          },
+          {
+            route: 'letters',
+            parameters: { letter: 'l' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/l"
+          },
+          {
+            route: 'a_to_z',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/a_z_letters"
+          },
+          {
+            route: 'lookup_by_letters',
+            parameters: { letters: 'labour' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/partial/labour"
+          }
+        ]
+
       before(:each) do
         headers = { 'Accept' => 'application/rdf+xml' }
         request.headers.merge(headers)
-        get :index
       end
 
       it 'should have a response with http status redirect (302)' do
-        expect(response).to have_http_status(302)
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to have_http_status(302)
+        end
       end
 
       it 'redirects to the data service' do
-        expect(response).to redirect_to("#{ENV['PARLIAMENT_BASE_URL']}/parties")
-      end
-    end
-
-    context 'an available id is requested' do
-      before(:each) do
-        headers = { 'Accept' => 'application/rdf+xml' }
-        request.headers.merge(headers)
-        get :show, params: { party_id: 'jF43Jxoc' }
-      end
-      it 'redirects to the data service with specific ids' do
-        expect(response).to redirect_to("#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc")
-      end
-    end
-
-    context 'an unavailable data format is requested' do
-      before(:each) do
-        headers = { 'Accept' => 'application/n-quads' }
-        request.headers.merge(headers)
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to redirect_to(method[:data_url])
+        end
       end
 
-      it 'should raise ActionController::UnknownFormat error' do
-        expect{ get :index }.to raise_error(ActionController::UnknownFormat)
-      end
     end
   end
 

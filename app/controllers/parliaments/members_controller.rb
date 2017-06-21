@@ -1,7 +1,7 @@
 module Parliaments
   class MembersController < ApplicationController
     before_action :data_check
-    
+
     def index
       parliament_id = params[:parliament_id]
 
@@ -44,6 +44,18 @@ module Parliaments
 
       @parliament = @parliament.first
       @letters    = @letters.map(&:value)
+    end
+
+    private
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).members },
+      a_to_z: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).members.a_z_letters },
+      letters: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).members(params[:letter]) }
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

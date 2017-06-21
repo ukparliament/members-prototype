@@ -1,6 +1,6 @@
 class HousesController < ApplicationController
   before_action :data_check
-  
+
   def index
     @houses = parliament_request.houses.get.sort_by(:name)
   end
@@ -33,5 +33,18 @@ class HousesController < ApplicationController
     else
       redirect_to houses_path
     end
+  end
+
+  private
+
+  ROUTE_MAP = {
+    index: proc { ParliamentHelper.parliament_request.houses },
+    show: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]) },
+    lookup: proc { |params| ParliamentHelper.parliament_request.houses.lookup(params[:source], params[:id]) },
+    lookup_by_letters: proc { |params| ParliamentHelper.parliament_request.houses.partial(params[:letters]) }
+  }.freeze
+
+  def data_url
+    ROUTE_MAP[params[:action].to_sym]
   end
 end

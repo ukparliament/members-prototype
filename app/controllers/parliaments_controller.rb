@@ -1,6 +1,6 @@
 class ParliamentsController < ApplicationController
   before_action :data_check
-  
+
   def index
     @parliaments = parliament_request.parliaments.get.reverse_sort_by(:number)
   end
@@ -61,4 +61,18 @@ class ParliamentsController < ApplicationController
     redirect_to parliament_path(@parliament.graph_id)
   end
 
+  private
+
+  ROUTE_MAP = {
+    index: proc { ParliamentHelper.parliament_request.parliaments },
+    current: proc { ParliamentHelper.parliament_request.parliaments.current },
+    next: proc { ParliamentHelper.parliament_request.parliaments.next },
+    previous: proc { ParliamentHelper.parliament_request.parliaments.previous },
+    next_parliament: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).next },
+    previous_parliament: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).previous }
+  }.freeze
+
+  def data_url
+    ROUTE_MAP[params[:action].to_sym]
+  end
 end

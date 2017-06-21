@@ -1,7 +1,7 @@
 module Parliaments
   class PartiesController < ApplicationController
     before_action :data_check
-    
+
     def index
       parliament_id = params[:parliament_id]
 
@@ -29,6 +29,17 @@ module Parliaments
 
       @parliament = @parliament.first
       @party      = @party.first
+    end
+
+    private
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties },
+      show: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties(params[:party_id]) }
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

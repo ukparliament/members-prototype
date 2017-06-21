@@ -111,4 +111,54 @@ RSpec.describe Parliaments::Parties::MembersController, vcr: true do
     end
   end
 
+  describe '#data_check' do
+    context 'an available data format is requested' do
+      methods = [
+          {
+            route: 'index',
+            parameters: { parliament_id: 'GEFMX81E', party_id: 'lk3RZ8EB' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments/GEFMX81E/parties/lk3RZ8EB/members"
+          },
+          {
+            route: 'a_to_z',
+            parameters: { parliament_id: 'GEFMX81E', party_id: 'lk3RZ8EB' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments/GEFMX81E/parties/lk3RZ8EB/members/a_z_letters"
+          },
+          {
+            route: 'letters',
+            parameters: { parliament_id: 'GEFMX81E', party_id: 'lk3RZ8EB', letter: 'a' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments/GEFMX81E/parties/lk3RZ8EB/members/a"
+          }
+        ]
+
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to have_http_status(302)
+        end
+      end
+
+      it 'redirects to the data service' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to redirect_to(method[:data_url])
+        end
+      end
+
+    end
+  end
+
 end

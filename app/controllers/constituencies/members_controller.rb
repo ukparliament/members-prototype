@@ -1,7 +1,7 @@
 module Constituencies
   class MembersController < ApplicationController
     before_action :data_check
-    
+
     def index
       constituency_id = params[:constituency_id]
 
@@ -32,6 +32,17 @@ module Constituencies
 
       @constituency = @constituency.first
       @seat_incumbency = @seat_incumbency.first
+    end
+
+    private
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]).members },
+      current: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]).members.current }
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

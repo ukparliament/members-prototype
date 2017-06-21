@@ -189,4 +189,86 @@ RSpec.describe ParliamentsController, vcr: true do
       end
     end
   end
+
+  describe '#data_check' do
+    context 'an available data format is requested' do
+      #TODO this doesn't include lookup yet
+      methods = [
+          {
+            route: 'index',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments"
+          },
+          {
+            route: 'current',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments/current"
+          },
+          {
+            route: 'next_parliament',
+            parameters: { parliament_id: '0FxbTVtr' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments/0FxbTVtr/next"
+          },
+          {
+            route: 'previous',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments/previous"
+          },
+          {
+            route: 'previous_parliament',
+            parameters: { parliament_id: '0FxbTVtr' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parliaments/0FxbTVtr/previous"
+          }
+        ]
+
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to have_http_status(302)
+        end
+      end
+
+      it 'redirects to the data service' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to redirect_to(method[:data_url])
+        end
+      end
+
+    end
+    describe 'next' do
+      context '@parliament is nil' do
+        # updated VCR cassette in order to set @parliament to nil
+        it 'should raise ActionController::RoutingError' do
+          expect{get :next}.to raise_error(ActionController::RoutingError)
+        end
+      end
+
+      context '@pariament is not nil' do
+        before(:each) do
+          headers = { 'Accept' => 'application/rdf+xml' }
+          request.headers.merge(headers)
+          get :next
+        end
+
+        it 'should have a response with http status redirect (302)' do
+            expect(response).to have_http_status(302)
+        end
+
+        it 'redirects to the data service' do
+            expect(response).to redirect_to("#{ENV['PARLIAMENT_BASE_URL']}/parliaments/next")
+        end
+      end
+    end
+  end
 end

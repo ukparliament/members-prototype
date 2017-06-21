@@ -2,6 +2,38 @@ require 'rails_helper'
 
 RSpec.describe 'postcodes/show', vcr: true do
   before do
+    assign(:person,
+      [double(:person,
+        display_name: 'Test Display Name',
+        graph_id:     '7TX8ySd4',
+        house_incumbencies: [],
+        seat_incumbencies: [
+          double(:seat_incumbency,
+            current?: true,
+            start_date: "123",
+            end_date: "456",
+            constituency:
+              double(:constituency,
+                name: "constituency1",
+              )
+            )],
+        constituencies: [
+          double(:constituency,
+            name: "constituency1",
+            )],
+        party_memberships: [
+          double(:party_membership,
+            current?: true,
+            party: double(:party,
+              name: 'Test Party Name'
+            )
+          )
+        ],
+        parties:      [
+          double(:party,
+            name: 'Test Party Name')
+        ])]
+    )
     assign(:postcode, 'SW1A 0AA')
     assign(:constituency,
       double(:constituency,

@@ -12,13 +12,15 @@ class PostcodesController < ApplicationController
     begin
       response = PostcodeHelper.lookup(@postcode)
 
-      @constituency = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
+      @constituency, @person = response.filter('http://id.ukpds.org/schema/ConstituencyGroup', 'http://id.ukpds.org/schema/Person')
+      @constituency = @constituency.first
     rescue PostcodeHelper::PostcodeError => error
       flash[:error] = error.message
       flash[:postcode] = @postcode
 
       redirect_to(PostcodeHelper.previous_path)
     end
+
     # Instance variable for single MP pages
     @single_mp = true
   end

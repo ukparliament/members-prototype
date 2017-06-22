@@ -10,30 +10,30 @@
   %section
     .container
       = render partial: 'shared/election_message'
-
-%section#content
-  .container
-    .block--border__bottom
-      .inner-container--focus
-        %h2= t('.find_mp')
-        = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
-        = link_to t('.view_list_constituencies'), constituencies_current_a_z_letter_path('a')
-      %ol.list--box
-        %li
-          %h2= link_to t('.a_z_surname'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
-          %p= "#{t('view_all').capitalize} #{t('mp_plural')}."
-%section
-  .container
-    .block--border__bottom
-      %h2= t('party_plural').capitalize
-      %p= t('.find_mp_party')
-      %ul.list--inline__box
-        - @parties.each do |party|
-          - unless party.name == "Speaker" # Exclude speaker from list
-            %li
-              %h3= link_to(party.name, party_members_current_a_z_letter_path(party.graph_id, 'a'))
-              %p= "- #{party.count} #{t('mp_count', count: party.count)}"
-      %p= t('.speaker_clarification', speaker_link: link_to(t('.the_speaker'), person_path(@speaker.first.graph_id))).html_safe
+- else
+  %section#content
+    .container
+      .block--border__bottom
+        .inner-container--focus
+          %h2= t('.find_mp')
+          = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
+          = link_to t('.view_list_constituencies'), constituencies_current_a_z_letter_path('a')
+        %ol.list--box
+          %li
+            %h2= link_to t('.a_z_surname'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
+            %p= "#{t('view_all').capitalize} #{t('mp_plural')}."
+  %section
+    .container
+      .block--border__bottom
+        %h2= t('party_plural').capitalize
+        %p= t('.find_mp_party')
+        %ul.list--inline__box
+          - @parties.each do |party|
+            - unless party.name == "Speaker" # Exclude speaker from list
+              %li
+                %h3= link_to(party.name, party_members_current_a_z_letter_path(party.graph_id, 'a'))
+                %p= "- #{party.count} #{t('mp_count', count: party.count)}"
+        %p= t('.speaker_clarification', speaker_link: link_to(t('.the_speaker'), person_path(@speaker.first.graph_id))).html_safe
 
 %section
   .container

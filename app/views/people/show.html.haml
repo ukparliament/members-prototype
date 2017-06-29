@@ -1,29 +1,28 @@
 #content.section--primary
   .container
     .block--border__bottom
-      .section--primary__container
-        - if @image
-          %img{src: 'http://via.placeholder.com/250x197', alt: 'placeholder'}
-        .section--primary__block
-          %h1= title(@person.display_name)
+      - if @image
+        %img{src: 'http://via.placeholder.com/250x197', alt: 'placeholder'}
 
-          - if @most_recent_incumbency.nil? || @most_recent_incumbency.house.name == 'House of Lords'
-            %p= @person.full_title
-            %p= "#{@person.full_name}" unless @person.display_name == @person.full_name
+      %h1= title(@person.display_name)
 
-          - if @current_party_membership && @current_incumbency
-            - current_party_details = link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
+      - if @most_recent_incumbency.nil? || @most_recent_incumbency.house.name == 'House of Lords'
+        %p= @person.full_title
+        %p= "#{@person.full_name}" unless @person.display_name == @person.full_name
 
-          - unless @person.statuses[:house_membership_status].empty?
-            - if @person.statuses[:house_membership_status].include?('Current MP')
-              %p
-                = current_party_details if current_party_details
-                = t('.mp_for')
-                = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
-            - else
-              %p
-                = current_party_details if current_party_details
-                = @person.statuses[:house_membership_status].join(' and ')
+      - if @current_party_membership && @current_incumbency
+        - current_party_details = link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
+
+      - unless @person.statuses[:house_membership_status].empty?
+        - if @person.statuses[:house_membership_status].include?('Current MP')
+          %p
+            = current_party_details if current_party_details
+            = t('.mp_for')
+            = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
+        - else
+          %p
+            = current_party_details if current_party_details
+            = @person.statuses[:house_membership_status].join(' and ')
 
 
 %section

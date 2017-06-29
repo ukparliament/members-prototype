@@ -31,9 +31,9 @@ class HousesController < ApplicationController
   private
 
   ROUTE_MAP = {
-    index: proc { ParliamentHelper.parliament_request.houses },
-    show: proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]) },
-    lookup: proc { |params| ParliamentHelper.parliament_request.houses.lookup(params[:source], params[:id]) },
+    index:             proc { ParliamentHelper.parliament_request.houses },
+    show:              proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]) },
+    lookup:            proc { |params| ParliamentHelper.parliament_request.houses.lookup(params[:source], params[:id]) },
     lookup_by_letters: proc { |params| ParliamentHelper.parliament_request.houses.partial(params[:letters]) }
   }.freeze
 

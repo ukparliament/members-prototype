@@ -25,7 +25,6 @@ class PostcodesController < ApplicationController
           redirect_to(person_path(@person.first.graph_id)) && return
         end
       end
-
     rescue PostcodeHelper::PostcodeError => error
       flash[:error] = error.message
       flash[:postcode] = @postcode

@@ -4,9 +4,9 @@ module People
 
     def index
       @person, @seat_incumbencies = RequestHelper.filter_response_data(
-      ROUTE_MAP[:index].call(params),
-      'http://id.ukpds.org/schema/Person',
-      'http://id.ukpds.org/schema/SeatIncumbency'
+        ROUTE_MAP[:index].call(params),
+        'http://id.ukpds.org/schema/Person',
+        'http://id.ukpds.org/schema/SeatIncumbency'
       )
 
       @person = @person.first
@@ -15,9 +15,9 @@ module People
 
     def current
       @person, @constituency = RequestHelper.filter_response_data(
-      ROUTE_MAP[:current].call(params),
-      'http://id.ukpds.org/schema/Person',
-      'http://id.ukpds.org/schema/ConstituencyGroup'
+        ROUTE_MAP[:current].call(params),
+        'http://id.ukpds.org/schema/Person',
+        'http://id.ukpds.org/schema/ConstituencyGroup'
       )
 
       @person = @person.first
@@ -27,7 +27,7 @@ module People
     private
 
     ROUTE_MAP = {
-      index: proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]).constituencies },
+      index:   proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]).constituencies },
       current: proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]).constituencies.current }
     }.freeze
 

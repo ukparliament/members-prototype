@@ -30,7 +30,7 @@ class PeopleController < ApplicationController
       list:             @person.incumbencies,
       parameters:       [:end_date],
       prepend_rejected: false
-      })
+    })
 
     @most_recent_incumbency = sorted_incumbencies.last
     @current_incumbency = @most_recent_incumbency && @most_recent_incumbency.current? ? @most_recent_incumbency : nil
@@ -95,11 +95,11 @@ class PeopleController < ApplicationController
 
   # What to do about postcode_lookup?
   ROUTE_MAP = {
-    index: proc { ParliamentHelper.parliament_request.people },
-    show: proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]) },
-    lookup: proc { |params| ParliamentHelper.parliament_request.people.lookup(params[:source], params[:id]) },
-    letters: proc { |params| ParliamentHelper.parliament_request.people(params[:letter]) },
-    a_to_z: proc { ParliamentHelper.parliament_request.people.a_z_letters },
+    index:             proc { ParliamentHelper.parliament_request.people },
+    show:              proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]) },
+    lookup:            proc { |params| ParliamentHelper.parliament_request.people.lookup(params[:source], params[:id]) },
+    letters:           proc { |params| ParliamentHelper.parliament_request.people(params[:letter]) },
+    a_to_z:            proc { ParliamentHelper.parliament_request.people.a_z_letters },
     lookup_by_letters: proc { |params| ParliamentHelper.parliament_request.people.partial(params[:letters]) }
   }.freeze
 

@@ -55,12 +55,12 @@ class ParliamentsController < ApplicationController
   private
 
   ROUTE_MAP = {
-    index: proc { ParliamentHelper.parliament_request.parliaments },
-    show: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]) },
-    current: proc { ParliamentHelper.parliament_request.parliaments.current },
-    next: proc { ParliamentHelper.parliament_request.parliaments.next },
-    previous: proc { ParliamentHelper.parliament_request.parliaments.previous },
-    next_parliament: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).next },
+    index:               proc { ParliamentHelper.parliament_request.parliaments },
+    show:                proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]) },
+    current:             proc { ParliamentHelper.parliament_request.parliaments.current },
+    next:                proc { ParliamentHelper.parliament_request.parliaments.next },
+    previous:            proc { ParliamentHelper.parliament_request.parliaments.previous },
+    next_parliament:     proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).next },
     previous_parliament: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).previous }
   }.freeze
 

@@ -4,9 +4,9 @@ module Parliaments
 
     def index
       @parliament, @parties = RequestHelper.filter_response_data(
-      ROUTE_MAP[:index].call(params),
-      'http://id.ukpds.org/schema/ParliamentPeriod',
-      'http://id.ukpds.org/schema/Party'
+        ROUTE_MAP[:index].call(params),
+        'http://id.ukpds.org/schema/ParliamentPeriod',
+        'http://id.ukpds.org/schema/Party'
       )
 
       @parliament = @parliament.first
@@ -15,9 +15,9 @@ module Parliaments
 
     def show
       @parliament, @party = RequestHelper.filter_response_data(
-      ROUTE_MAP[:show].call(params),
-      'http://id.ukpds.org/schema/ParliamentPeriod',
-      'http://id.ukpds.org/schema/Party'
+        ROUTE_MAP[:show].call(params),
+        'http://id.ukpds.org/schema/ParliamentPeriod',
+        'http://id.ukpds.org/schema/Party'
       )
 
       raise ActionController::RoutingError, 'Not Found' if @party.empty?
@@ -30,7 +30,7 @@ module Parliaments
 
     ROUTE_MAP = {
       index: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties },
-      show: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties(params[:party_id]) }
+      show:  proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).parties(params[:party_id]) }
     }.freeze
 
     def data_url

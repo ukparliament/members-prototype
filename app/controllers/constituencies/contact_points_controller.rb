@@ -8,8 +8,8 @@ module Constituencies
 
     def index
       @constituency = RequestHelper.filter_response_data(
-      ROUTE_MAP[:index].call(params),
-      'http://id.ukpds.org/schema/ConstituencyGroup'
+        ROUTE_MAP[:index].call(params),
+        'http://id.ukpds.org/schema/ConstituencyGroup'
       ).first
     end
 
@@ -17,7 +17,7 @@ module Constituencies
 
     ROUTE_MAP = {
       index: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]).contact_point }
-      }.freeze
+    }.freeze
 
     def data_url
       ROUTE_MAP[params[:action].to_sym]

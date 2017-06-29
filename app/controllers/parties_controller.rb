@@ -63,12 +63,12 @@ class PartiesController < ApplicationController
   private
 
   ROUTE_MAP = {
-    index: proc { ParliamentHelper.parliament_request.parties },
-    show: proc { |params| ParliamentHelper.parliament_request.parties(params[:party_id]) },
-    lookup: proc { |params| ParliamentHelper.parliament_request.parties.lookup(params[:source], params[:id]) },
-    current: proc { ParliamentHelper.parliament_request.parties.current },
-    letters: proc { |params| ParliamentHelper.parliament_request.parties(params[:letter]) },
-    a_to_z: proc { ParliamentHelper.parliament_request.parties.a_z_letters },
+    index:             proc { ParliamentHelper.parliament_request.parties },
+    show:              proc { |params| ParliamentHelper.parliament_request.parties(params[:party_id]) },
+    lookup:            proc { |params| ParliamentHelper.parliament_request.parties.lookup(params[:source], params[:id]) },
+    current:           proc { ParliamentHelper.parliament_request.parties.current },
+    letters:           proc { |params| ParliamentHelper.parliament_request.parties(params[:letter]) },
+    a_to_z:            proc { ParliamentHelper.parliament_request.parties.a_z_letters },
     lookup_by_letters: proc { |params| ParliamentHelper.parliament_request.parties.partial(params[:letters]) }
   }.freeze
 

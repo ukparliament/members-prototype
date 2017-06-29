@@ -4,9 +4,9 @@ module People
 
     def index
       @person, @contact_points = RequestHelper.filter_response_data(
-      ROUTE_MAP[:index].call(params),
-      'http://id.ukpds.org/schema/Person',
-      'http://id.ukpds.org/schema/ContactPoint'
+        ROUTE_MAP[:index].call(params),
+        'http://id.ukpds.org/schema/Person',
+        'http://id.ukpds.org/schema/ContactPoint'
       )
 
       @person = @person.first

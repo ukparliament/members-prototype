@@ -1,10 +1,10 @@
 module ResourceHelper
   ACCEPTABLE_OBJECT_TYPES = {
-    Person:             'people',
-    House:              'houses',
-    ConstituencyGroup:  'constituencies',
-    Party:              'parties',
-    ParliamentPeriod:   'parliaments'
+    Person:            'people',
+    House:             'houses',
+    ConstituencyGroup: 'constituencies',
+    Party:             'parties',
+    ParliamentPeriod:  'parliaments'
   }.freeze
 
   def self.get_object_type(node_type)
@@ -39,5 +39,4 @@ module ResourceHelper
     end
     statements
   end
-
 end

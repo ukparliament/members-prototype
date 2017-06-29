@@ -4,10 +4,10 @@ module Parliaments
 
     def index
       @parliament, @constituencies, @letters = RequestHelper.filter_response_data(
-      ROUTE_MAP[:index].call(params),
-      'http://id.ukpds.org/schema/ParliamentPeriod',
-      'http://id.ukpds.org/schema/ConstituencyGroup',
-      ::Grom::Node::BLANK
+        ROUTE_MAP[:index].call(params),
+        'http://id.ukpds.org/schema/ParliamentPeriod',
+        'http://id.ukpds.org/schema/ConstituencyGroup',
+        ::Grom::Node::BLANK
       )
 
       @parliament     = @parliament.first
@@ -17,10 +17,10 @@ module Parliaments
 
     def a_to_z
       @parliament, @constituencies, @letters = RequestHelper.filter_response_data(
-      ROUTE_MAP[:a_to_z].call(params),
-      'http://id.ukpds.org/schema/ParliamentPeriod',
-      'http://id.ukpds.org/schema/ConstituencyGroup',
-      ::Grom::Node::BLANK
+        ROUTE_MAP[:a_to_z].call(params),
+        'http://id.ukpds.org/schema/ParliamentPeriod',
+        'http://id.ukpds.org/schema/ConstituencyGroup',
+        ::Grom::Node::BLANK
       )
 
       @parliament     = @parliament.first
@@ -30,10 +30,10 @@ module Parliaments
 
     def letters
       @parliament, @constituencies, @letters = RequestHelper.filter_response_data(
-      ROUTE_MAP[:letters].call(params),
-      'http://id.ukpds.org/schema/ParliamentPeriod',
-      'http://id.ukpds.org/schema/ConstituencyGroup',
-      ::Grom::Node::BLANK
+        ROUTE_MAP[:letters].call(params),
+        'http://id.ukpds.org/schema/ParliamentPeriod',
+        'http://id.ukpds.org/schema/ConstituencyGroup',
+        ::Grom::Node::BLANK
       )
 
       @parliament     = @parliament.first
@@ -44,8 +44,8 @@ module Parliaments
     private
 
     ROUTE_MAP = {
-      index: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).constituencies },
-      a_to_z: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).constituencies },
+      index:   proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).constituencies },
+      a_to_z:  proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).constituencies },
       letters: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).constituencies(params[:letter]) }
     }.freeze
 

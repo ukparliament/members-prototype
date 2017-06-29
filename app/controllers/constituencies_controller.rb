@@ -23,9 +23,9 @@ class ConstituenciesController < ApplicationController
     @postcode = flash[:postcode]
 
     @constituency, @seat_incumbencies = RequestHelper.filter_response_data(
-    ROUTE_MAP[:show].call(params),
-    'http://id.ukpds.org/schema/ConstituencyGroup',
-    'http://id.ukpds.org/schema/SeatIncumbency'
+      ROUTE_MAP[:show].call(params),
+      'http://id.ukpds.org/schema/ConstituencyGroup',
+      'http://id.ukpds.org/schema/SeatIncumbency'
     )
     # Instance variable for single MP pages
     @single_mp = true
@@ -57,7 +57,6 @@ class ConstituenciesController < ApplicationController
     redirect_to constituency_path(@constituency.graph_id)
   end
 
-
   # Post method which accepts form parameters from postcode lookup and redirects to constituency_path.
   # @controller_action_param :postcode [String] postcode entered into postcode lookup form.
   # @controller_action_param :constituency_id [String] 8 character identifier that identifies constituency in graph database.
@@ -67,7 +66,6 @@ class ConstituenciesController < ApplicationController
 
     redirect_to constituency_path(params[:constituency_id])
   end
-
 
   # Renders a list of all constituencies with current incumbents and sorted in ascending order by name from a GET request. Shown with an a - z partial view.
   # @return [Array] Grom::Nodes of type 'http://id.ukpds.org/schema/ConstituencyGroup'.
@@ -165,16 +163,16 @@ class ConstituenciesController < ApplicationController
   private
 
   ROUTE_MAP = {
-    index: proc { ParliamentHelper.parliament_request.constituencies },
-    show: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]) },
-    lookup: proc { |params| ParliamentHelper.parliament_request.constituencies.lookup(params[:source], params[:id]) },
+    index:             proc { ParliamentHelper.parliament_request.constituencies },
+    show:              proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]) },
+    lookup:            proc { |params| ParliamentHelper.parliament_request.constituencies.lookup(params[:source], params[:id]) },
     lookup_by_letters: proc { |params| ParliamentHelper.parliament_request.constituencies.partial(params[:letters]) },
-    a_to_z_current: proc { ParliamentHelper.parliament_request.constituencies.current.a_z_letters },
-    current: proc { ParliamentHelper.parliament_request.constituencies.current },
-    map: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]) },
-    letters: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:letter]) },
-    current_letters: proc { |params| ParliamentHelper.parliament_request.constituencies.current(params[:letter]) },
-    a_to_z: proc { ParliamentHelper.parliament_request.constituencies.a_z_letters }
+    a_to_z_current:    proc { ParliamentHelper.parliament_request.constituencies.current.a_z_letters },
+    current:           proc { ParliamentHelper.parliament_request.constituencies.current },
+    map:               proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]) },
+    letters:           proc { |params| ParliamentHelper.parliament_request.constituencies(params[:letter]) },
+    current_letters:   proc { |params| ParliamentHelper.parliament_request.constituencies.current(params[:letter]) },
+    a_to_z:            proc { ParliamentHelper.parliament_request.constituencies.a_z_letters }
   }.freeze
 
   def data_url

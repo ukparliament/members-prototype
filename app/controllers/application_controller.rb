@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
     # find corresponding data url
     @data_url = data_url
     # redirect
-    if @data_url != nil
+    if !@data_url.nil?
       # if so, set headers
       response.headers['Accept'] = request.formats.first
       redirect_to(@data_url.call(params).query_url) && return

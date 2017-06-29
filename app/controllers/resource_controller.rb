@@ -1,16 +1,13 @@
 class ResourceController < ApplicationController
   before_action :resource_params, only: :show
+  # before_action :data_check
 
   def index
     raise ActionController::RoutingError, 'Not Found'
   end
 
   def show
-    begin
-      @results = parliament_request.resources.get(params: { uri: @resource_uri })
-    rescue Parliament::NoContentResponseError => error
-      raise ActionController::RoutingError, error.message
-    end
+    @results = parliament_request.resources.get(params: { uri: @resource_uri })
 
     types = ResourceHelper.store_types(@results)
     path = ResourceHelper.check_acceptable_object_type(types)

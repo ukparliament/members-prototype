@@ -23,4 +23,22 @@ RSpec.describe People::ContactPointsController, vcr: true do
       expect(response).to render_template('index')
     end
   end
+
+  describe '#data_check' do
+    context 'an available data format is requested' do
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+        get :index, params: { person_id: '7TX8ySd4' }
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        expect(response).to have_http_status(302)
+      end
+
+      it 'redirects to the data service' do
+        expect(response).to redirect_to("#{ENV['PARLIAMENT_BASE_URL']}/people/7TX8ySd4/contact_points")
+      end
+    end
+  end
 end

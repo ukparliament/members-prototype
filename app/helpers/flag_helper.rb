@@ -18,6 +18,6 @@ module FlagHelper
   end
 
   def self.election_period?
-    true if election? == true || post_election? == true
+    (election? == true || post_election? == true)
   end
 end

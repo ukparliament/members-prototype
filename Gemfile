@@ -7,10 +7,10 @@ gem 'rails', '~> 5.1'
 gem 'turbolinks', '5.0.1'
 
 gem 'json-ld', '~> 2.1'
-gem 'vcard', '0.2.15'
+gem 'vcard', '~> 0.2'
 
 # Parliament Ruby is a wrapper for the internal Parliament data API
-gem 'parliament-ruby', '~> 0.7'
+ gem 'parliament-ruby', '~> 0.7'
 
 # Parliament NTriple processes N-triple data
 gem 'parliament-ntriple', '~> 0.1', require: false
@@ -22,7 +22,7 @@ gem 'parliament-grom-decorators', '~> 0.2.0'
 gem 'bandiera-client'
 
 # Pugin is the front-end component library used by Parliament
-gem 'pugin', '~> 0.8.5'
+gem 'pugin', '~> 0.8'
 
 # HAML is used for front-end template rendering
 gem 'haml', '~> 5.0'
@@ -38,7 +38,7 @@ gem 'rack-timeout'
 gem 'rack-rewrite'
 
 # Manually update mail to account for security issues
-gem 'mail', '~> 2.6.6.rc1'
+gem 'mail', '~> 2.6'
 
 # Gem to sanitize html into safe format
 gem 'sanitize'

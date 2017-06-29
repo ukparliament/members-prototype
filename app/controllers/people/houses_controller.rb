@@ -1,10 +1,10 @@
 module People
   class HousesController < ApplicationController
-    def index
-      person_id = params[:person_id]
+    before_action :data_check
 
+    def index
       @person, @incumbencies = RequestHelper.filter_response_data(
-      parliament_request.people(person_id).houses,
+      ROUTE_MAP[:index].call(params),
       'http://id.ukpds.org/schema/Person',
       'http://id.ukpds.org/schema/Incumbency'
       )
@@ -14,16 +14,25 @@ module People
     end
 
     def current
-      person_id = params[:person_id]
-
       @person, @house = RequestHelper.filter_response_data(
-      parliament_request.people(person_id).houses.current,
+      ROUTE_MAP[:current].call(params),
       'http://id.ukpds.org/schema/Person',
       'http://id.ukpds.org/schema/House'
       )
 
       @person = @person.first
       @house = @house.first
+    end
+
+    private
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]).houses },
+      current: proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]).houses.current }
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

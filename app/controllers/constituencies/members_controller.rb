@@ -1,10 +1,10 @@
 module Constituencies
   class MembersController < ApplicationController
-    def index
-      constituency_id = params[:constituency_id]
+    before_action :data_check
 
+    def index
       @constituency, @seat_incumbencies = RequestHelper.filter_response_data(
-      parliament_request.constituencies(constituency_id).members,
+      ROUTE_MAP[:index].call(params),
       'http://id.ukpds.org/schema/ConstituencyGroup',
       'http://id.ukpds.org/schema/SeatIncumbency'
       )
@@ -20,16 +20,25 @@ module Constituencies
     # @return [Grom::Node] object with type 'http://id.ukpds.org/schema/SeatIncumbency'.
 
     def current
-      constituency_id = params[:constituency_id]
-
       @constituency, @seat_incumbency = RequestHelper.filter_response_data(
-      parliament_request.constituencies(constituency_id).members.current,
+      ROUTE_MAP[:current].call(params),
       'http://id.ukpds.org/schema/ConstituencyGroup',
       'http://id.ukpds.org/schema/SeatIncumbency'
       )
 
       @constituency = @constituency.first
       @seat_incumbency = @seat_incumbency.first
+    end
+
+    private
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]).members },
+      current: proc { |params| ParliamentHelper.parliament_request.constituencies(params[:constituency_id]).members.current }
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

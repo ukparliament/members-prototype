@@ -64,7 +64,7 @@ RSpec.describe Parties::MembersController, vcr: true do
 
   describe 'GET letters' do
     before(:each) do
-      get :letters, params: { party_id: 'lk3RZ8EB', letter: 'a' }
+      get :letters, params: { party_id: 'P6LNyUn4', letter: 'a' }
     end
 
     it 'should have a response with http status ok (200)' do
@@ -84,7 +84,7 @@ RSpec.describe Parties::MembersController, vcr: true do
 
     it 'assigns @people in alphabetical order' do
       expect(assigns(:people)[0].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 1')
-      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 11')
+      expect(assigns(:people)[1].sort_name).to eq('A5EE13ABE03C4D3A8F1A274F57097B6C - 10')
     end
 
     it 'renders the members_letters template' do
@@ -162,6 +162,71 @@ RSpec.describe Parties::MembersController, vcr: true do
   describe 'rescue_from Parliament::ClientError' do
     it 'raises an ActionController::RoutingError' do
       expect{ get :index, params: { party_id: '12345678' } }.to raise_error(ActionController::RoutingError)
+    end
+  end
+
+  describe '#data_check' do
+    context 'an available data format is requested' do
+      methods = [
+          {
+            route: 'index',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members"
+          },
+          {
+            route: 'current',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/current"
+          },
+          {
+            route: 'letters',
+            parameters: { party_id: 'jF43Jxoc', letter: 'c' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/c"
+          },
+          {
+            route: 'current_letters',
+            parameters: { party_id: 'jF43Jxoc', letter: 'c' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/current/c"
+          },
+          {
+            route: 'a_to_z',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/a_z_letters"
+          },
+          {
+            route: 'a_to_z_current',
+            parameters: { party_id: 'jF43Jxoc' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/parties/jF43Jxoc/members/current/a_z_letters"
+          }
+        ]
+
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to have_http_status(302)
+        end
+      end
+
+      it 'redirects to the data service' do
+        methods.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to redirect_to(method[:data_url])
+        end
+      end
+
     end
   end
 

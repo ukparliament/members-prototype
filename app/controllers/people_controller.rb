@@ -1,7 +1,9 @@
 class PeopleController < ApplicationController
+  before_action :data_check
+
   def index
     @people, @letters = RequestHelper.filter_response_data(
-      parliament_request.people,
+      ROUTE_MAP[:index].call,
       'http://id.ukpds.org/schema/Person',
       ::Grom::Node::BLANK
     )
@@ -10,21 +12,11 @@ class PeopleController < ApplicationController
     @letters = @letters.map(&:value)
   end
 
-  def lookup
-    source = params[:source]
-    id = params[:id]
-
-    @person = parliament_request.people.lookup(source, id).get.first
-
-    redirect_to person_path(@person.graph_id)
-  end
-
   def show
     @postcode = flash[:postcode]
-    person_id = params[:person_id]
 
     @person, @seat_incumbencies, @house_incumbencies = RequestHelper.filter_response_data(
-      parliament_request.people(person_id),
+      ROUTE_MAP[:show].call(params),
       'http://id.ukpds.org/schema/Person',
       'http://id.ukpds.org/schema/SeatIncumbency',
       'http://id.ukpds.org/schema/HouseIncumbency'
@@ -38,7 +30,7 @@ class PeopleController < ApplicationController
       list:             @person.incumbencies,
       parameters:       [:end_date],
       prepend_rejected: false
-    })
+      })
 
     @most_recent_incumbency = sorted_incumbencies.last
     @current_incumbency = @most_recent_incumbency && @most_recent_incumbency.current? ? @most_recent_incumbency : nil
@@ -56,6 +48,12 @@ class PeopleController < ApplicationController
     end
   end
 
+  def lookup
+    @person = ROUTE_MAP[:lookup].call(params).get.first
+
+    redirect_to person_path(@person.graph_id)
+  end
+
   def postcode_lookup
     flash[:postcode] = params[:postcode]
 
@@ -63,10 +61,8 @@ class PeopleController < ApplicationController
   end
 
   def letters
-    letter = params[:letter]
-
     @people, @letters = RequestHelper.filter_response_data(
-      parliament_request.people(letter),
+      ROUTE_MAP[:letters].call(params),
       'http://id.ukpds.org/schema/Person',
       ::Grom::Node::BLANK
     )
@@ -76,14 +72,12 @@ class PeopleController < ApplicationController
   end
 
   def a_to_z
-    @letters = RequestHelper.process_available_letters(parliament_request.people.a_z_letters)
+    @letters = RequestHelper.process_available_letters(ROUTE_MAP[:a_to_z].call)
   end
 
   def lookup_by_letters
-    letters = params[:letters]
-
     @people, @letters = RequestHelper.filter_response_data(
-      parliament_request.people.partial(letters),
+      ROUTE_MAP[:lookup_by_letters].call(params),
       'http://id.ukpds.org/schema/Person',
       ::Grom::Node::BLANK
     )
@@ -95,5 +89,21 @@ class PeopleController < ApplicationController
 
     @people = @people.sort_by(:name)
     @letters = @letters.map(&:value)
+  end
+
+  private
+
+  # What to do about postcode_lookup?
+  ROUTE_MAP = {
+    index: proc { ParliamentHelper.parliament_request.people },
+    show: proc { |params| ParliamentHelper.parliament_request.people(params[:person_id]) },
+    lookup: proc { |params| ParliamentHelper.parliament_request.people.lookup(params[:source], params[:id]) },
+    letters: proc { |params| ParliamentHelper.parliament_request.people(params[:letter]) },
+    a_to_z: proc { ParliamentHelper.parliament_request.people.a_z_letters },
+    lookup_by_letters: proc { |params| ParliamentHelper.parliament_request.people.partial(params[:letters]) }
+  }.freeze
+
+  def data_url
+    ROUTE_MAP[params[:action].to_sym]
   end
 end

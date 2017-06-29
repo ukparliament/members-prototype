@@ -333,4 +333,97 @@ RSpec.describe ConstituenciesController, vcr: true do
       end
     end
   end
+
+  describe '#data_check' do
+    context 'an available data format is requested' do
+      METHODS = [
+          {
+            route: 'index',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies"
+          },
+          {
+            route: 'lookup',
+            parameters: { source: 'mnisId', id: '3274' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/lookup/mnisId/3274"
+          },
+          {
+            route: 'show',
+            parameters: { constituency_id: 'vUPobpVT' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/vUPobpVT"
+          },
+          {
+            route: 'lookup_by_letters',
+            parameters: { letters: 'epping' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/partial/epping"
+          },
+          {
+            route: 'a_to_z_current',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/current/a_z_letters"
+          },
+          {
+            route: 'current',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/current"
+          },
+          {
+            route: 'map',
+            parameters: { constituency_id: 'vUPobpVT' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/vUPobpVT"
+          },
+          {
+            route: 'letters',
+            parameters: { letter: 'p' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/p"
+          },
+          {
+            route: 'current_letters',
+            parameters: { letter: 'p' },
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/current/p"
+          },
+          {
+            route: 'a_to_z',
+            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/a_z_letters"
+          },
+        ]
+
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+      end
+
+      it 'should have a response with http status redirect (302)' do
+        METHODS.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to have_http_status(302)
+        end
+      end
+
+      it 'redirects to the data service' do
+        METHODS.each do |method|
+          if method.include?(:parameters)
+            get method[:route].to_sym, params: method[:parameters]
+          else
+            get method[:route].to_sym
+          end
+          expect(response).to redirect_to(method[:data_url])
+        end
+      end
+
+    end
+
+    context 'an unavailable data format is requested' do
+      before(:each) do
+        headers = { 'Accept' => 'application/n-quads' }
+        request.headers.merge(headers)
+      end
+
+      it 'should raise ActionController::UnknownFormat error' do
+        expect{ get :index }.to raise_error(ActionController::UnknownFormat)
+      end
+    end
+  end
+
 end

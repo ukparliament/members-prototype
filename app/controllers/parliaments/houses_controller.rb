@@ -1,10 +1,10 @@
 module Parliaments
   class HousesController < ApplicationController
-    def index
-      parliament_id = params[:parliament_id]
+    before_action :data_check
 
+    def index
       @parliament, @houses = RequestHelper.filter_response_data(
-      parliament_request.parliaments(parliament_id).houses,
+      ROUTE_MAP[:index].call(params),
       'http://id.ukpds.org/schema/ParliamentPeriod',
       'http://id.ukpds.org/schema/House'
       )
@@ -14,11 +14,8 @@ module Parliaments
     end
 
     def show
-      parliament_id = params[:parliament_id]
-      house_id      = params[:house_id]
-
       @parliament, @house = RequestHelper.filter_response_data(
-      parliament_request.parliaments(parliament_id).houses(house_id),
+      ROUTE_MAP[:show].call(params),
       'http://id.ukpds.org/schema/ParliamentPeriod',
       'http://id.ukpds.org/schema/House'
       )
@@ -27,6 +24,17 @@ module Parliaments
 
       @parliament = @parliament.first
       @house      = @house.first
+    end
+
+    private
+
+    ROUTE_MAP = {
+      index: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).houses },
+      show: proc { |params| ParliamentHelper.parliament_request.parliaments(params[:parliament_id]).houses(params[:house_id]) }
+    }.freeze
+
+    def data_url
+      ROUTE_MAP[params[:action].to_sym]
     end
   end
 end

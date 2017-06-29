@@ -3,6 +3,7 @@ require 'parliament'
 require 'houses_helper'
 require 'request_helper'
 require 'parliament_helper'
+require 'format_helper'
 require 'pugin/helpers/controller_helpers'
 
 # Base class for all other controllers
@@ -13,7 +14,7 @@ class ApplicationController < ActionController::Base
   include RequestHelper
   include ParliamentHelper
   include ResourceHelper
-
+  include FormatHelper
   include Pugin::Helpers::ControllerHelpers
 
   # Prevent CSRF attacks by raising an exception.
@@ -35,5 +36,25 @@ class ApplicationController < ActionController::Base
   # Rescues from a Parliament::NoContentResponseError and raises an ActionController::RoutingError
   rescue_from Parliament::NoContentResponseError do |error|
     raise ActionController::RoutingError, error.message
+  end
+
+  def data_url
+    raise StandardError, 'Must provide valid data'
+  end
+
+  def data_check
+    # check format to see if it can be rendered
+    return unless DATA_FORMATS.include?(request.formats.first)
+
+    # find corresponding data url
+    @data_url = data_url
+    # redirect
+    if @data_url != nil
+      # if so, set headers
+      response.headers['Accept'] = request.formats.first
+      redirect_to(@data_url.call(params).query_url) && return
+    else
+      raise StandardError, 'Data URL does not exist'
+    end
   end
 end

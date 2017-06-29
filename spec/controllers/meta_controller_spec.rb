@@ -48,4 +48,23 @@ RSpec.describe MetaController, vcr: true do
       expect(response).to render_template('cookie_policy')
     end
   end
+
+  describe '#data_check' do
+    context 'no data available' do
+      before(:each) do
+        headers = { 'Accept' => 'application/rdf+xml' }
+        request.headers.merge(headers)
+      end
+
+      it 'GET index should raise an error' do
+        expect{get :index}.to raise_error(StandardError, 'Data URL does not exist')
+        expect(response).not_to have_http_status(302)
+      end
+
+      it 'GET lookup should raise an error' do
+        expect{get :cookie_policy}.to raise_error(StandardError, 'Data URL does not exist')
+        expect(response).not_to have_http_status(302)
+      end
+    end
+  end
 end

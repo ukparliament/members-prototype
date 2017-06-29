@@ -46,3 +46,10 @@ services:
     environment:
       POSTGRES_USER: 'bandiera'
       POSTGRES_PASSWORD: 'bandiera'
+
+  backstop:
+    image: 'node:7'
+    volumes:
+      - ./backstop/:/app
+      - /app/node_modules
+    command: app/compose.sh

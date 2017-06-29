@@ -31,3 +31,8 @@ passenger.3000.pid
 /doc/
 
 vendor
+
+.vscode/
+/backstop/backstop_data/
+/backstop/node_modules/
+/backstop/npm-debug.log

@@ -1,0 +1,59 @@
+{
+  "id": "parliament.uk-prototype_dev-config",
+  "hideSelectors": [],
+  "removeSelectors": [],
+  "selectorExpansion": true,
+  "delay": 500,
+  "misMatchThreshold" : 0.1,
+  "viewports": [
+    {
+      "name": "small",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "large",
+      "width": 1024,
+      "height": 768
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "header",
+      "url": "https://devci.parliament.uk/constituencies/current/a-z/a",
+      "referenceUrl": "https://beta.parliament.uk/constituencies/current/a-z/a",
+      "selectors": [
+        "header"
+      ]
+    },
+    {
+      "label": "navigation--letter",
+      "url": "https://devci.parliament.uk/constituencies/current/a-z/a",
+      "referenceUrl": "https://beta.parliament.uk/constituencies/current/a-z/a",
+      "selectors": [
+        ".navigation--letter"
+      ]
+    },
+    {
+      "label": "bandiera",
+      "url": "https://devci.parliament.uk/constituencies/current/a-z/a",
+      "referenceUrl": "https://beta.parliament.uk/constituencies/current/a-z/a",
+      "selectors": [
+        ".highlight--box",
+        ".highlight--status"
+      ]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "casper_scripts": "backstop_data/casper_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "casperFlags": [],
+  "engine": "phantomjs",
+  "report": ["CI", "browser"],
+  "debug": false
+}
+

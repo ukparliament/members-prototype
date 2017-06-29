@@ -32,7 +32,7 @@
             - unless party.name == "Speaker" # Exclude speaker from list
               %li
                 %h3= link_to(party.name, party_members_current_a_z_letter_path(party.graph_id, 'a'))
-                %p= "- #{party.count} #{t('mp_count', count: party.count)}"
+                %p= "- #{party.member_count} #{t('mp_count', count: party.member_count)}"
         %p= t('.speaker_clarification', speaker_link: link_to(t('.the_speaker'), person_path(@speaker.first.graph_id))).html_safe
 
 %section

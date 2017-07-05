@@ -180,6 +180,7 @@ en:
       check_constituency: 'check if this is your constituency'
       former_constituency: 'This is a former constituency. %{current_constituencies_link}.'
       current_constituencies_link: 'view current constituencies'
+      constituency_map_fallback: 'Map of constituency is unavailable.'
   # parties translations
   parties:
     index:

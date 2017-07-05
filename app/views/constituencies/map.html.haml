@@ -2,4 +2,7 @@
   .container
     %h1= @constituency.name
 
-    = @constituency.area.polygon unless @constituency.area.nil?
+    .map#mapbox
+      %noscript
+        %p
+          = "#{t('constituencies.constituency.constituency_map_fallback')}"

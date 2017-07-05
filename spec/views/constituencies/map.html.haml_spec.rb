@@ -9,12 +9,6 @@ RSpec.describe 'constituencies/map', vcr: true do
     end
 
     context '@constituency.area' do
-      it 'will render polygon' do
-        assign(:constituency, double(:constituency, name: 'Aberdeen Central', area: double(:area, polygon: '-3.81201849979 51.58102958827')))
-        render
-        expect(rendered).to match(/-3.81201849979 51.58102958827/)
-      end
-
       context '@constituency.area is nil' do
         before do
           assign(:constituency, double(:constituency, name: 'Aberdeen Central', area: nil))

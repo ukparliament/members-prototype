@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
       # /people/:person_id/parties
       build_root_and_current_routes('people/parties', 'parties')
+
+      get '/media/:media_id', to: 'people/media#show'
     end
 
     # Allow lookups - but ensure they are SECOND in the routes list after /people/:person_id

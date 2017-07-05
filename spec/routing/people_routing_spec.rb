@@ -82,6 +82,18 @@ RSpec.describe 'people', type: :routing do
         end
       end
 
+      context 'media' do
+        # people/media#show
+        it 'GET people/:person_id/media/:media_id' do
+          expect(get: '/people/7TX8ySd4/media/XXXX').to route_to(
+            controller: 'people/media',
+            action:     'show',
+            person_id:    '7TX8ySd4',
+            media_id: 'XXXX'
+          )
+        end
+      end
+
       context 'houses' do
 
         it 'GET people/:person_id/houses' do

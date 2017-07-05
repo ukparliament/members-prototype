@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people/7TX8ySd4/media/12345678
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Thu, 06 Jul 2017 10:09:35 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '736'
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/7TX8ySd4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/7TX8ySd4> <http://id.ukpds.org/schema/personGivenName> "personGivenName - 1" .
+        <http://id.ukpds.org/7TX8ySd4> <http://id.ukpds.org/schema/personFamilyName> "personFamilyName - 1" .
+        <http://id.ukpds.org/7TX8ySd4> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF> "F31CBD81AD8343898B49DC65743F0BDF - 1" .
+        <http://id.ukpds.org/7TX8ySd4> <http://example.com/D79B0BAC513C4A9A87C9D5AFF1FC632F> "D79B0BAC513C4A9A87C9D5AFF1FC632F - 1" .
+        <http://id.ukpds.org/7TX8ySd4> <http://id.ukpds.org/schema/personHasImage> <http://id.ukpds.org/12345678> .
+        <http://id.ukpds.org/12345678> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Image> .
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 10:31:40 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/houses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Tue, 02 May 2017 14:10:26 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '416'
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/KL2k1BGP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/KL2k1BGP> <http://id.ukpds.org/schema/houseName> "houseName - 1" .
+        <http://id.ukpds.org/m1EgVTLj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/m1EgVTLj> <http://id.ukpds.org/schema/houseName> "houseName - 2" .
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 10:31:41 GMT
+recorded_with: VCR 3.0.3

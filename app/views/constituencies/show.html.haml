@@ -1,6 +1,13 @@
 #content.section--primary
   .container
-    %h1= title(@constituency.name)
+    .block--border__bottom
+
+      #mapbox{ data: { json: { location: @json_location } } }
+        %noscript
+          %p
+            = "#{t('constituencies.constituency.constituency_map_fallback')}"
+
+      %h1= title(@constituency.name)
 
 %section
   .container

@@ -6,6 +6,7 @@
       = link_to "#{@parliament.date_range(date_format: '%Y')} #{t('parliament')}", parliament_path(@parliament.graph_id)
     %ol.list--box
       %li
-        %h2= link_to "A-Z", parliament_members_a_z_path(@parliament.graph_id)
-        %p= t('parliaments.find_mp_a_to_z')
+        .list--details
+          %h2= link_to "A-Z", parliament_members_a_z_path(@parliament.graph_id)
+          %p= t('parliaments.find_mp_a_to_z')
 

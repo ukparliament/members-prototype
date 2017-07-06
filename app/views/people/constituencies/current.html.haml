@@ -7,5 +7,6 @@
     .container
       %ul.list--box
         %li
-          %h2= link_to(@constituency.name, party_path(@constituency.graph_id))
-          %p= @constituency.seat_incumbencies.first.date_range
+          .list--details
+            %h2= link_to(@constituency.name, party_path(@constituency.graph_id))
+            %p= @constituency.seat_incumbencies.first.date_range

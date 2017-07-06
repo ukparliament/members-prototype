@@ -16,7 +16,7 @@ gem 'vcard', '~> 0.2'
 gem 'parliament-ntriple', '~> 0.1', require: false
 
 # Parliament Grom Decorators decorates Grom nodes
-gem 'parliament-grom-decorators', '~> 0.2.0'
+gem 'parliament-grom-decorators', '~> 0.2'
 
 # Converts GeoSparql to GeoJSON
 gem 'geosparql_to_geojson', '~> 0.1'
@@ -25,7 +25,7 @@ gem 'geosparql_to_geojson', '~> 0.1'
 gem 'bandiera-client'
 
 # Pugin is the front-end component library used by Parliament
-gem 'pugin', '~> 0.8.6.pre'
+gem 'pugin', '~> 0.8.6'
 
 # HAML is used for front-end template rendering
 gem 'haml', '~> 5.0'

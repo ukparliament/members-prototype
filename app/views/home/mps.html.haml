@@ -20,8 +20,9 @@
           = link_to t('.view_list_constituencies'), constituencies_current_a_z_letter_path('a')
         %ol.list--box
           %li
-            %h2= link_to t('.a_z_surname'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
-            %p= "#{t('view_all').capitalize} #{t('mp_plural')}."
+            .list--details
+              %h2= link_to t('.a_z_surname'), house_members_current_a_z_letter_path(HousesHelper.commons_id, 'a')
+              %p= "#{t('view_all').capitalize} #{t('mp_plural')}."
   %section
     .container
       .block--border__bottom
@@ -31,8 +32,9 @@
           - @parties.each do |party|
             - unless party.name == "Speaker" # Exclude speaker from list
               %li
-                %h3= link_to(party.name, party_members_current_a_z_letter_path(party.graph_id, 'a'))
-                %p= "- #{party.member_count} #{t('mp_count', count: party.member_count)}"
+                .list--details
+                  %h3= link_to(party.name, house_parties_party_members_current_a_z_letter_path(HousesHelper.commons_id,party.graph_id, 'a'))
+                  %p= "- #{party.member_count} #{t('mp_count', count: party.member_count)}"
         %p= t('.speaker_clarification', speaker_link: link_to(t('.the_speaker'), person_path(@speaker.first.graph_id))).html_safe
 
 %section
@@ -43,6 +45,7 @@
       %ul.list--box
         - @parliaments.each do |parliament|
           %li
-            %h3= link_to "#{parliament.date_range(date_format: '%Y')} #{t('parliament').capitalize}", parliament_members_a_z_letter_path(parliament.graph_id, 'a')
+            .list--details
+              %h3= link_to "#{parliament.date_range(date_format: '%Y')} #{t('parliament').capitalize}", parliament_members_a_z_letter_path(parliament.graph_id, 'a')
         %li
           %h3= link_to "#{t('view_all').capitalize} #{t('parliament_plural').capitalize}", parliaments_path

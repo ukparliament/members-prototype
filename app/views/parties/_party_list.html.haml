@@ -4,4 +4,5 @@
   %ul.list--box
     - @parties.each do |party|
       %li
-        %h2= link_to party.name, party_path(party.graph_id) if party.name.present?
+        .list--details
+          %h2= link_to party.name, party_path(party.graph_id) if party.name.present?

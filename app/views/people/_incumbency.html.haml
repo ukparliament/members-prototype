@@ -1,8 +1,9 @@
 %li
-  - if incumbency.house.nil?
-    %h2= link_to(incumbency.seat.house.name, house_path(incumbency.seat.house.graph_id))
-  - else
-    %h2= link_to(incumbency.house.name, house_path(incumbency.house.graph_id))
+  .list--details
+    - if incumbency.house.nil?
+      %h2= link_to(incumbency.seat.house.name, house_path(incumbency.seat.house.graph_id))
+    - else
+      %h2= link_to(incumbency.house.name, house_path(incumbency.house.graph_id))
 
-  %p
-    = incumbency.date_range
+    %p
+      = incumbency.date_range

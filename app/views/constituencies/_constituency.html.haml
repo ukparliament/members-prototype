@@ -10,9 +10,10 @@
   - elsif @current_incumbency
     %ul.list--pipe
       %li
-        %h3= link_to @current_incumbency.member.display_name, person_path(@current_incumbency.member.graph_id)
-        %p
-          = @current_incumbency.date_range
+        .list--details
+          %h3= link_to @current_incumbency.member.display_name, person_path(@current_incumbency.member.graph_id)
+          %p
+            = @current_incumbency.date_range
   - elsif FlagHelper.election_period?
     = render partial: 'shared/election_message'
   - else @current_incumbency.nil?
@@ -30,6 +31,7 @@
     - @seat_incumbencies.each do |seat_incumbency|
       - if !seat_incumbency.current?
         %li
-          %h3= link_to seat_incumbency.member.display_name, person_path(seat_incumbency.member.graph_id)
-          %p
-            = seat_incumbency.date_range
+          .list--details
+            %h3= link_to seat_incumbency.member.display_name, person_path(seat_incumbency.member.graph_id)
+            %p
+              = seat_incumbency.date_range

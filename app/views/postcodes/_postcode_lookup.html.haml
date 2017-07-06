@@ -11,7 +11,7 @@
     = label_tag 'input', t('.search_by_postcode')
     = text_field_tag(:postcode, @postcode, value: flash[:postcode], maxlength: 8, pattern:'[0-9a-zA-Z ]{5,}', id:'input')
     - button_text = @person.nil? && @constituency.nil? ? "Find" : "Check"
-    %button{:id => 'btn_loading', :class => 'btn--secondary', :value => button_text, :type => 'submit'}
+    %button{:id => 'btn_loading', :class => 'btn--alternative', :value => button_text, :type => 'submit'}
       %span{:class => 'btn--loading__text'}= button_text
       %span{:class => 'btn--loading__icon'}
         %object{:data => 'https://s3-eu-west-1.amazonaws.com/web1devci.pugin-website/1.4.4/icons/loading.svg', :type => 'image/svg+xml'}

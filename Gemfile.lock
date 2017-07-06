@@ -144,7 +144,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.5)
-    pugin (0.8.6.pre)
+    pugin (0.8.6)
     puma (3.9.1)
     rack (2.0.3)
     rack-rewrite (1.5.1)
@@ -290,11 +290,11 @@ DEPENDENCIES
   json-ld (~> 2.1)
   mail (~> 2.6)
   parallel_tests
-  parliament-grom-decorators (~> 0.2.0)
+  parliament-grom-decorators (~> 0.2)
   parliament-ntriple (~> 0.1)
   parliament-ruby (~> 0.7)
   pry
-  pugin (~> 0.8.6.pre)
+  pugin (~> 0.8.6)
   puma
   rack-rewrite
   rack-timeout

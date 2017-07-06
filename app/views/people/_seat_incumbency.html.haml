@@ -1,10 +1,11 @@
 %li
-  %h2
-    = link_to(constituency_path(seat_incumbency.constituency.graph_id)) do
-      = seat_incumbency.constituency.name
-      %span.sr-only
-        = " #{t('constituency')} #{t('from')} "
-        = seat_incumbency.date_range
+  .list--details
+    %h2
+      = link_to(constituency_path(seat_incumbency.constituency.graph_id)) do
+        = seat_incumbency.constituency.name
+        %span.sr-only
+          = " #{t('constituency')} #{t('from')} "
+          = seat_incumbency.date_range
 
-  %p(aria-hidden="true")
-    = seat_incumbency.date_range
+    %p(aria-hidden="true")
+      = seat_incumbency.date_range

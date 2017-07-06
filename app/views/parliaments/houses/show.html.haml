@@ -9,8 +9,8 @@
   .container
     %ul.list--box
       %li
-        %h2= link_to "#{t('mp_plural')}", parliament_house_members_path(@parliament.graph_id, @house.graph_id)
+        .list--details
+          %h2= link_to "#{t('mp_plural')}", parliament_house_members_path(@parliament.graph_id, @house.graph_id)
       %li
-        %h2= link_to "#{t('party_plural').capitalize}", parliament_house_parties_path(@parliament.graph_id, @house.graph_id)
-      %li
-        %h2= link_to "#{t('constituency_plural').capitalize}", parliament_constituencies_path(@parliament.graph_id)
+        .list--details
+          %h2= link_to "#{t('party_plural').capitalize}", parliament_house_parties_path(@parliament.graph_id, @house.graph_id)

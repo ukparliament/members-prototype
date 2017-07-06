@@ -1,8 +1,9 @@
 #content.section--primary
   .container
     .block--border__bottom
-      - if @image
-        %img{src: 'http://via.placeholder.com/250x197', alt: 'placeholder'}
+      - if Pugin::Feature::Bandiera.show_list_images?
+        - if @person.image_id(show_placeholder:false)
+          %img{src: "#{ENV['IMAGE_SERVICE_URL']}/#{@person.image_id}.jpg?crop=2&width=732px", alt: "#{@person.display_name}"}
 
       %h1= title(@person.display_name)
 
@@ -24,45 +25,48 @@
             = current_party_details if current_party_details
             = @person.statuses[:house_membership_status].join(' and ')
 
-
-%section
-  .container
-    - if @current_incumbency && @current_party_membership
-      %h2= "#{t('.contact').capitalize}"
-      - if @postcode
-        - if @postcode_constituency.correct?
-          %p= t('.correct_mp', name: @person.display_name)
-        - else
-          %p
-            = t('.incorrect_mp', name: @person.display_name)
-            = "#{link_to(@postcode_constituency.members.first.display_name, person_path(@postcode_constituency.members.first.graph_id))}.".html_safe
-      - elsif @person.statuses[:house_membership_status].include?('Current MP')
-        %h3= t('.check_mp', name: @person.display_name)
-
-        = render partial: 'postcodes/postcode_lookup', locals: { path: people_postcode_lookup_path }
-
-      - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Member of the House of Lords')
-        - if @current_incumbency.contact_points.empty?
-          %p= t('.empty_contact_details')
-        - else
-          %dl.list--definition
-            - @current_incumbency.contact_points.each do |contact_point|
-              - if contact_point.email.present?
-                %dt= t('contact_points.email').capitalize + ": "
-                %dd
-                  %a{ href: "mailto:#{contact_point.email}" }= contact_point.email
-              - if contact_point.phone_number.present?
-                %dt= t('contact_points.phone').capitalize + ": "
-                %dd
-                  %a{ href: "tel:#{contact_point.phone_number.gsub(/\s+/, "")}" }= contact_point.phone_number
-              - if contact_point.postal_addresses.present?
-                %dt
-                  = t('contact_points.address').capitalize + ": "
-                - contact_point.postal_addresses.each do |postal_address|
-                  %dd= postal_address.full_address
-              - if @current_incumbency.contact_points.length > 1
-                - unless contact_point.equal?(@current_incumbency.contact_points.last)
-                  .line-break--sm
+- if @current_incumbency && @current_party_membership
+  %section.section--minor
+    .container
+      .dropdown
+        .dropdown__toggle
+          %h2=  link_to t('.check_mp_alternative'), '#'
+        .dropdown__content
+          - if @postcode
+            - if @postcode_constituency.correct?
+              %p= t('.correct_mp', name: @person.display_name)
+            - else
+              %p
+                = t('.incorrect_mp', name: @person.display_name)
+                = "#{link_to(@postcode_constituency.members.first.display_name, person_path(@postcode_constituency.members.first.graph_id))}.".html_safe
+          - elsif @person.statuses[:house_membership_status].include?('Current MP')
+            = render partial: 'postcodes/postcode_lookup', locals: { path: people_postcode_lookup_path }
+  %section
+    .container
+      .block
+        %h2= "#{t('.contact').capitalize}"
+        - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Member of the House of Lords')
+          - if @current_incumbency.contact_points.empty?
+            %p= t('.empty_contact_details')
+          - else
+            %dl.list--definition
+              - @current_incumbency.contact_points.each do |contact_point|
+                - if contact_point.email.present?
+                  %dt= t('contact_points.email').capitalize + ": "
+                  %dd
+                    %a{ href: "mailto:#{contact_point.email}" }= contact_point.email
+                - if contact_point.phone_number.present?
+                  %dt= t('contact_points.phone').capitalize + ": "
+                  %dd
+                    %a{ href: "tel:#{contact_point.phone_number.gsub(/\s+/, "")}" }= contact_point.phone_number
+                - if contact_point.postal_addresses.present?
+                  %dt
+                    = t('contact_points.address').capitalize + ": "
+                  - contact_point.postal_addresses.each do |postal_address|
+                    %dd= postal_address.full_address
+                - if @current_incumbency.contact_points.length > 1
+                  - unless contact_point.equal?(@current_incumbency.contact_points.last)
+                    .line-break--sm
 
 %section
   .container
@@ -73,15 +77,15 @@
         %ol.list--pipe
           - @house_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |house_incumbency|
             %li
-              %p
-                = house_incumbency.date_range
+              .list--details
+                %p= house_incumbency.date_range
       - if @seat_incumbencies.present?
         %h3= "#{t('mp')}"
         %ol.list--pipe
           - @seat_incumbencies.sort{ |inc_a, inc_b| inc_b.start_date <=> inc_a.start_date }.each do |seat_incumbency|
             %li
-              %p
-                = t('.mp_for')
-                = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
-              %p
-                = seat_incumbency.date_range
+              .list--details
+                %p
+                  = t('.mp_for')
+                  = link_to(seat_incumbency.constituency.name, constituency_path(seat_incumbency.constituency.graph_id))
+                %p= seat_incumbency.date_range

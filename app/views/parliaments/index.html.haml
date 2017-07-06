@@ -4,4 +4,5 @@
     %ul.list--box
       - @parliaments.each do |parliament|
         %li
-          %h2= link_to "#{parliament.date_range(date_format: '%Y')}", parliament_path(parliament.graph_id)
+          .list--details
+            %h2= link_to "#{parliament.date_range(date_format: '%Y')}", parliament_path(parliament.graph_id)

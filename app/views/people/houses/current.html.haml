@@ -7,9 +7,10 @@
     .container
       %ul.list--box
         %li
-          %h2= link_to(@house.name, house_path(@house.graph_id))
-          - unless @house.seat_incumbencies.empty?
-            %p= @house.seat_incumbencies.first.date_range
+          .list--details
+            %h2= link_to(@house.name, house_path(@house.graph_id))
+            - unless @house.seat_incumbencies.empty?
+              %p= @house.seat_incumbencies.first.date_range
 
-          - unless @house.house_incumbencies.empty?
-            %p= @house.house_incumbencies.first.date_range
+            - unless @house.house_incumbencies.empty?
+              %p= @house.house_incumbencies.first.date_range

@@ -9,18 +9,19 @@
     %ul.list--box
       - @contact_points.each do |contact_point|
         %li
-          %dl.list--definition
-            - if contact_point.email.present?
-              %dt= "#{t('contact_points.email')}:"
-              %dd= contact_point.email
-            - if contact_point.phone_number.present?
-              %dt= "#{t('contact_points.phone')}:"
-              %dd= contact_point.phone_number
-            - if contact_point.fax_number.present?
-              %dt= "#{t('contact_points.fax')}:"
-              %dd= contact_point.fax_number
-            - contact_point.postal_addresses.each do |postal_address|
-              - if postal_address.full_address.present?
-                %dt= "#{t('contact_points.address')}:"
-                %dd= postal_address.full_address
-          %p= link_to "#{t('contact_points.add_address_book').capitalize}", contact_point_path(contact_point.graph_id), target: '_blank'
+          .list--details
+            %dl.list--definition
+              - if contact_point.email.present?
+                %dt= "#{t('contact_points.email')}:"
+                %dd= contact_point.email
+              - if contact_point.phone_number.present?
+                %dt= "#{t('contact_points.phone')}:"
+                %dd= contact_point.phone_number
+              - if contact_point.fax_number.present?
+                %dt= "#{t('contact_points.fax')}:"
+                %dd= contact_point.fax_number
+              - contact_point.postal_addresses.each do |postal_address|
+                - if postal_address.full_address.present?
+                  %dt= "#{t('contact_points.address')}:"
+                  %dd= postal_address.full_address
+            %p= link_to "#{t('contact_points.add_address_book').capitalize}", contact_point_path(contact_point.graph_id), target: '_blank'

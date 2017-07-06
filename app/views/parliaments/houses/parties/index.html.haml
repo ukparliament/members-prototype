@@ -11,8 +11,10 @@
       - @parties.each do |party|
         %li
           .column--75
-            %h2= link_to party.name, parliament_house_party_path(@parliament.graph_id,@house.graph_id, party.graph_id)
+            .list--details
+              %h2= link_to party.name, parliament_house_party_path(@parliament.graph_id,@house.graph_id, party.graph_id)
           .column--25
-            %p
-              = party.member_count
-              %span= t('mp_count', count: party.member_count)
+            .list--details
+              %p
+                = party.member_count
+                %span= t('mp_count', count: party.member_count)

@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/vUPobpVT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Thu, 15 Jun 2017 13:54:54 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '48610'
+    body:
+      encoding: UTF-8
+      string: |-
+        <http://id.ukpds.org/7IeDQFi5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/7IeDQFi5> <http://id.ukpds.org/schema/constituencyGroupStartDate> "2005-04-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/7IeDQFi5> <http://id.ukpds.org/schema/constituencyGroupName> "constituencyGroupName - 1" .
+        <http://id.ukpds.org/7IeDQFi5> <http://id.ukpds.org/schema/constituencyGroupOnsCode> "constituencyGroupOnsCode - 1" .
+        <http://id.ukpds.org/7IeDQFi5> <http://id.ukpds.org/schema/constituencyGroupHasConstituencyArea> <http://id.ukpds.org/EnjkcrlA> .
+        <http://id.ukpds.org/EnjkcrlA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyArea> .
+        <http://id.ukpds.org/EnjkcrlA> <http://id.ukpds.org/schema/constituencyAreaLatitude> "constituencyAreaLatitude - 1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+        <http://id.ukpds.org/EnjkcrlA> <http://id.ukpds.org/schema/constituencyAreaLongitude> "constituencyAreaLongitude - 1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+        <http://id.ukpds.org/EnjkcrlA> <http://id.ukpds.org/schema/constituencyAreaExtent> "constituencyAreaExtent - 1"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+        <http://id.ukpds.org/EnjkcrlA> <http://id.ukpds.org/schema/constituencyAreaExtent> "constituencyAreaExtent - 2"^^<http://www.opengis.net/ont/geosparql#wktLiteral> .
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 15:20:43 GMT
+- request:
+    method: get
+    uri: http://localhost:3030/houses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+      Ocp-Apim-Subscription-Key:
+      - "<AUTH_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Thu, 27 Apr 2017 13:41:19 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '416'
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/KL2k1BGP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/KL2k1BGP> <http://id.ukpds.org/schema/houseName> "houseName - 1" .
+        <http://id.ukpds.org/m1EgVTLj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/m1EgVTLj> <http://id.ukpds.org/schema/houseName> "houseName - 2" .
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 15:20:44 GMT
+recorded_with: VCR 3.0.3

@@ -169,6 +169,26 @@ RSpec.describe ConstituenciesController, vcr: true do
     it 'renders the map template' do
       expect(response).to render_template('map')
     end
+
+    context 'request JSON' do
+      before(:each) do
+        headers = { 'Accept' => 'application/json' }
+        request.headers.merge(headers)
+      end
+
+      it 'should have a response with a http status ok (200)' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'assigns @constituency' do
+        expect(assigns(:constituency)).to be_a(Grom::Node)
+        expect(assigns(:constituency).type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+      end
+
+      it 'renders the map template' do
+        expect(response).to render_template('map')
+      end
+    end
   end
 
   describe 'GET letters' do
@@ -363,11 +383,6 @@ RSpec.describe ConstituenciesController, vcr: true do
           {
             route: 'current',
             data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/current"
-          },
-          {
-            route: 'map',
-            parameters: { constituency_id: 'vUPobpVT' },
-            data_url: "#{ENV['PARLIAMENT_BASE_URL']}/constituencies/vUPobpVT"
           },
           {
             route: 'letters',

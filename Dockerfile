@@ -1,6 +1,7 @@
 FROM ruby:2-alpine
 
 # Add command line argument variables used to cusomise the image at build-time.
+ARG IMAGE_SERVICE_URL
 ARG PARLIAMENT_BASE_URL
 ARG PARLIAMENT_AUTH_TOKEN
 ARG AIRBRAKE_PROJECT_ID
@@ -41,6 +42,7 @@ RUN if [ "$RACK_ENV" == "production" ]; then \
 
 # Set up our user and environment
 USER nobody
+ENV IMAGE_SERVICE_URL $IMAGE_SERVICE_URL
 ENV PARLIAMENT_BASE_URL $PARLIAMENT_BASE_URL
 ENV PARLIAMENT_AUTH_TOKEN $PARLIAMENT_AUTH_TOKEN
 ENV AIRBRAKE_PROJECT_ID $AIRBRAKE_PROJECT_ID

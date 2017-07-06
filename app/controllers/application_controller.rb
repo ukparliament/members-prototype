@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
 
   def data_check
     # Check format to see if it is available from the data API
-    return unless DATA_FORMATS.include?(request.formats.first)
+    return if !DATA_FORMATS.include?(request.formats.first) || (params[:controller] == 'constituencies' && params[:action] == 'map')
 
     # Find the current controller/action's API url
     @data_url = data_url

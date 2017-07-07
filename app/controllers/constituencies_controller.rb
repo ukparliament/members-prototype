@@ -45,7 +45,7 @@ class ConstituenciesController < ApplicationController
 
     @current_incumbency = @seat_incumbencies.shift if !@seat_incumbencies.empty? && @seat_incumbencies.first.current?
 
-    @json_location = constituency_map_url(@constituency.graph_id, format: 'json')
+    @json_location = constituency_map_path(@constituency.graph_id, format: 'json')
 
     return if @postcode.nil?
 
@@ -104,7 +104,7 @@ class ConstituenciesController < ApplicationController
           'http://id.ukpds.org/schema/ConstituencyGroup'
         ).first
 
-        @json_location = constituency_map_url(@constituency.graph_id, format: 'json')
+        @json_location = constituency_map_path(@constituency.graph_id, format: 'json')
       end
 
       format.json do

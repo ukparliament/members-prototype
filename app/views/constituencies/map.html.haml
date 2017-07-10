@@ -1,10 +1,5 @@
 #content.section--primary
   .container
     .block--border__bottom
-
-      #mapbox{ data: { json: { location: @json_location } } }
-        %noscript
-          %p
-            = "#{t('constituencies.constituency.constituency_map_fallback')}"
-
       %h1= @constituency.name
+      = render partial: 'shared/map'

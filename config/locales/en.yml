@@ -184,6 +184,10 @@ en:
       title: # needs title
     show:
       title: # title does not require translation
+      check_constituency: 'Check if %{name} is your constituency'
+      check_constituency_alternative: 'Check if this is your constituency'
+      correct_constituency: '%{name} is the constituency for the postcode entered.'
+      incorrect_constituency: '%{name} is not the constituency for the postcode entered.  Your constituency is '
     members:
       index:
         title: '%{current_and_former} %{mp_plural}'
@@ -206,7 +210,7 @@ en:
       check_constituency: 'check if this is your constituency'
       former_constituency: 'This is a former constituency. %{current_constituencies_link}.'
       current_constituencies_link: 'view current constituencies'
-      constituency_map_fallback: 'Map of constituency is unavailable.'
+      constituency_map_fallback: 'A map of the constituency is available. To view it JavaScript must enabled.'
   # parties translations
   parties:
     index:

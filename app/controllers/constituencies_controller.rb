@@ -33,10 +33,12 @@ class ConstituenciesController < ApplicationController
   def show
     @postcode = flash[:postcode]
 
-    @constituency, @seat_incumbencies = RequestHelper.filter_response_data(
+    @constituency, @seat_incumbencies, @party, @person = RequestHelper.filter_response_data(
       @request,
       'http://id.ukpds.org/schema/ConstituencyGroup',
-      'http://id.ukpds.org/schema/SeatIncumbency'
+      'http://id.ukpds.org/schema/SeatIncumbency',
+      'http://id.ukpds.org/schema/Party',
+      'http://id.ukpds.org/schema/Person'
     )
     # Instance variable for single MP pages
     @single_mp = true
@@ -46,6 +48,10 @@ class ConstituenciesController < ApplicationController
     @current_incumbency = @seat_incumbencies.shift if !@seat_incumbencies.empty? && @seat_incumbencies.first.current?
 
     @json_location = constituency_map_path(@constituency.graph_id, format: 'json')
+
+    @party = @party.first
+
+    @person = @person.first
 
     return if @postcode.nil?
 

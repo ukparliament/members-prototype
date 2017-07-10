@@ -112,10 +112,6 @@ RSpec.describe 'constituencies/_constituency', vcr: true do
             assign(:current_incumbency, double(:current_incumbency, date_range: "#{(Time.zone.now - 1.month).strftime('%-e %b %Y')} to present", member: double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')))
             render
           end
-
-          it 'will not render current incumbency start date' do
-            expect(rendered).to match("#{(Time.zone.now - 1.month).strftime('%-e %b %Y')} to present")
-          end
         end
       end
     end

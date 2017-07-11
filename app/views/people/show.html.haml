@@ -26,21 +26,23 @@
             = @person.statuses[:house_membership_status].join(' and ')
 
 - if @current_incumbency && @current_party_membership
-  %section.section--minor
-    .container
-      .dropdown
-        .dropdown__toggle
-          %h2=  link_to t('.check_mp_alternative'), '#'
-        .dropdown__content
-          - if @postcode
-            - if @postcode_constituency.correct?
-              %p= t('.correct_mp', name: @person.display_name)
-            - else
-              %p
-                = t('.incorrect_mp', name: @person.display_name)
-                = "#{link_to(@postcode_constituency.members.first.display_name, person_path(@postcode_constituency.members.first.graph_id))}.".html_safe
-          - elsif @person.statuses[:house_membership_status].include?('Current MP')
-            = render partial: 'postcodes/postcode_lookup', locals: { path: people_postcode_lookup_path }
+  - if @person.statuses[:house_membership_status].include?('Current MP')
+    %section
+      .container
+        .dropdown
+          .dropdown__toggle
+            %h2=  link_to t('.check_mp_alternative'), '#'
+          .dropdown__content
+            - if @postcode
+              - if @postcode_constituency.correct?
+                %p= t('.correct_mp', name: @person.display_name)
+              - else
+                %p
+                  = t('.incorrect_mp', name: @person.display_name)
+                  = "#{link_to(@postcode_constituency.members.first.display_name, person_path(@postcode_constituency.members.first.graph_id))}.".html_safe
+            - elsif @person.statuses[:house_membership_status].include?('Current MP')
+              = render partial: 'postcodes/postcode_lookup', locals: { path: people_postcode_lookup_path }
+
   %section
     .container
       .block

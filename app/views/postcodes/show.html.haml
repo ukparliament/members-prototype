@@ -2,7 +2,7 @@
   .container
     %h1
       %span= title("#{t('.results_for')} #{@postcode.upcase}")
-    .inner-container--focus
+    .block
       %h2= link_to(@constituency.name, constituency_path(@constituency.graph_id))
 
     - if @person.empty?

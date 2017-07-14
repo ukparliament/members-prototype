@@ -14,7 +14,7 @@
   %section#content
     .container
       .block--border__bottom
-        .inner-container--focus
+        .block
           %h2= t('.find_mp')
           = render partial: 'postcodes/postcode_lookup', locals: { path: postcodes_lookup_path }
           = link_to t('.view_list_constituencies'), constituencies_current_a_z_letter_path('a')

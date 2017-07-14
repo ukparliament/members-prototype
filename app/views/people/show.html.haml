@@ -3,7 +3,11 @@
     .block--border__bottom
       - if Pugin::Feature::Bandiera.show_list_images?
         - if @person.image_id(show_placeholder:false)
-          %img{src: "#{ENV['IMAGE_SERVICE_URL']}/#{@person.image_id}.jpg?crop=2&width=732px", alt: "#{@person.display_name}"}
+          %figure
+            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@person.image_id}.jpeg?crop=CU_5:2&width=1464&quality=80", alt: "#{@person.display_name}" }
+            %span
+              = "Image loading"
+              %object.loading{ data: "https://s3-eu-west-1.amazonaws.com/web1devci.pugin-website/1.4.4/icons/loading.svg", type: "image/svg+xml", tabindex: "-1", "aria-hidden": "true" }
 
       %h1= title(@person.display_name)
 

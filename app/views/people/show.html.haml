@@ -1,56 +1,38 @@
 #content.section--primary
   .container
-    .block--border__bottom
-      - if Pugin::Feature::Bandiera.show_list_images?
-        - if @person.image_id(show_placeholder:false)
-          %figure
-            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@person.image_id}.jpeg?crop=CU_5:2&width=1464&quality=80", alt: "#{@person.display_name}" }
-            %span
-              = "Image loading"
-              %object.loading{ data: "https://s3-eu-west-1.amazonaws.com/web1devci.pugin-website/1.4.4/icons/loading.svg", type: "image/svg+xml", tabindex: "-1", "aria-hidden": "true" }
 
-      %h1= title(@person.display_name)
+    %h1= title(@person.display_name)
 
-      - if @most_recent_incumbency.nil? || @most_recent_incumbency.house.name == 'House of Lords'
-        %p= @person.full_title
-        %p= "#{@person.full_name}" unless @person.display_name == @person.full_name
+    - if @most_recent_incumbency.nil? || @most_recent_incumbency.house.name == 'House of Lords'
+      %p= @person.full_title
+      %p= "#{@person.full_name}" unless @person.display_name == @person.full_name
 
-      - if @current_party_membership && @current_incumbency
-        - current_party_details = link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
+    - if @current_party_membership && @current_incumbency
+      - current_party_details = link_to(@current_party_membership.party.name, party_path(@current_party_membership.party.graph_id))
 
-      - unless @person.statuses[:house_membership_status].empty?
-        - if @person.statuses[:house_membership_status].include?('Current MP')
-          %p
-            = current_party_details if current_party_details
-            = t('.mp_for')
-            = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
-        - else
-          %p
-            = current_party_details if current_party_details
-            = @person.statuses[:house_membership_status].join(' and ')
+    - unless @person.statuses[:house_membership_status].empty?
+      - if @person.statuses[:house_membership_status].include?('Current MP')
+        %p
+          = current_party_details if current_party_details
+          = t('.mp_for')
+          = link_to(@current_incumbency.constituency.name, constituency_path(@current_incumbency.constituency.graph_id))
+      - else
+        %p
+          = current_party_details if current_party_details
+          = @person.statuses[:house_membership_status].join(' and ')
+
+    - if Pugin::Feature::Bandiera.show_list_images?
+      - if @person.image_id(show_placeholder:false)
+        %figure
+          %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@person.image_id}.jpeg?crop=CU_5:2&width=1464&quality=100", alt: "#{@person.display_name}" }
+          %figcaption= t('.figcaption', link: link_to(t('.available_download'), media_show_path(@person.image_id))).html_safe
 
 - if @current_incumbency && @current_party_membership
-  - if @person.statuses[:house_membership_status].include?('Current MP')
-    %section
-      .container
-        .dropdown
-          .dropdown__toggle
-            %h2=  link_to t('.check_mp_alternative'), '#'
-          .dropdown__content
-            - if @postcode
-              - if @postcode_constituency.correct?
-                %p= t('.correct_mp', name: @person.display_name)
-              - else
-                %p
-                  = t('.incorrect_mp', name: @person.display_name)
-                  = "#{link_to(@postcode_constituency.members.first.display_name, person_path(@postcode_constituency.members.first.graph_id))}.".html_safe
-            - elsif @person.statuses[:house_membership_status].include?('Current MP')
-              = render partial: 'postcodes/postcode_lookup', locals: { path: people_postcode_lookup_path }
-
   %section
     .container
       .block
         %h2= "#{t('.contact').capitalize}"
+        %p= t('.contact_postcode')
         - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Member of the House of Lords')
           - if @current_incumbency.contact_points.empty?
             %p= t('.empty_contact_details')
@@ -73,6 +55,7 @@
                 - if @current_incumbency.contact_points.length > 1
                   - unless contact_point.equal?(@current_incumbency.contact_points.last)
                     .line-break--sm
+        %p= t('.contact_discussion')
 
 %section
   .container

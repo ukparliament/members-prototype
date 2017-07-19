@@ -10,11 +10,14 @@ class MediaController < ApplicationController
   end
 
   def show
-    @image = RequestHelper.filter_response_data(
+    @image, @person = RequestHelper.filter_response_data(
       @request,
-      'http://id.ukpds.org/schema/MemberImage'
+      'http://id.ukpds.org/schema/MemberImage',
+      'http://id.ukpds.org/schema/Person'
     )
 
     @image = @image.first
+
+    @person = @person.first
   end
 end

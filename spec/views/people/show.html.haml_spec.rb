@@ -305,42 +305,9 @@ RSpec.describe 'people/show', vcr: true do
               date_range: 'from 2010')))
       end
 
-      context 'postcode is not assigned' do
-        it 'will render postcode lookup' do
-          render
-          expect(response).to render_template(partial: 'postcodes/_postcode_lookup')
-        end
-      end
-
       context 'postcode is assigned' do
         before do
           assign(:postcode, 'SW1A 0AA')
-        end
-
-        context 'postcode constituency is correct' do
-          before do
-            assign(:postcode_constituency, double(:postcode_constituency, correct?: true, members: [double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')]))
-            render
-          end
-
-          it 'will render correct name' do
-            expect(rendered).to match(/Test Display Name is the MP for the postcode entered/)
-          end
-        end
-
-        context 'postcode constituency is not correct' do
-          before do
-            assign(:postcode_constituency, double(:postcode_constituency, correct?: false, members: [double(:member, display_name: 'Test Display Name', graph_id: '7TX8ySd4')]))
-            render
-          end
-
-          it 'will render incorrect mp' do
-            expect(rendered).to match(/Test Display Name is not the MP for the postcode entered/)
-          end
-
-          it 'will render link to person_path' do
-            expect(rendered).to have_link('Test Display Name', href: person_path('7TX8ySd4'))
-          end
         end
       end
     end

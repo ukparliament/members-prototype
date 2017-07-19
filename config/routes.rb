@@ -276,7 +276,7 @@ Rails.application.routes.draw do
   # /media/
   scope '/media', as: 'media' do
     get '/', to: 'media#index'
-    scope '/:medium_id' do
+    scope '/:medium_id', as: 'show' do
       get '/', to: 'media#show', medium_id: id_format_regex
     end
   end

@@ -108,6 +108,8 @@ en:
     show:
       mp_for: 'MP for'
       contact: 'contact'
+      contact_postcode: 'Please include your postcode when contacting your MP.'
+      contact_discussion: 'You may be able to discuss issues with your MP in person or online. Contact them for details.'
       membership_history: 'membership history'
       election_history: 'election history'
       roles: 'roles'
@@ -115,6 +117,8 @@ en:
       check_mp_alternative: 'Check if this is your MP'
       correct_mp: '%{name} is the MP for the postcode entered.'
       incorrect_mp: '%{name} is not the MP for the postcode entered.  Your MP is '
+      figcaption: 'The official MP portraits are %{link}'
+      available_download: 'available to download'
     constituencies:
       index:
         title: '%{current_and_former} %{constituency_plural}'
@@ -132,6 +136,27 @@ en:
         title: '%{current_and_former} %{parties_and_groups}'
       current:
         title: '%{current} %{party}'
+  # media translations
+  media:
+    show:
+      title: 'official portrait of'
+      figcaption: 'The official MP portraits are %{link}'
+      available_download: 'available to download'
+      license: 'This photo, and all related crops, are released under an %{link} license.'
+      license_link: 'Attribution 3.0 Unported (CC BY 3.0)'
+      license_context: 'This means that you can use, share and adapt it, as long as you give proper attribution, provide a link to the license, and indicate if changes were made to the image. See the %{link} for more details'
+      license_context_link: 'full license'
+      portraits_heading: 'Cropped portraits'
+      download: 'download'
+      download_original: 'download original'
+      download_res_original: '(3797 x 5315 jpeg)'
+      download_heading_1: '3 x 2 Portrait'
+      download_res_wide_portrait: '(3000 x 2000 jpeg)'
+      download_heading_3: '3 x 4 Portrait'
+      download_res_portrait: '(1500 x 2000 jpeg)'
+      download_heading_3: 'Thumbnail'
+      download_res_thumbnail: '(1500 x 1500 jpeg)'
+      no_portrait: 'There is currently no official portrait for this MP.'
   # contact points translations
   contact_points:
     index:

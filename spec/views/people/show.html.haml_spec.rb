@@ -387,10 +387,6 @@ RSpec.describe 'people/show', vcr: true do
                   ]))
               render
             end
-
-            it 'will remove whitespace' do
-              expect(rendered).to match(/07700000001/)
-            end
           end
 
           it 'will render postal address' do

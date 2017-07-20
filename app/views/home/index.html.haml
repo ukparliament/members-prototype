@@ -8,33 +8,32 @@
 
 %section
   .container
-    %h2= t('.whats_on.title')
-    %h3= t('.members_info.title')
+    %h2= t('.members_info.title')
     %ol.list--box
       %li
         .list--details
-          %h4= link_to t('mp_plural'), mps_path
+          %h3= link_to t('mp_plural'), mps_path
           %p= t('.members_info.current_mps')
       %li
         .list--details
-          %h4= link_to t('lord_plural'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a')
+          %h3= link_to t('lord_plural'), house_members_current_a_z_letter_path(HousesHelper.lords_id, 'a')
           %p= t('.members_info.current_lords')
       %li
         .list--details
-          %h4= link_to t('constituency_plural').capitalize, constituencies_current_a_z_letter_path('a')
+          %h3= link_to t('constituency_plural').capitalize, constituencies_current_a_z_letter_path('a')
           %p= t('.members_info.current_constituencies')
       %li
         .list--details
-          %h4= link_to t('parties_and_groups').capitalize, house_parties_current_path(HousesHelper.commons_id)
+          %h3= link_to t('parties_and_groups').capitalize, house_parties_current_path(HousesHelper.commons_id)
           %p= t('.members_info.current_parties')
     .highlight--box.highlight--primary__soft
       %p= t('.latest_members.blog', link: link_to(t('.latest_members.blog_link'), 'https://pds.blog.parliament.uk/2017/03/27/uk-parliament-website-public-beta/')).html_safe
 
-    %h3= t('search').capitalize
+    %h2= t('search').capitalize
     %ol.list--box
       %li
         .list--details
-          %h4= link_to t('search').capitalize, '/search'
+          %h3= link_to t('search').capitalize, '/search'
           %p= t('find_results')
     .highlight--box.highlight--primary__soft
       %p= t('.search.blog', link: link_to(t('.search.blog_link'), 'https://pds.blog.parliament.uk/2017/06/14/improving-the-search-function-on-parliament-uk/')).html_safe

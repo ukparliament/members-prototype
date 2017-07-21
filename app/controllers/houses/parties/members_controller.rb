@@ -4,7 +4,8 @@ module Houses
       before_action :data_check, :build_request
 
       ROUTE_MAP = {
-        index:           proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties(params[:party_id]).members },
+        # index:           proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties(params[:party_id]).members },
+        index:           proc { |params| ParliamentHelper.parliament_request.house_party_members({ house_id: params[:house_id], party_id: params[:party_id] }) },
         a_to_z_current:  proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties(params[:party_id]).members.current.a_z_letters },
         current:         proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties(params[:party_id]).members.current },
         letters:         proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]).parties(params[:party_id]).members(params[:letter]) },

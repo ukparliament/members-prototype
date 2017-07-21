@@ -2,7 +2,8 @@ class HousesController < ApplicationController
   before_action :data_check, :build_request
 
   ROUTE_MAP = {
-    index:             proc { ParliamentHelper.parliament_request.houses },
+    # index:             proc { ParliamentHelper.parliament_request.houses },
+    index:             proc { ParliamentHelper.parliament_request.house_index },
     show:              proc { |params| ParliamentHelper.parliament_request.houses(params[:house_id]) },
     lookup:            proc { |params| ParliamentHelper.parliament_request.houses.lookup(params[:source], params[:id]) },
     lookup_by_letters: proc { |params| ParliamentHelper.parliament_request.houses.partial(params[:letters]) }

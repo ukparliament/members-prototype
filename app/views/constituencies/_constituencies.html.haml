@@ -4,14 +4,15 @@
   %ul.list--box
     - @constituencies.each do |constituency|
       %li
-        %h2
-          = link_to(constituency_path(constituency.graph_id)) do
-            = constituency.name
+        .list--details
+          %h2
+            = link_to(constituency_path(constituency.graph_id)) do
+              = constituency.name
 
-            %span.sr-only
-              = constituency.current? ? "#{t('current')} #{t('constituency')}" : "#{t('former')} #{t('constituency')}"
-              = "#{t('from')} #{l(constituency.start_date, format: :default)}" unless constituency.start_date.nil?
-              = constituency.end_date.nil? ? t('to_present') : " #{t('to')} #{l(constituency.end_date, format: :default)}"
+              %span.sr-only
+                = constituency.current? ? "#{t('current')} #{t('constituency')}" : "#{t('former')} #{t('constituency')}"
+                = "#{t('from')} #{l(constituency.start_date, format: :default)}" unless constituency.start_date.nil?
+                = constituency.end_date.nil? ? t('to_present') : " #{t('to')} #{l(constituency.end_date, format: :default)}"
 
-        %p(aria-hidden="true")
-          = constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"
+          %p(aria-hidden="true")
+            = constituency.current? ? "#{t('current').capitalize} #{t('constituency')}" : "#{t('former').capitalize} #{t('constituency')}"

@@ -9,4 +9,5 @@
     %ul.list--box
       - @meta_routes.each do |route|
         %li
-          %h2= link_to(t("meta.#{route[:translation].underscore}.title"), route[:url])
+          .list--details
+            %h2= link_to(t("meta.#{route[:translation].underscore}.title"), route[:url])

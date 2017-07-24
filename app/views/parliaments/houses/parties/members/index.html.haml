@@ -9,5 +9,6 @@
   .container
     %ul.list--box
       %li
-        %h2= link_to "A-Z", parliament_house_party_members_a_z_path(@parliament.graph_id, @house.graph_id, @party.graph_id)
-        %p= t('parliaments.find_mp_a_to_z')
+        .list--details
+          %h2= link_to "A-Z", parliament_house_party_members_a_z_path(@parliament.graph_id, @house.graph_id, @party.graph_id)
+          %p= t('parliaments.find_mp_a_to_z')

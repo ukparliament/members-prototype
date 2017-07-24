@@ -9,4 +9,5 @@
   .container
     %ul.list--box
       %li
-        %h2= link_to "#{t('mp_plural')}", parliament_house_party_members_path(@parliament.graph_id, @house.graph_id, @party.graph_id)
+        .list--details
+          %h2= link_to "#{t('mp_plural')}", parliament_house_party_members_path(@parliament.graph_id, @house.graph_id, @party.graph_id)

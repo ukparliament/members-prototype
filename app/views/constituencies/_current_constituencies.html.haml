@@ -4,8 +4,9 @@
   %ul.list--box
     - @constituencies.each do |constituency|
       %li
-        %h2= link_to(constituency.name, constituency_path(constituency.graph_id))
-        - if constituency.members.empty?
-          %p= t('constituencies.shared_translations.vacant').capitalize
-        - else
-          %p= "#{constituency.members.first.display_name} #{t('mp')}"
+        .list--details
+          %h2= link_to(constituency.name, constituency_path(constituency.graph_id))
+          - if constituency.members.empty?
+            %p= t('constituencies.shared_translations.vacant').capitalize
+          - else
+            %p= "#{constituency.members.first.display_name} #{t('mp')}"

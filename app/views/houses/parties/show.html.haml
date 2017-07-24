@@ -11,8 +11,9 @@
     - if @party.member_count > 0
       %ul.list--box
         %li
-          %h2= link_to("#{@party.name} #{@current_person_type}", house_parties_party_members_current_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
-          %p= "#{t('view_all').capitalize} #{@party.name} #{t('member_plural')} #{t('in_the')} #{@house.name}"
+          .list--details
+            %h2= link_to("#{@party.name} #{@current_person_type}", house_parties_party_members_current_a_z_letter_path(@house.graph_id, @party.graph_id, 'a'))
+            %p= "#{t('view_all').capitalize} #{@party.name} #{t('member_plural')} #{t('in_the')} #{@house.name}"
 
     - if @party.member_count == 0
 
@@ -21,5 +22,6 @@
 
       %ul.list--box
         %li
-          %h2= link_to("#{t('current_and_former').capitalize} #{@party.name} #{@current_person_type}", house_parties_party_members_path(@house.graph_id, @party.graph_id))
-          %p= "#{t('view_all').capitalize} #{t('current_and_former')} #{@party.name} #{t('member_plural')}"
+          .list--details
+            %h2= link_to("#{t('current_and_former').capitalize} #{@party.name} #{@current_person_type}", house_parties_party_members_path(@house.graph_id, @party.graph_id))
+            %p= "#{t('view_all').capitalize} #{t('current_and_former')} #{@party.name} #{t('member_plural')}"

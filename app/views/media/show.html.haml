@@ -30,19 +30,19 @@
       %ol.list--pipe
         %li
           %figure
-            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=MCU_3:2&quality=80?download=true", alt: "#{@person.display_name}" }
+            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=MCU_3:2&width=260&quality=80?download=true", alt: "#{@person.display_name}" }
           .list--details
             %h3= t('.download_heading_1')
             = link_to(t('.download_jpeg').capitalize + ' ' + t('.download_res_wide_portrait'), "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=MCU_3:2&quality=80&download=true", class: 'btn--primary', download: '')
         %li
           %figure
-            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=MCU_3:4&width=130&quality=80", alt: "#{@person.display_name}" }
+            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=MCU_3:4&width=260&quality=80", alt: "#{@person.display_name}" }
           .list--details
             %h3= t('.download_heading_2')
             = link_to(t('.download_jpeg').capitalize + ' ' + t('.download_res_portrait'), "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=MCU_3:4&quality=80&download=true", class: 'btn--primary', download: '')
         %li
           %figure
-            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=CU_1:1&width=130&quality=80", alt: "#{@person.display_name}" }
+            %img{ src: "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=CU_1:1&width=260&quality=80", alt: "#{@person.display_name}" }
           .list--details
             %h3= t('.download_heading_3')
             = link_to(t('.download_jpeg').capitalize + ' ' + t('.download_res_thumbnail'), "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?crop=CU_1:1&quality=80&download=true", class: 'btn--primary', download: '')

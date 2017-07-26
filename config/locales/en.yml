@@ -144,7 +144,7 @@ en:
       available_download: 'available to download'
       license: 'This photo, and all related crops, are released under an %{link} license.'
       license_link: 'Attribution 3.0 Unported (CC BY 3.0)'
-      license_context: 'This means that you can use, share and adapt it, as long as you give proper attribution, provide a link to the license, and indicate if changes were made to the image. See the %{link} for more details'
+      license_context: 'This means that you can use, share and adapt it, as long as you give proper attribution, provide a link to the license, and indicate if changes were made to the image. See the %{link} for more details.'
       license_context_link: 'full license'
       portraits_heading: 'Cropped portraits'
       download_jpeg: 'download jpeg'

@@ -1,7 +1,6 @@
 #content.section--primary
   .container
-    .block--border__bottom
-      %h1= title(@constituency.name)
-      = render partial: 'shared/map'
+    %h1= title(@constituency.name)
+    = render partial: 'shared/map'
 
 = render 'constituencies/constituency'

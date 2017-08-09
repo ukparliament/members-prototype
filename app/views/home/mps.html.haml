@@ -46,6 +46,6 @@
         - @parliaments.each do |parliament|
           %li
             .list--details
-              %h3= link_to "#{parliament.date_range(date_format: '%Y')} #{t('parliament').capitalize}", parliament_members_a_z_letter_path(parliament.graph_id, 'a')
+              %h3= link_to "#{parliament.date_range(date_format: '%Y')} #{t('parliament').capitalize}",  parliament_house_members_a_z_letter_path(parliament.graph_id, HousesHelper.commons_id, 'a')
         %li
           %h3= link_to "#{t('view_all').capitalize} #{t('parliament_plural').capitalize}", parliaments_path

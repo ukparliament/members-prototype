@@ -12,9 +12,9 @@
             = "#{t('.title').capitalize}"
             = link_to(@person.display_name, person_path(@person.graph_id))
 
-        %p= t('.license', link: link_to(t('.license_link'), 'https://creativecommons.org/licenses/by/3.0/', title: t('open_new_window'))).html_safe
+        %p= t('.license', link: link_to(t('.license_link'), 'https://creativecommons.org/licenses/by/3.0/')).html_safe
 
-        %p= t('.license_context', link: link_to(t('.license_context_link'), 'https://creativecommons.org/licenses/by/3.0/', title: t('open_new_window'))).html_safe
+        %p= t('.license_context', link: link_to(t('.license_context_link'), 'https://creativecommons.org/licenses/by/3.0/')).html_safe
 
         = link_to(t('.download_jpeg').capitalize + ' ' + t('.download_res_original'), "#{ENV['IMAGE_SERVICE_URL']}/#{@image.graph_id}.jpeg?download=true", class: 'btn--primary')
 

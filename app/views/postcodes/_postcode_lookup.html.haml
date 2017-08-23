@@ -3,7 +3,7 @@
     %p= flash[:error]
 
 = form_tag(path, method: :post) do
-  .form-group
+  .input-group
     = hidden_field_tag('previous_controller', params[:controller])
     = hidden_field_tag('previous_action', params[:action])
     = hidden_field_tag('constituency_id', @constituency.graph_id) if @constituency

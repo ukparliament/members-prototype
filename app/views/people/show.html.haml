@@ -32,7 +32,8 @@
     .container
       .block
         %h2= "#{t('.contact').capitalize}"
-        %p= t('.contact_postcode')
+        - if @seat_incumbencies.present?
+          %p= t('.contact_postcode')
         - if @person.statuses[:house_membership_status].include?('Current MP') || @person.statuses[:house_membership_status].include?('Member of the House of Lords')
           - if @current_incumbency.contact_points.empty?
             %p= t('.empty_contact_details')
@@ -56,7 +57,8 @@
                 - if @current_incumbency.contact_points.length > 1
                   - unless contact_point.equal?(@current_incumbency.contact_points.last)
                     .line-break--sm
-        %p= t('.contact_discussion')
+        - if @seat_incumbencies.present?
+          %p= t('.contact_discussion')
 
 %section
   .container
